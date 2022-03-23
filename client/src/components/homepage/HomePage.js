@@ -11,6 +11,7 @@ export default function HomePage(){
                 <a className="" href="/mix">Mixing</a>
                 <a className="" href="/results">Results</a>
                 <a className="" href="/drinks">Drinks</a>
+                <a className="" href="/seasonal">Seasonal</a>
             </div>
 
         </React.Fragment>
