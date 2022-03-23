@@ -6,7 +6,10 @@ import axios from 'axios';
 export default function Header(){
     return(
         <React.Fragment>
-            This is the Header!
+            <div className='header-nav'>
+                <div>This is the Header!</div>
+                <a className="" href="/profile">ProfilePage</a>
+            </div>
         </React.Fragment>
     )
 }
