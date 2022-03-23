@@ -24,6 +24,7 @@ export default function Header({username,password,passwordConfirmation,setUserna
                 passwordConfirmation={passwordConfirmation}
                 setPasswordConfirmation={setPasswordConfirmation}
                 handleSubmit={handleSubmit}
+                showSignInModal={showSignInModal}
                 setShowSignInModal={setShowSignInModal}
                 />:<button onClick={handleSignIn}>Sign Up/Sign In</button>}
         </React.Fragment>

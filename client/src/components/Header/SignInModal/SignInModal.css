@@ -1,0 +1,63 @@
+    
+.signin-card {
+    /* position: flex; */
+    /* background-color: rgb(78, 80, 78); */
+    position: absolute;
+    /* display: flex; */
+    /* flex-direction: column; */
+    background-color: rgb(194, 187, 187);
+    width: 850px;
+    height: 500px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
+    transition: all .15s;
+    margin-left: 20%;
+    margin-top: 10%;
+    animation: fadeInAnimation ease .3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeInAnimation {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+    }
+}
+
+.test{
+    animation: fadeInAnimation ease .25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    position: absolute;
+    /* z-index:999; */
+    background-color: rgba(0, 0, 0, 0.459);
+    opacity: .95;
+    padding-top: 100%;
+    padding-left: 150%;
+    max-height: 90%;
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+
+}
+
+.form-columns{
+    display: flex;
+    flex-direction: row;
+}
