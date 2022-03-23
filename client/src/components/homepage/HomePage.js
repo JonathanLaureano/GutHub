@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 
 export default function HomePage(){
+    document.title = 'GutHub - Home'
     return(
         <React.Fragment>
             <div>This is the HomePage</div>
@@ -11,6 +12,7 @@ export default function HomePage(){
                 <a className="" href="/mix">Mixing</a>
                 <a className="" href="/results">Results</a>
                 <a className="" href="/drinks">Drinks</a>
+                <a className="" href="/seasonal">Seasonal</a>
             </div>
 
         </React.Fragment>

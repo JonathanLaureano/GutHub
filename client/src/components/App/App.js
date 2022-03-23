@@ -6,6 +6,7 @@ import HomePage from '../HomePage/HomePage'
 import MixPage from '../Mixing/MixPage'
 import ResultsPage from '../Results/ResultsPage';
 import DrinksPage from '../Drinks/DrinksPage';
+import SeasonalPage from '../Seasonal/SeasonalPage';
 
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
           <Route path='/drinks'>
               <DrinksPage/>
           </Route>
+          <Route path='/seasonal'>
+              <SeasonalPage/>
+          </Route>
+
         </Switch>
       </div>
   );
