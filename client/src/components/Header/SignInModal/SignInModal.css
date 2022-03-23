@@ -11,9 +11,9 @@
     border-radius: 10px;
     background-size: cover;
     background-position: center;
-    box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
+    /* box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199); */
     transition: all .15s;
-    margin-left: 20%;
+    margin-left: 0%;
     margin-top: 10%;
     animation: fadeInAnimation ease .3s;
     animation-iteration-count: 1;
@@ -30,7 +30,7 @@
     }
 }
 
-.test{
+.signin-curtain{
     animation: fadeInAnimation ease .25s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -44,6 +44,7 @@
 }
 
 .signup-form{
+    
     display: flex;
     flex-direction: column;
     align-content: space-between;
@@ -58,6 +59,20 @@
 }
 
 .form-columns{
+    margin-left: 30%;
+    margin-top:5%;
     display: flex;
     flex-direction: row;
+    align-content: space-between;
+}
+
+.vl{
+    margin-left: 5%;
+    margin-right: 5%;
+    border-left: 3px solid rgb(7, 7, 7);
+    height: 400px;
+    /* position: absolute; */
+    left: 50%;
+    /* margin-bottom: 10%; */
+    top: 0;
 }

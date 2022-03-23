@@ -9,11 +9,12 @@ export default function SignInModal({username,setUsername,password,setPassword,p
     }
     return(
         <React.Fragment>
-            {showSignInModal?<div className='test'>-</div>:null}
+            {showSignInModal?<div className='signin-curtain'>-</div>:null}
                 <div className='signin-card'> 
                 <div className='form-columns'>
                     <div className='signup-form'>
                         <form onSubmit={handleSubmit}>
+                            <h1>Sign Up</h1>
                             <div className='form'>
                                 <label htmlFor="username">Username:</label>
                                 <input
@@ -36,13 +37,15 @@ export default function SignInModal({username,setUsername,password,setPassword,p
                                     value={passwordConfirmation}
                                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                                 />
+                                <div>-</div>
                                 <button type="submit">Submit</button>
-                                <button onClick={handleCloseModal}>Close Sign Up</button>
                             </div>
                         </form>  
                     </div>
+                    <div class="vl"></div>
                     <div className='signin-form'>
                         <form onSubmit={handleSubmit}>
+                            <h1>Sign In</h1>
                                 <div className='form'>
                                     <label htmlFor="username">Username:</label>
                                     <input
@@ -58,14 +61,13 @@ export default function SignInModal({username,setUsername,password,setPassword,p
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
-                                    <label htmlFor="password_confirmation">Confirm Password:</label>
+                                    <div>-</div>
                                     <button type="submit">Submit</button>
-                                    <button onClick={handleCloseModal}>Close Sign Up</button>
                                 </div>
                             </form>  
                     </div>
                 </div>
-
+                <button onClick={handleCloseModal}>Close</button>
                 </div>
           </React.Fragment>
     )

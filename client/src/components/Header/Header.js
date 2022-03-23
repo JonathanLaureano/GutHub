@@ -13,20 +13,20 @@ export default function Header({username,password,passwordConfirmation,setUserna
     return(
         <React.Fragment>
             <div className='header-nav'>
-                <div>GutHub</div>
                 <a className="" href="/profile">ProfilePage</a>
+                <div>GutHub</div>
+                {showSignInModal?<SignInModal 
+                    username={username}
+                    setUsername={setUsername}
+                    password={password}
+                    setPassword={setPassword}
+                    passwordConfirmation={passwordConfirmation}
+                    setPasswordConfirmation={setPasswordConfirmation}
+                    handleSubmit={handleSubmit}
+                    showSignInModal={showSignInModal}
+                    setShowSignInModal={setShowSignInModal}
+                    />:<button onClick={handleSignIn}>Sign Up/Sign In</button>}
             </div>
-            {showSignInModal?<SignInModal 
-                username={username}
-                setUsername={setUsername}
-                password={password}
-                setPassword={setPassword}
-                passwordConfirmation={passwordConfirmation}
-                setPasswordConfirmation={setPasswordConfirmation}
-                handleSubmit={handleSubmit}
-                showSignInModal={showSignInModal}
-                setShowSignInModal={setShowSignInModal}
-                />:<button onClick={handleSignIn}>Sign Up/Sign In</button>}
         </React.Fragment>
     )
 }
