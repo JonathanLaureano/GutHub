@@ -13,7 +13,7 @@ import FavoritesPage from '../Favorites/FavoritesPage';
 
 
 function App() {
-
+  //User Auth:
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -28,6 +28,9 @@ function App() {
       .then();
   }
 
+  //Modals:
+  let [showSignInModal, setShowSignInModal] = useState(false);
+
   return (
       <div className="App">
         {/* <div>This is the App Page</div> */}
@@ -39,6 +42,8 @@ function App() {
           setPassword={setPassword}
           setPasswordConfirmation={setPasswordConfirmation}
           handleSubmit={handleSubmit}
+          showSignInModal={showSignInModal}
+          setShowSignInModal={setShowSignInModal}
           />
         <Switch>
           <Route exact path='/'>

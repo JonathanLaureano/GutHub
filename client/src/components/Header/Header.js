@@ -2,39 +2,30 @@ import './Header.css';
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
+import SignInModal from './SignInModal/SignInModal';
 
-export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleSubmit}){
+export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleSubmit,showSignInModal,setShowSignInModal}){
+
+    function handleSignIn(){
+        setShowSignInModal(true)
+    }
+
     return(
         <React.Fragment>
             <div className='header-nav'>
                 <div>GutHub</div>
                 <a className="" href="/profile">ProfilePage</a>
-                <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <label htmlFor="password_confirmation">Confirm Password:</label>
-      <input
-        type="password"
-        id="password_confirmation"
-        value={passwordConfirmation}
-        onChange={(e) => setPasswordConfirmation(e.target.value)}
-      />
-      <button type="submit">Submit</button>
-    </form>
-  );
             </div>
+            {showSignInModal?<SignInModal 
+                username={username}
+                setUsername={setUsername}
+                password={password}
+                setPassword={setPassword}
+                passwordConfirmation={passwordConfirmation}
+                setPasswordConfirmation={setPasswordConfirmation}
+                handleSubmit={handleSubmit}
+                setShowSignInModal={setShowSignInModal}
+                />:<button onClick={handleSignIn}>Sign Up/Sign In</button>}
         </React.Fragment>
     )
 }
