@@ -9,6 +9,7 @@ import DrinksPage from '../Drinks/DrinksPage';
 import SeasonalPage from '../Seasonal/SeasonalPage';
 import Header from '../Header/Header';
 import ProfilePage from '../Profile/ProfilePage';
+import FavoritesPage from '../Favorites/FavoritesPage';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path='/profile'>
               <ProfilePage/>
+          </Route>
+          <Route path='/favorites'>
+              <FavoritesPage/>
           </Route>
           <Route path='/mix'>
               <MixPage/>
