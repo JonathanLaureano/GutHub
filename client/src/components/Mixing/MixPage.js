@@ -7,6 +7,7 @@ export default function MixPage(){
     return(
         <React.Fragment>
             <div>This is the MixPage</div>
+            <a className="" href="/">Home</a>
         </React.Fragment>
     )
 }
