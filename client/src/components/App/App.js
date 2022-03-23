@@ -8,6 +8,7 @@ import ResultsPage from '../Results/ResultsPage';
 import DrinksPage from '../Drinks/DrinksPage';
 import SeasonalPage from '../Seasonal/SeasonalPage';
 import Header from '../Header/Header';
+import ProfilePage from '../Profile/ProfilePage';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
               <HomePage/>
+          </Route>
+          <Route path='/profile'>
+              <ProfilePage/>
           </Route>
           <Route path='/mix'>
               <MixPage/>
