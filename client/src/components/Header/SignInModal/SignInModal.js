@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 
-export default function SignInModal({username,setUsername,password,setPassword,passwordConfirmation,setPasswordConfirmation,handleSubmit,showSignInModal,setShowSignInModal}){
+export default function SignInModal({username,setUsername,password,setPassword,handleSubmit,showSignInModal,setShowSignInModal,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation}){
     function handleCloseModal(){
         setShowSignInModal(false)
     }
@@ -20,22 +20,22 @@ export default function SignInModal({username,setUsername,password,setPassword,p
                                 <input
                                     type="text"
                                     id="username"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
+                                    value={signUpUsername}
+                                    onChange={(e) => setSignUpUsername(e.target.value)}
                                 />
                                 <label htmlFor="password">Password:</label>
                                 <input
                                     type="password"
                                     id="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    value={signUpPassword}
+                                    onChange={(e) => setSignUpPassword(e.target.value)}
                                 />
                                 <label htmlFor="password_confirmation">Confirm Password:</label>
                                 <input
                                     type="password"
                                     id="password_confirmation"
-                                    value={passwordConfirmation}
-                                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                                    value={signUpPasswordConfirmation}
+                                    onChange={(e) => setSignUpPasswordConfirmation(e.target.value)}
                                 />
                                 <div>-</div>
                                 <button type="submit">Submit</button>

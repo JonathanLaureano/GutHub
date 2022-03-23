@@ -14,18 +14,28 @@ import FavoritesPage from '../Favorites/FavoritesPage';
 
 function App() {
   //User Auth:
+  const [signUpUsername, setSignUpUsername] = useState("");
+  const [signUpPassword, setSignUpPassword] = useState("");
+  const [signUpPasswordConfirmation, setSignUpPasswordConfirmation] = useState("");
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [signedIn, setSignedIn] = useState(false);
 
-  function handleSubmit(e) {
+  function handleSignUpSubmit(e) {
     e.preventDefault();
     axios.post("/signup", {
         username,
         password,
-        password_confirmation: passwordConfirmation,
+        password_confirmation: signUpPasswordConfirmation,
       })
-      .then();
+      .then(setSignedIn(true));
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    console.log(e.target.parentNode)
+    // e.target.parentNode;
   }
 
   //Modals:
@@ -37,13 +47,19 @@ function App() {
         <Header
           username={username}
           password={password}
-          passwordConfirmation={passwordConfirmation}
           setUsername={setUsername}
           setPassword={setPassword}
-          setPasswordConfirmation={setPasswordConfirmation}
           handleSubmit={handleSubmit}
           showSignInModal={showSignInModal}
           setShowSignInModal={setShowSignInModal}
+          signedIn={signedIn}
+          signUpUsername={signUpUsername}
+          setSignUpUsername={setSignUpUsername}
+          signUpPassword={signUpPassword}
+          setSignUpPassword={setSignUpPassword}
+          signUpPasswordConfirmation={signUpPasswordConfirmation}
+          setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}
+          handleSignUpSubmit={handleSignUpSubmit}
           />
         <Switch>
           <Route exact path='/'>
