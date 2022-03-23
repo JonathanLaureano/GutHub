@@ -1,0 +1,4 @@
+.profile-nav{
+    display: flex;
+    flex-direction: column;
+}

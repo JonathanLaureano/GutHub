@@ -7,8 +7,11 @@ export default function ProfilePage(){
     document.title = 'GutHub - Profile'
     return(
         <React.Fragment>
-            <div>This is the ProfilePage</div>
-            <a className="" href="/">Home</a>
+            <div className='profile-nav'>
+                <div>This is the ProfilePage</div>
+                <a className="" href="/favorites">Favorites</a>
+                <a className="" href="/">Home</a>
+            </div>
         </React.Fragment>
     )
 }

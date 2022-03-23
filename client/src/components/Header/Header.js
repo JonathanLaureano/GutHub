@@ -7,7 +7,7 @@ export default function Header(){
     return(
         <React.Fragment>
             <div className='header-nav'>
-                <div>This is the Header!</div>
+                <div>GutHub</div>
                 <a className="" href="/profile">ProfilePage</a>
             </div>
         </React.Fragment>
