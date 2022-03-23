@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :favoritedrinks
   resources :ingredients
   resources :recipes
-  resources :favorites
   resources :drinks
   resources :users
   post "/signup", to: "users#create"
