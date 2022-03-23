@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 
 export default function DrinksPage(){
+    document.title = 'GutHub - Drinks'
     return(
         <React.Fragment>
             <div>This is the DrinksPage</div>
