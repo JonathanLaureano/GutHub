@@ -7,6 +7,7 @@ export default function HomePage(){
     return(
         <React.Fragment>
             <div>This is the HomePage</div>
+            <a className="" href="/mix">Mixing</a>
         </React.Fragment>
     )
 }

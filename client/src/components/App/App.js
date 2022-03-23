@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
-import HomePage from '../homepage/HomePage'
+import HomePage from '../HomePage/HomePage'
 import MixPage from '../MixPage/MixPage'
 
 
