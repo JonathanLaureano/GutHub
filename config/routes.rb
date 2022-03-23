@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :ingredients
   resources :recipes
-  resources :drinks
+  resources :drinks, only: [:index, :show, :destroy, :create, :update]
   resources :users
   post "/signup", to: "users#create"
   get "/me", to: "users#show"

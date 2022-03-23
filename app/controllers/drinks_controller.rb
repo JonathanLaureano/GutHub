@@ -11,7 +11,7 @@ class DrinksController < ApplicationController
     end
 
     def create
-        drink = drink.create!(drink_params)
+        drink = Drink.create!(drink_params)
         drink.save
         render json: drink, status: :created
     end
@@ -37,11 +37,7 @@ class DrinksController < ApplicationController
 
     def drink_params
         params.permit(:name, :image_url,
-                    recipe_attributes: [{
-                        :drink_id,
-                        :ingredient_id,
-                        :parts
-                    }])
+                    recipe_attributes: [:drink_id, :ingredient_id, :parts])
     end
 
 
