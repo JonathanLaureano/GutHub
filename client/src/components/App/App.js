@@ -14,10 +14,32 @@ import FavoritesPage from '../Favorites/FavoritesPage';
 
 function App() {
 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    axios.post("/signup", {
+        username,
+        password,
+        password_confirmation: passwordConfirmation,
+      })
+      .then();
+  }
+
   return (
       <div className="App">
         {/* <div>This is the App Page</div> */}
-        <Header/>
+        <Header
+          username={username}
+          password={password}
+          passwordConfirmation={passwordConfirmation}
+          setUsername={setUsername}
+          setPassword={setPassword}
+          setPasswordConfirmation={setPasswordConfirmation}
+          handleSubmit={handleSubmit}
+          />
         <Switch>
           <Route exact path='/'>
               <HomePage/>
