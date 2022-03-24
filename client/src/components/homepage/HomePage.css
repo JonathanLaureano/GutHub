@@ -39,7 +39,7 @@ body {
   }
 
 .subtitle{
-    margin-top: 12.5%;
+    margin-top: 12.55%;
     font-family: 'PT Sans', sans-serif;
     font-size: 200%;
     color: #ffff;
@@ -53,9 +53,10 @@ body {
   
 .logo b{
     font: 100 25vh "Vibur";
-    color: rgb(255, 244, 238);
+    color: rgb(255, 238, 238);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     /* ff9844 */
+    /* color: rgb(255, 244, 238); */
     /* rgb(238, 254, 255) */
 }
 .logo b span{

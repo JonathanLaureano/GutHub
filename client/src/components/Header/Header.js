@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import SignInModal from './SignInModal/SignInModal';
+import TestModal from './SignInModal/TestModal';
 
 export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc, handleSignUpSubmit}){
 
@@ -15,7 +16,7 @@ export default function Header({username,password,passwordConfirmation,setUserna
             <div className='header-nav'>
                 <a className="" href="/profile">ProfilePage</a>
                 <div><strong>-</strong></div>
-                {showSignInModal?<SignInModal 
+                {/* {showSignInModal?<SignInModal 
                     username={username}
                     setUsername={setUsername}
                     password={password}
@@ -36,7 +37,8 @@ export default function Header({username,password,passwordConfirmation,setUserna
                     signUpDesc={signUpDesc}
                     setSignUpDesc={setSignUpDesc}   
                     handleSignUpSubmit={handleSignUpSubmit}     
-                    />:null}
+                    />:null} */}
+                    {showSignInModal?<TestModal/>:null}
                     {signedIn?<button>Log Out</button>:<button onClick={handleSignIn}>Sign In</button>}
             </div>
         </React.Fragment>
