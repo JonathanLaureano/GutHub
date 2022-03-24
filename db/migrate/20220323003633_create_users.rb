@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.string :image_url
       t.string :description
+      t.integer :favorites, array: true, default: []
 
       t.timestamps
     end
