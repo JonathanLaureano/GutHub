@@ -7,7 +7,16 @@ export default function HomePage(){
     document.title = 'GutHub - Home'
     return(
         <React.Fragment>
-            <div className='title'>This is the HomePage</div>
+            <h3 className='subtitle'>Welcome to</h3>
+            <h1 className='title'>GutHub</h1>
+            <input 
+                type='text'
+                placeholder='Enter a Drink Here...'
+                autoComplete='off'
+                cursor='pointer'
+                className='home-search'
+                >
+            </input>
         </React.Fragment>
     )
 }
