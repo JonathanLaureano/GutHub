@@ -14,7 +14,7 @@
     transition: all .15s;
     margin-left: 0%;
     margin-top: 10%;
-    animation: .4s fadeInAnimation ease;
+    animation: .3s fadeInAnimation ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     z-index: 1000;
@@ -40,7 +40,7 @@
 }
 
 .signin-curtain{
-    animation: fadeInAnimation ease .25s;
+    animation: fadeInAnimation ease .2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     position: absolute;
@@ -48,12 +48,11 @@
     background-color: rgba(0, 0, 0, 0.459);
     opacity: .95;
     padding-top: 100%;
-    padding-left: 150%;
-    max-height: 90%;
+    padding-left: 100%;
+    max-height: 50%;
 }
 
 .signup-form{
-
     display: flex;
     flex-direction: column;
     align-content: space-between;
