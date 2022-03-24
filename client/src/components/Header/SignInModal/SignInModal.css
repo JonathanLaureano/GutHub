@@ -15,7 +15,7 @@
     transition: all .15s;
     margin-left: 0%;
     margin-top: 10%;
-    animation: fadeInAnimation ease .3s;
+    animation: .4s fadeInAnimation ease;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -28,6 +28,15 @@
 100% {
     opacity: 1;
     }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        }
 }
 
 .signin-curtain{

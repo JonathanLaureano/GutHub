@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import SignInModal from './SignInModal/SignInModal';
 
-export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleSubmit,showSignInModal,setShowSignInModal,signedIn,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,handleSignUpSubmit}){
+export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc, handleSignUpSubmit}){
 
     function handleSignIn(){
         setShowSignInModal(true)
@@ -22,7 +22,7 @@ export default function Header({username,password,passwordConfirmation,setUserna
                     setPassword={setPassword}
                     passwordConfirmation={passwordConfirmation}
                     setPasswordConfirmation={setPasswordConfirmation}
-                    handleSubmit={handleSubmit}
+                    handleLogInSubmit={handleLogInSubmit}
                     showSignInModal={showSignInModal}
                     setShowSignInModal={setShowSignInModal}
                     signUpUsername={signUpUsername}
@@ -30,7 +30,11 @@ export default function Header({username,password,passwordConfirmation,setUserna
                     signUpPassword={signUpPassword}
                     setSignUpPassword={setSignUpPassword}
                     signUpPasswordConfirmation={signUpPasswordConfirmation}
-                    setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}     
+                    setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}  
+                    signUpImage={signUpImage}
+                    setSignUpImage={setSignUpImage}
+                    signUpDesc={signUpDesc}
+                    setSignUpDesc={setSignUpDesc}   
                     handleSignUpSubmit={handleSignUpSubmit}     
                     />:null}
                     {signedIn?<button>Log Out</button>:<button onClick={handleSignIn}>Sign In</button>}

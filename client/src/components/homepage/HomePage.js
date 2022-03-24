@@ -7,14 +7,7 @@ export default function HomePage(){
     document.title = 'GutHub - Home'
     return(
         <React.Fragment>
-            <div>This is the HomePage</div>
-            <div className='link-container'>
-                <a className="" href="/mix">Mixing</a>
-                <a className="" href="/results">Results</a>
-                <a className="" href="/drinks">Drinks</a>
-                <a className="" href="/seasonal">Seasonal</a>
-            </div>
-
+            <div className='title'>This is the HomePage</div>
         </React.Fragment>
     )
 }

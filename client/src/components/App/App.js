@@ -17,6 +17,8 @@ function App() {
   const [signUpUsername, setSignUpUsername] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
   const [signUpPasswordConfirmation, setSignUpPasswordConfirmation] = useState("");
+  const [signUpImage, setSignUpImage] = useState("");
+  const [signUpDesc,setSignUpDesc] = useState("")
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,18 +26,28 @@ function App() {
 
   function handleSignUpSubmit(e) {
     e.preventDefault();
-    axios.post("/signup", {
-        username,
-        password,
-        password_confirmation: signUpPasswordConfirmation,
-      })
-      .then(setSignedIn(true));
+    // axios.post("/signup", {
+    //     username,
+    //     password,
+    //     image_url: signUpImage,
+    //     description: signUpDesc,
+    //     password_confirmation: signUpPasswordConfirmation,
+    //   })
+    //   .then(r=>{
+    //       setSignedIn(true)
+    //       setShowSignInModal(!showSignInModal)
+    //     });
+        setSignedIn(true)
+        setShowSignInModal(!showSignInModal)
+
   }
 
-  function handleSubmit(e){
+  function handleLogInSubmit(e){
     e.preventDefault();
     console.log(e.target.parentNode)
     // e.target.parentNode;
+    setSignedIn(true)
+    setShowSignInModal(!showSignInModal)
   }
 
   //Modals:
@@ -49,7 +61,7 @@ function App() {
           password={password}
           setUsername={setUsername}
           setPassword={setPassword}
-          handleSubmit={handleSubmit}
+          handleLogInSubmit={handleLogInSubmit}
           showSignInModal={showSignInModal}
           setShowSignInModal={setShowSignInModal}
           signedIn={signedIn}
@@ -59,6 +71,10 @@ function App() {
           setSignUpPassword={setSignUpPassword}
           signUpPasswordConfirmation={signUpPasswordConfirmation}
           setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}
+          signUpImage={signUpImage}
+          setSignUpImage={setSignUpImage}
+          signUpDesc={signUpDesc}
+          setSignUpDesc={setSignUpDesc}
           handleSignUpSubmit={handleSignUpSubmit}
           />
         <Switch>
