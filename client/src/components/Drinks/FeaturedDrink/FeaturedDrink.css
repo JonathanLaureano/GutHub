@@ -1,14 +1,14 @@
 .cardContainer {
     /* margin-top: 50px; */
     width: 35%;
-    height: 210px;
+    height: 280px;
   }
   
 .card {
     margin-top: 50px;
     position: relative;
-    width: 400px;
+    width: 35%;
     /* max-width: 460px; */
-    height: 200px;
+    height: 280px;
     /* border-radius: 20px; */
   }

@@ -4,14 +4,12 @@
     overflow-x: scroll;
     overflow-y: hidden;
     align-items: center;
-    /* width: 85%; */
+    width: 95%;
     -ms-overflow-style: none; 
     scrollbar-width: none;
-    justify-content: center;
     /* margin-bottom: -50px;   */
 }
 
 .featured-carousel::-webkit-scrollbar {
     display: none;
-    /* color:rgb(159, 175, 245) */
 }
