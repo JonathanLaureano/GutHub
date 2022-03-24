@@ -11,13 +11,13 @@
     border-radius: 10px;
     background-size: cover;
     background-position: center;
-    /* box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199); */
     transition: all .15s;
     margin-left: 0%;
     margin-top: 10%;
     animation: .4s fadeInAnimation ease;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    z-index: 1000;
 }
 
 

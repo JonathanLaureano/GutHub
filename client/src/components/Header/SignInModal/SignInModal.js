@@ -9,8 +9,8 @@ export default function SignInModal({username,setUsername,password,setPassword,h
     }
     return(
         <React.Fragment>
-            {showSignInModal?<div className='signin-curtain'>-</div>:null}
-                <div className='signin-card'> 
+            {showSignInModal?<div onClick={handleCloseModal} className='signin-curtain'>-</div>:null}
+                <div className='signin-card' > 
                 <div className='form-columns'>
                     <div className='signup-form'>
                         <form onSubmit={handleSignUpSubmit}>

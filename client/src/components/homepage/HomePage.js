@@ -8,10 +8,11 @@ export default function HomePage(){
     return(
         <React.Fragment>
             <h3 className='subtitle'>Welcome to</h3>
-            <h1 className='title'>GutHub</h1>
+            {/* <h1 className='title'>GutHub</h1> */}
+            <div className="logo"><b>G<span>ut</span>H<span>u</span>b</b></div>
             <input 
                 type='text'
-                placeholder='Enter a Drink Here...'
+                placeholder='Search For A Drink'
                 autoComplete='off'
                 cursor='pointer'
                 className='home-search'

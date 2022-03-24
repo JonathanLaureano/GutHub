@@ -14,7 +14,7 @@ export default function Header({username,password,passwordConfirmation,setUserna
         <React.Fragment>
             <div className='header-nav'>
                 <a className="" href="/profile">ProfilePage</a>
-                <div><strong>GutHub</strong></div>
+                <div><strong>-</strong></div>
                 {showSignInModal?<SignInModal 
                     username={username}
                     setUsername={setUsername}

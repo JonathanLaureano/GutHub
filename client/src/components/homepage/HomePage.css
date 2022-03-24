@@ -1,3 +1,14 @@
+@import url(//fonts.googleapis.com/css?family=Vibur);
+html,body{
+  height:100%
+}
+
+body {
+    background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
+    background-size:cover;
+    margin:0
+  }
+
 .link-container{
     /* justify-content: space-between; */
     display: flex;  
@@ -9,26 +20,29 @@
     font-size: 1.2rem;
     border: none;
     outline: none;
-    background-color: lightgrey;
-    width: 10%;
+    background-color: rgb(46, 45, 45);
+    width: 15%;
     padding: .75%;
-    transition:  .75s;
+    transition:  .5s;
     opacity: .5;
-    /* border-radius:50px; */
+    border-radius:5px;
     text-align: center;
     margin-top: -10%;
+    color: transparent;
 }
 
 .home-search:focus{
     width: 70%;
     cursor: text;
-    opacity: 1;
+    opacity: .75;
+    color: #fff
   }
 
 .subtitle{
-    margin-top: 15%;
+    margin-top: 10%;
     font-family: 'PT Sans', sans-serif;
     font-size: 200%;
+    color: #ffff;
 }
 
 .title{
@@ -41,7 +55,6 @@
     color: transparent;
     animation: rainbow 15s ease-in-out infinite;
     background-size: 400% 100%;
-
 }
 
 #shadowBox {
@@ -56,3 +69,56 @@
     0%,100% {background-position: 0 0;}
     50% {background-position: 100% 0;}
 }
+
+.logo {
+    margin-top: -3%;
+
+    text-align: center;
+    height: 1200%;
+  }
+  
+.logo b{
+    font: 100 25vh "Vibur";
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+}
+.logo b span{
+    animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2){
+    animation: blink linear infinite 3s;
+}
+  @keyframes blink {
+    78% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    79%{
+       color: #333;
+    }
+    80% {
+      
+      text-shadow: none;
+    }
+    81% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    82% {
+      color: #333;
+      text-shadow: none;
+    }
+    83% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    92% {
+      color: #333;
+      text-shadow: none;
+    }
+    92.5% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+  }
+  
