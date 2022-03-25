@@ -5,7 +5,7 @@ import axios from 'axios';
 import SignInModal from './SignInModal/SignInModal';
 import TestModal from './SignInModal/TestModal';
 
-export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc, handleSignUpSubmit}){
+export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc, handleSignUpSubmit}){
 
     function handleSignIn(){
         setShowSignInModal(true)
@@ -38,7 +38,32 @@ export default function Header({username,password,passwordConfirmation,setUserna
                     setSignUpDesc={setSignUpDesc}   
                     handleSignUpSubmit={handleSignUpSubmit}     
                     />:null} */}
-                    {showSignInModal?<TestModal/>:null}
+                    {showSignInModal?<TestModal
+                        username={username}
+                        setUsername={setUsername}
+                        password={password}
+                        setPassword={setPassword}
+                        passwordConfirmation={passwordConfirmation}
+                        setPasswordConfirmation={setPasswordConfirmation}
+                        handleLogInSubmit={handleLogInSubmit}
+                        showSignInModal={showSignInModal}
+                        setShowSignInModal={setShowSignInModal}
+                        signUpFirstName={signUpFirstName}
+                        setSignUpFirstName={setSignUpFirstName}
+                        signUpLastName={signUpLastName}
+                        setSignUpLastName={setSignUpLastName}
+                        signUpUsername={signUpUsername}
+                        setSignUpUsername={setSignUpUsername}
+                        signUpPassword={signUpPassword}
+                        setSignUpPassword={setSignUpPassword}
+                        signUpPasswordConfirmation={signUpPasswordConfirmation}
+                        setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}  
+                        signUpImage={signUpImage}
+                        setSignUpImage={setSignUpImage}
+                        signUpDesc={signUpDesc}
+                        setSignUpDesc={setSignUpDesc}   
+                        handleSignUpSubmit={handleSignUpSubmit}
+                    />:null}
                     {signedIn?<button>Log Out</button>:<button onClick={handleSignIn}>Sign In</button>}
             </div>
         </React.Fragment>

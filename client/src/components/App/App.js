@@ -14,11 +14,13 @@ import FavoritesPage from '../Favorites/FavoritesPage';
 
 function App() {
   //User Auth:
+  const [signUpFirstName,setSignUpFirstName] = useState("");
+  const [signUpLastName,setSignUpLastName] = useState("");
   const [signUpUsername, setSignUpUsername] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
   const [signUpPasswordConfirmation, setSignUpPasswordConfirmation] = useState("");
   const [signUpImage, setSignUpImage] = useState("");
-  const [signUpDesc,setSignUpDesc] = useState("")
+  const [signUpDesc,setSignUpDesc] = useState("");
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -26,20 +28,23 @@ function App() {
 
   function handleSignUpSubmit(e) {
     e.preventDefault();
-    // axios.post("/signup", {
-    //     username,
-    //     password,
-    //     image_url: signUpImage,
-    //     description: signUpDesc,
-    //     password_confirmation: signUpPasswordConfirmation,
-    //   })
-    //   .then(r=>{
-    //       setSignedIn(true)
-    //       setShowSignInModal(!showSignInModal)
-    //     });
-        setSignedIn(true)
-        setShowSignInModal(!showSignInModal)
-
+    const signUpDetails = {
+      // "first_name": signUpFirstName,
+      // "last_name": signUpLastName,
+      // "username": username,
+      // "password": password,
+      // "password_confirmation": signUpPasswordConfirmation
+      // username,
+      // password
+    }
+    axios.post("/signup", signUpDetails)
+      .then(r=>{
+          console.log(r)
+          setSignedIn(true)
+          setShowSignInModal(!showSignInModal)
+        });
+        // setSignedIn(true)
+        // setShowSignInModal(!showSignInModal)
   }
 
   function handleLogInSubmit(e){
@@ -65,6 +70,10 @@ function App() {
           showSignInModal={showSignInModal}
           setShowSignInModal={setShowSignInModal}
           signedIn={signedIn}
+          signUpFirstName={signUpFirstName}
+          setSignUpFirstName={setSignUpFirstName}
+          signUpLastName={signUpLastName}
+          setSignUpLastName={setSignUpLastName}
           signUpUsername={signUpUsername}
           setSignUpUsername={setSignUpUsername}
           signUpPassword={signUpPassword}

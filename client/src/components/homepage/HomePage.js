@@ -9,7 +9,7 @@ export default function HomePage(){
         <React.Fragment>
             {/* <div className='parallax'> */}
                 <h3 className='subtitle'>Welcome to</h3>
-                <div className="logo"><b>G<span>ut</span>H<span>u</span>b</b></div>
+                {/* <div className="logo"><b>G<span>ut</span>H<span>u</span>b</b></div> */}
                 <input 
                     type='text'
                     placeholder='Search For A Drink'
