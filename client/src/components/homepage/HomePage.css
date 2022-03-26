@@ -16,6 +16,7 @@ body {
 }
 
 .home-search{
+    font-family: 'Shippori Mincho', serif;
     text-align: center;
     font-size: 1.2rem;
     border: none;
@@ -36,19 +37,44 @@ body {
     cursor: text;
     opacity: .75;
     color: #fff
-  }
+}
+
+.home-signIn{
+  font-family: 'Shippori Mincho', serif;
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: rgb(46, 45, 45);
+  width: 12.5%;
+  padding: 1%;
+  transition: .35s ease-in-out;
+  opacity: .5;
+  border-radius:5px;
+  text-align: center;
+  margin-top: -15%;
+  color: white;
+}
+
+.home-signIn:hover{
+  opacity: .75;
+  color: #fff;
+  cursor: pointer;
+  
+}
 
 .subtitle{
-    margin-top: 12.55%;
+    margin-top: 15.55%;
     font-family: 'Shippori Mincho', serif;
     font-size: 200%;
     color: #ffff;
 }
 
 .logo {
-    margin-top: -3%;
+    margin-top: -4%;
     text-align: center;
     height: 1200%;
+    margin-bottom: -2%;
   }
   
 .logo b{

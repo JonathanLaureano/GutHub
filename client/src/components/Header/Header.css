@@ -3,3 +3,42 @@
     justify-content: space-evenly;
 
 }
+
+.header-logOut{
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    font-size: ;
+    border: none;
+    outline: none;
+    background-color: rgb(46, 45, 45);
+    width: %;
+    padding: .75%;
+    transition: .35s ease-in-out;
+    opacity: .5;
+    border-radius:5px;
+    text-align: center;
+    color: white;
+}
+  
+.header-logOut:hover{
+    opacity: .75;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header-signIn{
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    font-size: ;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: %;
+    padding: .75%;
+    transition: .35s ease-in-out;
+    opacity: .5;
+    border-radius:5px;
+    text-align: center;
+    color: transparent;
+  }
+  

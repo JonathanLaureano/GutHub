@@ -93,7 +93,31 @@ function App() {
           />
         <Switch>
           <Route exact path='/'>
-              <HomePage/>
+              <HomePage
+                  username={username}
+                  password={password}
+                  setUsername={setUsername}
+                  setPassword={setPassword}
+                  handleLogInSubmit={handleLogInSubmit}
+                  showSignInModal={showSignInModal}
+                  setShowSignInModal={setShowSignInModal}
+                  signedIn={signedIn}
+                  signUpFirstName={signUpFirstName}
+                  setSignUpFirstName={setSignUpFirstName}
+                  signUpLastName={signUpLastName}
+                  setSignUpLastName={setSignUpLastName}
+                  signUpUsername={signUpUsername}
+                  setSignUpUsername={setSignUpUsername}
+                  signUpPassword={signUpPassword}
+                  setSignUpPassword={setSignUpPassword}
+                  signUpPasswordConfirmation={signUpPasswordConfirmation}
+                  setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}
+                  signUpImage={signUpImage}
+                  setSignUpImage={setSignUpImage}
+                  signUpDesc={signUpDesc}
+                  setSignUpDesc={setSignUpDesc}
+                  handleSignUpSubmit={handleSignUpSubmit}
+              />
           </Route>
           <Route path='/profile'>
               <ProfilePage/>
