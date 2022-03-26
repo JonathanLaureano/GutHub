@@ -55,11 +55,15 @@ function App() {
       username,
       password
     }
+    axios.post("/login", logInDetails)
+    .then((r)=>{
+      console.log(r)
+      setSignedIn(true)
+      setShowSignInModal(!showSignInModal)
+      scrollBot();
+    })
     console.log(logInDetails)
     // e.target.parentNode;
-    setSignedIn(true)
-    setShowSignInModal(!showSignInModal)
-    scrollBot();
   }
 
   //Modals:

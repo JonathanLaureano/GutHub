@@ -45,8 +45,8 @@ export default function SignInModal({username,setUsername,password,setPassword,h
                             <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
                         </div> */}
                         {/* <span className='or-message'>or use your account</span> */}
-                        <input className='modal-input' type="email" placeholder="Email" />
-                        <input className='modal-input' type="password" placeholder="Password" />
+                        <input className='modal-input' type="email" placeholder="Email" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input className='modal-input' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                         <a className='modal-a' href="#">Forgot your password?</a>
                         <button className='modal-button' onClick={handleLogInSubmit}>Sign In</button>
                     </form>
