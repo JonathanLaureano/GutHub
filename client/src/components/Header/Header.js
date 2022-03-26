@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import SignInModal from './SignInModal/SignInModal';
-import TestModal from './SignInModal/TestModal';
 
 export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc, handleSignUpSubmit}){
 
@@ -16,29 +15,7 @@ export default function Header({username,password,passwordConfirmation,setUserna
             <div className='header-nav'>
                 <a className="" href="/profile">ProfilePage</a>
                 <div><strong>-</strong></div>
-                {/* {showSignInModal?<SignInModal 
-                    username={username}
-                    setUsername={setUsername}
-                    password={password}
-                    setPassword={setPassword}
-                    passwordConfirmation={passwordConfirmation}
-                    setPasswordConfirmation={setPasswordConfirmation}
-                    handleLogInSubmit={handleLogInSubmit}
-                    showSignInModal={showSignInModal}
-                    setShowSignInModal={setShowSignInModal}
-                    signUpUsername={signUpUsername}
-                    setSignUpUsername={setSignUpUsername}
-                    signUpPassword={signUpPassword}
-                    setSignUpPassword={setSignUpPassword}
-                    signUpPasswordConfirmation={signUpPasswordConfirmation}
-                    setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}  
-                    signUpImage={signUpImage}
-                    setSignUpImage={setSignUpImage}
-                    signUpDesc={signUpDesc}
-                    setSignUpDesc={setSignUpDesc}   
-                    handleSignUpSubmit={handleSignUpSubmit}     
-                    />:null} */}
-                    {showSignInModal?<TestModal
+                    {showSignInModal?<SignInModal
                         username={username}
                         setUsername={setUsername}
                         password={password}

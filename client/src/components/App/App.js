@@ -29,27 +29,32 @@ function App() {
   function handleSignUpSubmit(e) {
     e.preventDefault();
     const signUpDetails = {
-      // "first_name": signUpFirstName,
-      // "last_name": signUpLastName,
-      // "username": username,
-      // "password": password,
-      // "password_confirmation": signUpPasswordConfirmation
+      "first_name": signUpFirstName,
+      "last_name": signUpLastName,
+      username: signUpUsername,
+      password: signUpPassword,
+      "password_confirmation": signUpPasswordConfirmation
       // username,
       // password
     }
-    axios.post("/signup", signUpDetails)
-      .then(r=>{
-          console.log(r)
-          setSignedIn(true)
-          setShowSignInModal(!showSignInModal)
-        });
-        // setSignedIn(true)
-        // setShowSignInModal(!showSignInModal)
+    // axios.post("/signup", signUpDetails)
+    //   .then(r=>{
+    //       console.log(r)
+    //       setSignedIn(true)
+    //       setShowSignInModal(!showSignInModal)
+    //     });
+        console.log(signUpDetails)
+        setSignedIn(true)
+        setShowSignInModal(!showSignInModal)
   }
 
   function handleLogInSubmit(e){
     e.preventDefault();
-    console.log(e.target.parentNode)
+    const logInDetails ={
+      username,
+      password
+    }
+    console.log(logInDetails)
     // e.target.parentNode;
     setSignedIn(true)
     setShowSignInModal(!showSignInModal)

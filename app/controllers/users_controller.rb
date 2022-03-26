@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: :create
+    # skip_before_action :authorize, only: :create
 
     #In your controller, you would just call Drinks.where(id: user.favorites)
 
