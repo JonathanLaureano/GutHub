@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
+import {animateScroll as ScrollAction} from 'react-scroll';
 import HomePage from '../HomePage/HomePage';
 import MixPage from '../Mixing/MixPage';
 import ResultsPage from '../Results/ResultsPage';
@@ -58,10 +59,16 @@ function App() {
     // e.target.parentNode;
     setSignedIn(true)
     setShowSignInModal(!showSignInModal)
+    scrollBot();
   }
 
   //Modals:
   let [showSignInModal, setShowSignInModal] = useState(false);
+
+  //Scrolling:
+  function scrollBot(){
+    ScrollAction.scrollToBottom();
+}
 
   return (
       <div className="App">
