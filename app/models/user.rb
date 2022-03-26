@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_many :drinks, dependent: :destroy
+    has_many :recipes, through: :drinks
 
     has_secure_password
 

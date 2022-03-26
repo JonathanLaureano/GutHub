@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     # Add Email to user params (stretch deliverable)
     def user_params
-      params.require(:user).permit(
+      params.permit(
           :first_name,
           :last_name,
           :username, 
