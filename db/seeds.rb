@@ -3,7 +3,7 @@ User.create!([
     {
         first_name: "Henry"
         last_name: "Miller"
-        username: "Henry"
+        username: "Mozart@guthub.com"
         password_digest: "1234"
         image_url: ""
         description: ""
@@ -12,7 +12,7 @@ User.create!([
     {
         first_name: "Jonathan"
         last_name: "Laureano"
-        username: "Jonathan"
+        username: "Socrates@guthub@.com"
         password_digest: "1234"
         image_url: ""
         description: ""
@@ -283,7 +283,100 @@ Ingredient.create!([
         name: "Lime"
         image_url: ""
     }
+    {
+        name: "Tomato Juice"
+        image_url: ""
+    }
 ])
 
 puts "Seeding Recipes..."
 
+Recipe.create!(drink_id: 1, ingredient_id: 1, parts: 1.33)
+Recipe.create!(drink_id: 1, ingredient_id: 2, parts: 0.33)
+Recipe.create!(drink_id: 1, ingredient_id: 15, parts: .66)
+Recipe.create!(drink_id: 1, ingredient_id: 19, parts: 0.33)
+Recipe.create!(drink_id: 1, ingredient_id: 39, parts: 1)
+Recipe.create!(drink_id: 1, ingredient_id: 24, parts: 1)
+Recipe.create!(drink_id: 2, ingredient_id: 6, parts: 1.33)
+Recipe.create!(drink_id: 2, ingredient_id: 36, parts: 1)
+Recipe.create!(drink_id: 2, ingredient_id: 39, parts: 1)
+Recipe.create!(drink_id: 2, ingredient_id: 19, parts: 0.33)
+Recipe.create!(drink_id: 2, ingredient_id: 15, parts: 0.5)
+Recipe.create!(drink_id: 2, ingredient_id: 20, parts: 5)
+Recipe.create!(drink_id: 3, ingredient_id: 4, parts: 0.5)
+Recipe.create!(drink_id: 3, ingredient_id: 6, parts: 0.5)
+Recipe.create!(drink_id: 3, ingredient_id: 1, parts: 0.5)
+Recipe.create!(drink_id: 3, ingredient_id: 7, parts: 0.5)
+Recipe.create!(drink_id: 3, ingredient_id: 2, parts: 0.5)
+Recipe.create!(drink_id: 3, ingredient_id: 19, parts: 0.5)
+Recipe.create!(drink_id: 3, ingredient_id: 17, parts: 0.5)
+Recipe.create!(drink_id: 3, ingredient_id: 21, parts: 5)
+Recipe.create!(drink_id: 3, ingredient_id: 38, parts: 1)
+Recipe.create!(drink_id: 4, ingredient_id: 4, parts: 1.33)
+Recipe.create!(drink_id: 4, ingredient_id: 38, parts: 1)
+Recipe.create!(drink_id: 4, ingredient_id: 39, parts: 1)
+Recipe.create!(drink_id: 4, ingredient_id: 40, parts: 2.66)
+Recipe.create!(drink_id: 4, ingredient_id: 29, parts: 1)
+Recipe.create!(drink_id: 4, ingredient_id: 25, parts: 1)
+Recipe.create!(drink_id: 4, ingredient_id: 26, parts: 1)
+Recipe.create!(drink_id: 4, ingredient_id: 27, parts: 1)
+Recipe.create!(drink_id: 4, ingredient_id: 28, parts: 1)
+Recipe.create!(drink_id: 5, ingredient_id: 8, parts: 1.66)
+Recipe.create!(drink_id: 5, ingredient_id: 9, parts: 0.66)
+Recipe.create!(drink_id: 5, ingredient_id: 32, parts: 1)
+Recipe.create!(drink_id: 6, ingredient_id: 4, parts: 1)
+Recipe.create!(drink_id: 6, ingredient_id: 22, parts: 1)
+Recipe.create!(drink_id: 6, ingredient_id: 23, parts: 1)
+Recipe.create!(drink_id: 7, ingredient_id: 7, parts: 2)
+Recipe.create!(drink_id: 7, ingredient_id: 9, parts: 0.5)
+Recipe.create!(drink_id: 7, ingredient_id: 38, parts: 1)
+Recipe.create!(drink_id: 7, ingredient_id: 33, parts: 1)
+Recipe.create!(drink_id: 8, ingredient_id: 6, parts: 1.33)
+Recipe.create!(drink_id: 8, ingredient_id: 15, parts: 0.5)
+Recipe.create!(drink_id: 8, ingredient_id: 19, parts: 0.5)
+Recipe.create!(drink_id: 8, ingredient_id: 39, parts: 1)
+Recipe.create!(drink_id: 9, ingredient_id: 6, parts: 1)
+Recipe.create!(drink_id: 9, ingredient_id: 2, parts: 0.33)
+Recipe.create!(drink_id: 9, ingredient_id: 19, parts: 0.33)
+Recipe.create!(drink_id: 9, ingredient_id: 13, parts: 0.5)
+Recipe.create!(drink_id: 9, ingredient_id: 12, parts: 0.33)
+Recipe.create!(drink_id: 9, ingredient_id: 32, parts: 1)
+Recipe.create!(drink_id: 9, ingredient_id: 34, parts: 1)
+Recipe.create!(drink_id: 9, ingredient_id: 37, parts: 1)
+Recipe.create!(drink_id: 10, ingredient_id: 6, parts: 1.33)
+Recipe.create!(drink_id: 10, ingredient_id: 15, parts: 1)
+Recipe.create!(drink_id: 10, ingredient_id: 35, parts: 1)
+Recipe.create!(drink_id: 11, ingredient_id: 6, parts: 1.33)
+Recipe.create!(drink_id: 11, ingredient_id: 21, parts: 4)
+Recipe.create!(drink_id: 12, ingredient_id: 10, parts: 1.66)
+Recipe.create!(drink_id: 12, ingredient_id: 19, parts: 0.33)
+Recipe.create!(drink_id: 12, ingredient_id: 32, parts: 1)
+Recipe.create!(drink_id: 12, ingredient_id: 38, parts: 1)
+Recipe.create!(drink_id: 12, ingredient_id: 37, parts: 1)
+Recipe.create!(drink_id: 13, ingredient_id: 7, parts: 1.33)
+Recipe.create!(drink_id: 13, ingredient_id: 20, parts: 4)
+Recipe.create!(drink_id: 14, ingredient_id: 4, parts: 1)
+Recipe.create!(drink_id: 14, ingredient_id: 16, parts: 0.33)
+Recipe.create!(drink_id: 14, ingredient_id: 15, parts: 0.5)
+Recipe.create!(drink_id: 14, ingredient_id: 2, parts: 0.5)
+Recipe.create!(drink_id: 15, ingredient_id: 4, parts: 1.33)
+Recipe.create!(drink_id: 15, ingredient_id: 12, parts: 4)
+Recipe.create!(drink_id: 16, ingredient_id: 1, parts: 1.33)
+Recipe.create!(drink_id: 16, ingredient_id: 12, parts: 4)
+Recipe.create!(drink_id: 16, ingredient_id: 18, parts: 0.33)
+Recipe.create!(drink_id: 17, ingredient_id: 8, parts: 1.33)
+Recipe.create!(drink_id: 17, ingredient_id: 17, parts: 0.66)
+Recipe.create!(drink_id: 17, ingredient_id: 19, parts: 0.5)
+Recipe.create!(drink_id: 17, ingredient_id: 30, parts: 1)
+Recipe.create!(drink_id: 18, ingredient_id: 6, parts: 1.33)
+Recipe.create!(drink_id: 18, ingredient_id: 14, parts: 1.33)
+Recipe.create!(drink_id: 18, ingredient_id: 13, parts: 1.33)
+Recipe.create!(drink_id: 19, ingredient_id: 11, parts: 1)
+Recipe.create!(drink_id: 19, ingredient_id: 9, parts: 1.66)
+Recipe.create!(drink_id: 19, ingredient_id: 30, parts: 1)
+Recipe.create!(drink_id: 19, ingredient_id: 31, parts: 1)
+Recipe.create!(drink_id: 20, ingredient_id: 3, parts: 1.33)
+Recipe.create!(drink_id: 20, ingredient_id: 5, parts: 0.33)
+Recipe.create!(drink_id: 20, ingredient_id: 17, parts: 1)
+
+puts "Seeding Done!"
