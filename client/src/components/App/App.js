@@ -55,6 +55,8 @@ function App() {
       if (r.ok) {
         r.json().then((user) => {
           console.log(user)
+          setUser(user)
+          setSignedIn(true)
         }
         );
       }

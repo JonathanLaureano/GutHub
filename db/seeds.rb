@@ -1,3 +1,9 @@
+puts 'Removing Previous Data'
+User.destroy_all
+Drink.destroy_all
+Ingredient.destroy_all
+Recipe.destroy_all
+
 puts "Seeding Users..."
 User.create([
     {
