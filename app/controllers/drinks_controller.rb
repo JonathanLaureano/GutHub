@@ -28,6 +28,12 @@ class DrinksController < ApplicationController
         head :no_content
     end
 
+    def search
+        @query = params[:query]
+        drink = Drink.where("drinks.name LIKE ?", ["%#{@query}%"])
+        render json: drink, status: :ok
+    end
+
 
     private
 
