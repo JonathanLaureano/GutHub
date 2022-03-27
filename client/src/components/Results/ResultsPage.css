@@ -1,7 +1,7 @@
 .search-results-title{
     color: #fff;
-    color: rgb(255, 238, 238);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+    color: rgb(219, 205, 205);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     font-size: 300%;
     margin-top: .5%;
     font: 100 10vh "Vibur";
@@ -19,8 +19,23 @@
     width: 95%;
     height: 78vh;
     border-radius: 10px;
-    background-color: rgb(31, 31, 51);
+    background-color: rgb(23, 23, 32);
     background-size: cover;
     background-position: center;
     box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+  }
+  
+.search-results-card::-webkit-scrollbar {
+    display: none;
+  }
+  
+.drink-cards-container{
+    /* margin-left: 1%; */
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
 }
