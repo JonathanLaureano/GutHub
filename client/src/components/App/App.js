@@ -76,15 +76,29 @@ function App() {
       // username,
       // password
     }
-    // axios.post("/signup", signUpDetails)
-    //   .then(r=>{
-    //       console.log(r)
-    //       setSignedIn(true)
-    //       setShowSignInModal(!showSignInModal)
-    //     });
-        console.log(signUpDetails)
-        setSignedIn(true)
-        setShowSignInModal(!showSignInModal)
+    axios.post("/signup", signUpDetails)
+      .then(r=>{
+          console.log(r)
+          setSignedIn(true)
+          setShowSignInModal(!showSignInModal)
+        })
+      .catch(function (error) {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data.errors);
+          alert(error.response.data.errors)
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', error.message);
+        }
+      });
+    
   }
 
   function handleLogInSubmit(e){
