@@ -33,6 +33,8 @@ function App() {
   const [signedIn, setSignedIn] = useState(false);
   const [user,setUser] = useState(null)
 
+  const [drinks,setDrinks]= useState([]);
+
   // Search
   const [searchParams,setSearchParams] = useState('');
   const [searchActive,setSearchActive] = useState(false);
@@ -47,6 +49,9 @@ function App() {
   }
 
 
+  //  On page load -> setup important information 
+  // check if user logged in
+  // drinks 
 
   useEffect(()=>{
     // axios.get('/me').then(r=>{console.log(r)})
@@ -54,13 +59,17 @@ function App() {
     .then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          console.log(user)
           setUser(user)
           setSignedIn(true)
         }
         );
       }
     });
+
+    axios.get('/drinks')
+    .then(r=>{
+      setDrinks(r.data)
+    })
   },[])
 
   // useEffect(()=>{
@@ -228,7 +237,10 @@ function App() {
               <MixPage/>
           </Route>
           <Route path='/search-results'>
-              <ResultsPage/>
+              <ResultsPage
+                drinks={drinks}
+                setDrinks={drinks}
+              />
           </Route>
           <Route path='/drinks'>
               <DrinksPage/>

@@ -1,0 +1,10 @@
+.drink-card-container{
+    background-color: rgb(43, 44, 43);
+    height: 37vh;
+    width: 23%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: color .5s;
+}

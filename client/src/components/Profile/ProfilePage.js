@@ -11,6 +11,7 @@ export default function ProfilePage(){
                 <div>This is the ProfilePage</div>
                 <a className="" href="/favorites">Favorites</a>
                 <a className="" href="/">Home</a>
+                <a className="" href="/search-results">Search Results</a>
             </div>
         </React.Fragment>
     )
