@@ -3,7 +3,7 @@
     color: rgb(255, 238, 238);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     font-size: 300%;
-    margin-top: -1.5%;
+    margin-top: .5%;
     font: 100 10vh "Vibur";
 }
 
@@ -17,7 +17,7 @@
 .search-results-card{
     margin-top: -.5%;
     width: 95%;
-    height: 81vh;
+    height: 78vh;
     border-radius: 10px;
     background-color: rgb(31, 31, 51);
     background-size: cover;
