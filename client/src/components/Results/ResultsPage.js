@@ -7,8 +7,12 @@ export default function ResultsPage(){
     document.title = 'GutHub - Results'
     return(
         <React.Fragment>
-            <div>This is the ResultsPage</div>
-            <a className="" href="/">Home</a>
+            <div className='search-results-title'>Search Results</div>
+            <div className='search-results-container'>
+                <div className='search-results-card'>
+                
+                </div>
+            </div>
         </React.Fragment>
     )
 }

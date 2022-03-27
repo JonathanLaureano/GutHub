@@ -1,0 +1,26 @@
+.search-results-title{
+    color: #fff;
+    color: rgb(255, 238, 238);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+    font-size: 300%;
+    margin-top: -1.5%;
+    font: 100 10vh "Vibur";
+}
+
+.search-results-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-results-card{
+    margin-top: -.5%;
+    width: 95%;
+    height: 81vh;
+    border-radius: 10px;
+    background-color: rgb(31, 31, 51);
+    background-size: cover;
+    background-position: center;
+    box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
+}

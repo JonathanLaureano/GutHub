@@ -38,8 +38,8 @@
 	font-family: 'Shippori Mincho', serif;
 	margin: 0;
 	font-size: 250%;
-	color: #FB4264;
-	text-shadow: 0 0 3vw #F40A35;
+	color: #ffb444;
+	text-shadow: 0 0 3vw #db8137;
 }
 
 .modal-create{
@@ -85,8 +85,8 @@
 
 .modal-button {
 	border-radius: 20px;
-	border: 1px solid #ff416d4f;
-	background-color: #ff416d9c;
+	border: 1px solid transparent;
+	background-color: #ffb444;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -98,8 +98,8 @@
 }
 
 .modal-button:hover{
-	border: 1px solid #ff41619c;
-	background-color: #ff41619c;
+	border: 1px solid transparent;
+	background-color: rgb(247, 184, 91)
 }
 
 
@@ -118,7 +118,7 @@
 }
 
 .ghost:hover {
-	background-color: #ff416d9c;
+	background-color: #ffb444;
 	border-color: transparent;
 }
 
