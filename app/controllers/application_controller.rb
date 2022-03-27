@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_message
 
-  # before_action :authorize
+  before_action :authorize
 
   private
 

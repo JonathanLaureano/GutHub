@@ -1,7 +1,8 @@
 .header-nav{
+    top: 0;
+    /* position: fixed; */
     display: flex;
     justify-content: space-evenly;
-
 }
 
 .header-logOut{
@@ -13,6 +14,7 @@
     background-color: rgb(46, 45, 45);
     width: %;
     padding: .75%;
+    padding-bottom: 1%;
     transition: .35s ease-in-out;
     opacity: .5;
     border-radius:5px;
