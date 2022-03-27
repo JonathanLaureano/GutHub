@@ -3,7 +3,7 @@ import './SignInModal.css';
 
 export default function SignInModal({username,setUsername,password,setPassword,handleLogInSubmit,showSignInModal,setShowSignInModal,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit}){
 
-    const [formType, setFormType ] = useState(false)
+    const [formType, setFormType ] = useState(true)
 
     function onFormClick() {
         setFormType(formType => !formType)
