@@ -35,6 +35,7 @@ function App() {
 
   // Search
   const [searchParams,setSearchParams] = useState('');
+  const [searchActive,setSearchActive] = useState(false);
 
   function handleSearchSubmit(e){
     e.preventDefault();
@@ -224,7 +225,7 @@ function App() {
           <Route path='/mix'>
               <MixPage/>
           </Route>
-          <Route path='/results'>
+          <Route path='/search-results'>
               <ResultsPage/>
           </Route>
           <Route path='/drinks'>
