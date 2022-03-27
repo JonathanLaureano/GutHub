@@ -1,6 +1,6 @@
 class Drink < ApplicationRecord
   belongs_to :user
-  has_one :recipe
-  has_many :ingredients, through: :recipe
-  accepts_nested_attributes_for :recipe, :ingredients, allow_destroy: true
+  has_many :recipes
+  has_many :ingredients, through: :recipes
+  accepts_nested_attributes_for :recipes, :ingredients, allow_destroy: true
 end
