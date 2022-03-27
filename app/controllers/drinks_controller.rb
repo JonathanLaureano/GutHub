@@ -7,7 +7,7 @@ class DrinksController < ApplicationController
 
     def show
         drink = find_drink
-        render json: drink, status: :ok
+        render json: drink, include: ["recipes.ingredient", "user"], status: :ok
     end
 
     def create
