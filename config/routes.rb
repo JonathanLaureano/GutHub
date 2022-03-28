@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :recipes
   resources :drinks, only: [:index, :show, :destroy, :create, :update]
   resources :users
+  get "/search", to: "drinks#search"
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
