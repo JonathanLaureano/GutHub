@@ -171,30 +171,8 @@ function App() {
       <div className="App">
         {/* <div>This is the App Page</div> */}
         <Header
-          username={username}
-          password={password}
-          setUsername={setUsername}
-          setPassword={setPassword}
-          handleLogInSubmit={handleLogInSubmit}
-          showSignInModal={showSignInModal}
-          setShowSignInModal={setShowSignInModal}
           signedIn={signedIn}
           setSignedIn={setSignedIn}
-          signUpFirstName={signUpFirstName}
-          setSignUpFirstName={setSignUpFirstName}
-          signUpLastName={signUpLastName}
-          setSignUpLastName={setSignUpLastName}
-          signUpUsername={signUpUsername}
-          setSignUpUsername={setSignUpUsername}
-          signUpPassword={signUpPassword}
-          setSignUpPassword={setSignUpPassword}
-          signUpPasswordConfirmation={signUpPasswordConfirmation}
-          setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}
-          signUpImage={signUpImage}
-          setSignUpImage={setSignUpImage}
-          signUpDesc={signUpDesc}
-          setSignUpDesc={setSignUpDesc}
-          handleSignUpSubmit={handleSignUpSubmit}
           />
         <Switch>
           <Route exact path='/'>
@@ -245,8 +223,11 @@ function App() {
                 setDrinks={drinks}
               />
           </Route>
-          <Route path='/drinks'>
-              <DrinksPage/>
+          <Route path='/all-drinks'>
+              <DrinksPage
+                drinks={drinks}
+                setDrinks={drinks}          
+                />
           </Route>
           <Route path='/seasonal'>
               <SeasonalPage/>

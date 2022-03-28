@@ -59,7 +59,7 @@ export default function ResultsPage({drinks}) {
             }
         
     function drinkCardsRow(data) {
-        return <div className='drink-cards-container'>
+        return <div className='drinks-page-cards-container'>
             {data.map(drink => {
                 return (<DrinkCard
                     drink={drink}

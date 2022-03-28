@@ -4,11 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import SignInModal from '../SignInModal/SignInModal';
 
-export default function Header({username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,setSignedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc, handleSignUpSubmit}){
-
-    function handleSignIn(){
-        setShowSignInModal(true)
-    }
+export default function Header({signedIn,setSignedIn}){
 
     function handleLogOut(){
         setSignedIn(false)
