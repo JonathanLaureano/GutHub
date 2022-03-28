@@ -27,6 +27,10 @@
     -ms-overflow-style: none; 
     scrollbar-width: none;  
   }
+
+.frozen{
+    overflow-y: hidden;
+}
   
 .search-results-card::-webkit-scrollbar {
     display: none;

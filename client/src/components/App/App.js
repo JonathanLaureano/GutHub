@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import axios from 'axios';
 import {animateScroll as ScrollAction} from 'react-scroll';
 import HomePage from '../HomePage/HomePage';
@@ -14,6 +14,7 @@ import FavoritesPage from '../Favorites/FavoritesPage';
 
 
 function App() {
+  let history = useHistory();
   //User Auth:
 
   // Sign Up:
@@ -36,16 +37,18 @@ function App() {
   const [drinks,setDrinks]= useState([]);
 
   // Search
+  const [searchActive,setSearchActive] = useState(false)
   const [searchParams,setSearchParams] = useState('');
-  const [searchActive,setSearchActive] = useState(false);
   const [searchResults,setSearchResults] = useState(drinks)
 
   function handleSearchSubmit(e){
     e.preventDefault();
-    console.log(searchParams);
+    setSearchActive(true)
     let query ={"query":searchParams}
     axios.post('/search',query)
-    .then(r=>{console.log(r)})
+    .then(r=>{
+      setSearchResults(r.data)      
+    })
     .catch(function (error) {
       if (error.response) {
         // The request was made and the server responded with a status code
@@ -62,8 +65,7 @@ function App() {
         console.log('Error', error.message);
       }
     });
-
-    // scrollBot();
+    scrollBot();
   }
 
   function handleSearchChange(event){
@@ -180,6 +182,15 @@ function App() {
 
   }
 
+  function handleLogOut(){
+    axios.delete('/logout')
+    .then(r=>{
+      setSignedIn(false);
+      setUser(null);
+      history.push('/')
+    })
+  }
+
   //Modals:
   let [showSignInModal, setShowSignInModal] = useState(false);
 
@@ -191,15 +202,19 @@ function App() {
   return (
       <div className="App">
         {/* <div>This is the App Page</div> */}
-        <Header
+       {signedIn?<Header
           signedIn={signedIn}
           setSignedIn={setSignedIn}
-          />
+          />:null}
         <Switch>
           <Route exact path='/'>
               <HomePage
                   drinks={drinks}
                   setDrinks={drinks}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  searchActive={searchActive}
+                  setSearchActive={setSearchActive}
                   searchParams={searchParams}
                   setSearchParams={setSearchParams}
                   handleSearchChange={handleSearchChange}
@@ -230,7 +245,10 @@ function App() {
               />
           </Route>
           <Route path='/profile'>
-              <ProfilePage/>
+              <ProfilePage
+                signedIn={signedIn}
+                handleLogOut={handleLogOut}
+              />
           </Route>
           <Route path='/favorites'>
               <FavoritesPage/>

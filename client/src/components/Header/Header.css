@@ -44,3 +44,14 @@
     color: transparent;
   }
   
+.header-link{
+    text-decoration: none;
+    color: #fee;
+    opacity: .05;
+    transition: .5s ease;
+}
+
+.header-link:hover{
+    opacity: .5;
+    transition: .5s ease;
+}

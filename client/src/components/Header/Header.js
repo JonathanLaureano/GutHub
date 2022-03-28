@@ -13,9 +13,9 @@ export default function Header({signedIn,setSignedIn}){
     return(
         <React.Fragment>
             <div className='header-nav'>
-                <a className="" href="/profile">ProfilePage</a>
-                <div><strong>-</strong></div>
-                {signedIn?<button className="header-logOut" onClick={handleLogOut}>Log Out</button>:<button className="header-signIn">Log Out</button>}
+                <a className="header-link" href="/profile">Navigation</a>
+                {/* <div><strong>-</strong></div> */}
+                {/* {signedIn?<button className="header-logOut" onClick={handleLogOut}>Log Out</button>:<button className="header-signIn">Log Out</button>} */}
             </div>
         </React.Fragment>
     )

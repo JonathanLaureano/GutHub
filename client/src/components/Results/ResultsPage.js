@@ -69,13 +69,15 @@ export default function ResultsPage({drinks}) {
         </div>
     }
     // document.title = 'GutHub - Results'
+
+    let searchResultsCardClass = drinks.length<=8?'search-results-card frozen':'search-results-card'
     return (
         <React.Fragment>
             <div className='search-results-title'>Search Results</div>
             {/* <button onClick={scrollBot}>Test</button> */}
 
             <div className='search-results-container'>
-                <div className='search-results-card' id='cards'>
+                <div className={searchResultsCardClass} id='cards'>
                     {displayDrinks(drinks)}
                 </div>
             </div>

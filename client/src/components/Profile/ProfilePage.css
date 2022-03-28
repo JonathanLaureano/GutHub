@@ -1,4 +1,72 @@
 .profile-nav{
+    margin-top: 2.5%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link{
+    /* font-family: 'Shippori Mincho', serif; */
+    text-decoration: none;
+    font-size: 300%;
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    margin-top: .5%;
+    font: 100 8vh "Vibur";
+}
+
+.nav-link:hover{
+    animation: blink linear infinite 1s;
+}
+
+/* .nav-link b span{
+    animation: blink linear infinite 2s;
+}
+
+.nav-link b span:nth-of-type(2){
+    animation: blink linear infinite 3s;
+} */
+
+.profile-logOut{
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: rgb(211, 204, 204);
+    /* width: 25%; */
+    padding: .75%;
+    padding-bottom: 1%;
+    transition: .35s ease-in-out;
+    /* opacity: .5; */
+    border-radius:5px;
+    text-align: center;
+    width: fit-content;
+
+}
+  
+.profile-logOut:hover{
+    opacity: .75;
+    color: #fff;
+    cursor: pointer;
+}
+
+.l2{
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #5744ff, 0 0 0.5em #5744ff, 0 0 0.1em #5744ff, 0 10px 3px #000;
+}
+
+.l3{
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff44ff, 0 0 0.5em #ff44ff, 0 0 0.1em #ff44ff, 0 10px 3px #000;  
+}
+
+.l4{
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #98ff44, 0 0 0.5em #98ff44, 0 0 0.1em #98ff44, 0 10px 3px #000;  
+}
+
+.l5{
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #44ffe6, 0 0 0.5em #44ffe6, 0 0 0.1em #44ffe6, 0 10px 3px #000;  
 }
