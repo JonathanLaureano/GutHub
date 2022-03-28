@@ -38,11 +38,32 @@ function App() {
   // Search
   const [searchParams,setSearchParams] = useState('');
   const [searchActive,setSearchActive] = useState(false);
+  const [searchResults,setSearchResults] = useState(drinks)
 
   function handleSearchSubmit(e){
     e.preventDefault();
     console.log(searchParams);
-    scrollBot();
+    let query ={"query":searchParams}
+    axios.post('/search',query)
+    .then(r=>{console.log(r)})
+    .catch(function (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data.errors);
+        alert(error.response.data.errors)
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
+      }
+    });
+
+    // scrollBot();
   }
 
   function handleSearchChange(event){
