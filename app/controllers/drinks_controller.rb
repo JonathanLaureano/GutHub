@@ -31,7 +31,9 @@ class DrinksController < ApplicationController
     def search
         @query = params[:query]
         # drink = Drink.where("drinks.name LIKE ?", ["%#{@query.capitalize}%"])
-        drinks = Drink.all.filter{|drink| drink.name.downcase.include? @query.downcase}
+        # drinks = Drink.all.filter{|drink| drink.name.downcase.include? @query.downcase}
+        # drinks = Drink.all.filter{|drink| drink.ingredients.map{|ingredient| ingredient.name.downcase.include? @query.downcase}.include? true}
+        drinks = Drink.all.filter{|drink| (drink.name.downcase.include? @query.downcase) || (drink.ingredients.map{|ingredient| ingredient.name.downcase.include? @query.downcase}.include? true)}
         render json: drinks, include: ["recipes.ingredient", "user"], status: :ok
     end 
 
