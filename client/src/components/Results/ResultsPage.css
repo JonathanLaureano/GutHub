@@ -16,8 +16,8 @@
 
 .search-results-card{
     margin-top: -.5%;
-    width: 95%;
-    height: 78vh;
+    width: 80%;
+    height: 78.5vh;
     border-radius: 10px;
     background-color: rgb(23, 23, 32);
     background-size: cover;
@@ -34,7 +34,7 @@
   
 .drink-cards-container{
     /* margin-left: 1%; */
-    margin-top: 1%;
+    margin-top: 1.15%;
     display: flex;
     flex-direction: row;
     justify-content: space-around

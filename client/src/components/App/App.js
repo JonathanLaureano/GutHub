@@ -42,6 +42,7 @@ function App() {
   function handleSearchSubmit(e){
     e.preventDefault();
     console.log(searchParams);
+    scrollBot();
   }
 
   function handleSearchChange(event){
@@ -198,6 +199,8 @@ function App() {
         <Switch>
           <Route exact path='/'>
               <HomePage
+                  drinks={drinks}
+                  setDrinks={drinks}
                   searchParams={searchParams}
                   setSearchParams={setSearchParams}
                   handleSearchChange={handleSearchChange}
