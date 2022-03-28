@@ -30,13 +30,14 @@ class DrinksController < ApplicationController
 
     def mix
         @mix = params[:mix]
+
+        #returns only the drinks that contain an exact match of the provided ingredients
         drinks = Drink.all.filter{|drink| drink.recipes.map{|recipe| @mix.map{|ingred| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}}
         render json: drinks, include: ["recipes.ingredient", "user"], status: :ok
     end
 
     def search
         @query = params[:query]
-        # drink = Drink.where("drinks.name LIKE ?", ["%#{@query.capitalize}%"])
         # drinks = Drink.all.filter{|drink| drink.name.downcase.include? @query.downcase}
         # drinks = Drink.all.filter{|drink| drink.ingredients.map{|ingredient| ingredient.name.downcase.include? @query.downcase}.include? true}
         drinks = Drink.all.filter{|drink| (drink.name.downcase.include? @query.downcase) || (drink.ingredients.map{|ingredient| ingredient.name.downcase.include? @query.downcase}.include? true)}

@@ -1,7 +1,7 @@
 .ingredient-card-container{
     background-color: rgb(35, 35, 39);
-    height: 37vh;
-    width: 22%;
+    height: 15vh;
+    width: 20vh;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@
 .ingredient-card-image{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    margin-bottom: 41%;
+    margin-bottom: 20%;
     margin-left: 25%;
     /* height: 80%; */
     height: 50%;

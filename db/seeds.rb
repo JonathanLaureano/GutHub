@@ -10,7 +10,7 @@ User.create!([
         first_name: "Henry",
         last_name: "Miller",
         username: "mozart@guthub.com",
-        password_digest: "1234",
+        password: "1234",
         image_url: "",
         description: "",
         favorites: []
@@ -19,7 +19,7 @@ User.create!([
         first_name: "Jonathan",
         last_name: "Laureano",
         username: "socrates@guthub.com",
-        password_digest: "1234",
+        password: "1234",
         image_url: "",
         description: "",
         favorites: []
