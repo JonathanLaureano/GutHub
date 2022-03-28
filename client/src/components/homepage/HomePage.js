@@ -71,12 +71,12 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
                     This div is just here to enable scrolling.
                     Tip: Try to remove the background-attachment property to remove the scrolling effect.
             </div> */}
-            {/* {searchActive?<div className='home-page-spacer' style={{marginTop:'22%'}}></div>:null}
+            {searchActive?<div className='home-page-spacer' style={{marginTop:'25%'}}></div>:null}
             {searchActive?<ResultsPage drinks={searchResults}/>:null}
-            {searchActive?<button onClick={scrollTop}>test</button> :null} */}
-                <div className='home-page-spacer' style={{marginTop:'30%'}}></div>
+            {searchActive?<button onClick={scrollTop}>test</button> :null}
+                {/* <div className='home-page-spacer' style={{marginTop:'30%'}}></div>
                 <ResultsPage drinks={searchResults}/>
-                <button onClick={scrollTop}>test</button>
+                <button onClick={scrollTop}>test</button> */}
         </React.Fragment>
     )
 }
