@@ -27,107 +27,106 @@ User.create!([
 ])
 
 puts "Seeding Drinks..."
-user = User.find(User.pluck(:id).sample)
 Drink.create!([
     {
         name: "Margarita",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Mojito",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Long Island Ice Tea",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Bloody Mary",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Manhattan",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "White Russian",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Martini",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Daiquiri",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Mai Tai",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Capirinha",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Rum and Coke",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Old Fashioned",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Gin & Tonic",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Cosmopolitan",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Screwdriver",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Tequila Sunrise",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Whiskey Sour",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Piña Colada",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "Irish Coffee",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     },
     {
         name: "The Godfather",
         image_url: "",
-        user_id: user.id
+        user_id: 1
     }
 ])
 
