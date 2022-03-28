@@ -71,7 +71,7 @@ export default function MixPage({ingredients}) {
 
     return (
         <React.Fragment>
-            <div className='search-results-title'>ingredients</div>
+            <div className='search-results-title'>mixing</div>
             {/* <button onClick={scrollBot}>Test</button> */}
 
             <div className='search-results-container'>
