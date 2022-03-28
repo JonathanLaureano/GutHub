@@ -72,6 +72,7 @@ body {
     font-size: 200%;
     color: #ffff;
     transition: .5s ease-in-out;
+    font: 100 30vh;
 }
 
 .logo {

@@ -66,11 +66,6 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
                         handleSignUpSubmit={handleSignUpSubmit}
                     />:null}
             {/* </div> */}
-            {/* <div style={{height:"800px", backgroundColor:"black", fontSize:"36px",marginTop:"250px", color:'#fff'}}>
-                    Scroll Up and Down this page to see the parallax scrolling effect.
-                    This div is just here to enable scrolling.
-                    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-            </div> */}
             {searchActive?<div className='home-page-spacer' style={{marginTop:'25%'}}></div>:null}
             {searchActive?<ResultsPage drinks={searchResults}/>:null}
             {searchActive?<button onClick={scrollTop}>test</button> :null}

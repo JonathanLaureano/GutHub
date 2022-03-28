@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
     def index
         ingredients = Ingredient.all
-        render json: ingredients, status: :ok
+        render json: ingredients, include: "ingredients", status: :ok
     end
 
     def show

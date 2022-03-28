@@ -35,6 +35,7 @@ function App() {
   const [user,setUser] = useState(null)
 
   const [drinks,setDrinks]= useState([]);
+  const [ingredients,setIngredients] = useState([]);
 
   // Search
   const [searchActive,setSearchActive] = useState(false)
@@ -94,12 +95,15 @@ function App() {
     .then(r=>{
       setDrinks(r.data)
     })
+
+    axios.get('/ingredients')
+    .then(r=>{
+      setIngredients(r.data)
+    })
+
   },[])
 
-  // useEffect(()=>{
-  //   axios.get('/me').then(r=>{console.log(r)})
 
-  // },[])
 
   function handleSignUpSubmit(e) {
     e.preventDefault();
@@ -258,7 +262,10 @@ function App() {
               <FavoritesPage/>
           </Route>
           <Route path='/mix'>
-              <MixPage/>
+              <MixPage
+                ingredients={ingredients}
+                setIngredients={setIngredients}
+                />
           </Route>
           <Route path='/search-results'>
               <ResultsPage
