@@ -28,6 +28,12 @@ class DrinksController < ApplicationController
         head :no_content
     end
 
+    def mix
+        @mix = params[:mix]
+        drinks = Drink.all.filter{|drink| drink.recipes.map{|recipe| @mix.map{|ingred| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}}
+        render json: drinks, include: ["recipes.ingredient", "user"], status: :ok
+    end
+
     def search
         @query = params[:query]
         # drink = Drink.where("drinks.name LIKE ?", ["%#{@query.capitalize}%"])
