@@ -2,7 +2,7 @@ import './MixPage.css';
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
-import IngredientCard from '../IngredientCard/IngredientCard';
+import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
 
 
