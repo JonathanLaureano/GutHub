@@ -1,8 +1,11 @@
 .header-nav{
-    top: 0;
-    /* position: fixed; */
+    /* top: 0; */
+    position: fixed;
     display: flex;
     justify-content: space-evenly;
+    /* margin-top: 10%; */
+    margin-top: -12%;
+    margin-left: 47%;
 }
 
 .header-logOut{
@@ -49,6 +52,7 @@
     color: #fee;
     opacity: .05;
     transition: .5s ease;
+    /* color: red; */
 }
 
 .header-link:hover{

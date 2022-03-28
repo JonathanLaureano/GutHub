@@ -206,6 +206,10 @@ function App() {
           signedIn={signedIn}
           setSignedIn={setSignedIn}
           />:null}
+        {/* <Header
+          signedIn={signedIn}
+          setSignedIn={setSignedIn}
+          /> */}
         <Switch>
           <Route exact path='/'>
               <HomePage
