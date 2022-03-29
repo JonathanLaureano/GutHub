@@ -31,6 +31,14 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    def user_drinks
+        render json: @current_user.drinks
+    end
+
+    def user_favorites
+        render json: @current_user.favorites
+    end
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

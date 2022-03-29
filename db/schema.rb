@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_03_23_225411) do
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
+    t.string "ingredient_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
