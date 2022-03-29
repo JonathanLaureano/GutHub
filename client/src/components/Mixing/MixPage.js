@@ -18,16 +18,20 @@ export default function MixPage({ingredients}) {
 
     function displayIngredients(data){
                 return <React.Fragment>
-                    {ingredientCardsRow(data.slice(0,4))}
-                    {ingredientCardsRow(data.slice(4,8))}
-                    {ingredientCardsRow(data.slice(8,12))}
-                    {ingredientCardsRow(data.slice(12,16))}
-                    {ingredientCardsRow(data.slice(16,20))}
-                    {ingredientCardsRow(data.slice(20,24))}
-                    {ingredientCardsRow(data.slice(24,28))}
-                    {ingredientCardsRow(data.slice(28,32))}
-                    {ingredientCardsRow(data.slice(32,36))}
-                    {ingredientCardsRow(data.slice(36,40))}
+                    {ingredientCardsRow(data.slice(0,3))}
+                    {ingredientCardsRow(data.slice(3,6))}
+                    {ingredientCardsRow(data.slice(6,9))}
+                    {ingredientCardsRow(data.slice(9,12))}
+                    {ingredientCardsRow(data.slice(12,15))}
+                    {ingredientCardsRow(data.slice(15,18))}
+                    {ingredientCardsRow(data.slice(18,21))}
+                    {ingredientCardsRow(data.slice(21,24))}
+                    {ingredientCardsRow(data.slice(24,27))}
+                    {ingredientCardsRow(data.slice(27,30))}
+                    {ingredientCardsRow(data.slice(30,33))}
+                    {ingredientCardsRow(data.slice(33,36))}
+                    {ingredientCardsRow(data.slice(36,39))}
+
                 </React.Fragment>}
     
         
@@ -46,10 +50,12 @@ export default function MixPage({ingredients}) {
         <React.Fragment>
             <div className='mix-page-title'>mixing</div>
             {/* <button onClick={scrollBot}>Test</button> */}
-            <div className='mix-page-jug-container'></div>
-            <div className='mix-page-ingredients-container'>
-                <div className='mix-page-ingredients-holder' id='cards'>
-                    {displayIngredients(ingredients)}
+            <div className='mix-page-items-wrapper'>
+                <div className='mix-page-jug-container'></div>
+                <div className='mix-page-ingredients-container'>
+                    <div className='mix-page-ingredients-holder' id='cards'>
+                        {displayIngredients(ingredients)}
+                    </div>
                 </div>
             </div>
         </React.Fragment>
