@@ -194,7 +194,6 @@ function App() {
 
   return (
       <div className="App">
-        {/* <div>This is the App Page</div> */}
        {signedIn?<Header
           signedIn={signedIn}
           setSignedIn={setSignedIn}

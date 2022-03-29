@@ -2,50 +2,12 @@
     /* top: 0; */
     position: fixed;
     display: flex;
-    justify-content: space-evenly;
-    /* margin-top: 10%; */
-    margin-top: -12%;
-    margin-left: 47%;
+    justify-content: space-between;
+    align-content: space-around;
+    margin-top: -10%;
+    margin-left: 5%;
 }
 
-.header-logOut{
-    font-family: 'Shippori Mincho', serif;
-    text-align: center;
-    font-size: ;
-    border: none;
-    outline: none;
-    background-color: rgb(46, 45, 45);
-    width: %;
-    padding: .75%;
-    padding-bottom: 1%;
-    transition: .35s ease-in-out;
-    opacity: .5;
-    border-radius:5px;
-    text-align: center;
-    color: white;
-}
-  
-.header-logOut:hover{
-    opacity: .75;
-    color: #fff;
-    cursor: pointer;
-}
-
-.header-signIn{
-    font-family: 'Shippori Mincho', serif;
-    text-align: center;
-    font-size: ;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    width: %;
-    padding: .75%;
-    transition: .35s ease-in-out;
-    opacity: .5;
-    border-radius:5px;
-    text-align: center;
-    color: transparent;
-  }
   
 .header-link{
     text-decoration: none;
@@ -61,4 +23,21 @@
 .header-link:hover{
     opacity: .5;
     transition: .5s ease;
+}
+
+.profile-picture{
+    filter: invert(100%);
+    border-radius: 40%;
+    border-style: solid;
+    border: 15% solid rgb(26, 25, 25);
+    opacity: 0.3;
+    border-width: 2.5%;
+    height: 6vh;
+    transition: .25s;
+}
+
+.profile-picture:hover{
+    height: 7vh;
+    cursor: pointer;
+    opacity: .55;
 }
