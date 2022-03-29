@@ -118,6 +118,7 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
                     {searchResults.length==0 && searchActive==true?
                         <div className='no-results-container'> 
                             <div className='no-results-found'>No Results Found</div>
+                            <div className='no-results-query'>Please Enter a Different Search Query</div>
                         </div>
                         
                         :null}
