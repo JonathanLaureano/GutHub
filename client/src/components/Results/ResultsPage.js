@@ -14,7 +14,7 @@ function scrollBot() {
 
 
 
-export default function ResultsPage({drinks}) {
+export default function ResultsPage({searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop}) {
 
     function displayDrinks(data){
             if (data.length>=20) {
@@ -68,17 +68,53 @@ export default function ResultsPage({drinks}) {
             })}
         </div>
     }
-    // document.title = 'GutHub - Results'
 
-    let searchResultsCardClass = drinks.length<=8?'search-results-card frozen':'search-results-card'
+
+    function handleSearchUpdate(e){
+        e.preventDefault();
+        setSearchParams(e.target.value)
+        let query ={"query":e.target.value}
+        axios.post('/search',query)
+        .then(r=>{
+          setSearchResults(r.data)      
+        })
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.data.errors);
+            alert(error.response.data.errors)
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+        });
+      }
+    
+
+    let searchResultsCardClass = searchResults.length<=8?'search-results-card frozen':'search-results-card'
     return (
         <React.Fragment>
             <div className='search-results-title'>Search Results</div>
+            <div className='search-title-wrapper'>
+            <form onSubmit={handleSearchSubmit}><input 
+                    type='text'
+                    placeholder='Search For A Drink'
+                    autoComplete='off'
+                    cursor='pointer'
+                    className='results-search'
+                    value={searchParams}
+                    onChange={handleSearchUpdate}
+                    id='search-input'
+                    >
+                </input></form>
+                <div className='go-home-button' onClick={scrollTop}>↑</div>
+            </div>
+            {/* <button onClick={scrollTop}>test</button> */}
             {/* <button onClick={scrollBot}>Test</button> */}
 
             <div className='search-results-container'>
                 <div className={searchResultsCardClass} id='cards'>
-                    {displayDrinks(drinks)}
+                    {displayDrinks(searchResults)}
                 </div>
             </div>
         </React.Fragment>

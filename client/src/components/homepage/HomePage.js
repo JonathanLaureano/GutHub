@@ -66,9 +66,17 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
                         handleSignUpSubmit={handleSignUpSubmit}
                     />:null}
             {/* </div> */}
-            {searchActive?<div className='home-page-spacer' style={{marginTop:'25%'}}></div>:null}
-            {searchActive?<ResultsPage drinks={searchResults}/>:null}
-            {searchActive?<button onClick={scrollTop}>test</button> :null}
+            {searchActive?<div className='home-page-spacer' style={{marginTop:'22.5%'}}></div>:null}
+            {searchActive?<ResultsPage 
+                searchResults={searchResults}
+                setSearchResults={setSearchResults}
+                searchParams={searchParams}
+                setSearchParams={setSearchParams}
+                handleSearchChange={handleSearchChange}
+                handleSearchSubmit={handleSearchSubmit}
+                scrollTop={scrollTop}
+                />:null}
+            {/* {searchActive?<button onClick={scrollTop}>test</button> :null} */}
                 {/* <div className='home-page-spacer' style={{marginTop:'30%'}}></div>
                 <ResultsPage drinks={searchResults}/>
                 <button onClick={scrollTop}>test</button> */}

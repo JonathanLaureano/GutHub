@@ -1,10 +1,33 @@
-.search-results-title{
-    color: #fff;
+.search-title-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.go-home-button{
     color: rgb(219, 205, 205);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     font-size: 300%;
-    margin-top: .5%;
+    margin-top: -1.75%;
+    margin-left: 1%;
+    font: 100 6vh "Vibur";
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.go-home-button:hover{
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    color: #ff9191;
+    height: 100%
+}
+
+.search-results-title{
+    color: rgb(219, 205, 205);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+    font-size: 300%;
+    margin-top: .25%;
     font: 100 10vh "Vibur";
+    cursor: default;
 }
 
 .search-results-container{
@@ -42,4 +65,29 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around
+}
+
+.results-search{
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: rgb(46, 45, 45);
+    width: 65vw;
+    padding: .65%;
+    transition: .25s ease-in-out;
+    opacity: .5;
+    border-radius:5px;
+    text-align: center;
+    margin-top: -10%;
+    color: rgba(255, 255, 255, 0.471);
+    font-size: 125%;
+}
+
+.results-search:focus{
+    /* margin-top: -5%; */
+    cursor: text;
+    opacity: .65;
+    color: #fff
 }

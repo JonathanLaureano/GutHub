@@ -53,6 +53,9 @@
     opacity: .05;
     transition: .5s ease;
     /* color: red; */
+    background-color: rgb(78, 77, 77);
+    padding: 10%;
+    border-radius: 3.5px;
 }
 
 .header-link:hover{
