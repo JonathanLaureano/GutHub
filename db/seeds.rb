@@ -134,202 +134,202 @@ puts "Seeding Ingredients..."
 Ingredient.create!([
     {
         name: "Tequila",
-        image_url: "",
+        image_url: "Tequila.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Triple Sec",
-        image_url: "",
+        image_url: "TripleSec.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Scotch",
-        image_url: "",
+        image_url: "Scotch.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Vodka",
-        image_url: "",
+        image_url: "Vodka.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Almond Liquer",
-        image_url: "",
+        image_url: "AlmondLiquer.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "White Rum",
-        image_url: "",
+        image_url: "WhiteRum.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Gin",
-        image_url: "",
+        image_url: "Gin.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Whiskey",
-        image_url: "",
+        image_url: "Whiskey.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Wine",
-        image_url: "",
+        image_url: "Wine.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Bourbon",
-        image_url: "",
+        image_url: "Bourbon.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Brandy",
-        image_url: "",
+        image_url: "Brandy.png",
         ingredient_type: "Alcohol"
     },
     {
         name: "Orange Juice",
-        image_url: "",
+        image_url: "OrangeJuice.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Pineapple Juice",
-        image_url: "",
+        image_url: "PineappleJuice.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Coconut Cream",
-        image_url: "",
+        image_url: "CoconutCream.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Lime Juice",
-        image_url: "",
+        image_url: "LimeJuice.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Cranberry Juice",
-        image_url: "",
+        image_url: "CranberryJuice.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Lemon Juice",
-        image_url: "",
+        image_url: "LemonJuice.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Grenadine",
-        image_url: "",
+        image_url: "Grenadine.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Simple Syrup",
-        image_url: "",
+        image_url: "SimpleSyrup.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Tonic",
-        image_url: "",
+        image_url: "Tonic.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Coke",
-        image_url: "",
+        image_url: "Coke.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Milk",
-        image_url: "",
+        image_url: "Milk.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Coffee",
-        image_url: "",
+        image_url: "Coffee.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Salt",
-        image_url: "",
+        image_url: "Salt.png",
         ingredient_type: "Solid"
     },
     {
         name: "Tobasco Sauce",
-        image_url: "",
+        image_url: "Tobasco.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Worcestershire Sauce",
-        image_url: "",
+        image_url: "WorcestershireSauce.png",
         ingredient_type: "Liquid"
     },
     {
         name: "Pepper",
-        image_url: "",
+        image_url: "Pepper.png",
         ingredient_type: "Solid"
     },
     {
         name: "Peprika",
-        image_url: "",
+        image_url: "Peprika.png",
         ingredient_type: "Solid"
     },
     {
         name: "Horse Radish",
-        image_url: "",
+        image_url: "HorseRadish.png",
         ingredient_type: "Solid"
     },
     {
         name: "Egg",
-        image_url: "",
+        image_url: "Egg.png",
         ingredient_type: "Solid"
     },
     {
         name: "Nutmeg",
-        image_url: "",
+        image_url: "Nutmeg.png",
         ingredient_type: "Solid"
     },
     {
         name: "Bitter",
-        image_url: "",
+        image_url: "Bitter.png",
         ingredient_type: "Solid"
     },
     {
         name: "Olive",
-        image_url: "",
+        image_url: "Olive.png",
         ingredient_type: "Solid"
     },
     {
         name: "Cinnamon Stick",
-        image_url: "",
+        image_url: "Cinnamon.png",
         ingredient_type: "Solid"
     },
     {
         name: "Sugar",
-        image_url: "",
+        image_url: "Sugar.png",
         ingredient_type: "Solid"
     },
     {
         name: "Mint Leaves",
-        image_url: "",
+        image_url: "MintLeaves.png",
         ingredient_type: "Solid"
     },
     {
         name: "Orange",
-        image_url: "",
+        image_url: "Orange.png",
         ingredient_type: "Solid"
     },
     {
         name: "Lemon",
-        image_url: "",
+        image_url: "Lemon.png",
         ingredient_type: "Solid"
     },
     {
         name: "Lime",
-        image_url: "",
+        image_url: "Lime.png",
         ingredient_type: "Solid"
     },
     {
         name: "Tomato Juice",
-        image_url: "",
+        image_url: "TomatoJuice.png",
         ingredient_type: "Liquid"
     }
 ])
