@@ -43,29 +43,27 @@ function App() {
 
   function handleSearchSubmit(e){
     e.preventDefault();
-    setSearchActive(true)
     let query ={"query":searchParams}
     axios.post('/search',query)
     .then(r=>{
-      setSearchResults(r.data)      
+      if (r.data.length==0){
+        alert('No Results Found!')
+      } else { 
+      setSearchActive(true)
+      setSearchResults(r.data);
+      scrollBot(); }
     })
     .catch(function (error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
         console.log(error.response.data.errors);
         alert(error.response.data.errors)
       } else if (error.request) {
-        // The request was made but no response was received
-        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-        // http.ClientRequest in node.js
         console.log(error.request);
       } else {
         // Something happened in setting up the request that triggered an Error
         console.log('Error', error.message);
       }
     });
-    scrollBot();
   }
 
   function handleSearchChange(event){
@@ -112,8 +110,6 @@ function App() {
       username: signUpUsername,
       password: signUpPassword,
       "password_confirmation": signUpPasswordConfirmation
-      // username,
-      // password
     }
     axios.post("/signup", signUpDetails)
       .then(r=>{
@@ -123,17 +119,11 @@ function App() {
         })
       .catch(function (error) {
         if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
           console.log(error.response.data.errors);
           alert(error.response.data.errors)
         } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-          // http.ClientRequest in node.js
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log('Error', error.message);
         }
       });
