@@ -7,7 +7,6 @@ import HomePage from '../HomePage/HomePage';
 import MixPage from '../Mixing/MixPage';
 import ResultsPage from '../Results/ResultsPage';
 import DrinksPage from '../Drinks/DrinksPage';
-import SeasonalPage from '../Seasonal/SeasonalPage';
 import Header from '../Header/Header';
 import ProfilePage from '../Profile/ProfilePage';
 import FavoritesPage from '../Favorites/FavoritesPage';
@@ -279,10 +278,6 @@ function App() {
                 setDrinks={drinks}          
                 />
           </Route>
-          <Route path='/seasonal'>
-              <SeasonalPage/>
-          </Route>
-
         </Switch>
       </div>
   );
