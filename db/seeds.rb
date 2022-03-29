@@ -30,102 +30,102 @@ puts "Seeding Drinks..."
 Drink.create!([
     {
         name: "Margarita",
-        image_url: "",
+        image_url: "Margarita.png",
         user_id: 1
     },
     {
         name: "Mojito",
-        image_url: "",
+        image_url: "Mojito.png",
         user_id: 1
     },
     {
         name: "Long Island Ice Tea",
-        image_url: "",
+        image_url: "LongIslandIceTea.png",
         user_id: 1
     },
     {
         name: "Bloody Mary",
-        image_url: "",
+        image_url: "BloodyMary.png",
         user_id: 1
     },
     {
         name: "Manhattan",
-        image_url: "",
+        image_url: "Manhattan.png",
         user_id: 1
     },
     {
         name: "White Russian",
-        image_url: "",
+        image_url: "WhiteRussian.png",
         user_id: 1
     },
     {
         name: "Martini",
-        image_url: "",
+        image_url: "Martini.png",
         user_id: 1
     },
     {
         name: "Daiquiri",
-        image_url: "",
+        image_url: "Daiquiri.png",
         user_id: 1
     },
     {
         name: "Mai Tai",
-        image_url: "",
+        image_url: "MaiTai.png",
         user_id: 1
     },
     {
         name: "Capirinha",
-        image_url: "",
+        image_url: "Capirinha.png",
         user_id: 1
     },
     {
-        name: "Rum and Coke",
-        image_url: "",
+        name: "Rum & Coke",
+        image_url: "Rum&Coke.png",
         user_id: 1
     },
     {
         name: "Old Fashioned",
-        image_url: "",
+        image_url: "OldFashioned.png",
         user_id: 1
     },
     {
         name: "Gin & Tonic",
-        image_url: "",
+        image_url: "Gin&Tonic.png",
         user_id: 1
     },
     {
         name: "Cosmopolitan",
-        image_url: "",
+        image_url: "Cosmopolitan.png",
         user_id: 1
     },
     {
         name: "Screwdriver",
-        image_url: "",
+        image_url: "Screwdriver.png",
         user_id: 1
     },
     {
         name: "Tequila Sunrise",
-        image_url: "",
+        image_url: "TequilaSunrise.png",
         user_id: 1
     },
     {
         name: "Whiskey Sour",
-        image_url: "",
+        image_url: "WhiskeySour.png",
         user_id: 1
     },
     {
         name: "Piña Colada",
-        image_url: "",
+        image_url: "PinaColada.png",
         user_id: 1
     },
     {
         name: "Irish Coffee",
-        image_url: "",
+        image_url: "IrishCoffee.png",
         user_id: 1
     },
     {
         name: "The Godfather",
-        image_url: "",
+        image_url: "Godfather.png",
         user_id: 1
     }
 ])
