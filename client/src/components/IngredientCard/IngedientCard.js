@@ -2,7 +2,7 @@ import React from "react";
 import './IngredientCard.css';
 
 export default function IngredientCard({ingredient}){
-    const images = require.context('../Images',true);
+    const images = require.context('../Images-Resized',true);
     
 
     return(

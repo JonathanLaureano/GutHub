@@ -9,18 +9,35 @@
     transition: color .5s;
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 .drink-card-image{
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    margin-bottom: 41%;
-    margin-left: 25%;
-    /* height: 80%; */
-    height: 50%;
-    width: 50%;
-    opacity: .65;
+    height: 200px;
+    width: 200px;
 }
+
+.margarita{
+    height: 200px;
+    width: 125px;
+}
+
+.bloodymary{
+    width: 350px;
+    height: 180px;
+    margin-left: -30%;
+}
+
+.caipirinha{
+    height: 175px;
+    width: 175px;
+}
+
+.oldfashioned{
+    height: 250px;
+    width: 175px;
+}
+
 .drink-card-text-info{
     display: flex;
     flex-direction: column;

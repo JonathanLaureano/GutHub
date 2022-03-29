@@ -74,8 +74,8 @@ Drink.create!([
         user_id: 1
     },
     {
-        name: "Capirinha",
-        image_url: "Capirinha.png",
+        name: "Caipirinha",
+        image_url: "Caipirinha.png",
         user_id: 1
     },
     {
