@@ -268,8 +268,8 @@ Ingredient.create!([
         ingredient_type: "Solid"
     },
     {
-        name: "Peprika",
-        image_url: "Peprika.png",
+        name: "Paprika",
+        image_url: "Paprika.png",
         ingredient_type: "Solid"
     },
     {
