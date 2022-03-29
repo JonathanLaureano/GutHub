@@ -68,6 +68,7 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
             {/* </div> */}
             {searchActive?<div className='home-page-spacer' style={{marginTop:'22.5%'}}></div>:null}
             {searchActive?<ResultsPage 
+                searchActive={searchActive}
                 searchResults={searchResults}
                 setSearchResults={setSearchResults}
                 searchParams={searchParams}

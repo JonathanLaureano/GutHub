@@ -14,7 +14,7 @@ function scrollBot() {
 
 
 
-export default function ResultsPage({searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop}) {
+export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop}) {
 
     function displayDrinks(data){
             if (data.length>=20) {
@@ -115,6 +115,12 @@ export default function ResultsPage({searchResults,setSearchResults,searchParams
             <div className='search-results-container'>
                 <div className={searchResultsCardClass} id='cards'>
                     {displayDrinks(searchResults)}
+                    {searchResults.length==0 && searchActive==true?
+                        <div className='no-results-container'> 
+                            <div className='no-results-found'>No Results Found</div>
+                        </div>
+                        
+                        :null}
                 </div>
             </div>
         </React.Fragment>

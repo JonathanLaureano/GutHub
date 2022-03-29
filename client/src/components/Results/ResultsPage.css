@@ -91,3 +91,22 @@
     opacity: .65;
     color: #fff
 }
+
+.no-results-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.no-results-found{
+    margin-left: 30%;
+    font-family: 'Shippori Mincho', serif;
+    /* font: 100 5vh "Vibur"; */
+    color: rgb(241, 159, 159);
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; */
+    background-color: rgb(65, 65, 70);
+    border-radius: 15px;
+    width: 35%;
+    font-size: 150%;
+    padding: 1.5%;
+}
