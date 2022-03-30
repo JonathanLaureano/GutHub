@@ -14,7 +14,7 @@ function scrollBot() {
 
 
 
-export default function MixPage({ingredients}) {
+export default function MixPage({ingredients,setIngredients}) {
 
     let [mixes,setMixes]=useState({"mix":[
     ]});
@@ -67,6 +67,16 @@ export default function MixPage({ingredients}) {
         </div>
     }
 
+    function resetIngredients(){
+        setMixes({"mix":[
+        ]})
+        setIngredients([])
+        axios.get('/ingredients')
+        .then(r => {
+          setIngredients(r.data)
+        })  
+    }
+
     let titleClass = mixes.mix.length==0?'mix-page-title-off':'mix-page-title'
 
     return (
@@ -75,6 +85,7 @@ export default function MixPage({ingredients}) {
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
                     <button className='mix-button' onClick={handleMixClick}>MIX</button>
+                    <button onClick={resetIngredients}>Reset</button>
                                 {mixesToDisplay}
                 </div>
                 <div className='mix-page-ingredients-container'>
