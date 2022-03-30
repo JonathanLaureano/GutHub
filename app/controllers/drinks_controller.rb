@@ -44,6 +44,26 @@ class DrinksController < ApplicationController
         render json: drinks, include: ["recipes.ingredient", "user"], status: :ok
     end 
 
+    def mixcreate
+        @mix = params[:mix]
+        @name = params[:name]
+        @user_id = params[:user_id]
+        @image_url = params[:image_url]
+
+        new = Drink.create!({name: @name, image_url: @image_url, user_id: @user_id})
+
+        @mix.map{|mix| 
+        
+        Recipe.create({
+            drink_id: new.id,
+            ingredient_id: mix["ingredient_id"],
+            parts: mix["parts"]}
+        )}
+
+        render json: new, include: ["recipes.ingredient", "user"], status: :ok
+
+    end
+
 
     private
 
