@@ -14,7 +14,7 @@
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     /* margin-bottom: 20%; */
-    margin-left: 20%;
+    margin-left: 25%;
     height: 80%;
     width: 80%;
     max-width: 100px;
@@ -33,8 +33,9 @@
 }
 
 .milk{
+    margin-left: 35%;
     height: 75px;
-    width: 75px;
+    width: 50px;
 }
 
 .mint{
