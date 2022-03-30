@@ -10,6 +10,9 @@ export default function IngredientCard({ingredient}){
     })
     let imgClass;
 
+    let mixes={"mix":[
+    ]}
+
     switch (ingredient.name) {
         case "Gin":
             imgClass='ingredient-card-image gin'
@@ -30,20 +33,29 @@ export default function IngredientCard({ingredient}){
     function addClick(){
         if (partsCount<10){
             setPartsCount(partsCount+=1)
-            setRecipe({
-                "ingredient_id": ingredient.id,
-                "parts": partsCount 
-            })}
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+            mixes.mix.push(ingredientRecipe)
+            console.log(mixes.mix)
+            setRecipe(ingredientRecipe)}
     }
 
     function subtractClick(){
-        if (partsCount>0) {
+        if (partsCount>1) {
             setPartsCount(partsCount-=1)
-            setRecipe({
-                "ingredient_id": ingredient.id,
-                "parts": partsCount 
-            })}    
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+            mixes.mix.push(ingredientRecipe)
+            console.log(mixes.mix)
+            setRecipe(ingredientRecipe)}
+         else if (partsCount=1){
+            setPartsCount(partsCount-=1)
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+            setRecipe(ingredientRecipe)
+            mixes.mix.filter(mix=> mix.ingredient_id==ingredient.id)
+            console.log(mixes.mix)
+        } else {
+            console.log(mixes.mix)
         }
+    }
     
     return(
         <React.Fragment>
