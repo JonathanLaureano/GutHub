@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
 
   post "/mix", to: "drinks#mix"
+  post "/mixcreate", to: "drinks#mixcreate"
   post "/search", to: "drinks#search"
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
