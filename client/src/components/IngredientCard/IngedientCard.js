@@ -23,6 +23,13 @@ export default function IngredientCard({ingredient}){
             imgClass='ingredient-card-image'
     }
 
+    function addClick(){
+        if (partsCount<10){setPartsCount(partsCount+=1)}
+    }
+
+    function subtractClick(){
+        if (partsCount>0) {setPartsCount(partsCount-=1)}
+    }
     
 
     return(
@@ -32,10 +39,9 @@ export default function IngredientCard({ingredient}){
                 <div className="ingredient-card-text-info">
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
-                        <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png'/>
+                        <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick}/>
                         <div className="count">{partsCount}</div>
-                        {/* <div className="add">+</div> */}
-                        <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png'/>
+                        <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png' onClick={addClick}/>
                     </div>
                 </div>
             </div>
