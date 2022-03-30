@@ -4,13 +4,8 @@ import './IngredientCard.css';
 export default function IngredientCard({ingredient,mixes,setMixes}){
     const images = require.context('../Images-Resized',true);
     let [partsCount,setPartsCount] = useState(0);
-    let [recipe,setRecipe] =useState({
-        "ingredient_id": ingredient.id,
-        "parts": partsCount 
-    })
-    let imgClass;
 
-    let allMixes = mixes.mix;
+    let imgClass;
 
     switch (ingredient.name) {
         case "Gin":
@@ -34,20 +29,14 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
             setPartsCount(partsCount+=1)
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
             if (mixes.mix.length>0){
-                console.log(mixes.mix)
-                let filteredMixes = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
-                console.log(filteredMixes)
-                let updatedMix= [...filteredMixes,ingredientRecipe];
-                console.log(updatedMix)
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let updatedMix= [...filteredMix,ingredientRecipe];
                 let newMixes = {"mix": updatedMix}
                 setMixes(newMixes)
-                // console.log(mixes.mix)    
             } else{
                 let updatedMix= [...mixes.mix,ingredientRecipe];
-                // console.log(updatedMix)
                 let newMixes = {"mix": updatedMix}
                 setMixes(newMixes)
-                // console.log(mixes.mix)
             }
     }}
 
@@ -55,19 +44,22 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
         if (partsCount>1) {
             setPartsCount(partsCount-=1)
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
-            mixes.mix.filter(mix=> mix.ingredient_id==ingredient.id)
-            mixes.mix.push(ingredientRecipe)
-            console.log(mixes.mix)
-            setRecipe(ingredientRecipe)}
+            if (mixes.mix.length>0){
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let updatedMix= [...filteredMix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            } else{
+                let updatedMix= [...mixes.mix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            }}
          else if (partsCount=1){
             setPartsCount(partsCount-=1)
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
-            setRecipe(ingredientRecipe)
-            mixes.mix.filter(mix=> mix.ingredient_id==ingredient.id)
-            console.log(mixes.mix)
-        } else {
-            console.log(mixes.mix)
-        }
+            let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+            let newMixes = {"mix": filteredMix}
+            setMixes(newMixes)
+        } 
     }
     
     return(
