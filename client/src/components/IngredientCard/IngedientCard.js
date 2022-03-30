@@ -112,27 +112,45 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
     function handleUpdatePartsCountOnInput(e){
-        let updatedCount = partsCount.toString().indexOf('.') != -1? parseFloat(e.target.value).toFixed(2):e.target.value
-        setPartsCount(updatedCount);
-        let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": updatedCount}
-        if (mixes.mix.length>0){
-            let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
-            let updatedMix= [...filteredMix,ingredientRecipe];
-            let newMixes = {"mix": updatedMix}
-            setMixes(newMixes)
-        } else{
-            let updatedMix= [...mixes.mix,ingredientRecipe];
-            let newMixes = {"mix": updatedMix}
-            setMixes(newMixes)
-        }
+        // let updatedCount = partsCount.toString().indexOf('.') != -1? parseFloat(e.target.value).toFixed(2):e.target.value;
+        let newValue = e.target.value;
+        setPartsCount(newValue);
+        if (newValue.toString().indexOf('.') != -1) {
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": parseFloat(newValue).toFixed(2)}
+            if (mixes.mix.length>0){
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let updatedMix= [...filteredMix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            } else{
+                let updatedMix= [...mixes.mix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            }    
+        }else {
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": newValue}
+            if (mixes.mix.length>0){
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let updatedMix= [...filteredMix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            } else{
+                let updatedMix= [...mixes.mix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            }
+        }   
     }
 
     function handleOffFocusClick(e){
-        if (e.target.value===''){
+        let newValue =e.target.value;
+        if (newValue===''){
             setPartsCount(0);
             let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
             let newMixes = {"mix": filteredMix}
             setMixes(newMixes)
+        } else if (newValue.toString().indexOf('.') != -1){
+            setPartsCount(parseFloat(newValue).toFixed(2));
         }
     }
 
