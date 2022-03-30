@@ -138,6 +138,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                 setMixes(newMixes)
             }    
         }else {
+            setPartsCount(parseInt(newValue));
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": newValue}
             if (mixes.mix.length>0){
                 let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
@@ -210,7 +211,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     
     return(
         <React.Fragment>
-            <div className="ingredient-card-container">
+            <div id={ingredient.d} className="ingredient-card-container">
                 <img className={imgClass} src={images('./'+ingredient.image_url)}/>
                 <div className="ingredient-card-text-info">
                     <div className="ingredient-card-name">{ingredient.name}</div>

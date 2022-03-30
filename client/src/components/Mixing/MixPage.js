@@ -15,7 +15,6 @@ function scrollBot() {
 
 
 export default function MixPage({ingredients,setIngredients}) {
-
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
@@ -29,7 +28,7 @@ export default function MixPage({ingredients,setIngredients}) {
 
     let mixesToDisplay= sortedMix.map(mix=>{
         return(
-            <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients[mix["ingredient_id"]-1].name}: {mix["parts"]}</div>
+            <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient=> ingredient.id==[mix["ingredient_id"]])[0].name}: {mix["parts"]}</div>
         )
     })
 
@@ -61,6 +60,7 @@ export default function MixPage({ingredients,setIngredients}) {
     function ingredientCardsRow(data) {
         return <div className='mix-page-ingredients-cards-container'>
             {data.map(ingredient => {
+                // console.log(ingredient)
                 return (<IngredientCard
                     ingredient={ingredient}
                     key={ingredient.id}
@@ -93,8 +93,11 @@ export default function MixPage({ingredients,setIngredients}) {
                                 {mixesToDisplay}
                 </div>
                 <div className='mix-page-ingredients-container'>
+                    <div className='mix-page-ingredients-tab-holders'>
+
+                    </div>
                     <div className='mix-page-ingredients-holder' id='cards'>
-                        {displayIngredients(sortedIngredients)}
+                        {displayIngredients(ingredients)}
                     </div>
                 </div>
             </div>
