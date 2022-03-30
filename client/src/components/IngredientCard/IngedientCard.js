@@ -38,12 +38,10 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                 let newMixes = {"mix": updatedMix}
                 setMixes(newMixes)
             }
-
      }
     }
 
     function addClick(){
-        console.log(ingredient)
         if(ingredient.ingredient_type!='Solid'){
             handleAddUpdatePartsCount(5)
         } else{
@@ -73,36 +71,22 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
         } 
     }
 
-    let countClass;
-    
-    switch (partsCount){
-        case 5:
-            countClass='count-max';
-            break;
-        case 4:
-        case 3:
-        case 2:
-        case 1:
-            countClass='count-active';
-            break;
-        default:
-            countClass='count'
-    }
 
-    let countClass2;
+
+    let countClass;
     if (ingredient.ingredient_type!='Solid'){
         if (partsCount===5){
-            countClass2='count-max';
+            countClass='count-max';
         } else if(partsCount>0){
-        countClass2='count-active';
+        countClass='count-active';
         } else {
-            countClass2='count'
+            countClass='count'
         }
     } else {
         if (partsCount===1){
-            countClass2='count-max';
+            countClass='count-max';
         } else{
-            countClass2='count';
+            countClass='count';
         }
     }
     
@@ -114,7 +98,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
                         <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick}/>
-                        <div className={countClass2}>{partsCount}</div>
+                        <div className={countClass}>{partsCount}</div>
                         <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png' onClick={addClick}/>
                     </div>
                 </div>

@@ -25,12 +25,14 @@ export default function MixPage({ingredients}) {
 
     let mixesToDisplay= sortedMix.map(mix=>{
         return(
-            <div key={mix["ingredient_id"]} className='mix-recipe'>{mix["ingredient_id"]}: {mix["parts"]}</div>
+            <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients[mix["ingredient_id"]-1].name}: {mix["parts"]}</div>
         )
     })
 
     function handleMixClick(){
         console.log(mixes.mix);
+        axios.post('/mix',mixes)
+        .then(r=>console.log(r))
     }
 
     function displayIngredients(data){
