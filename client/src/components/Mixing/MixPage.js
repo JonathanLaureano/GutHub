@@ -32,7 +32,7 @@ export default function MixPage({ingredients}) {
     function handleMixClick(){
         console.log(mixes.mix);
         axios.post('/mix',mixes)
-        .then(r=>console.log(r))
+        .then(r=>console.log(r.data[0]))
     }
 
     function displayIngredients(data){
@@ -50,6 +50,7 @@ export default function MixPage({ingredients}) {
                     {ingredientCardsRow(data.slice(30,33))}
                     {ingredientCardsRow(data.slice(33,36))}
                     {ingredientCardsRow(data.slice(36,39))}
+                    {ingredientCardsRow(data.slice(39,))}
                 </React.Fragment>}
     
         

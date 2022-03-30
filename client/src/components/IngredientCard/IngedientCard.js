@@ -2,6 +2,17 @@ import React, {useState} from "react";
 import './IngredientCard.css';
 
 export default function IngredientCard({ingredient,mixes,setMixes}){
+
+    function truncateDecimals (num, digits) {
+        let numS = num.toString(),
+            decPos = numS.indexOf('.'),
+            substrLength = decPos == -1 ? numS.length : 1 + decPos + digits,
+            trimmedResult = numS.substr(0, substrLength),
+            finalResult = isNaN(trimmedResult) ? 0 : trimmedResult;
+    
+        return parseFloat(finalResult);
+    }
+
     const images = require.context('../Images-Resized',true);
     let [partsCount,setPartsCount] = useState(0);
 
@@ -25,9 +36,10 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
     function handleAddUpdatePartsCount(num){
-        if (partsCount<num){
-            setPartsCount(partsCount+=1)
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+        let isFloat = partsCount.toString().indexOf('.') != -1;
+        if (isFloat){
+            setPartsCount(Math.ceil(partsCount))
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": Math.ceil(partsCount)}
             if (mixes.mix.length>0){
                 let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
                 let updatedMix= [...filteredMix,ingredientRecipe];
@@ -38,7 +50,23 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                 let newMixes = {"mix": updatedMix}
                 setMixes(newMixes)
             }
-     }
+        }
+        else{
+            if (partsCount<num){
+                setPartsCount(partsCount+=1)
+                let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+                if (mixes.mix.length>0){
+                    let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                    let updatedMix= [...filteredMix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                } else{
+                    let updatedMix= [...mixes.mix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                }
+         }    
+        }
     }
 
     function addClick(){
@@ -49,10 +77,56 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
         }
     }
 
+
+
     function subtractClick(){
-        if (partsCount>1) {
-            setPartsCount(partsCount-=1)
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+        let isFloat = partsCount.toString().indexOf('.') != -1;
+        if (isFloat){
+                setPartsCount(Math.floor(partsCount))
+                let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": Math.floor(partsCount)}
+                if (mixes.mix.length>0){
+                    let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                    let updatedMix= [...filteredMix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                } else{
+                    let updatedMix= [...mixes.mix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                }}
+        else{
+            if (partsCount>1) {
+                setPartsCount(partsCount-=1)
+                let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+                if (mixes.mix.length>0){
+                    let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                    let updatedMix= [...filteredMix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                } else{
+                    let updatedMix= [...mixes.mix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                }}
+             else if (partsCount==1){
+                setPartsCount(partsCount-=1)
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let newMixes = {"mix": filteredMix}
+                setMixes(newMixes)
+            } 
+    
+        }
+    }
+
+    function handleCountClick(e){
+        console.log(e.target)
+    }
+
+    function handleUpdatePartsCountOnInput(e){
+        let newValue = e.target.value;
+        setPartsCount(newValue);
+        if (newValue.toString().indexOf('.') != -1) {
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": truncateDecimals(parseFloat(newValue),2)}
             if (mixes.mix.length>0){
                 let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
                 let updatedMix= [...filteredMix,ingredientRecipe];
@@ -62,15 +136,41 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                 let updatedMix= [...mixes.mix,ingredientRecipe];
                 let newMixes = {"mix": updatedMix}
                 setMixes(newMixes)
-            }}
-         else if (partsCount=1){
-            setPartsCount(partsCount-=1)
+            }    
+        }else {
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": newValue}
+            if (mixes.mix.length>0){
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let updatedMix= [...filteredMix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            } else{
+                let updatedMix= [...mixes.mix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            }
+        }   
+    }
+
+    function handleOffFocusClick(e){
+        let newValue =e.target.value;
+        if (newValue >5){
+            setPartsCount(5);
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": 5}
+            let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+            let updatedMix= [...filteredMix,ingredientRecipe];
+            let newMixes = {"mix": updatedMix}
+            setMixes(newMixes)
+        } 
+        else if (newValue===''){
+            setPartsCount(0);
             let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
             let newMixes = {"mix": filteredMix}
             setMixes(newMixes)
+        } else if (newValue.toString().indexOf('.') != -1){
+            setPartsCount(truncateDecimals(parseFloat(newValue),2));
         } 
     }
-
 
 
     let countClass;
@@ -89,6 +189,24 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
             countClass='count';
         }
     }
+
+    let inputClass;
+    if (ingredient.ingredient_type!='Solid'){
+        if (partsCount===5){
+            inputClass='count-input-max';
+        } else if(partsCount>0){
+        inputClass='count-input-active';
+        } else {
+            inputClass='count-input'
+        }
+    } else {
+        if (partsCount===1){
+            inputClass='count-input-max';
+        } else{
+            inputClass='count-input';
+        }
+    }
+
     
     return(
         <React.Fragment>
@@ -98,7 +216,8 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
                         <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick}/>
-                        <div className={countClass}>{partsCount}</div>
+                        {/* <div onClick={handleCountClick} className={countClass}>{partsCount}</div> */}
+                        <input onBlur={handleOffFocusClick} className={inputClass} value={partsCount} onChange={handleUpdatePartsCountOnInput} type='number' min='0' max='5'></input>
                         <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png' onClick={addClick}/>
                     </div>
                 </div>
