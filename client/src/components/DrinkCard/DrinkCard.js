@@ -20,6 +20,13 @@ export default function DrinkCard({drink}){
             break;
         case 'Old Fashioned':
             imgClass2='drink-card-image oldfashioned'
+            break;
+        case 'Gin & Tonic':
+            imgClass2='drink-card-image gnt';
+            break;
+        case 'The Godfather':
+            imgClass2='drink-card-image godfather';
+            break;
         default:
             imgClass2='drink-card-image'
             

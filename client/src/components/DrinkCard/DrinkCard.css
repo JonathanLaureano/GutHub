@@ -34,8 +34,22 @@
 }
 
 .oldfashioned{
+    margin-top: -20%;
+    margin-left: 10%;
     height: 250px;
     width: 175px;
+}
+
+.gnt{
+    /* margin-top: -20%; */
+    margin-left: -30%;
+    height: 180px;
+    width: 450px;
+}
+
+.godfather{
+    height: 225px;
+    width: 225px;
 }
 
 .drink-card-text-info{
