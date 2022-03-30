@@ -127,6 +127,11 @@ Drink.create!([
         name: "The Godfather",
         image_url: "Godfather.png",
         user_id: 1
+    },
+    {
+        name: "Pink Lady",
+        image_url: "PinkLady.png",
+        user_id: 1
     }
 ])
 
@@ -331,6 +336,10 @@ Ingredient.create!([
         name: "Tomato Juice",
         image_url: "TomatoJuice.png",
         ingredient_type: "Liquid"
+    },
+    {   name: "Cherry",
+        image_url: "Cherry.png",
+        ingredient_type:"Solid"
     }
 ])
 
@@ -423,5 +432,9 @@ puts "Seeding Recipes..."
     Recipe.create!(drink_id: 20, ingredient_id: 3, parts: 1.33)
     Recipe.create!(drink_id: 20, ingredient_id: 5, parts: 0.33)
     Recipe.create!(drink_id: 20, ingredient_id: 17, parts: 1)
+    Recipe.create!(drink_id: 21, ingredient_id: 7, parts:1.33)
+    Recipe.create!(drink_id: 21, ingredient_id: 15, parts:.5)
+    Recipe.create!(drink_id: 21, ingredient_id: 18, parts:.5)
+    Recipe.create!(drink_id: 21, ingredient_id: 40, parts: 1)
 
 puts "Seeding Done!"
