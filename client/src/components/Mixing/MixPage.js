@@ -19,6 +19,10 @@ export default function MixPage({ingredients}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
+    function handleMixClick(){
+        console.log(mixes.mix);
+    }
+
     function displayIngredients(data){
                 return <React.Fragment>
                     {ingredientCardsRow(data.slice(0,3))}
@@ -55,7 +59,10 @@ export default function MixPage({ingredients}) {
             <div className='mix-page-title'>mixing</div>
             {/* <button onClick={scrollBot}>Test</button> */}
             <div className='mix-page-items-wrapper'>
-                <div className='mix-page-jug-container'></div>
+                <div className='mix-page-jug-container'>
+                    <button className='mix-button' onClick={handleMixClick}>MIX</button>
+
+                </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-holder' id='cards'>
                         {displayIngredients(ingredients)}
