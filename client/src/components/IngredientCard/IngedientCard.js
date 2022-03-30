@@ -4,6 +4,10 @@ import './IngredientCard.css';
 export default function IngredientCard({ingredient}){
     const images = require.context('../Images-Resized',true);
     let [partsCount,setPartsCount] = useState(0);
+    let [recipe,setRecipe] =useState({
+        "ingredient_id": ingredient.id,
+        "parts": partsCount 
+    })
     let imgClass;
 
     switch (ingredient.name) {
@@ -24,14 +28,23 @@ export default function IngredientCard({ingredient}){
     }
 
     function addClick(){
-        if (partsCount<10){setPartsCount(partsCount+=1)}
+        if (partsCount<10){
+            setPartsCount(partsCount+=1)
+            setRecipe({
+                "ingredient_id": ingredient.id,
+                "parts": partsCount 
+            })}
     }
 
     function subtractClick(){
-        if (partsCount>0) {setPartsCount(partsCount-=1)}
-    }
+        if (partsCount>0) {
+            setPartsCount(partsCount-=1)
+            setRecipe({
+                "ingredient_id": ingredient.id,
+                "parts": partsCount 
+            })}    
+        }
     
-
     return(
         <React.Fragment>
             <div className="ingredient-card-container">
