@@ -15,7 +15,7 @@
 
 .mix-page-jug-container{
     margin-top: -.5%;
-    margin-left: -20%;
+    /* margin-left: -20%; */
     margin-right: 2.5%;
     width: 30%;
     height: 78.5vh;
@@ -35,8 +35,8 @@
 }
 
 .mix-page-ingredients-holder{
-    margin-top: -.5%;
-    width: 150%;
+    margin-top: -.75%;
+    width: 85vh;
     height: 78.5vh;
     border-radius: 10px;
     background-color: rgb(23, 23, 32);
