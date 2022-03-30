@@ -2,6 +2,17 @@ import React, {useState} from "react";
 import './IngredientCard.css';
 
 export default function IngredientCard({ingredient,mixes,setMixes}){
+
+    function truncateDecimals (num, digits) {
+        let numS = num.toString(),
+            decPos = numS.indexOf('.'),
+            substrLength = decPos == -1 ? numS.length : 1 + decPos + digits,
+            trimmedResult = numS.substr(0, substrLength),
+            finalResult = isNaN(trimmedResult) ? 0 : trimmedResult;
+    
+        return parseFloat(finalResult);
+    }
+
     const images = require.context('../Images-Resized',true);
     let [partsCount,setPartsCount] = useState(0);
 
@@ -112,11 +123,10 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
     function handleUpdatePartsCountOnInput(e){
-        // let updatedCount = partsCount.toString().indexOf('.') != -1? parseFloat(e.target.value).toFixed(2):e.target.value;
         let newValue = e.target.value;
         setPartsCount(newValue);
         if (newValue.toString().indexOf('.') != -1) {
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": parseFloat(newValue).toFixed(2)}
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": truncateDecimals(parseFloat(newValue),2)}
             if (mixes.mix.length>0){
                 let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
                 let updatedMix= [...filteredMix,ingredientRecipe];
@@ -144,14 +154,22 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
 
     function handleOffFocusClick(e){
         let newValue =e.target.value;
-        if (newValue===''){
+        if (newValue >5){
+            setPartsCount(5);
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": 5}
+            let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+            let updatedMix= [...filteredMix,ingredientRecipe];
+            let newMixes = {"mix": updatedMix}
+            setMixes(newMixes)
+        } 
+        else if (newValue===''){
             setPartsCount(0);
             let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
             let newMixes = {"mix": filteredMix}
             setMixes(newMixes)
         } else if (newValue.toString().indexOf('.') != -1){
-            setPartsCount(parseFloat(newValue).toFixed(2));
-        }
+            setPartsCount(truncateDecimals(parseFloat(newValue),2));
+        } 
     }
 
 
