@@ -24,7 +24,9 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
                     {drinkCardsRow(data.slice(8,12))}
                     {drinkCardsRow(data.slice(12,16))}
                     {drinkCardsRow(data.slice(16,20))}
-                    {drinkCardsRow(data.slice(20,))}
+                    {drinkCardsRow(data.slice(20,24))}
+                    {drinkCardsRow(data.slice(24,28))}
+                    {drinkCardsRow(data.slice(28,32))}
                 </React.Fragment>}
             else if (data.length>=16)
                 {return <React.Fragment>

@@ -147,6 +147,16 @@ Drink.create!([
         name: "Mimosa",
         image_url: "Mimosa.png",
         user_id: 1
+    },
+    {
+        name: "Moscow Mule",
+        image_url: "MoscowMule.png",
+        user_id: 1
+    },
+    {
+        name: "Dirty Shirley",
+        image_url: "DirtyShirley.png",
+        user_id: 1
     }
 ])
 
@@ -360,6 +370,16 @@ Ingredient.create!([
         name: "Champagne",
         image_url: "Champagne.png",
         ingredient_type: "Alcohol"
+    },
+    {
+        name: "Ginger Beer",
+        image_url: "GingerBeer.png",
+        ingredient_type: "Alcohol"
+    },
+    {
+        name: "Ginger Ale",
+        image_url: "GingerAle.png",
+        ingredient_type: 'Liquid'
     }
 ])
 
@@ -462,7 +482,14 @@ puts "Seeding Recipes..."
     Recipe.create!(drink_id: 23, ingredient_id: 13, parts: 1.33)
     Recipe.create!(drink_id: 23, ingredient_id: 16, parts: 2.66)
     Recipe.create!(drink_id: 23, ingredient_id: 37, parts: 1)
-    Recipe.create!(drink_id: 24, ingredient_id: 42, parts: 2)
     Recipe.create!(drink_id: 24, ingredient_id: 12, parts: 1)
+    Recipe.create!(drink_id: 24, ingredient_id: 42, parts: 2)
+    Recipe.create!(drink_id: 25, ingredient_id: 4, parts: 1.33)
+    Recipe.create!(drink_id: 25, ingredient_id: 15, parts: 0.5)
+    Recipe.create!(drink_id: 25, ingredient_id: 39, parts: 1)
+    Recipe.create!(drink_id: 25, ingredient_id: 43, parts: 2.66)
+    Recipe.create!(drink_id: 26, ingredient_id: 4, parts: 1.33)
+    Recipe.create!(drink_id: 26, ingredient_id: 44, parts: 5)
+    Recipe.create!(drink_id: 26, ingredient_id: 41, parts: 1)
 
 puts "Seeding Done!"

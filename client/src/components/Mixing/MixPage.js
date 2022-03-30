@@ -53,7 +53,9 @@ export default function MixPage({ingredients,setIngredients}) {
                     {ingredientCardsRow(data.slice(30,33))}
                     {ingredientCardsRow(data.slice(33,36))}
                     {ingredientCardsRow(data.slice(36,39))}
-                    {ingredientCardsRow(data.slice(39,))}
+                    {ingredientCardsRow(data.slice(39,42))}
+                    {ingredientCardsRow(data.slice(42,45))}
+                    {ingredientCardsRow(data.slice(45,48))}
                 </React.Fragment>}
     
         
