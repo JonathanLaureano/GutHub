@@ -31,7 +31,12 @@ export default function IngredientCard({ingredient}){
                 <img className={imgClass} src={images('./'+ingredient.image_url)}/>
                 <div className="ingredient-card-text-info">
                     <div className="ingredient-card-name">{ingredient.name}</div>
-                    <div className="ingredient-card-partsCount">{partsCount}</div>
+                    <div className="ingredient-card-partsCount">
+                        <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png'/>
+                        <div className="count">{partsCount}</div>
+                        {/* <div className="add">+</div> */}
+                        <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png'/>
+                    </div>
                 </div>
             </div>
         </React.Fragment>

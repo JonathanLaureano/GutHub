@@ -7,7 +7,7 @@
     background-position: center;
     cursor: pointer;
     transition: color .5s;
-    display: flex;
+    display: grid;
     flex-direction: column;
 }
 
@@ -52,6 +52,7 @@
     /* border-radius: 10px; */
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    z-index: 2;
 }
 
 .ingredient-card-name{
@@ -62,6 +63,44 @@
 }
 
 .ingredient-card-partsCount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'Shippori Mincho', serif;
     color: #fff;
-    background-color: rgb(39, 39, 43);
+    /* font-size: larger;     */
+    font-weight: bold;
+    margin-bottom: -10%;
+}
+
+.count{
+    font-size: larger;
+}
+
+.subtract{
+    margin-left: 10%;
+    font-weight:900;
+    height: 50%;
+}
+
+.subtract:hover{
+    box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    border-radius: 100%;
+    transition: .15s;
+    height: 55%;
+}
+
+.add {
+    /* margin-left: -5%; */
+    margin-right: 10%;
+    /* transition: .5s; */
+    height: 50%;
+}
+
+.add:hover{
+    color: rgb(242, 255, 238);
+    box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #98ff44, 0 0 0.5em #98ff44, 0 0 0.1em #98ff44, 0 10px 3px #000;  
+    border-radius: 100%;
+    transition: .15s;
+    height: 55%;
 }
