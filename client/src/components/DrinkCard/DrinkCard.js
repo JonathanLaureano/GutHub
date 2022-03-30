@@ -26,7 +26,6 @@ export default function DrinkCard({drink}){
             break;
         default:
             imgClass='drink-card-image'
-            
     }
     
     return(
