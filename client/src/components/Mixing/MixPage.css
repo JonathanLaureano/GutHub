@@ -35,7 +35,7 @@
 }
 
 .mix-page-ingredients-holder{
-    margin-top: -.75%;
+    margin-top: -1.15%;
     width: 85vh;
     height: 78.5vh;
     border-radius: 10px;
@@ -58,7 +58,8 @@
   
 .mix-page-ingredients-cards-container{
     /* margin-left: 1%; */
-    margin-top: 1.15%;
+    margin-top: 3%;
+    margin-bottom: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-around
