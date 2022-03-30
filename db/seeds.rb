@@ -127,6 +127,26 @@ Drink.create!([
         name: "The Godfather",
         image_url: "Godfather.png",
         user_id: 1
+    },
+    {
+        name: "Pink Lady",
+        image_url: "PinkLady.png",
+        user_id: 1
+    },
+    {
+        name: "Jack & Coke",
+        image_url: "Jack&Coke.png",
+        user_id: 1
+    },
+    {
+        name: "Bay Breeze",
+        image_url: "BayBreeze.png",
+        user_id: 1
+    },
+    {
+        name: "Mimosa",
+        image_url: "Mimosa.png",
+        user_id: 1
     }
 ])
 
@@ -331,6 +351,15 @@ Ingredient.create!([
         name: "Tomato Juice",
         image_url: "TomatoJuice.png",
         ingredient_type: "Liquid"
+    },
+    {   name: "Cherry",
+        image_url: "Cherry.png",
+        ingredient_type:"Solid"
+    },
+    {
+        name: "Champagne",
+        image_url: "Champagne.png",
+        ingredient_type: "Alcohol"
     }
 ])
 
@@ -423,5 +452,17 @@ puts "Seeding Recipes..."
     Recipe.create!(drink_id: 20, ingredient_id: 3, parts: 1.33)
     Recipe.create!(drink_id: 20, ingredient_id: 5, parts: 0.33)
     Recipe.create!(drink_id: 20, ingredient_id: 17, parts: 1)
+    Recipe.create!(drink_id: 21, ingredient_id: 7, parts:1.33)
+    Recipe.create!(drink_id: 21, ingredient_id: 15, parts:0.5)
+    Recipe.create!(drink_id: 21, ingredient_id: 18, parts:0.5)
+    Recipe.create!(drink_id: 21, ingredient_id: 41, parts: 1)
+    Recipe.create!(drink_id: 22, ingredient_id: 8, parts: 1)
+    Recipe.create!(drink_id: 22, ingredient_id: 21, parts: 3)
+    Recipe.create!(drink_id: 23, ingredient_id: 4, parts: 1.33)
+    Recipe.create!(drink_id: 23, ingredient_id: 13, parts: 1.33)
+    Recipe.create!(drink_id: 23, ingredient_id: 16, parts: 2.66)
+    Recipe.create!(drink_id: 23, ingredient_id: 37, parts: 1)
+    Recipe.create!(drink_id: 24, ingredient_id: 42, parts: 2)
+    Recipe.create!(drink_id: 24, ingredient_id: 12, parts: 1)
 
 puts "Seeding Done!"
