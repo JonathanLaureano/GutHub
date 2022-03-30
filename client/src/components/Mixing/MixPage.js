@@ -19,6 +19,10 @@ export default function MixPage({ingredients,setIngredients}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
+    let sortedIngredients = ingredients.sort((ingred1,ingred2)=>{
+        return ingred1.ingredient_type.localeCompare(ingred2.ingredient_type)
+    })
+
     let sortedMix = mixes.mix.sort((recipe1,recipe2)=>{
         return parseInt(recipe1["ingredient_id"]) - parseInt(recipe2["ingredient_id"])
     })
@@ -90,7 +94,7 @@ export default function MixPage({ingredients,setIngredients}) {
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-holder' id='cards'>
-                        {displayIngredients(ingredients)}
+                        {displayIngredients(sortedIngredients)}
                     </div>
                 </div>
             </div>
