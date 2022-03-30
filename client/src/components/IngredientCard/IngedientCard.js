@@ -87,9 +87,24 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
             break;
         default:
             countClass='count'
-
     }
-    // = partsCount != 0?'count-active':'count'
+
+    let countClass2;
+    if (ingredient.ingredient_type!='Solid'){
+        if (partsCount===5){
+            countClass2='count-max';
+        } else if(partsCount>0){
+        countClass2='count-active';
+        } else {
+            countClass2='count'
+        }
+    } else {
+        if (partsCount===1){
+            countClass2='count-max';
+        } else{
+            countClass2='count';
+        }
+    }
     
     return(
         <React.Fragment>
@@ -99,7 +114,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
                         <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick}/>
-                        <div className={countClass}>{partsCount}</div>
+                        <div className={countClass2}>{partsCount}</div>
                         <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png' onClick={addClick}/>
                     </div>
                 </div>
