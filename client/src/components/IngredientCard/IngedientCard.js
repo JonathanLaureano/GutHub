@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './IngredientCard.css';
 
-export default function IngredientCard({ingredient}){
+export default function IngredientCard({ingredient,mixes,setMixes}){
     const images = require.context('../Images-Resized',true);
     let [partsCount,setPartsCount] = useState(0);
     let [recipe,setRecipe] =useState({
@@ -10,8 +10,7 @@ export default function IngredientCard({ingredient}){
     })
     let imgClass;
 
-    let mixes={"mix":[
-    ]}
+    let allMixes = mixes.mix;
 
     switch (ingredient.name) {
         case "Gin":
@@ -34,15 +33,29 @@ export default function IngredientCard({ingredient}){
         if (partsCount<10){
             setPartsCount(partsCount+=1)
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
-            mixes.mix.push(ingredientRecipe)
-            console.log(mixes.mix)
-            setRecipe(ingredientRecipe)}
-    }
+            if (mixes.mix.length>0){
+                console.log(mixes.mix)
+                let filteredMixes = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                console.log(filteredMixes)
+                let updatedMix= [...filteredMixes,ingredientRecipe];
+                console.log(updatedMix)
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+                // console.log(mixes.mix)    
+            } else{
+                let updatedMix= [...mixes.mix,ingredientRecipe];
+                // console.log(updatedMix)
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+                // console.log(mixes.mix)
+            }
+    }}
 
     function subtractClick(){
         if (partsCount>1) {
             setPartsCount(partsCount-=1)
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+            mixes.mix.filter(mix=> mix.ingredient_id==ingredient.id)
             mixes.mix.push(ingredientRecipe)
             console.log(mixes.mix)
             setRecipe(ingredientRecipe)}

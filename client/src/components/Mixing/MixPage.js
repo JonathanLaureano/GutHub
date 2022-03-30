@@ -16,6 +16,9 @@ function scrollBot() {
 
 export default function MixPage({ingredients}) {
 
+    let [mixes,setMixes]=useState({"mix":[
+    ]});
+
     function displayIngredients(data){
                 return <React.Fragment>
                     {ingredientCardsRow(data.slice(0,3))}
@@ -40,6 +43,8 @@ export default function MixPage({ingredients}) {
                 return (<IngredientCard
                     ingredient={ingredient}
                     key={ingredient.id}
+                    mixes={mixes}
+                    setMixes={setMixes}
                 />)
             })}
         </div>
