@@ -74,9 +74,24 @@
 }
 
 .count{
+
     font-size: larger;
     margin-top: -1.75%;
+    transition: .5s;
+}
+
+.count-active{
+    font-size: larger;
+    margin-top: -1.75%;
+    transition: .5s;
     color: #f3b37f;
+}
+
+.count-max{
+    font-size: larger;
+    margin-top: -1.75%;
+    transition: .5s;
+    color: #f37f7f;
 }
 
 .subtract{
@@ -86,10 +101,10 @@
 }
 
 .subtract:hover{
-    box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em rgba(255, 66, 66, 0.137), 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 0px 0px #000;
     border-radius: 100%;
     transition: .15s;
-    height: 55%;
+    /* height: 55%; */
 }
 
 .add {
@@ -101,8 +116,8 @@
 
 .add:hover{
     color: rgb(242, 255, 238);
-    box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #98ff44, 0 0 0.5em #98ff44, 0 0 0.1em #98ff44, 0 10px 3px #000;  
+    box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em rgba(152, 255, 68, 0.137), 0 0 0.5em #98ff44, 0 0 0.1em #98ff44, 0 0px 0px #000;  
     border-radius: 100%;
     transition: .15s;
-    height: 55%;
+    /* height: 55%; */
 }
