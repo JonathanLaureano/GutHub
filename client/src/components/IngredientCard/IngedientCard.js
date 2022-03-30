@@ -24,8 +24,8 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
             imgClass='ingredient-card-image'
     }
 
-    function addClick(){
-        if (partsCount<5){
+    function handleAddUpdatePartsCount(num){
+        if (partsCount<num){
             setPartsCount(partsCount+=1)
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
             if (mixes.mix.length>0){
@@ -38,7 +38,18 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                 let newMixes = {"mix": updatedMix}
                 setMixes(newMixes)
             }
-    }}
+
+     }
+    }
+
+    function addClick(){
+        console.log(ingredient)
+        if(ingredient.ingredient_type!='Solid'){
+            handleAddUpdatePartsCount(5)
+        } else{
+            handleAddUpdatePartsCount(1)
+        }
+    }
 
     function subtractClick(){
         if (partsCount>1) {
