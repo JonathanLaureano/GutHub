@@ -25,7 +25,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
     function addClick(){
-        if (partsCount<10){
+        if (partsCount<5){
             setPartsCount(partsCount+=1)
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
             if (mixes.mix.length>0){
@@ -61,6 +61,24 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
             setMixes(newMixes)
         } 
     }
+
+    let countClass;
+    
+    switch (partsCount){
+        case 5:
+            countClass='count-max';
+            break;
+        case 4:
+        case 3:
+        case 2:
+        case 1:
+            countClass='count-active';
+            break;
+        default:
+            countClass='count'
+
+    }
+    // = partsCount != 0?'count-active':'count'
     
     return(
         <React.Fragment>
@@ -70,7 +88,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
                         <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick}/>
-                        <div className="count">{partsCount}</div>
+                        <div className={countClass}>{partsCount}</div>
                         <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png' onClick={addClick}/>
                     </div>
                 </div>
