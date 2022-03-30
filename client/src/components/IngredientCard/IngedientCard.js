@@ -25,9 +25,10 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
     function handleAddUpdatePartsCount(num){
-        if (partsCount<num){
-            setPartsCount(partsCount+=1)
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+        let isFloat = partsCount.toString().indexOf('.') != -1;
+        if (isFloat){
+            setPartsCount(Math.ceil(partsCount))
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": Math.ceil(partsCount)}
             if (mixes.mix.length>0){
                 let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
                 let updatedMix= [...filteredMix,ingredientRecipe];
@@ -38,7 +39,23 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                 let newMixes = {"mix": updatedMix}
                 setMixes(newMixes)
             }
-     }
+        }
+        else{
+            if (partsCount<num){
+                setPartsCount(partsCount+=1)
+                let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+                if (mixes.mix.length>0){
+                    let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                    let updatedMix= [...filteredMix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                } else{
+                    let updatedMix= [...mixes.mix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                }
+         }    
+        }
     }
 
     function addClick(){
@@ -49,28 +66,75 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
         }
     }
 
+
+
     function subtractClick(){
-        if (partsCount>1) {
-            setPartsCount(partsCount-=1)
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
-            if (mixes.mix.length>0){
+        let isFloat = partsCount.toString().indexOf('.') != -1;
+        if (isFloat){
+                setPartsCount(Math.floor(partsCount))
+                let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": Math.floor(partsCount)}
+                if (mixes.mix.length>0){
+                    let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                    let updatedMix= [...filteredMix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                } else{
+                    let updatedMix= [...mixes.mix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                }}
+        else{
+            if (partsCount>1) {
+                setPartsCount(partsCount-=1)
+                let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": partsCount}
+                if (mixes.mix.length>0){
+                    let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                    let updatedMix= [...filteredMix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                } else{
+                    let updatedMix= [...mixes.mix,ingredientRecipe];
+                    let newMixes = {"mix": updatedMix}
+                    setMixes(newMixes)
+                }}
+             else if (partsCount==1){
+                setPartsCount(partsCount-=1)
                 let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
-                let updatedMix= [...filteredMix,ingredientRecipe];
-                let newMixes = {"mix": updatedMix}
+                let newMixes = {"mix": filteredMix}
                 setMixes(newMixes)
-            } else{
-                let updatedMix= [...mixes.mix,ingredientRecipe];
-                let newMixes = {"mix": updatedMix}
-                setMixes(newMixes)
-            }}
-         else if (partsCount=1){
-            setPartsCount(partsCount-=1)
+            } 
+    
+        }
+    }
+
+    function handleCountClick(e){
+        console.log(e.target)
+    }
+
+    function handleUpdatePartsCountOnInput(e){
+        let updatedCount = partsCount.toString().indexOf('.') != -1? parseFloat(e.target.value).toFixed(2):e.target.value
+        setPartsCount(updatedCount);
+        let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": updatedCount}
+        if (mixes.mix.length>0){
+            let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+            let updatedMix= [...filteredMix,ingredientRecipe];
+            let newMixes = {"mix": updatedMix}
+            setMixes(newMixes)
+        } else{
+            let updatedMix= [...mixes.mix,ingredientRecipe];
+            let newMixes = {"mix": updatedMix}
+            setMixes(newMixes)
+        }
+    }
+
+    function handleOffFocusClick(e){
+        if (e.target.value===''){
+            setPartsCount(0);
             let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
             let newMixes = {"mix": filteredMix}
             setMixes(newMixes)
-        } 
+        }
     }
-
 
 
     let countClass;
@@ -89,6 +153,24 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
             countClass='count';
         }
     }
+
+    let inputClass;
+    if (ingredient.ingredient_type!='Solid'){
+        if (partsCount===5){
+            inputClass='count-input-max';
+        } else if(partsCount>0){
+        inputClass='count-input-active';
+        } else {
+            inputClass='count-input'
+        }
+    } else {
+        if (partsCount===1){
+            inputClass='count-input-max';
+        } else{
+            inputClass='count-input';
+        }
+    }
+
     
     return(
         <React.Fragment>
@@ -98,7 +180,8 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
                         <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick}/>
-                        <div className={countClass}>{partsCount}</div>
+                        {/* <div onClick={handleCountClick} className={countClass}>{partsCount}</div> */}
+                        <input onBlur={handleOffFocusClick} className={inputClass} value={partsCount} onChange={handleUpdatePartsCountOnInput} type='number' min='0' max='5'></input>
                         <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png' onClick={addClick}/>
                     </div>
                 </div>
