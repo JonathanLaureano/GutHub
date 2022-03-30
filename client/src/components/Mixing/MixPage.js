@@ -85,7 +85,7 @@ export default function MixPage({ingredients,setIngredients}) {
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
                     <button className='mix-button' onClick={handleMixClick}>MIX</button>
-                    <button onClick={resetIngredients}>Reset</button>
+                    <button className='reset-mix' onClick={resetIngredients}>RESET</button>
                                 {mixesToDisplay}
                 </div>
                 <div className='mix-page-ingredients-container'>

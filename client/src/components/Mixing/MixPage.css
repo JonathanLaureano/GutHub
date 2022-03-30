@@ -94,18 +94,18 @@
     padding-bottom: 7%;
     transition: .35s ease-in-out;
     /* opacity: .5; */
-    border-radius:5px;
+    border-radius:10px;
     text-align: center;
     width: fit-content;
     font-size:300%;
-    color: aqua;
+    color: #fff;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
-
+    margin-top: 5%;
 }
   
 .mix-button:hover{
     opacity: .75;
-    color: #fff;
+    color: aqua;
     cursor: pointer;
 }
 
@@ -118,4 +118,36 @@
     color: #fff;
     font-family: 'Shippori Mincho', serif;
     font-size: larger;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.reset-mix{
+    margin-top: 5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    background-color: rgb(17, 17, 17);
+    /* width: 25%; */
+    padding-left: 10%;
+    padding-right: 10%;
+    /* padding-bottom: 1%; */
+    transition: .35s ease-in-out;
+    /* opacity: .5; */
+    border-radius:5px;
+    font-size:150%;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 3.25%;
+
+}
+  
+.reset-mix:hover{
+    opacity: .75;
+    color: rgb(252, 7, 101);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    cursor: pointer;
 }
