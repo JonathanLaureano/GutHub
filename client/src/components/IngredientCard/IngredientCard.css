@@ -127,32 +127,39 @@
 .count-input{
     background-color: transparent;
     border: none;
-    width: 30%; 
+    width: 25%; 
     color: #fff;
     /* font-size: larger; */
-    margin-top: -1.75%;
+    margin-top: -.6%;
     transition: .5s;
     text-align: center;
+    font-size: larger;
+    height: 60%;
 }
 
 .count-input-active{
     background-color: transparent;
-    width: 30%; 
+    width: 25%; 
     border: none;
     /* font-size: larger; */
-    margin-top: -1.75%;
+    margin-top: -.6%;
     transition: .5s;
     text-align: center;
+    font-size: larger;
+    height: 60%;
     color: #f3b37f;
 }
 
 .count-input-max{
     background-color: transparent;
     border: none;
+    width: 25%; 
     /* font-size: larger; */
-    margin-top: -1.75%;
+    margin-top: -.6%;
     transition: .5s;
     text-align: center;
+    font-size: larger;
+    height: 60%;
     color: #f37f7f;
 }
 
