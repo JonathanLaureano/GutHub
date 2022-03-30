@@ -19,9 +19,13 @@ export default function MixPage({ingredients}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
-    let mixesToDisplay=mixes.mix.map(mix=>{
+    let sortedMix = mixes.mix.sort((recipe1,recipe2)=>{
+        return parseInt(recipe1["ingredient_id"]) - parseInt(recipe2["ingredient_id"])
+    })
+
+    let mixesToDisplay= sortedMix.map(mix=>{
         return(
-            <div className='mix-recipe'>{mix["ingredient_id"]}: {mix["parts"]}</div>
+            <div key={mix["ingredient_id"]} className='mix-recipe'>{mix["ingredient_id"]}: {mix["parts"]}</div>
         )
     })
 
