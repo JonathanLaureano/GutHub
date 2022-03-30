@@ -92,9 +92,11 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
     
 
     let searchResultsCardClass = searchResults.length<=8?'search-results-card frozen':'search-results-card'
+    let titleClass= searchResults.length==0?'search-results-title-off':'search-results-title'
+
     return (
         <React.Fragment>
-            <div className={searchResults.length==0?'search-results-title-off':'search-results-title'}>Search Results</div>
+            <div className={titleClass}>Search Results</div>
             <div className='search-title-wrapper'>
             <form onSubmit={handleSearchSubmit}><input 
                     type='text'

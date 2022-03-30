@@ -1,11 +1,21 @@
 .mix-page-title{
-    color: #fff;
     color: rgb(219, 205, 205);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     font-size: 300%;
     margin-top: .5%;
     font: 100 10vh "Vibur";
     cursor: default;
+    transition: .75s;
+}
+
+.mix-page-title-off{
+    color: inherit;
+    text-shadow: inherit;    
+    font-size: 300%;
+    margin-top: .5%;
+    font: 100 10vh "Vibur";
+    cursor: default;
+    transition: .75s;
 }
 
 .mix-page-items-wrapper{
@@ -27,6 +37,10 @@
     background-position: center;
     box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
     z-index: 10;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 
 }
 
@@ -93,4 +107,15 @@
     opacity: .75;
     color: #fff;
     cursor: pointer;
+}
+
+
+.mix-recipe{
+    margin-top: 1.25%;
+    background-color: rgb(15, 15, 15);
+    border-radius: 10px;
+    width: 80%;
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-size: larger;
 }
