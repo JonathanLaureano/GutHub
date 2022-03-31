@@ -6,7 +6,7 @@ import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
-export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix}) {
+export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
@@ -84,8 +84,8 @@ export default function MixPage({ingredients,setIngredients,showDrinkModal,setSh
         })  
 }
 
-    let titleClass = mixes.mix.length==0 || showDrinkModal ?'mix-page-title-off':'mix-page-title'
-    let buttonClass = showDrinkModal ?'go-home-mix-page-button-off':'go-home-mix-page-button'
+    let titleClass = mixes.mix.length==0 || showDrinkModal || showProfileModal ?'mix-page-title-off':'mix-page-title'
+    let buttonClass = showDrinkModal || showProfileModal ?'go-home-mix-page-button-off':'go-home-mix-page-button'
 
 
     function clickOffModal(){

@@ -14,7 +14,7 @@ function scrollBot() {
 
 
 
-export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}) {
+export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal}) {
 
     function displayDrinks(data){
             if (data.length>=20) {
@@ -98,8 +98,8 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
     
 
     let searchResultsCardClass = searchResults.length<=8 ?'search-results-card frozen':'search-results-card'
-    let titleClass= searchResults.length==0||showDrinkModal?'search-results-title-off':'search-results-title'
-    let buttonClass = showDrinkModal?'go-home-button-off':'go-home-button'
+    let titleClass= searchResults.length==0||showDrinkModal ||showProfileModal?'search-results-title-off':'search-results-title'
+    let buttonClass = showDrinkModal||showProfileModal?'go-home-button-off':'go-home-button'
 
     return (
         <React.Fragment>

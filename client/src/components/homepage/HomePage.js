@@ -10,7 +10,7 @@ import MixPage from '../Mixing/MixPage';
 import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 
 
-export default function HomePage({drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive}){
+export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal}){
     document.title = 'GutHub - Home';
 
     function handleSignIn(){
@@ -35,6 +35,7 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
 
     function clickOffModal(){
         setShowDrinkModal(false);
+        setShowProfileModal(false)
     }
 
     function clickMixActivateButton(){
@@ -88,7 +89,10 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
             {showDrinkModal?<div className='modal-container'>
                 <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
             </div>:null}
-            {showDrinkModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
+            {showProfileModal?<div className='modal-container'>
+                <ProfileModal profile={user} setShowProfileModal={setShowProfileModal}/>
+            </div>:null}
+            {showDrinkModal || showProfileModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
             {searchActive?<ResultsPage 
                 searchActive={searchActive}
                 searchResults={searchResults}
@@ -102,6 +106,7 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
                 setShowDrinkModal={setShowDrinkModal}    
                 selectedDrink={selectedDrink}
                 setSelectedDrink={setSelectedDrink}    
+                showProfileModal={showProfileModal}
             />:null}
             {mixActive?<MixPage
                 ingredients={ingredients}
@@ -111,6 +116,7 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
                 selectedDrink={selectedDrink}
                 setSelectedDrink={setSelectedDrink}
                 scrollTopMix={scrollTopMix}
+                showProfileModal={showProfileModal}
             />:null}
 
 

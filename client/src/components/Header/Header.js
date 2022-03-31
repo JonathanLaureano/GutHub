@@ -5,17 +5,20 @@ import axios from 'axios';
 import SignInModal from '../SignInModal/SignInModal';
 import UserIcon from './user-icon.png'
 
-export default function Header({signedIn,setSignedIn}){
+export default function Header({signedIn,setSignedIn,showProfileModal,setShowProfileModal}){
 
     let history=useHistory();
 
     function handleProfileClick(){
-        history.push('/profile');
+        // history.push('/profile');
+        setShowProfileModal(true)
+        console.log('working')
     }
 
     function handleLogOut(){
         setSignedIn(false)
     }
+
 
     return(
         <React.Fragment>

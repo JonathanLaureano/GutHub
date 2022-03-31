@@ -79,10 +79,17 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
 
-
+    // ! Remove ingredient if partsCount <1 && >0
     function subtractClick(){
         let isFloat = partsCount.toString().indexOf('.') != -1;
         if (isFloat){
+            if (partsCount<1 && partsCount>0){
+                setPartsCount(0)
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let newMixes = {"mix": filteredMix}
+                setMixes(newMixes)
+            }
+            else{
                 setPartsCount(Math.floor(partsCount))
                 let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": Math.floor(partsCount)}
                 if (mixes.mix.length>0){
@@ -95,6 +102,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                     let newMixes = {"mix": updatedMix}
                     setMixes(newMixes)
                 }}
+            }
         else{
             if (partsCount>1) {
                 setPartsCount(partsCount-=1)
@@ -115,7 +123,6 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
                 let newMixes = {"mix": filteredMix}
                 setMixes(newMixes)
             } 
-    
         }
     }
 

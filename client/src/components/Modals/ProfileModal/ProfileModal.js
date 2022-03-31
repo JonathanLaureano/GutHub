@@ -15,7 +15,7 @@ export default function ProfileModal({profile,setShowProfileModal}){
         setShowProfileModal(false);
     }
 
-    let profileNameClass= profile.name?'modal-profile-name long':'modal-profile-name'
+    let profileNameClass= profile.first_name?'modal-profile-name long':'modal-profile-name'
 
     return(
             <div className="modal-card">
@@ -26,14 +26,15 @@ export default function ProfileModal({profile,setShowProfileModal}){
                     <div className="modal-right">   
                         <div className={profileNameClass}>{profile.first_name} {profile.last_name}</div>
                         <hr></hr>
-                        <div className="modal-profile-recipe-title">Recipe: </div>
+                        <div className="modal-profile-details"><l>Email:</l> {profile.username}</div>
+                        <div className="modal-profile-details"><l>Bio:</l> {profile.description}</div>
                         {/* <div className="modal-profile-recipe-wrapper">
                             {recipesToDisplay}
                         </div> */}
                     </div>
                 </div>
                 <div className="modal-bot"> 
-                    <button className="favorite-button">FAVORITE Profile</button>
+                    <button className="favorite-button">BUTTON</button>
                     <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
                 </div>
             </div>

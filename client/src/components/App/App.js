@@ -196,10 +196,14 @@ function App() {
       {signedIn ? <Header
         signedIn={signedIn}
         setSignedIn={setSignedIn}
+        showProfileModal={showProfileModal}
+        setShowProfileModal={setShowProfileModal}
       /> : null}
       <Switch>
         <Route exact path='/'>
           <HomePage
+            user={user}
+            setUser={setUser}
             drinks={drinks}
             setDrinks={drinks}
             ingredients={ingredients}
@@ -241,6 +245,8 @@ function App() {
             setSelectedDrink={setSelectedDrink}
             mixActive={mixActive}
             setMixActive={setMixActive}
+            showProfileModal={showProfileModal}
+            setShowProfileModal={setShowProfileModal}
           />
         </Route>
         <Route path='/profile'>

@@ -13,10 +13,14 @@
     font-size: 300%;
 }
 
-.modal-profile-recipe-title{
+.modal-profile-details{
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
     color: #fff;
+}
+
+.modal-profile-details l{
+    color:rgb(128, 126, 126)
 }
 
 .modal-profile-recipe-wrapper{
