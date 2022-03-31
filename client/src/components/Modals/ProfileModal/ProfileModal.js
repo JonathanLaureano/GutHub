@@ -24,7 +24,7 @@ export default function ProfileModal({profile,setShowProfileModal}){
                         <img src={images('./'+profile.image_url)} className="modal-profile-image"/>
                     </div>
                     <div className="modal-right">   
-                        <div className={profileNameClass}>{profile.name}</div>
+                        <div className={profileNameClass}>{profile.first_name} {profile.last_name}</div>
                         <hr></hr>
                         <div className="modal-profile-recipe-title">Recipe: </div>
                         {/* <div className="modal-profile-recipe-wrapper">

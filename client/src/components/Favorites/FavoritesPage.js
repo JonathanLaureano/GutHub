@@ -19,7 +19,7 @@ export default function FavoritesPage({user,showProfileModal,setShowProfileModal
         <React.Fragment>
             {showProfileModal?null:<button onClick={clickButton}>SHOW MODAL</button>}
             {showProfileModal?<div onClick={clickAway} className="modal-curtain"></div>:null}
-            {showProfileModal?<div className='mock-container'>
+            {showProfileModal?<div className='modal-container'>
                 <ProfileModal setShowProfileModal={setShowProfileModal} profile={user}/>
             </div>:null}
         </React.Fragment>

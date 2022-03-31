@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -55%;
+    margin-top: -35%;
     margin-left: 15vw;
     z-index: 10;
 }
@@ -23,7 +23,7 @@
 }
 
 .modal-curtain{
-    margin-top: -60.5%;
+    margin-top: -38%;
     position: fixed;
     z-index: 5;
     /* background-color: rgb(226, 222, 222); */
