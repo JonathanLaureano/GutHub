@@ -250,6 +250,10 @@ function App() {
           <MixPage
             ingredients={ingredients}
             setIngredients={setIngredients}
+            showDrinkModal={showDrinkModal}
+            setShowDrinkModal={setShowDrinkModal}
+            selectedDrink={selectedDrink}
+            setSelectedDrink={setSelectedDrink}
           />
         </Route>
         <Route path='/search-results'>

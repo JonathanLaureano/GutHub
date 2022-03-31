@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import './IngredientCard.css';
+import CheckIcon from './CheckCircleIcon.png'
 
 export default function IngredientCard({ingredient,mixes,setMixes}){
 
@@ -208,12 +209,14 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
         }
     }
 
+    let displayCheck = partsCount!=0;
     
     return(
         <React.Fragment>
             <div id={ingredient.d} className="ingredient-card-container">
             <img className={imgClass} src={images('./'+ingredient.image_url)}/>
                 <div className="ingredient-card-text-info">
+                                {/* {displayCheck?<img className='ingredient-check-icon' src={CheckIcon}/>:null} */}
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
                         <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick}/>
