@@ -1,13 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 import '../Modal.css';
 import './ProfileModal.css';
 
-export default function ProfileModal({ profile, setShowProfileModal }) {
+export default function ProfileModal({ profile, setShowProfileModal, handleLogOut }) {
     const users = require.context('../../../img/users', true);
     const drinks = require.context('../../../img/drinks', true);
 
+    const [showEditMode,setShowEditMode] = useState(false)
+
+    function clickEditButton(){
+        setShowEditMode(!showEditMode)
+    }
+
     function handleClickCloseButton() {
         setShowProfileModal(false);
+    }
+
+    function handleSubmitButton(){
+
     }
 
     let createdDrinksToDisplay = profile.drinks.map(drink => {
@@ -15,7 +25,10 @@ export default function ProfileModal({ profile, setShowProfileModal }) {
             <img className='modal-mini-drink-image' src={drinks('./' + drink.image_url)} />
         )
     })
-    let profileNameClass = profile.first_name ? 'modal-profile-name long' : 'modal-profile-name'
+    let profileNameClass = profile.first_name ? 'modal-profile-name long' : 'modal-profile-name';
+
+
+    let editButtonClass = showEditMode? 'edit-button-active' : 'edit-button'
 
     return (
         <div className="modal-card">
@@ -39,8 +52,13 @@ export default function ProfileModal({ profile, setShowProfileModal }) {
                 </div>
             </div>
             <div className="modal-bot">
-                <button className="favorite-button">EDIT</button>
-                <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
+                {showEditMode?<div className='profile-edit-buttons'>
+                    <button className={editButtonClass} onClick={clickEditButton}>CANCEL</button>
+                    <button className='submit-profile-changes-button' onClick={handleSubmitButton}>SUBMIT</button>
+                    </div>:
+                    <button className={editButtonClass} onClick={clickEditButton}>EDIT</button>
+                }
+                {showEditMode?<button className="logout-button" onClick={handleLogOut}>LOG OUT</button>:<button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>}
             </div>
         </div>
     )

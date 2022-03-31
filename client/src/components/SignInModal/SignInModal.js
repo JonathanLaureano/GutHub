@@ -9,23 +9,13 @@ export default function SignInModal({username,setUsername,password,setPassword,h
         setFormType(formType => !formType)
     }
 
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    // }
-
     return (
         <div className='signin-modal'>
                     <div className={formType ? "container" : "container right-panel-active"} id="container">
-            <div className="modal-container">
+            <div className="signin-container">
                 <div className="form-container sign-up-container">
                     <form className='modal-form' action="#">
                         <h1 className='modal-create'>Create Account</h1>
-                        {/* <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div> */}
-                        {/* <span className='or-message'>or use your email for registration</span> */}
                         <div className='modal-input-fullname'>
                             <input className='modal-input-name' type="text" placeholder="First Name" value={signUpFirstName} onChange={(e)=>{setSignUpFirstName(e.target.value)}}/>
                             <input className='modal-input-name last' type="text" placeholder="Last Name" value={signUpLastName} onChange={(e)=>{setSignUpLastName(e.target.value)}}/>
@@ -39,12 +29,6 @@ export default function SignInModal({username,setUsername,password,setPassword,h
                 <div className="form-container sign-in-container">
                     <form className='modal-form' action="#">
                         <h1 className='modal-signin-title'>Sign in</h1>
-                        {/* <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div> */}
-                        {/* <span className='or-message'>or use your account</span> */}
                         <input className='modal-input' type="email" placeholder="Email" value={username} onChange={(e) => setUsername(e.target.value)} />
                         <input className='modal-input' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                         <a className='modal-a' href="#">Forgot your password?</a>

@@ -10,7 +10,7 @@ import MixPage from '../Mixing/MixPage';
 import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 
 
-export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal}){
+export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut}){
     document.title = 'GutHub - Home';
 
     function handleSignIn(){
@@ -90,7 +90,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
             </div>:null}
             {showProfileModal?<div className='modal-container'>
-                <ProfileModal profile={user} setShowProfileModal={setShowProfileModal}/>
+                <ProfileModal profile={user} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut}/>
             </div>:null}
             {showDrinkModal || showProfileModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
             {searchActive?<ResultsPage 
@@ -118,8 +118,6 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 scrollTopMix={scrollTopMix}
                 showProfileModal={showProfileModal}
             />:null}
-
-
                 }
         </React.Fragment>
     )

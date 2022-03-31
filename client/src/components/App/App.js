@@ -10,9 +10,6 @@ import DrinksPage from '../Drinks/DrinksPage';
 import Header from '../Header/Header';
 import ProfilePage from '../Profile/ProfilePage';
 import FavoritesPage from '../Favorites/FavoritesPage';
-import Sandbox from '../Sandbox/Sandbox';
-
-
 
 function App() {
   let history = useHistory();
@@ -47,6 +44,8 @@ function App() {
 
 
   // * Modals
+  let [showSignInModal, setShowSignInModal] = useState(false);
+
   const [showProfileModal,setShowProfileModal] = useState(false);
   const [showDrinkModal,setShowDrinkModal] = useState(false);
   const [selectedDrink,setSelectedDrink] = useState({});
@@ -123,7 +122,8 @@ function App() {
       "last_name": signUpLastName,
       username: signUpUsername,
       password: signUpPassword,
-      "password_confirmation": signUpPasswordConfirmation
+      "password_confirmation": signUpPasswordConfirmation,
+      "image_url": 'user-icon.png'
     }
     axios.post("/signup", signUpDetails)
       .then(r => {
@@ -178,12 +178,11 @@ function App() {
       .then(r => {
         setSignedIn(false);
         setUser(null);
-        history.push('/')
+        setShowProfileModal(false);
+        history.push('/');
+        window.location.reload();
       })
   }
-
-  //Modals:
-  let [showSignInModal, setShowSignInModal] = useState(false);
 
   //Scrolling:
   function scrollBot() {
@@ -247,6 +246,7 @@ function App() {
             setMixActive={setMixActive}
             showProfileModal={showProfileModal}
             setShowProfileModal={setShowProfileModal}
+            handleLogOut={handleLogOut}
           />
         </Route>
         <Route path='/profile'>
@@ -283,9 +283,6 @@ function App() {
             drinks={drinks}
             setDrinks={drinks}
           />
-        </Route>
-        <Route path='/Sandbox'>
-          <Sandbox/>
         </Route>
       </Switch>
     </div>
