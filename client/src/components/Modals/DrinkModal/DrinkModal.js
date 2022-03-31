@@ -7,13 +7,15 @@ export default function DrinkModal({drink,setShowDrinkModal}){
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
         return(
-            <div className="modal-drink-recipe"><b>{recipe.ingredient.name}</b>: {recipe.parts}</div>
+            <div key={recipe.ingredient.id} className="modal-drink-recipe"><b>{recipe.ingredient.name}</b>: {recipe.parts}</div>
         )
     })
 
     function handleClickCloseButton(){
         setShowDrinkModal(false);
     }
+
+    let drinkNameClass= drink.name==='Long Island Ice Tea'?'modal-drink-name long':'modal-drink-name'
 
     return(
             <div className="modal-card">
@@ -22,7 +24,7 @@ export default function DrinkModal({drink,setShowDrinkModal}){
                         <img src={images('./'+drink.image_url)} className="modal-drink-image"/>
                     </div>
                     <div className="modal-right">   
-                        <div className="modal-drink-name">{drink.name}</div>
+                        <div className={drinkNameClass}>{drink.name}</div>
                         <hr></hr>
                         <div className="modal-drink-recipe-title">Recipe: </div>
                         <div className="modal-drink-recipe-wrapper">

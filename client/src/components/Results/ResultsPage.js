@@ -14,7 +14,7 @@ function scrollBot() {
 
 
 
-export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop}) {
+export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}) {
 
     function displayDrinks(data){
             if (data.length>=20) {
@@ -66,6 +66,10 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
                 return (<DrinkCard
                     drink={drink}
                     key={drink.id}
+                    showDrinkModal={showDrinkModal}
+                    setShowDrinkModal={setShowDrinkModal}    
+                    selectedDrink={selectedDrink}
+                    setSelectedDrink={setSelectedDrink}        
                 />)
             })}
         </div>

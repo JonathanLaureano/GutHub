@@ -76,7 +76,7 @@ export default function FavoritesPage({showDrinkModal,setShowDrinkModal}){
             {showDrinkModal?null:<button onClick={clickButton}>SHOW MODAL</button>}
             {showDrinkModal?<div onClick={clickAway} className="modal-curtain"></div>:null}
             {showDrinkModal?<div className='mock-container'>
-                <DrinkModal clickAway={clickAway} drink={mix}/>
+                <DrinkModal setShowDrinkModal={setShowDrinkModal} drink={mix}/>
             </div>:null}
         </React.Fragment>
     )

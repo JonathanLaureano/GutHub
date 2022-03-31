@@ -1,7 +1,7 @@
 import React from "react";
 import './DrinkCard.css';
 
-export default function DrinkCard({drink}){
+export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}){
     const images = require.context('../Images-Resized',true);
     let imgClass;
 
@@ -27,11 +27,16 @@ export default function DrinkCard({drink}){
         default:
             imgClass='drink-card-image'
     }
+
+    function handleClickCard(){
+        setSelectedDrink(drink);
+        setShowDrinkModal(true);
+    }
     
     return(
         <React.Fragment>
             <div className="drink-card-container">
-                <img className={imgClass} src={images('./'+drink.image_url)}/>
+                <img className={imgClass} src={images('./'+drink.image_url)} onClick={handleClickCard}/>
                 <div className="drink-card-text-info">
                     <div className="drink-card-name">{drink.name}</div>
                     <div className="drink-card-ingredient">{drink.recipes[0].ingredient.name}</div>

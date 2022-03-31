@@ -1,5 +1,16 @@
+.modal-container{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -55%;
+    margin-left: 15vw;
+    z-index: 3;
+}
+
 .modal-card{
-    z-index: 100;
+    z-index: 1000;
     margin-top: 8%;
     display: flex;
     flex-direction: column;
@@ -12,9 +23,11 @@
 }
 
 .modal-curtain{
-    position: absolute;
-    z-index:90;
-    background-color: rgb(226, 222, 222);
+    margin-top: -60.5%;
+    position: fixed;
+    z-index: 2;
+    /* background-color: rgb(226, 222, 222); */
+    background-color: rgb(17, 17, 17);
     opacity: .65;
     padding-top: 100vh;
     padding-left: 100vw;  
@@ -80,6 +93,7 @@
     padding-right: 10%;
     padding-bottom: 1%;
     background-color: rgb(36, 36, 36);
+    background-color: rgb(17, 17, 17);
     transition: .25s;
   }
   
@@ -114,7 +128,8 @@
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 1%;
-    background-color: rgb(36, 36, 36);
+    /* background-color: rgb(36, 36, 36); */
+    background-color: rgb(17, 17, 17);
     transition: .25s;
   }
   
@@ -139,6 +154,10 @@
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
 }
 
+.long{
+    font-size: 300%;
+}
+
 .modal-drink-recipe-title{
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
@@ -149,8 +168,15 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+    height: 30.18vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
 }
 
+.modal-drink-recipe-wrapper::-webkit-scrollbar {
+    display: none;
+  }
 
 .modal-drink-recipe{
     margin-top: 1.25%;

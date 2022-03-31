@@ -42,8 +42,9 @@ function App() {
   const [searchResults, setSearchResults] = useState(drinks)
 
 
-  //  * Modals
+  // * Modals
   const [showDrinkModal,setShowDrinkModal] = useState(false);
+  const [selectedDrink,setSelectedDrink] = useState({});
 
   function handleSearchSubmit(e) {
     e.preventDefault();
@@ -77,7 +78,7 @@ function App() {
 
   //  On page load -> setup important information 
   // check if user logged in
-  // drinks 
+  // drinks, ingredients, default selected drink
 
   useEffect(() => {
     fetch("/me")
@@ -100,6 +101,11 @@ function App() {
       .then(r => {
         setIngredients(r.data)
       })
+
+    axios.get('/drinks/1')
+    .then(r=>{
+      setSelectedDrink(r.data)
+    })
 
   }, [])
 
@@ -222,6 +228,10 @@ function App() {
             signUpDesc={signUpDesc}
             setSignUpDesc={setSignUpDesc}
             handleSignUpSubmit={handleSignUpSubmit}
+            showDrinkModal={showDrinkModal}
+            setShowDrinkModal={setShowDrinkModal}
+            selectedDrink={selectedDrink}
+            setSelectedDrink={setSelectedDrink}
           />
         </Route>
         <Route path='/profile'>

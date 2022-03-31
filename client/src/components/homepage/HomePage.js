@@ -2,12 +2,13 @@ import './HomePage.css';
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
-import SignInModal from '../SignInModal/SignInModal';
 import {animateScroll as ScrollAction} from 'react-scroll';
+import SignInModal from '../SignInModal/SignInModal';
+import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 import ResultsPage from '../Results/ResultsPage';
 
 
-export default function HomePage({drinks,setDrinks,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit}){
+export default function HomePage({drinks,setDrinks,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}){
     document.title = 'GutHub - Home';
 
     function handleSignIn(){
@@ -21,6 +22,10 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
             setSearchActive(false)
             console.log('test')
         },750)
+    }
+
+    function clickOffModal(){
+        setShowDrinkModal(false);
     }
 
     return(
@@ -66,7 +71,11 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
                         handleSignUpSubmit={handleSignUpSubmit}
                     />:null}
             {/* </div> */}
-            {searchActive?<div className='home-page-spacer' style={{marginTop:'22.5%'}}></div>:null}
+            {searchActive?<div className='home-page-spacer'></div>:null}
+            {showDrinkModal?<div className='modal-container'>
+                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
+            </div>:null}
+            {showDrinkModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
             {searchActive?<ResultsPage 
                 searchActive={searchActive}
                 searchResults={searchResults}
@@ -76,6 +85,10 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
                 handleSearchChange={handleSearchChange}
                 handleSearchSubmit={handleSearchSubmit}
                 scrollTop={scrollTop}
+                showDrinkModal={showDrinkModal}
+                setShowDrinkModal={setShowDrinkModal}    
+                selectedDrink={selectedDrink}
+                setSelectedDrink={setSelectedDrink}    
                 />:null}
             {/* {searchActive?<button onClick={scrollTop}>test</button> :null} */}
                 {/* <div className='home-page-spacer' style={{marginTop:'30%'}}></div>
