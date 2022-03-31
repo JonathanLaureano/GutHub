@@ -1,8 +1,8 @@
 import React from "react";
 import '../Modal.css';
-import './MixMatchModal.css';
+import './DrinkModal.css';
 
-export default function MixMatchModal({mix}){
+export default function DrinkModal({mix}){
     const images = require.context('../../Images-Resized',true);
 
     let recipesToDisplay = mix.recipes.map(recipe=>{
