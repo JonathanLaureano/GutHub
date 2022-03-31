@@ -72,7 +72,7 @@
     border: none;
     outline: none;
     color: #fff;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff73, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
     padding-top: 1%;
@@ -143,4 +143,29 @@
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
     color: #fff;
+}
+
+.modal-drink-recipe-wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.modal-drink-recipe{
+    margin-top: 1.25%;
+    background-color: rgb(15, 15, 15);
+    border-radius: 10px;
+    width: 80%;
+    color: rgb(128, 126, 126);
+    font-family: 'Shippori Mincho', serif;
+    font-size: larger;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.modal-drink-recipe b{
+    color: #fff;
+    font-weight: 300%;
+    font-size: larger;
 }
