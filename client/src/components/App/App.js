@@ -41,6 +41,8 @@ function App() {
   const [searchParams, setSearchParams] = useState('');
   const [searchResults, setSearchResults] = useState(drinks)
 
+  const [mixActive,setMixActive]= useState(false);
+
 
   // * Modals
   const [showDrinkModal,setShowDrinkModal] = useState(false);
@@ -197,6 +199,8 @@ function App() {
           <HomePage
             drinks={drinks}
             setDrinks={drinks}
+            ingredients={ingredients}
+            setIngredients={setIngredients}
             searchResults={searchResults}
             setSearchResults={setSearchResults}
             searchActive={searchActive}
@@ -232,6 +236,8 @@ function App() {
             setShowDrinkModal={setShowDrinkModal}
             selectedDrink={selectedDrink}
             setSelectedDrink={setSelectedDrink}
+            mixActive={mixActive}
+            setMixActive={setMixActive}
           />
         </Route>
         <Route path='/profile'>

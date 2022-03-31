@@ -6,9 +6,10 @@ import {animateScroll as ScrollAction} from 'react-scroll';
 import SignInModal from '../SignInModal/SignInModal';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 import ResultsPage from '../Results/ResultsPage';
+import MixPage from '../Mixing/MixPage';
 
 
-export default function HomePage({drinks,setDrinks,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}){
+export default function HomePage({drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive}){
     document.title = 'GutHub - Home';
 
     function handleSignIn(){
@@ -28,11 +29,16 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
         setShowDrinkModal(false);
     }
 
+    function clickMixActivateButton(){
+        setMixActive(true)
+        ScrollAction.scrollToBottom();
+    }
+
     return(
         <React.Fragment>
             {/* <div className='parallax'> */}
                 <h3 className={signedIn?'subtitle':'subtitle hidden'}>Welcome to</h3>
-                <div className={signedIn && !searchActive ?"logo":"logo off"}><b>G<span>ut</span>H<span>u</span>b</b></div>
+                <div onClick={clickMixActivateButton} className={signedIn && !searchActive ?"logo":"logo off"}><b>G<span>ut</span>H<span>u</span>b</b></div>
                 {signedIn?<form onSubmit={handleSearchSubmit}><input 
                     type='text'
                     placeholder='Search For A Drink'
@@ -71,7 +77,7 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
                         handleSignUpSubmit={handleSignUpSubmit}
                     />:null}
             {/* </div> */}
-            {searchActive?<div className='home-page-spacer'></div>:null}
+            {searchActive||mixActive?<div className='home-page-spacer'></div>:null}
             {showDrinkModal?<div className='modal-container'>
                 <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
             </div>:null}
@@ -90,10 +96,17 @@ export default function HomePage({drinks,setDrinks,searchResults,setSearchResult
                 selectedDrink={selectedDrink}
                 setSelectedDrink={setSelectedDrink}    
                 />:null}
-            {/* {searchActive?<button onClick={scrollTop}>test</button> :null} */}
-                {/* <div className='home-page-spacer' style={{marginTop:'30%'}}></div>
-                <ResultsPage drinks={searchResults}/>
-                <button onClick={scrollTop}>test</button> */}
+                {mixActive?<MixPage
+            ingredients={ingredients}
+            setIngredients={setIngredients}
+            showDrinkModal={showDrinkModal}
+            setShowDrinkModal={setShowDrinkModal}
+            selectedDrink={selectedDrink}
+            setSelectedDrink={setSelectedDrink}
+                />:null}
+
+
+                }
         </React.Fragment>
     )
 }
