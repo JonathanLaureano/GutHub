@@ -10,6 +10,8 @@ import DrinksPage from '../Drinks/DrinksPage';
 import Header from '../Header/Header';
 import ProfilePage from '../Profile/ProfilePage';
 import FavoritesPage from '../Favorites/FavoritesPage';
+import Sandbox from '../Sandbox/Sandbox';
+
 
 
 function App() {
@@ -273,6 +275,9 @@ function App() {
             drinks={drinks}
             setDrinks={drinks}
           />
+        </Route>
+        <Route path='/Sandbox'>
+          <Sandbox/>
         </Route>
       </Switch>
     </div>
