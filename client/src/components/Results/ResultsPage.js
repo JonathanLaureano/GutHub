@@ -97,11 +97,13 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
       }
     
 
-    let searchResultsCardClass = searchResults.length<=8?'search-results-card frozen':'search-results-card'
-    let titleClass= searchResults.length==0?'search-results-title-off':'search-results-title'
+    let searchResultsCardClass = searchResults.length<=8 ?'search-results-card frozen':'search-results-card'
+    let titleClass= searchResults.length==0||showDrinkModal?'search-results-title-off':'search-results-title'
+    let buttonClass = showDrinkModal?'go-home-button-off':'go-home-button'
 
     return (
         <React.Fragment>
+            <div style={{marginTop:'25%'}}></div>
             <div className={titleClass}>Search Results</div>
             <div className='search-title-wrapper'>
             <form onSubmit={handleSearchSubmit}><input 
@@ -115,7 +117,7 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
                     id='search-input'
                     >
                 </input></form>
-                <div className='go-home-button' onClick={scrollTop}>↑</div>
+                <div className={buttonClass} onClick={scrollTop}>↑</div>
             </div>
 
             <div className='search-results-container'>

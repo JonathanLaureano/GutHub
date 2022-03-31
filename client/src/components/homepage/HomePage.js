@@ -7,6 +7,7 @@ import SignInModal from '../SignInModal/SignInModal';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 import ResultsPage from '../Results/ResultsPage';
 import MixPage from '../Mixing/MixPage';
+import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 
 
 export default function HomePage({drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive}){
@@ -84,7 +85,6 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
                         handleSignUpSubmit={handleSignUpSubmit}
                     />:null}
             {/* </div> */}
-            {searchActive||mixActive?<div className='home-page-spacer'></div>:null}
             {showDrinkModal?<div className='modal-container'>
                 <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
             </div>:null}

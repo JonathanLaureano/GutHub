@@ -2,7 +2,7 @@ import React from "react";
 import './DrinkCard.css';
 
 export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}){
-    const images = require.context('../Images-Resized',true);
+    const images = require.context('../../img/drinks',true);
     let imgClass;
 
     switch (drink.name) {

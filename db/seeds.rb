@@ -11,7 +11,7 @@ User.create!([
         last_name: "Miller",
         username: "mozart@guthub.com",
         password: "1234",
-        image_url: "",
+        image_url: "user-icon.png",
         description: "",
         favorites: []
     },
@@ -20,7 +20,7 @@ User.create!([
         last_name: "Laureano",
         username: "socrates@guthub.com",
         password: "1234",
-        image_url: "",
+        image_url: "user-icon.png",
         description: "",
         favorites: []
     }

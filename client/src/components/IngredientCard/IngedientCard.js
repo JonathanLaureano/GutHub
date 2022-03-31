@@ -14,7 +14,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
         return parseFloat(finalResult);
     }
 
-    const images = require.context('../Images-Resized',true);
+    const images = require.context('../../img/ingredients',true);
     let [partsCount,setPartsCount] = useState(0);
 
     let imgClass;

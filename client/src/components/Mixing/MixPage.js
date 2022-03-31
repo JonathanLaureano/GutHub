@@ -84,7 +84,9 @@ export default function MixPage({ingredients,setIngredients,showDrinkModal,setSh
         })  
 }
 
-    let titleClass = mixes.mix.length==0?'mix-page-title-off':'mix-page-title'
+    let titleClass = mixes.mix.length==0 || showDrinkModal ?'mix-page-title-off':'mix-page-title'
+    let buttonClass = showDrinkModal ?'go-home-mix-page-button-off':'go-home-mix-page-button'
+
 
     function clickOffModal(){
         setShowDrinkModal(false);
@@ -92,9 +94,10 @@ export default function MixPage({ingredients,setIngredients,showDrinkModal,setSh
 
     return (
         <React.Fragment>
+            <div style={{marginTop:'25%'}}></div>
             <div className='mix-page-wrapper'>
                 <div className={titleClass}>mixing</div>
-                <div className='go-home-mix-page-button' onClick={handleClickArrow}>↑</div>
+                <div className={buttonClass} onClick={handleClickArrow}>↑</div>
             </div>
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
