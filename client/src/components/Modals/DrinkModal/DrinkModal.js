@@ -3,7 +3,7 @@ import '../Modal.css';
 import './DrinkModal.css';
 
 export default function DrinkModal({drink,setShowDrinkModal}){
-    const images = require.context('../../Images-Resized',true);
+    const images = require.context('../../../img',true);
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
         return(

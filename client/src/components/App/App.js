@@ -45,6 +45,7 @@ function App() {
 
 
   // * Modals
+  const [showProfileModal,setShowProfileModal] = useState(false);
   const [showDrinkModal,setShowDrinkModal] = useState(false);
   const [selectedDrink,setSelectedDrink] = useState({});
 
@@ -248,8 +249,9 @@ function App() {
         </Route>
         <Route path='/favorites'>
           <FavoritesPage
-            showDrinkModal={showDrinkModal}
-            setShowDrinkModal={setShowDrinkModal}
+            user = {user}
+            showProfileModal={showProfileModal}
+            setShowProfileModal={setShowProfileModal}
             />
         </Route>
         <Route path='/mix'>

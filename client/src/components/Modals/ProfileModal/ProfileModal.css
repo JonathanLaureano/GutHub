@@ -1,8 +1,8 @@
-.modal-drink-image{
+.modal-profile-image{
     height: 90%;
 }
 
-.modal-drink-name{
+.modal-profile-name{
     font-family: 'Shippori Mincho', serif;
     font-size: 350%;
     color: #fff;
@@ -13,13 +13,13 @@
     font-size: 300%;
 }
 
-.modal-drink-recipe-title{
+.modal-profile-recipe-title{
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
     color: #fff;
 }
 
-.modal-drink-recipe-wrapper{
+.modal-profile-recipe-wrapper{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -29,11 +29,11 @@
     scrollbar-width: none;  
 }
 
-.modal-drink-recipe-wrapper::-webkit-scrollbar {
+.modal-profile-recipe-wrapper::-webkit-scrollbar {
     display: none;
   }
 
-.modal-drink-recipe{
+.modal-profile-recipe{
     margin-top: 1.25%;
     background-color: rgb(15, 15, 15);
     border-radius: 10px;
@@ -45,7 +45,7 @@
     padding-bottom: 2%;
 }
 
-.modal-drink-recipe b{
+.modal-profile-recipe b{
     color: #fff;
     font-weight: 300%;
     font-size: larger;
