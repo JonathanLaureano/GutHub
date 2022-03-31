@@ -1,5 +1,6 @@
 import './Sandbox.css';
 import React from 'react';
+import 'animate.css'
 
 function Sandbox() {
     
