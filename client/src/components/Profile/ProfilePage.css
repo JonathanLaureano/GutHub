@@ -18,7 +18,7 @@
 
 .nav-link:hover{
     animation: blink linear infinite 1s;
-}
+} 
 
 /* .nav-link b span{
     animation: blink linear infinite 2s;

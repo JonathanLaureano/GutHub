@@ -13,8 +13,8 @@
 }
 
 .drink-card-image{
-    height: 200px;
-    width: 200px;
+    height: 20vh;
+    /* width: 200px; */
 }
 
 .margarita{

@@ -14,28 +14,21 @@
 }
 
 .modal-profile-details{
+    text-align: left;
+    margin-left: 5%;
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
     color: #fff;
+
 }
 
-.modal-profile-details l{
+.modal-profile-details b{
     color:rgb(128, 126, 126)
-}
-
-.modal-profile-recipe-wrapper{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    height: 30.18vh;
-    overflow-y: scroll;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;  
 }
 
 .modal-profile-recipe-wrapper::-webkit-scrollbar {
     display: none;
-  }
+}
 
 .modal-profile-recipe{
     margin-top: 1.25%;
@@ -49,8 +42,34 @@
     padding-bottom: 2%;
 }
 
-.modal-profile-recipe b{
+.modal-profile-drinks-list-title{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 150%;
+    text-align: left;
     color: #fff;
-    font-weight: 300%;
-    font-size: larger;
+    margin-left: 5%;
+    /* margin-bottom: 3%; */
+}
+
+.modal-profile-cards-wrapper{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    overflow-x: scroll;
+    background-color: rgb(34, 34, 34);
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    width: 32.5vw;
+    /* height: 0.5vh; */
+    height: 15vh;
+    max-height: 13vh;
+}
+
+.modal-profile-cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+
+.modal-mini-drink-image{
+    height: 12vh;
 }
