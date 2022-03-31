@@ -1,3 +1,9 @@
+.mix-page-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .mix-page-title{
     color: rgb(219, 205, 205);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
@@ -16,6 +22,23 @@
     font: 100 10vh "Vibur";
     cursor: default;
     transition: .75s;
+}
+
+.go-home-mix-page-button{
+    color: rgb(219, 205, 205);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+    font-size: 300%;
+    margin-top: 2.75%;
+    margin-left: 2.5%;
+    font: 100 6vh "Vibur";
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.go-home-mix-page-button:hover{
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    color: #ff9191;
+    height: 100%
 }
 
 .mix-page-items-wrapper{

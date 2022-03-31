@@ -21,7 +21,14 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
         ScrollAction.scrollToTop();
         setTimeout(()=>{
             setSearchActive(false)
-            console.log('test')
+        },750)
+    }
+
+    function scrollTopMix(){
+        //reset ingredients 
+        ScrollAction.scrollToTop();
+        setTimeout(()=>{
+            setMixActive(false)
         },750)
     }
 
@@ -38,7 +45,7 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
         <React.Fragment>
             {/* <div className='parallax'> */}
                 <h3 className={signedIn?'subtitle':'subtitle hidden'}>Welcome to</h3>
-                <div onClick={clickMixActivateButton} className={signedIn && !searchActive ?"logo":"logo off"}><b>G<span>ut</span>H<span>u</span>b</b></div>
+                <div onClick={clickMixActivateButton} className={signedIn && !searchActive && !mixActive ?"logo":"logo off"}><b>G<span>ut</span>H<span>u</span>b</b></div>
                 {signedIn?<form onSubmit={handleSearchSubmit}><input 
                     type='text'
                     placeholder='Search For A Drink'
@@ -95,15 +102,16 @@ export default function HomePage({drinks,setDrinks,ingredients,setIngredients,se
                 setShowDrinkModal={setShowDrinkModal}    
                 selectedDrink={selectedDrink}
                 setSelectedDrink={setSelectedDrink}    
-                />:null}
-                {mixActive?<MixPage
-            ingredients={ingredients}
-            setIngredients={setIngredients}
-            showDrinkModal={showDrinkModal}
-            setShowDrinkModal={setShowDrinkModal}
-            selectedDrink={selectedDrink}
-            setSelectedDrink={setSelectedDrink}
-                />:null}
+            />:null}
+            {mixActive?<MixPage
+                ingredients={ingredients}
+                setIngredients={setIngredients}
+                showDrinkModal={showDrinkModal}
+                setShowDrinkModal={setShowDrinkModal}
+                selectedDrink={selectedDrink}
+                setSelectedDrink={setSelectedDrink}
+                scrollTopMix={scrollTopMix}
+            />:null}
 
 
                 }

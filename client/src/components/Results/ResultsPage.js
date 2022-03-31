@@ -117,8 +117,6 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
                 </input></form>
                 <div className='go-home-button' onClick={scrollTop}>↑</div>
             </div>
-            {/* <button onClick={scrollTop}>test</button> */}
-            {/* <button onClick={scrollBot}>Test</button> */}
 
             <div className='search-results-container'>
                 <div className={searchResultsCardClass} id='cards'>

@@ -140,7 +140,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
             }    
         }else {
             setPartsCount(parseInt(newValue));
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": newValue}
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": parseInt(newValue)}
             if (mixes.mix.length>0){
                 let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
                 let updatedMix= [...filteredMix,ingredientRecipe];
@@ -157,7 +157,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     function handleOffFocusClick(e){
         let newValue =e.target.value;
         if (newValue >5){
-            setPartsCount(5);
+            setPartsCount(parseInt(5));
             let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": 5}
             let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
             let updatedMix= [...filteredMix,ingredientRecipe];

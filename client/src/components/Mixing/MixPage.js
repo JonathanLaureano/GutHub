@@ -6,7 +6,7 @@ import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
-export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}) {
+export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
@@ -24,11 +24,15 @@ export default function MixPage({ingredients,setIngredients,showDrinkModal,setSh
         )
     })
 
+    function handleClickArrow(){
+        resetIngredients();
+        scrollTopMix();
+    }
+
     function handleMixClick(){
         console.log(mixes.mix);
         axios.post('/mix',mixes)
         .then(r=>{
-            alert(r.data[0].name)
             console.log(r.data[0])
             setSelectedDrink(r.data[0])
             setShowDrinkModal(true)
@@ -88,12 +92,10 @@ export default function MixPage({ingredients,setIngredients,showDrinkModal,setSh
 
     return (
         <React.Fragment>
-            {showDrinkModal?<div className='modal-container'>
-                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
-            </div>:null}
-            {showDrinkModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
-
-            <div className={titleClass}>mixing</div>
+            <div className='mix-page-wrapper'>
+                <div className={titleClass}>mixing</div>
+                <div className='go-home-mix-page-button' onClick={handleClickArrow}>↑</div>
+            </div>
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
                     <button className='mix-button' onClick={handleMixClick}>MIX</button>
