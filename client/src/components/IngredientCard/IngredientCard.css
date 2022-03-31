@@ -175,4 +175,8 @@
 .count-input-max::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-  
+
+.ingredient-check-icon{
+    position: absolute;
+    height: 2.5%;
+}

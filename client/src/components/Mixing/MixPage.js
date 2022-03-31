@@ -4,17 +4,9 @@ import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
+import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
-
-function scrollBot() {
-    // ScrollAction.scrollToBottom();
-    let cards = document.getElementById('cards')
-    cards.scroll(0, 100)
-}
-
-
-
-export default function MixPage({ingredients,setIngredients}) {
+export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
@@ -32,10 +24,19 @@ export default function MixPage({ingredients,setIngredients}) {
         )
     })
 
+    function handleClickArrow(){
+        resetIngredients();
+        scrollTopMix();
+    }
+
     function handleMixClick(){
         console.log(mixes.mix);
         axios.post('/mix',mixes)
-        .then(r=>console.log(r.data[0]))
+        .then(r=>{
+            console.log(r.data[0])
+            setSelectedDrink(r.data[0])
+            setShowDrinkModal(true)
+        })
     }
 
     function displayIngredients(data){
@@ -81,13 +82,20 @@ export default function MixPage({ingredients,setIngredients}) {
         .then(r => {
           setIngredients(r.data)
         })  
-    }
+}
 
     let titleClass = mixes.mix.length==0?'mix-page-title-off':'mix-page-title'
 
+    function clickOffModal(){
+        setShowDrinkModal(false);
+    }
+
     return (
         <React.Fragment>
-            <div className={titleClass}>mixing</div>
+            <div className='mix-page-wrapper'>
+                <div className={titleClass}>mixing</div>
+                <div className='go-home-mix-page-button' onClick={handleClickArrow}>↑</div>
+            </div>
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
                     <button className='mix-button' onClick={handleMixClick}>MIX</button>

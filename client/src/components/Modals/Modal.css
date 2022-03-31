@@ -6,7 +6,7 @@
     justify-content: center;
     margin-top: -55%;
     margin-left: 15vw;
-    z-index: 3;
+    z-index: 10;
 }
 
 .modal-card{
@@ -25,7 +25,7 @@
 .modal-curtain{
     margin-top: -60.5%;
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     /* background-color: rgb(226, 222, 222); */
     background-color: rgb(17, 17, 17);
     opacity: .65;
