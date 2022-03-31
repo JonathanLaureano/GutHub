@@ -4,12 +4,15 @@ import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
-export default function FavoritesPage(){
+export default function FavoritesPage({showDrinkModal,setShowDrinkModal}){
     document.title = 'GutHub - Your Favorites'
-    let [modalActive,setModalActive] = useState(false)
 
     function clickAway(){
-        setModalActive(false);
+        setShowDrinkModal(false);
+    }
+
+    function clickButton(){
+        setShowDrinkModal(true);
     }
 
     let mix = {
@@ -70,10 +73,11 @@ export default function FavoritesPage(){
         }
     return(
         <React.Fragment>
-            <div className="modal-curtain"></div>
-            <div className='mock-container'>
-                <DrinkModal onDrop={clickAway} mix={mix}/>
-            </div>
+            {showDrinkModal?null:<button onClick={clickButton}>SHOW MODAL</button>}
+            {showDrinkModal?<div onClick={clickAway} className="modal-curtain"></div>:null}
+            {showDrinkModal?<div className='mock-container'>
+                <DrinkModal clickAway={clickAway} drink={mix}/>
+            </div>:null}
         </React.Fragment>
     )
 }

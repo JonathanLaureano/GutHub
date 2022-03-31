@@ -41,6 +41,10 @@ function App() {
   const [searchParams, setSearchParams] = useState('');
   const [searchResults, setSearchResults] = useState(drinks)
 
+
+  //  * Modals
+  const [showDrinkModal,setShowDrinkModal] = useState(false);
+
   function handleSearchSubmit(e) {
     e.preventDefault();
     let query = { "query": searchParams }
@@ -227,7 +231,10 @@ function App() {
           />
         </Route>
         <Route path='/favorites'>
-          <FavoritesPage />
+          <FavoritesPage
+            showDrinkModal={showDrinkModal}
+            setShowDrinkModal={setShowDrinkModal}
+            />
         </Route>
         <Route path='/mix'>
           <MixPage
