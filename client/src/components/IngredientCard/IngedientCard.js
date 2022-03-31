@@ -212,7 +212,7 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     return(
         <React.Fragment>
             <div id={ingredient.d} className="ingredient-card-container">
-                <img className={imgClass} src={images('./'+ingredient.image_url)}/>
+            <img className={imgClass} src={images('./'+ingredient.image_url)}/>
                 <div className="ingredient-card-text-info">
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">

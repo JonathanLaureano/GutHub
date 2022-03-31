@@ -24,7 +24,7 @@
 .modal-top{
     display: flex;
     flex-direction: row;
-    background-color: rgb(144, 202, 144);
+    /* background-color: rgb(144, 202, 144); */
     width: 65vw;
     height: 50vh;
     border-radius: 15px;
@@ -33,25 +33,114 @@
 
 .modal-bot{
     display: flex;
-    flex-direction: row;
-    background-color: rgb(203, 182, 238);
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(203, 182, 238); */
+    background-color: #1f2022;
     width: 65vw;
     height: 15vh;
-    border-radius: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     opacity: 90%;
 }
 
 
 .modal-left{
-    background-color: rgb(240, 99, 99);
-    opacity: .25;
+    /* background-color: rgb(240, 99, 99);
+    opacity: .25; */
     width: 40vw;
     height: 50vh;
+    background-color: #3e4044;
+    border-top-left-radius: 10px;
 }
 
 .modal-right{
-    background-color: rgb(99, 219, 240);
-    opacity: .25;
+    /* background-color: rgb(99, 219, 240);
+    opacity: .15; */
     width: 40vw;
     height: 50vh;
+    border-top-right-radius: 10px;
+}
+
+.favorite-button {
+    margin-top: 1vh;
+    cursor: pointer;
+    font-size: 155%;
+    width: 32.5vw;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
+    font-weight: bold;
+    border-radius: 5px;    
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1%;
+    background-color: rgb(36, 36, 36);
+    transition: .25s;
+  }
+  
+.favorite-button:hover {
+    opacity: .75;
+    color: aqua;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
+    cursor: pointer;
+} 
+
+.favorite-button:active{
+    opacity: .65;
+    color: rgb(255, 228, 105);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+    cursor: pointer;
+}
+
+.close-button {
+    margin-top: 1vh;
+    cursor: pointer;
+    font-size: 125%;
+    width: 30vw;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    font-weight: bold;
+    border-radius: 5px;    
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1%;
+    background-color: rgb(36, 36, 36);
+    transition: .25s;
+  }
+  
+.close-button:hover {
+    color: rgb(252, 7, 101);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    cursor: pointer;
+}  
+
+.close-button:active{
+    background-color: rgb(50, 36, 36);
+}
+
+.modal-drink-image{
+    height: 90%;
+}
+
+.modal-drink-name{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 350%;
+    color: #fff;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+}
+
+.modal-drink-recipe-title{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 150%;
+    color: #fff;
 }
