@@ -4,7 +4,7 @@ import '../Modal.css';
 import './ProfileModal.css';
 
 export default function ProfileModal({ profile,setUser,setShowProfileModal,handleLogOut,setSelectedDrink,setShowDrinkModal,drinks }) {
-    const users = require.context('../../../img/users', true);
+    // const users = require.context('../../../img/users', true);
     const drinkImgs = require.context('../../../img/drinks', true);
 
     const [showEditMode,setShowEditMode] = useState(false)
@@ -13,6 +13,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
     const [firstName,setFirstName] = useState(profile.first_name)
     const [lastName,setLastName] = useState(profile.last_name)
     const [email,setEmail] = useState(profile.username)
+    const [imageLink,setImageLink] = useState('')
     const [password,setPassword] = useState('');
 
     function clickEditButton(){
@@ -47,12 +48,16 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
             setLastName(profile.last_name)
         }
 
+        if (imageLink===''){
+            setImageLink(profile.imageLink)
+        }
+
         let updatedProfile = {
             "first_name": firstName,
             "last_name": lastName,
             username: email,
             "password": password,
-            "image_url": 'user-icon.png'
+            "image_url": imageLink
           }
 
         axios.patch('/users/'+profile.id,updatedProfile)
@@ -105,11 +110,14 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
     const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
     let dateMsg = `${monthNames[month]} ${day}, ${year}`;
 
+    let imageClass = showEditMode?'modal-profile-edit-image':'modal-profile-image'
+
     return (
         <div className="modal-card">
             <div className="modal-top">
                 <div className="modal-left">
-                    <img src={users('./' + profile.image_url)} className="modal-profile-image" />
+                    <img src={profile.image_url} className={imageClass} />
+                    {showEditMode?<input type='text' className="profile-image-input" placeholder='Image Url' value={imageLink} onChange={(e)=>{setImageLink(e.target.value)}}></input>:null}
                 </div>
                 <div className="modal-right">
                     <div className={profileNameClass}>{showEditMode?<input className='profile-name-input' value={firstName} onChange={(e)=>{setFirstName(e.target.value)}} placeholder='First Name'></input>:profile.first_name} {showEditMode?<input className='profile-name-input' value={lastName} onChange={(e)=>{setLastName(e.target.value)}} placeholder='Last Name'></input>:profile.last_name}</div>
