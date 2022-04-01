@@ -157,6 +157,126 @@ Drink.create!([
         name: "Dirty Shirley",
         image_url: "DirtyShirley.png",
         user_id: 1
+    },
+    {
+        name: "French Martini",
+        image_url: "FrenchMartini.png",
+        user_id: 1
+    },
+    {
+        name: "Lychee Martini",
+        image_url: "LycheeMartini.png",
+        user_id: 1
+    },
+    {
+        name: "French 75",
+        image_url: "French75.png",
+        user_id: 1
+    },
+    {
+        name: "Negroni",
+        image_url: "Negroni.png",
+        user_id: 1
+    },
+    {
+        name: "Scottish Coffee",
+        image_url: "ScottishCoffee.png",
+        user_id: 1
+    },
+    {
+        name: "Zombie",
+        image_url: "Zombie.png",
+        user_id: 1
+    },
+    {
+        name: "Expresso Martini",
+        image_url: "ExpressoMartini.png",
+        user_id: 1
+    },
+    {
+        name: "Tequila Pineapple",
+        image_url: "TequilaPineapple.png",
+        user_id: 1
+    },
+    {
+        name: "Death In The Afternoon",
+        image_url: "DeathInTheAfternoon.png",
+        user_id: 1
+    },
+    {
+        name: "Gin Martini",
+        image_url: "GinMartini.png",
+        user_id: 1
+    },
+    {
+        name: "Sazerac",
+        image_url: "Sazerac.png",
+        user_id: 1
+    },
+    {
+        name: "Necromancer",
+        image_url: "Necromancer.png",
+        user_id: 1
+    },
+    {
+        name: "Gimlet",
+        image_url: "Gimlet.png",
+        user_id: 1
+    },
+    {
+        name: "Tom Collins",
+        image_url: "TomCollins.png",
+        user_id: 1
+    },
+    {
+        name: "Paloma",
+        image_url: "Paloma.png",
+        user_id: 1
+    },
+    {
+        name: "Irish Car Bomb",
+        image_url: "IrishCarBomb.png",
+        user_id: 1
+    },
+    {
+        name: "La Tour Eiffel",
+        image_url: "LaTourEiffel.png",
+        user_id: 1
+    },
+    {
+        name: "High Seas",
+        image_url: "HighSeas.png",
+        user_id: 1
+    },
+    {
+        name: "Vesper",
+        image_url: "Vesper.png",
+        user_id: 1
+    },
+    {
+        name: "Aperol Spritz",
+        image_url: "AperolSpritz.png",
+        user_id: 1
+    },
+    {
+        name: "Classic Bellini",
+        image_url: "ClassicBellini.png",
+        user_id: 1
+    },
+    {
+        name: "Cleo",
+        image_url: "Cleo.png",
+        user_id: 1
+    },
+    {
+        name: "Jalepeno Diablo",
+        image_url: "JalepenoDiablo.png",
+        user_id: 1
+    },
+    {
+        name: "Pine Pepper Crush",
+        image_url: "PinePepperCrush.png",
+        user_id: 1
     }
 ])
 
@@ -362,10 +482,6 @@ Ingredient.create!([
         image_url: "TomatoJuice.png",
         ingredient_type: "Liquid"
     },
-    {   name: "Cherry",
-        image_url: "Cherry.png",
-        ingredient_type:"Solid"
-    },
     {
         name: "Champagne",
         image_url: "Champagne.png",
@@ -380,7 +496,106 @@ Ingredient.create!([
         name: "Ginger Ale",
         image_url: "GingerAle.png",
         ingredient_type: 'Liquid'
-    }
+    },
+    {
+        name: "Chambord",
+        image_url: "Chambord.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Lychee Juice",
+        image_url: "LycheeJuice.png",
+        ingredient_type: 'Liquid'
+    },
+    {
+        name: "Vermouth",
+        image_url: "Vermouth.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Falernum",
+        image_url: "Falernum.png",
+        ingredient_type: 'Liquid'
+    },
+    {
+        name: "Expresso",
+        image_url: "Expresso.png",
+        ingredient_type: 'Liquid'
+    },
+    {
+        name: "Absinthe",
+        image_url: "Absinthe.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Cognac",
+        image_url: "Cognac.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "RedBull",
+        image_url: "Redbull.png",
+        ingredient_type: 'Solid'
+    },
+    {
+        name: "Grapefruit Soda",
+        image_url: "GrapefruitSoda.png",
+        ingredient_type: 'Liquid'
+    },
+    {
+        name: "Bailey's",
+        image_url: "Baileys.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Guiness",
+        image_url: "Guiness.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Suze",
+        image_url: "Suze.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Capelletti Aperitif",
+        image_url: "CapellettiAperitif.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Prosecco",
+        image_url: "Prosecco.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Aperol",
+        image_url: "Aperol.png",
+        ingredient_type: 'Alcohol'
+    },
+    {
+        name: "Peach",
+        image_url: "Peach.png",
+        ingredient_type: 'Solid'
+    },
+    {
+        name: "Dragonfruit",
+        image_url: "Dragonfruit.png",
+        ingredient_type: 'Solid'
+    },
+    {
+        name: "Ginger",
+        image_url: "Ginger.png",
+        ingredient_type: 'Solid'
+    },
+    {
+        name: "Pineapple",
+        image_url: "Pineapple.png",
+        ingredient_type: 'Solid'
+    },
+    {   name: "Cherry",
+        image_url: "Cherry.png",
+        ingredient_type:"Solid"
+    },
 ])
 
 puts "Seeding Recipes..."
@@ -490,6 +705,103 @@ puts "Seeding Recipes..."
     Recipe.create!(drink_id: 25, ingredient_id: 43, parts: 2.66)
     Recipe.create!(drink_id: 26, ingredient_id: 4, parts: 1.33)
     Recipe.create!(drink_id: 26, ingredient_id: 44, parts: 5)
-    Recipe.create!(drink_id: 26, ingredient_id: 41, parts: 1)
+    Recipe.create!(drink_id: 26, ingredient_id: 63, parts: 1)
+    Recipe.create!(drink_id: 27, ingredient_id: 4, parts: 1)
+    Recipe.create!(drink_id: 27, ingredient_id: 44, parts: 0.33)
+    Recipe.create!(drink_id: 27, ingredient_id: 14, parts: 0.5)
+    Recipe.create!(drink_id: 27, ingredient_id: 38, parts: 1)
+    Recipe.create!(drink_id: 28, ingredient_id: 4, parts: 2)
+    Recipe.create!(drink_id: 28, ingredient_id: 45, parts: 0.33)
+    Recipe.create!(drink_id: 28, ingredient_id: 14, parts: 0.5)
+    Recipe.create!(drink_id: 29, ingredient_id: 7, parts: 0.66)
+    Recipe.create!(drink_id: 29, ingredient_id: 17, parts: 0.33)
+    Recipe.create!(drink_id: 29, ingredient_id: 19, parts: 0.33)
+    Recipe.create!(drink_id: 29, ingredient_id: 41, parts: 2)
+    Recipe.create!(drink_id: 29, ingredient_id: 38, parts: 1)
+    Recipe.create!(drink_id: 30, ingredient_id: 7, parts: 0.66)
+    Recipe.create!(drink_id: 30, ingredient_id: 47, parts: 0.66)
+    Recipe.create!(drink_id: 30, ingredient_id: 46, parts: 0.66)
+    Recipe.create!(drink_id: 30, ingredient_id: 37, parts: 1)
+    Recipe.create!(drink_id: 31, ingredient_id: 8, parts: 1.5)
+    Recipe.create!(drink_id: 31, ingredient_id: 23, parts: 4)
+    Recipe.create!(drink_id: 31, ingredient_id: 19, parts: 0.66)
+    Recipe.create!(drink_id: 31, ingredient_id: 22, parts: 0.66)
+    Recipe.create!(drink_id: 32, ingredient_id: 6, parts: 2.66)
+    Recipe.create!(drink_id: 32, ingredient_id: 15, parts: 0.5)
+    Recipe.create!(drink_id: 32, ingredient_id: 48, parts: 0.33)
+    Recipe.create!(drink_id: 32, ingredient_id: 18, parts: 0.5)
+    Recipe.create!(drink_id: 32, ingredient_id: 32, parts: 1)
+    Recipe.create!(drink_id: 32, ingredient_id: 36, parts: 1)
+    Recipe.create!(drink_id: 33, ingredient_id: 4, parts: 1.33)
+    Recipe.create!(drink_id: 33, ingredient_id: 49, parts: 0.66)
+    Recipe.create!(drink_id: 33, ingredient_id: 19, parts: 0.33)
+    Recipe.create!(drink_id: 33, ingredient_id: 23, parts: 1)
+    Recipe.create!(drink_id: 34, ingredient_id: 1, parts: 1)
+    Recipe.create!(drink_id: 34, ingredient_id: 2, parts: 0.33)
+    Recipe.create!(drink_id: 34, ingredient_id: 13, parts: 2.66)
+    Recipe.create!(drink_id: 34, ingredient_id: 39, parts: 1)
+    Recipe.create!(drink_id: 35, ingredient_id: 50, parts: 1)
+    Recipe.create!(drink_id: 35, ingredient_id: 41, parts: 3)
+    Recipe.create!(drink_id: 36, ingredient_id: 7, parts: 1.66)
+    Recipe.create!(drink_id: 36, ingredient_id: 46, parts: 0.33)
+    Recipe.create!(drink_id: 36, ingredient_id: 32, parts: 1)
+    Recipe.create!(drink_id: 36, ingredient_id: 38, parts: 1)
+    Recipe.create!(drink_id: 37, ingredient_id: 8, parts: 1)
+    Recipe.create!(drink_id: 37, ingredient_id: 32, parts: 1)
+    Recipe.create!(drink_id: 37, ingredient_id: 51, parts: 1)
+    Recipe.create!(drink_id: 37, ingredient_id: 38, parts: 1)
+    Recipe.create!(drink_id: 38, ingredient_id: 50, parts: 0.66)
+    Recipe.create!(drink_id: 38, ingredient_id: 7, parts: 0.66)
+    Recipe.create!(drink_id: 38, ingredient_id: 17, parts: 0.66)
+    Recipe.create!(drink_id: 39, ingredient_id: 7, parts: 1.66)
+    Recipe.create!(drink_id: 39, ingredient_id: 15, parts: 0.33)
+    Recipe.create!(drink_id: 39, ingredient_id: 19, parts: 0.33)
+    Recipe.create!(drink_id: 39, ingredient_id: 39, parts: 1)
+    Recipe.create!(drink_id: 40, ingredient_id: 7, parts: 1.33)
+    Recipe.create!(drink_id: 40, ingredient_id: 17, parts: 0.66)
+    Recipe.create!(drink_id: 40, ingredient_id: 19, parts: 0.33)
+    Recipe.create!(drink_id: 40, ingredient_id: 20, parts: 3)
+    Recipe.create!(drink_id: 40, ingredient_id: 38, parts: 1)
+    Recipe.create!(drink_id: 40, ingredient_id: 63, parts: 1)
+    Recipe.create!(drink_id: 41, ingredient_id: 1, parts: 1.33)
+    Recipe.create!(drink_id: 41, ingredient_id: 15, parts: 0.33)
+    Recipe.create!(drink_id: 41, ingredient_id: 53, parts: 2)
+    Recipe.create!(drink_id: 41, ingredient_id: 39, parts: 1)
+    Recipe.create!(drink_id: 41, ingredient_id: 24, parts: 1)
+    Recipe.create!(drink_id: 42, ingredient_id: 8, parts: 0.33)
+    Recipe.create!(drink_id: 42, ingredient_id: 54, parts: 1)
+    Recipe.create!(drink_id: 42, ingredient_id: 55, parts: 1)
+    Recipe.create!(drink_id: 43, ingredient_id: 51, parts: 1.66)
+    Recipe.create!(drink_id: 43, ingredient_id: 50, parts: 0.33)
+    Recipe.create!(drink_id: 43, ingredient_id: 2, parts: 0.33)
+    Recipe.create!(drink_id: 43, ingredient_id: 56, parts: 0.33)
+    Recipe.create!(drink_id: 43, ingredient_id: 38, parts: 1)
+    Recipe.create!(drink_id: 44, ingredient_id: 8, parts: 0.5)
+    Recipe.create!(drink_id: 44, ingredient_id: 57, parts: 0.66)
+    Recipe.create!(drink_id: 44, ingredient_id: 46, parts: 0.66)
+    Recipe.create!(drink_id: 45, ingredient_id: 7, parts: 2)
+    Recipe.create!(drink_id: 45, ingredient_id: 4, parts: 0.66)
+    Recipe.create!(drink_id: 45, ingredient_id: 57, parts: 0.33)
+    Recipe.create!(drink_id: 45, ingredient_id: 38, parts: 1)
+    Recipe.create!(drink_id: 46, ingredient_id: 58, parts: 2)
+    Recipe.create!(drink_id: 46, ingredient_id: 59, parts: 1.33)
+    Recipe.create!(drink_id: 46, ingredient_id: 20, parts: 0.66)
+    Recipe.create!(drink_id: 46, ingredient_id: 37, parts: 1)
+    Recipe.create!(drink_id: 47, ingredient_id: 58, parts: 2.66)
+    Recipe.create!(drink_id: 47, ingredient_id: 60, parts: 1)
+    Recipe.create!(drink_id: 48, ingredient_id: 1, parts: 1.33)
+    Recipe.create!(drink_id: 48, ingredient_id: 15, parts: 0.66)
+    Recipe.create!(drink_id: 48, ingredient_id: 19, parts: 0.33)
+    Recipe.create!(drink_id: 48, ingredient_id: 61, parts: 1)
+    Recipe.create!(drink_id: 49, ingredient_id: 1, parts: 1.33)
+    Recipe.create!(drink_id: 49, ingredient_id: 15, parts: 0.5)
+    Recipe.create!(drink_id: 49, ingredient_id: 19, parts: 0.5)
+    Recipe.create!(drink_id: 49, ingredient_id: 20, parts: 0.33)
+    Recipe.create!(drink_id: 49, ingredient_id: 62, parts: 1)
+    Recipe.create!(drink_id: 50, ingredient_id: 1, parts: 2)
+    Recipe.create!(drink_id: 50, ingredient_id: 27, parts: 1)
+    Recipe.create!(drink_id: 50, ingredient_id: 63, parts: 1)
+    Recipe.create!(drink_id: 50, ingredient_id: 15, parts: 0.33)
+    Recipe.create!(drink_id: 50, ingredient_id: 19, parts: 0.33)
 
 puts "Seeding Done!"
