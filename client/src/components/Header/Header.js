@@ -26,7 +26,7 @@ export default function Header({signedIn,setSignedIn,showProfileModal,setShowPro
                 {/* <a className="header-link" href="/profile">Navigation</a> */}
                 {/* <div><strong>-</strong></div> */}
                 {/* {signedIn?<button className="header-logOut" onClick={handleLogOut}>Log Out</button>:<button className="header-signIn">Log Out</button>} */}
-                <img src={UserIcon} onClick={handleProfileClick} className='profile-picture'/>
+                <img src={"https://img.icons8.com/material-rounded/384/000000/user.png"} onClick={handleProfileClick} className='profile-picture'/>
             </div>
         </React.Fragment>
     )

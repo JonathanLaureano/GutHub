@@ -2,6 +2,10 @@
     height: 50vh;
 }
 
+.modal-profile-edit-image{
+    height: 45vh;
+}
+
 .modal-profile-name{
     font-family: 'Shippori Mincho', serif;
     font-size: 350%;
@@ -273,5 +277,18 @@
     width: 35%; */
     font-size: 75%;
     padding: 1.5%;
+}
+
+
+.profile-image-input{
+    margin-top: -30%;
+    background-color: rgba(0, 0, 0, 0.363);
+    border-color: transparent;
+    font-family: 'Shippori Mincho', serif;
+    border-radius: 5px;
+    font-size: 175%;
+    width: 23vw;
+    color: #fff;
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
 }
 
