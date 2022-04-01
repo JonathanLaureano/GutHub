@@ -9,9 +9,13 @@ export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,select
         case "Margarita":
             imgClass='drink-card-image margarita'
             break;
+        case "Long Island Ice Tea":
         case "Bloody Mary":
             imgClass='drink-card-image bloodymary'
             break;
+        case 'Negroni':
+        case 'Paloma':
+        case 'Pine Pepper Crush':
         case 'Caipirinha':
             imgClass='drink-card-image caipirinha'
             break;

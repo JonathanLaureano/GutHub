@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .drink-card-image{
@@ -17,24 +19,31 @@
     justify-self: center;
     height: 15vh;
     width: 15vw;
+    margin-bottom: 12%;
+    overflow-y: hidden;
 }
 
 .margarita{
     height: 15vh;
-    width: 15vw;
-
+    width: 7.5vw;
 }
 
 .bloodymary{
-
+    height: 21vh;
+    width: 22vw;
+    margin-left: 5%;
+    margin-bottom: 0%;
+    margin-top: -6%;
 }
 
 .caipirinha{
-
+    height: 15vh;
+    width: 11vw;
 }
 
 .oldfashioned{
-
+    height: 15vh;
+    width: 11vw;
 }
 
 .gnt{
@@ -42,7 +51,8 @@
 }
 
 .godfather{
-
+    height: 15vh;
+    width: 11vw;
 }
 
 .drink-card-text-info{

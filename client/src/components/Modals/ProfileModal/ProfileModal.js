@@ -77,9 +77,9 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
           });
     }
 
-    let favoriteEmpty = profile.favorites!=undefined
+    let favoriteEmpty = profile.favorites.length===0;
 
-    let favoriteDrinksToDisplay = favoriteEmpty?profile.favorites.map(drink_id => {
+    let favoriteDrinksToDisplay = !favoriteEmpty?profile.favorites.map(drink_id => {
         let drink = drinks[drink_id-1]
         return (
             <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(drink)} src={drinkImgs('./' + drink.image_url)} />
@@ -125,7 +125,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
                     <div className='modal-profile-drinks-list-title'>Favorites:</div>
                     <div className='modal-profile-cards-wrapper'>
                         {favoriteDrinksToDisplay}
-                        {!favoriteEmpty?<div className='no-favorites-container'> 
+                        {favoriteEmpty?<div className='no-favorites-container'> 
                             <div className='no-favorites-found'>No Favorites Found</div>
                             <div className='no-favorites-query'>Explore More Drinks to Add Favorites</div>
                         </div>:null}
