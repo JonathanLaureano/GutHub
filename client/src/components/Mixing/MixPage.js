@@ -76,7 +76,6 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
     function ingredientCardsRow(data) {
         return <div className='mix-page-ingredients-cards-container'>
             {data.map(ingredient => {
-                // console.log(ingredient)
                 return (<IngredientCard
                     ingredient={ingredient}
                     key={ingredient.id}
@@ -160,7 +159,9 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 <div className='mix-page-jug-container'>
                     <button className='mix-button' onClick={handleMixClick}>MIX</button>
                     <button className='reset-mix' onClick={resetIngredients}>RESET</button>
-                                {mixesToDisplay}
+                    <div className='mix-recipes-wrapper'>
+                        {mixesToDisplay}
+                    </div>
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
