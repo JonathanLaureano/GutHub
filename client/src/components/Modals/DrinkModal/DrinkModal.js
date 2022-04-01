@@ -67,7 +67,7 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
                 <div className="modal-top"> 
                     <div className="modal-left"> 
                         <img src={images('./'+drink.image_url)} className="modal-drink-image"/>
-                        {isCreatedDrink?<div className="modal-drink-credits">Created By: {drink.user.username}</div>:null}
+                        {isCreatedDrink?<div className="modal-drink-credits"><label>Created By: </label>{drink.user.username}</div>:null}
                     </div>
                     <div className="modal-right">   
                         <div className={drinkNameClass}>{drink.name}</div>
