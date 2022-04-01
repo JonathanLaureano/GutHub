@@ -2,9 +2,11 @@ import './MixPage.css';
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
+import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
+
 
 export default function MixPage({user,ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal,matchFound,setMatchFound,mixToCreate,setMixToCreate,showMixModal, setShowMixModal}) {
     let [mixes,setMixes]=useState({"mix":[
@@ -42,6 +44,7 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 setShowMixModal(true)
             } else {
                 console.log(r.data[0])
+                celebrate();
                 setSelectedDrink(r.data[0])
                 setShowDrinkModal(true)
                 setMatchFound(true);
@@ -73,7 +76,6 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
     function ingredientCardsRow(data) {
         return <div className='mix-page-ingredients-cards-container'>
             {data.map(ingredient => {
-                // console.log(ingredient)
                 return (<IngredientCard
                     ingredient={ingredient}
                     key={ingredient.id}
@@ -95,11 +97,55 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
 }
 
     let titleClass = mixes.mix.length==0 || showDrinkModal || showProfileModal || showMixModal ?'mix-page-title-off':'mix-page-title'
-    let buttonClass = showDrinkModal || showProfileModal || showMixModal ?'go-home-mix-page-button-off':'go-home-mix-page-button'
+    let buttonClass = mixes.mix.length==0 || showDrinkModal || showProfileModal || showMixModal ?'go-home-mix-page-button-nolight':'go-home-mix-page-button'
 
 
     function clickOffModal(){
         setShowDrinkModal(false);
+    }
+
+    let count = 200;
+    let defaults = {
+        origin: { y: 0.9 }
+    };
+
+    function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio)
+        }));
+    }
+
+    function celebrate(){
+        fire(0.35, {
+            spread: 36,
+            startVelocity: 65,
+        });
+        fire(0.25, {
+            spread: 26,
+            startVelocity: 55,
+        });
+        fire(0.2, {
+            spread: 60,
+        });
+        fire(0.35, {
+            spread: 100,
+            decay: 0.91,
+            scalar: 0.8
+        });
+        fire(0.1, {
+            spread: 120,
+            startVelocity: 25,
+            decay: 0.92,
+            scalar: 1.2
+        });
+        fire(0.1, {
+            spread: 120,
+            startVelocity: 45,
+        });
+        fire(0.05, {
+            spread: 130,
+            startVelocity: 55,
+        });
     }
 
     return (
@@ -113,7 +159,9 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 <div className='mix-page-jug-container'>
                     <button className='mix-button' onClick={handleMixClick}>MIX</button>
                     <button className='reset-mix' onClick={resetIngredients}>RESET</button>
-                                {mixesToDisplay}
+                    <div className='mix-recipes-wrapper'>
+                        {mixesToDisplay}
+                    </div>
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
