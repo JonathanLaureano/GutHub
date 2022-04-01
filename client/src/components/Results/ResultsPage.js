@@ -33,10 +33,6 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
                     {drinkCardsRow(data.slice(44,48))}
                     {drinkCardsRow(data.slice(48,52))}
                     {drinkCardsRow(data.slice(52,56))}
-                    {drinkCardsRow(data.slice(56,60))}
-                    {drinkCardsRow(data.slice(64,68))}
-                    {drinkCardsRow(data.slice(68,72))}
-                    {drinkCardsRow(data.slice(72,76))}
                 </React.Fragment>}
             else if (data.length>=16)
                 {return <React.Fragment>
