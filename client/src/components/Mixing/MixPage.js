@@ -6,7 +6,7 @@ import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
-export default function MixPage({user,ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal,matchFound,setMatchFound,mixToCreate,setMixToCreate}) {
+export default function MixPage({user,ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal,matchFound,setMatchFound,mixToCreate,setMixToCreate,showMixModal, setShowMixModal}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
@@ -36,10 +36,10 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
             if (r.data[0]===undefined){
                 alert("No Match Found")
                 setMixToCreate({
-                    "user_id": user.id,
                     "image_url": 'BlankGlass.png',
                     "recipes": mixes.mix
                 })
+                setShowMixModal(true)
             } else {
                 console.log(r.data[0])
                 setSelectedDrink(r.data[0])
@@ -94,8 +94,8 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
         })  
 }
 
-    let titleClass = mixes.mix.length==0 || showDrinkModal || showProfileModal ?'mix-page-title-off':'mix-page-title'
-    let buttonClass = showDrinkModal || showProfileModal ?'go-home-mix-page-button-off':'go-home-mix-page-button'
+    let titleClass = mixes.mix.length==0 || showDrinkModal || showProfileModal || showMixModal ?'mix-page-title-off':'mix-page-title'
+    let buttonClass = showDrinkModal || showProfileModal || showMixModal ?'go-home-mix-page-button-off':'go-home-mix-page-button'
 
 
     function clickOffModal(){
@@ -104,7 +104,7 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
 
     return (
         <React.Fragment>
-            <div style={{marginTop:'25%'}}></div>
+            <div style={{marginTop:'22.5%'}}></div>
             <div className='mix-page-wrapper'>
                 <div className={titleClass}>mixing</div>
                 <div className={buttonClass} onClick={handleClickArrow}>↑</div>

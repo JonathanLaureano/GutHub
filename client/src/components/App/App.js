@@ -58,7 +58,10 @@ function App() {
     axios.post('/search', query)
       .then(r => {
         if (r.data.length == 0) {
-          alert('No Results Found!')
+          // alert('No Results Found!')
+          setSearchActive(true)
+          setSearchResults(r.data);
+          scrollBot();
         } else {
           setSearchActive(true)
           setSearchResults(r.data);
@@ -214,6 +217,8 @@ function App() {
     .then(r=>{
       setDrinks([...drinks,r.data])
       setSelectedDrink(r.data);
+      setShowMixModal(false)
+      setShowDrinkModal(true)
     })
     .catch(function (error) {
       if (error.response) {
@@ -300,6 +305,8 @@ function App() {
             setMixActive={setMixActive}
             showProfileModal={showProfileModal}
             setShowProfileModal={setShowProfileModal}
+            showMixModal={showMixModal}
+            setShowMixModal={setShowMixModal}
             handleLogOut={handleLogOut}
             mixToCreate={mixToCreate}
             setMixToCreate={setMixToCreate}
