@@ -161,23 +161,32 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
     function handleOffFocusClick(e){
-        let newValue =e.target.value;
-        if (newValue >5){
-            setPartsCount(parseInt(5));
-            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": 5}
+        if (ingredient.ingredient_type==='Solid'){
+            setPartsCount(parseInt(1));
+            let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": 1}
             let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
             let updatedMix= [...filteredMix,ingredientRecipe];
             let newMixes = {"mix": updatedMix}
             setMixes(newMixes)
-        } 
-        else if (newValue===''){
-            setPartsCount(0);
-            let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
-            let newMixes = {"mix": filteredMix}
-            setMixes(newMixes)
-        } else if (newValue.toString().indexOf('.') != -1){
-            setPartsCount(truncateDecimals(parseFloat(newValue),2));
-        } 
+    } else {
+            let newValue =e.target.value;
+            if (newValue >5){
+                setPartsCount(parseInt(5));
+                let ingredientRecipe = {"ingredient_id": ingredient.id,"parts": 5}
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let updatedMix= [...filteredMix,ingredientRecipe];
+                let newMixes = {"mix": updatedMix}
+                setMixes(newMixes)
+            } 
+            else if (newValue===''){
+                setPartsCount(0);
+                let filteredMix = mixes.mix.filter(mix=> mix["ingredient_id"]!=ingredient.id)
+                let newMixes = {"mix": filteredMix}
+                setMixes(newMixes)
+            } else if (newValue.toString().indexOf('.') != -1){
+                setPartsCount(truncateDecimals(parseFloat(newValue),2));
+            } 
+        }
     }
 
 
