@@ -98,7 +98,7 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
 }
 
     let titleClass = mixes.mix.length==0 || showDrinkModal || showProfileModal || showMixModal ?'mix-page-title-off':'mix-page-title'
-    let buttonClass = showDrinkModal || showProfileModal || showMixModal ?'go-home-mix-page-button-off':'go-home-mix-page-button'
+    let buttonClass = mixes.mix.length==0 || showDrinkModal || showProfileModal || showMixModal ?'go-home-mix-page-button-nolight':'go-home-mix-page-button'
 
 
     function clickOffModal(){

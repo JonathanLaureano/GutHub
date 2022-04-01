@@ -28,7 +28,7 @@
     color: rgb(219, 205, 205);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     font-size: 300%;
-    margin-top: 2.75%;
+    margin-top: 2.25%;
     margin-left: 2.5%;
     font: 100 6vh "Vibur";
     cursor: pointer;
@@ -41,9 +41,15 @@
     height: 100%
 }
 
-.go-home-mix-page-button-lightsout{
+.go-home-mix-page-button-nolight{
     color: inherit;
     text-shadow: inherit;
+    font-size: 300%;
+    margin-top: 2.25%;
+    margin-left: 2.5%;
+    font: 100 6vh "Vibur";
+    cursor: pointer;
+    transition: 1s ease;
 }
 
 .mix-page-items-wrapper{
