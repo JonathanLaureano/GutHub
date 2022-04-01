@@ -11,7 +11,7 @@ import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 import MixModal from '../Modals/MixModal/MixModal';
 
 
-export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit}){
+export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink}){
     document.title = 'GutHub - Home';
 
     let [matchFound,setMatchFound] = useState(false);
@@ -95,10 +95,10 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                         <div className='no-results-query'>Please Enter a Different Search Query</div>
                     </div>:null} */}
             {showDrinkModal?<div className='modal-container'>
-                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal} setMatchFound={matchFound}/>
+                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal} setMatchFound={matchFound} handleFavoriteDrink={handleFavoriteDrink}handleUnfavoriteDrink={handleUnfavoriteDrink}/>
             </div>:null}
             {showProfileModal?<div className='modal-container'>
-                <ProfileModal profile={user} setUser={setUser} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut}/>
+                <ProfileModal profile={user} setUser={setUser} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut} handleFavoriteDrink={handleFavoriteDrink}handleUnfavoriteDrink={handleUnfavoriteDrink}/>
             </div>:null}
             {showMixModal?<div className='modal-container'>
                 <MixModal user={user} setShowMixModal={setShowMixModal} drink={mixToCreate} ingredients={ingredients} handleCreateDrinkSubmit={handleCreateDrinkSubmit}/>
@@ -106,6 +106,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
 
             {showDrinkModal || showProfileModal || showMixModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
             {searchActive?<ResultsPage 
+                user={user}
                 searchActive={searchActive}
                 searchResults={searchResults}
                 setSearchResults={setSearchResults}
@@ -118,7 +119,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 setShowDrinkModal={setShowDrinkModal}    
                 selectedDrink={selectedDrink}
                 setSelectedDrink={setSelectedDrink}    
-                showProfileModal={showProfileModal}
+                showProfileModal={showProfileModal}    
             />:null}
             {mixActive?<MixPage
                 user={user}

@@ -1,9 +1,19 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect,useState } from "react";
 import '../Modal.css';
 import './DrinkModal.css';
 
-export default function DrinkModal({drink,setShowDrinkModal,setMatchFound}){
+export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,handleFavoriteDrink,handleUnfavoriteDrink}){
     const images = require.context('../../../img/drinks',true);
+    let [cardUser,setCardUser]=useState({})
+
+    useEffect(()=>{
+        axios.get('/me')
+        .then(r=>{
+            setCardUser(r.data)
+        })
+
+    },[])
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
         return(
@@ -16,7 +26,27 @@ export default function DrinkModal({drink,setShowDrinkModal,setMatchFound}){
         setMatchFound(false);
     }
 
-    let drinkNameClass= drink.name==='Long Island Ice Tea'?'modal-drink-name long':'modal-drink-name'
+    function handleClickFavoriteButton(){
+        handleFavoriteDrink(drink)
+        axios.get('/me')
+        .then(r=>{
+            setCardUser(r.data)
+        })
+
+    }
+
+    function handleClickUnfavoriteButton(){
+        handleUnfavoriteDrink(drink)
+        axios.get('/me')
+        .then(r=>{
+            setCardUser(r.data)
+        })
+
+    }
+
+    let inFavorites = cardUser['favorites']==[]?cardUser.favorites.map(favorite=>favorite.id):false
+    console.log(cardUser.favorites)
+    let drinkNameClass= drink.name.length>15?'modal-drink-name long':'modal-drink-name'
 
     return(
             <div className="modal-card">
@@ -34,7 +64,8 @@ export default function DrinkModal({drink,setShowDrinkModal,setMatchFound}){
                     </div>
                 </div>
                 <div className="modal-bot"> 
-                    <button className="favorite-button">FAVORITE DRINK</button>
+                    {/* <button className="favorite-button" onClick={handleClickFavoriteButton} >FAVORITE DRINK</button> */}
+                    {inFavorites?<button className="unfavorite-button" onClick={handleClickUnfavoriteButton} >UNFAVORITE DRINK</button>:<button className="favorite-button" onClick={handleClickFavoriteButton} >FAVORITE DRINK</button>}
                     <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
                 </div>
             </div>

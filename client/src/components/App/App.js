@@ -249,6 +249,23 @@ function App() {
   }
 
 
+  function handleFavoriteDrink(drink){
+    let drinkToFavorite = {"drink":drink}
+    axios.post('/favorite',drinkToFavorite)
+    .then(r=>{
+      setUser(r.data)
+    })
+  }
+
+  function handleUnfavoriteDrink(drink){
+    let drinkToUnFavorite = {"drink":drink}
+    axios.post('/unfavorite',drinkToUnFavorite)
+    .then(r=>{
+      setUser(r.data)
+    })
+  }
+
+
   return (
     <div className="App">
       {signedIn ? <Header
@@ -311,6 +328,8 @@ function App() {
             mixToCreate={mixToCreate}
             setMixToCreate={setMixToCreate}
             handleCreateDrinkSubmit={handleCreateDrinkSubmit}
+            handleFavoriteDrink={handleFavoriteDrink}
+            handleUnfavoriteDrink={handleUnfavoriteDrink}
           />
         </Route>
         <Route path='/profile'>

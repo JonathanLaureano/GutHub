@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
     #In your controller, you would just call Drinks.where(id: user.favorites)
 
-
     def index
         @users = User.all
         render json: @users
@@ -41,13 +40,16 @@ class UsersController < ApplicationController
 
     def favoritedrink
         drink = params[:drink]
-        @current_user.favorites << drink
+        userFavs = @current_user.favorites
+        userFavs << drink
+        @current_user.update!(favorites: userFavs)
         render json: @current_user
     end
 
     def unfavoritedrink
         drink = params[:drink]
-        @current_user.favorites = @current_user.favorites.filter{|favorite| favorite.id!=drink.id}
+        userFavs = @current_user.favorites.filter{|favorite| favorite!=drink}
+        @current_user.update!(favorites: userFavs)
         render json: @current_user
     end
 
@@ -60,13 +62,15 @@ class UsersController < ApplicationController
     # Add Email to user params (stretch deliverable)
     def user_params
       params.permit(
+          :id,
           :first_name,
           :last_name,
           :username, 
           :password, 
           :password_confirmation, 
           :image_url, 
-          :description
+          :description,
+          :favorites,
           )
     end
 end
