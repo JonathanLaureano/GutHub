@@ -2,7 +2,7 @@ import React from "react";
 import '../Modal.css';
 import './DrinkModal.css';
 
-export default function DrinkModal({drink,setShowDrinkModal}){
+export default function DrinkModal({drink,setShowDrinkModal,setMatchFound}){
     const images = require.context('../../../img/drinks',true);
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
@@ -13,6 +13,7 @@ export default function DrinkModal({drink,setShowDrinkModal}){
 
     function handleClickCloseButton(){
         setShowDrinkModal(false);
+        setMatchFound(false);
     }
 
     let drinkNameClass= drink.name==='Long Island Ice Tea'?'modal-drink-name long':'modal-drink-name'

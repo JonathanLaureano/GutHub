@@ -13,6 +13,8 @@ import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut}){
     document.title = 'GutHub - Home';
 
+    let [matchFound,setMatchFound] = useState(false);
+
     function handleSignIn(){
         setShowSignInModal(true)
     }
@@ -87,8 +89,12 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                         handleSignUpSubmit={handleSignUpSubmit}
                     />:null}
             {/* </div> */}
+        {/* {matchFound?<div className='no-results-container'> 
+                        <div className='no-results-found'>No Results Found</div>
+                        <div className='no-results-query'>Please Enter a Different Search Query</div>
+                    </div>:null} */}
             {showDrinkModal?<div className='modal-container'>
-                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
+                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal} setMatchFound={matchFound}/>
             </div>:null}
             {showProfileModal?<div className='modal-container'>
                 <ProfileModal profile={user} setUser={setUser} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut}/>
@@ -110,6 +116,8 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 showProfileModal={showProfileModal}
             />:null}
             {mixActive?<MixPage
+                matchFound={matchFound}
+                setMatchFound={setMatchFound}
                 ingredients={ingredients}
                 setIngredients={setIngredients}
                 showDrinkModal={showDrinkModal}
@@ -119,7 +127,6 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 scrollTopMix={scrollTopMix}
                 showProfileModal={showProfileModal}
             />:null}
-                }
         </React.Fragment>
     )
 }

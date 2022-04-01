@@ -6,7 +6,7 @@ import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
-export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal}) {
+export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal,matchFound,setMatchFound}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
@@ -33,9 +33,14 @@ export default function MixPage({ingredients,setIngredients,showDrinkModal,setSh
         console.log(mixes.mix);
         axios.post('/mix',mixes)
         .then(r=>{
-            console.log(r.data[0])
-            setSelectedDrink(r.data[0])
-            setShowDrinkModal(true)
+            if (r.data[0]===undefined){
+                alert("No Match Found")
+            } else {
+                console.log(r.data[0])
+                setSelectedDrink(r.data[0])
+                setShowDrinkModal(true)
+                setMatchFound(true);
+            }
         })
     }
 
