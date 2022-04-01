@@ -6,7 +6,7 @@ import IngredientCard from '../IngredientCard/IngedientCard';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
-export default function MixPage({ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal,matchFound,setMatchFound}) {
+export default function MixPage({user,ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal,matchFound,setMatchFound,mixToCreate,setMixToCreate}) {
     let [mixes,setMixes]=useState({"mix":[
     ]});
 
@@ -35,6 +35,11 @@ export default function MixPage({ingredients,setIngredients,showDrinkModal,setSh
         .then(r=>{
             if (r.data[0]===undefined){
                 alert("No Match Found")
+                setMixToCreate({
+                    "user_id": user.id,
+                    "image_url": 'BlankGlass.png',
+                    "recipes": mixes.mix
+                })
             } else {
                 console.log(r.data[0])
                 setSelectedDrink(r.data[0])

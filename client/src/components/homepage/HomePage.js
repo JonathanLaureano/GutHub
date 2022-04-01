@@ -10,7 +10,7 @@ import MixPage from '../Mixing/MixPage';
 import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 
 
-export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut}){
+export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut, mixToCreate,setMixToCreate}){
     document.title = 'GutHub - Home';
 
     let [matchFound,setMatchFound] = useState(false);
@@ -116,6 +116,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 showProfileModal={showProfileModal}
             />:null}
             {mixActive?<MixPage
+                user={user}
                 matchFound={matchFound}
                 setMatchFound={setMatchFound}
                 ingredients={ingredients}
@@ -126,6 +127,8 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 setSelectedDrink={setSelectedDrink}
                 scrollTopMix={scrollTopMix}
                 showProfileModal={showProfileModal}
+                mixToCreate={mixToCreate}
+                setMixToCreate={setMixToCreate}    
             />:null}
         </React.Fragment>
     )

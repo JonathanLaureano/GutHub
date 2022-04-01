@@ -2,25 +2,40 @@ import './FavoritesPage.css';
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
-import ProfileModal from '../Modals/ProfileModal/ProfileModal';
+import MixModal from '../Modals/MixModal/MixModal';
 
-export default function FavoritesPage({user,showProfileModal,setShowProfileModal}){
+export default function FavoritesPage({user,showMixModal,setShowMixModal,mixToCreate,setMixToCreate}){
     document.title = 'GutHub - Your Favorites'
 
     function clickAway(){
-        setShowProfileModal(false);
+        setShowMixModal(false);
     }
 
     function clickButton(){
-        setShowProfileModal(true);
+        setShowMixModal(true);
+    }
+
+    let mix = {
+        "user_id": 1,
+        "image_url": 'BlankGlass.png',
+        "recipes": [
+            {
+                "ingredient_id": 12,
+                "parts": 1
+            },
+            {
+                "ingredient_id": 42,
+                "parts": 2
+            }
+        ]
     }
 
     return(
         <React.Fragment>
-            {showProfileModal?null:<button onClick={clickButton}>SHOW MODAL</button>}
-            {showProfileModal?<div onClick={clickAway} className="modal-curtain"></div>:null}
-            {showProfileModal?<div className='modal-container'>
-                <ProfileModal setShowProfileModal={setShowProfileModal} profile={user}/>
+            {showMixModal?null:<button onClick={clickButton}>SHOW MODAL</button>}
+            {showMixModal?<div onClick={clickAway} className="modal-curtain"></div>:null}
+            {showMixModal?<div className='modal-container'>
+                <MixModal user={user} setShowMixModal={setShowMixModal} drink={mix}/>
             </div>:null}
         </React.Fragment>
     )
