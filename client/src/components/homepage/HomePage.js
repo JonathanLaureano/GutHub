@@ -95,7 +95,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                         <div className='no-results-query'>Please Enter a Different Search Query</div>
                     </div>:null} */}
             {showDrinkModal?<div className='modal-container'>
-                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal} setMatchFound={matchFound} handleFavoriteDrink={handleFavoriteDrink} handleUnfavoriteDrink={handleUnfavoriteDrink} />
+                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal} setMatchFound={setMatchFound} handleFavoriteDrink={handleFavoriteDrink} handleUnfavoriteDrink={handleUnfavoriteDrink} />
             </div>:null}
             {showProfileModal?<div className='modal-container'>
                 <ProfileModal profile={user} setUser={setUser} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut}drinks={drinks} setSelectedDrink={setSelectedDrink} setShowDrinkModal={setShowDrinkModal}/>
