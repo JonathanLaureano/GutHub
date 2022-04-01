@@ -250,7 +250,7 @@ function App() {
 
 
   function handleFavoriteDrink(drink){
-    let drinkToFavorite = {"drink":drink}
+    let drinkToFavorite = {"drink":drink.id}
     axios.post('/favorite',drinkToFavorite)
     .then(r=>{
       setUser(r.data)
@@ -258,7 +258,7 @@ function App() {
   }
 
   function handleUnfavoriteDrink(drink){
-    let drinkToUnFavorite = {"drink":drink}
+    let drinkToUnFavorite = {"drink":drink.id}
     axios.post('/unfavorite',drinkToUnFavorite)
     .then(r=>{
       setUser(r.data)
