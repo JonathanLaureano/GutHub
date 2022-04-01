@@ -133,6 +133,13 @@ body {
       text-shadow: inherit;
     }
   }
+
+.logo b:active{
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+  transition: 3s ease;
+}
+
   
 .parallax{
     /* Set a specific height */
@@ -177,4 +184,28 @@ body {
 .home-page-spacer{
   background-color: white;
   margin-top: 25%;
+}
+
+
+.home-mix-button{
+  font-family: 'Shippori Mincho', serif;
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: rgb(46, 45, 45);
+  width: 12.5%;
+  padding: 1%;
+  transition: .35s ease-in-out;
+  opacity: .5;
+  border-radius:5px;
+  text-align: center;
+  margin-top: 1.5%;
+  color: white;
+}
+
+.home-mix-button:hover{
+  opacity: .75;
+  color: #fff;
+  cursor: pointer;
 }
