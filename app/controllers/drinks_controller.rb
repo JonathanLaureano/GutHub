@@ -47,7 +47,7 @@ class DrinksController < ApplicationController
     def mixcreate
         @mix = params[:recipes]
         @name = params[:name]
-        @user_id = params[:user_id]
+        @user_id = @current_user.id
         @image_url = params[:image_url]
 
         new = Drink.create!({name: @name, image_url: @image_url, user_id: @user_id})

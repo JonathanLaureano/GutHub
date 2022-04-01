@@ -210,7 +210,7 @@ function App() {
 
 
   function handleCreateDrinkSubmit(newDrink){
-    axios.post('/mixcreate')
+    axios.post('/mixcreate',newDrink)
     .then(r=>{
       setDrinks([...drinks,r.data])
       setSelectedDrink(r.data);

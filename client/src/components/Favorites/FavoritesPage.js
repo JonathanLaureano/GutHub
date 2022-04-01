@@ -16,7 +16,6 @@ export default function FavoritesPage({user,showMixModal,setShowMixModal,mixToCr
     }
 
     let mix = {
-        "user_id": 1,
         "image_url": 'BlankGlass.png',
         "recipes": [
             {

@@ -27,7 +27,7 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
             "name": drinkName
         }
         console.log(newDrink)
-        // handleCreateDrinkSubmit()
+        handleCreateDrinkSubmit(newDrink)
     }
 
     return(
