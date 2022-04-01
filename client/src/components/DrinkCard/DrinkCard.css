@@ -13,52 +13,43 @@
 }
 
 .drink-card-image{
-    height: 20vh;
-    /* width: 200px; */
+    align-self: center;
+    justify-self: center;
+    height: 15vh;
+    width: 15vw;
 }
 
 .margarita{
-    height: 200px;
-    width: 125px;
+    height: 15vh;
+    width: 15vw;
+
 }
 
 .bloodymary{
-    width: 350px;
-    height: 180px;
-    margin-left: -30%;
+
 }
 
 .caipirinha{
-    height: 175px;
-    width: 175px;
+
 }
 
 .oldfashioned{
-    margin-top: -20%;
-    margin-left: 10%;
-    height: 250px;
-    width: 175px;
+
 }
 
 .gnt{
-    /* margin-top: -20%; */
-    margin-left: -30%;
-    height: 180px;
-    width: 450px;
+
 }
 
 .godfather{
-    height: 225px;
-    width: 225px;
+
 }
 
 .drink-card-text-info{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* align-items: flex-end; */
     background-color: rgb(49, 49, 54);
-    /* border-radius: 10px; */
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
