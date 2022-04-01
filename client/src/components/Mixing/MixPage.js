@@ -75,6 +75,14 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                     {ingredientCardsRow(data.slice(39,42))}
                     {ingredientCardsRow(data.slice(42,45))}
                     {ingredientCardsRow(data.slice(45,48))}
+                    {ingredientCardsRow(data.slice(48,51))}
+                    {ingredientCardsRow(data.slice(51,54))}
+                    {ingredientCardsRow(data.slice(54,57))}
+                    {ingredientCardsRow(data.slice(57,60))}
+                    {ingredientCardsRow(data.slice(60,63))}
+                    {ingredientCardsRow(data.slice(63,66))}
+                    {ingredientCardsRow(data.slice(69,72))}
+                    {ingredientCardsRow(data.slice(72,75))}
                 </React.Fragment>}
     
         
