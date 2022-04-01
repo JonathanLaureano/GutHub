@@ -60,11 +60,14 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
     console.log(cardUser.favorites)
     let drinkNameClass= drink.name.length>15?'modal-drink-name long':'modal-drink-name'
 
+    let isCreatedDrink = drink.user.id!=1
+
     return(
             <div className="modal-card">
                 <div className="modal-top"> 
                     <div className="modal-left"> 
                         <img src={images('./'+drink.image_url)} className="modal-drink-image"/>
+                        {isCreatedDrink?<div className="modal-drink-credits">Created By: {drink.user.username}</div>:null}
                     </div>
                     <div className="modal-right">   
                         <div className={drinkNameClass}>{drink.name}</div>
