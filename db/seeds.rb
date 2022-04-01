@@ -533,9 +533,9 @@ Ingredient.create!([
         ingredient_type: 'Alcohol'
     },
     {
-        name: "RedBull",
+        name: "Red Bull",
         image_url: "Redbull.png",
-        ingredient_type: 'Solid'
+        ingredient_type: 'Liquid'
     },
     {
         name: "Grapefruit Soda",
