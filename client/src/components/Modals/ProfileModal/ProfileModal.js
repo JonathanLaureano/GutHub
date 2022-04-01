@@ -3,9 +3,9 @@ import React,{useState} from "react";
 import '../Modal.css';
 import './ProfileModal.css';
 
-export default function ProfileModal({ profile,setUser,setShowProfileModal, handleLogOut }) {
+export default function ProfileModal({ profile,setUser,setShowProfileModal,handleLogOut,setSelectedDrink,setShowDrinkModal,drinks }) {
     const users = require.context('../../../img/users', true);
-    const drinks = require.context('../../../img/drinks', true);
+    const drinkImgs = require.context('../../../img/drinks', true);
 
     const [showEditMode,setShowEditMode] = useState(false)
 
@@ -13,7 +13,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal, hand
     const [firstName,setFirstName] = useState(profile.first_name)
     const [lastName,setLastName] = useState(profile.last_name)
     const [email,setEmail] = useState(profile.username)
-    const [password,setPassword] = useState('')
+    const [password,setPassword] = useState('');
 
     function clickEditButton(){
         setPassword('');
@@ -21,6 +21,12 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal, hand
     }
 
     function handleClickCloseButton() {
+        setShowProfileModal(false);
+    }
+
+    function handleClickMiniCard(drink){
+        setSelectedDrink(drink);
+        setShowDrinkModal(true);
         setShowProfileModal(false);
     }
 
@@ -68,11 +74,24 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal, hand
     
     }
 
-    let createdDrinksToDisplay = profile.drinks.map(drink => {
+    let favoriteEmpty = profile.favorites!=undefined
+
+    let favoriteDrinksToDisplay = favoriteEmpty?profile.favorites.map(drink_id => {
+        let drink = drinks[drink_id-1]
         return (
-            <img className='modal-mini-drink-image' src={drinks('./' + drink.image_url)} />
+            <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(drink)} src={drinkImgs('./' + drink.image_url)} />
         )
-    })
+    }):null;
+
+    let createdEmpty = profile.drinks!=undefined
+
+
+    let createdDrinksToDisplay = createdEmpty?profile.drinks.map(drink => {
+        return (
+            <img className='modal-mini-drink-image' onClick={handleClickMiniCard} src={drinkImgs('./' + drink.image_url)} />
+        )
+    }):null;
+
     let profileNameClass = profile.first_name ? 'modal-profile-name long' : 'modal-profile-name';
 
 
@@ -98,7 +117,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal, hand
                     {showEditMode?<div className="modal-profile-details"><label>Password: </label> <input type='password' className='profile-password-input' value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password'></input></div>:<div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>}
                     <div className='modal-profile-drinks-list-title'>Favorites:</div>
                     <div className='modal-profile-cards-wrapper'>
-                        {createdDrinksToDisplay}
+                        {favoriteDrinksToDisplay}
                     </div>
                     <div className='modal-profile-drinks-list-title'>Created:</div>
                     <div className='modal-profile-cards-wrapper'>
