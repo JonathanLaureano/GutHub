@@ -35,7 +35,7 @@
 
 .modal-drink-recipe{
     margin-top: 1.25%;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(30, 30, 30);
     border-radius: 10px;
     width: 80%;
     color: rgb(128, 126, 126);
@@ -49,4 +49,13 @@
     color: #fff;
     font-weight: 300%;
     font-size: larger;
+}
+
+.modal-drink-credits{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 150%;
+    color: #fff;
+    background-color: rgb(30, 30, 30);
+    border-radius: 15px;
+    padding-bottom: 1%;
 }
