@@ -198,9 +198,9 @@ function App() {
   function handleLogOut() {
     axios.delete('/logout')
       .then(r => {
+        setShowProfileModal(false);
         setSignedIn(false);
         setUser(null);
-        setShowProfileModal(false);
         history.push('/');
         window.location.reload();
       })
