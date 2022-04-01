@@ -216,10 +216,12 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
     let displayCheck = partsCount!=0;
+
+    let containerClass = partsCount!=0?'ingredient-card-container-active':'ingredient-card-container'
     
     return(
         <React.Fragment>
-            <div id={ingredient.d} className="ingredient-card-container">
+            <div id={ingredient.d} className={containerClass}>
             <img className={imgClass} src={images('./'+ingredient.image_url)}/>
                 <div className="ingredient-card-text-info">
                                 {/* {displayCheck?<img className='ingredient-check-icon' src={CheckIcon}/>:null} */}
