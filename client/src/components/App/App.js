@@ -171,6 +171,23 @@ function App() {
         }
       });
 
+    axios.get('/drinks')
+    .then(r => {
+      setDrinks(r.data)
+    })
+
+    axios.get('/ingredients')
+      .then(r => {
+        setIngredients(r.data)
+      })
+
+    axios.get('/drinks/1')
+    .then(r=>{
+      setSelectedDrink(r.data)
+    })
+
+
+
   }
 
   function handleLogOut() {

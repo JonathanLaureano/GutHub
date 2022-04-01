@@ -90,7 +90,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal}/>
             </div>:null}
             {showProfileModal?<div className='modal-container'>
-                <ProfileModal profile={user} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut}/>
+                <ProfileModal profile={user} setUser={setUser} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut}/>
             </div>:null}
             {showDrinkModal || showProfileModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
             {searchActive?<ResultsPage 

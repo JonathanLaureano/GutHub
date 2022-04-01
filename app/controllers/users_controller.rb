@@ -11,8 +11,8 @@ class UsersController < ApplicationController
 
 
     def update
-        @user.update(user_params)
-        render json: @user
+        @current_user.update(user_params)
+        render json: @current_user
     end
 
     def create

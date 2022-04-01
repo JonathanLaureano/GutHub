@@ -145,24 +145,6 @@ body {
     background-size: cover;
 }
 
-.title{
-    font-family: 'PT Sans', sans-serif;
-    font-size: 1200%;
-    margin-top: -5%;
-    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rainbow 15s ease-in-out infinite;
-    background-size: 400% 100%;
-}
-
-
-@keyframes rainbow {
-    0%,100% {background-position: 0 0;}
-    50% {background-position: 100% 0;}
-}
-
 .hidden{
   visibility: hidden;
   transition: .5s ease-in-out;

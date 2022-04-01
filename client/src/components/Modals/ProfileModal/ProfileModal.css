@@ -21,7 +21,7 @@
     color: rgb(200, 200, 200);
 }
 
-.modal-profile-details b{
+.modal-profile-details label{
     color:rgb(128, 126, 126)
 }
 
@@ -163,7 +163,7 @@
     padding-top: 1%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 1.5%;
+    padding-bottom: 3%;
     background-color: rgb(36, 36, 36);
     background-color: rgb(17, 17, 17);
     transition: .25s;
@@ -185,7 +185,7 @@
     border: none;
     outline: none;
     opacity: .65;
-    color: rgb(159, 224, 133);
+    color: rgb(110, 230, 63);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #52e683, 0 0 0.5em #52e683, 0 0 0.1em #52e683, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
@@ -195,10 +195,45 @@
     padding-bottom: 3%;
     background-color: rgb(36, 36, 36);
     background-color: rgb(17, 17, 17);
-    transition: .25s;
+    transition: .35s;
 
 }
 
 .submit-profile-changes-button:hover{
     color: #fff;
 }
+
+
+.profile-name-input{
+    background-color: rgba(0, 0, 0, 0.363);
+    border-color: transparent;
+    font-family: 'Shippori Mincho', serif;
+    border-radius: 5px;
+    font-size: 75%;
+    width: 45%;
+    color: #fff;
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
+}
+
+.profile-email-input{
+    background-color: rgba(0, 0, 0, 0.363);
+    border-color: transparent;
+    font-family: 'Shippori Mincho', serif;
+    border-radius: 5px;
+    font-size: 90%;
+    width: 26vw;
+    color: #fff;
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
+}
+
+.profile-password-input{
+    background-color: rgba(0, 0, 0, 0.363);
+    border-color: transparent;
+    font-family: 'Shippori Mincho', serif;
+    border-radius: 5px;
+    font-size: 75%;
+    width: 23vw;
+    color: #fff;
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
+}
+
