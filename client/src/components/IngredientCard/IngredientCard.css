@@ -10,6 +10,18 @@
     flex-direction: column;
 }
 
+.ingredient-card-container-active{
+    background-color: rgb(93, 93, 97);
+    height: 15vh;
+    width: 25vh;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: color .5s;
+    display: grid;
+    flex-direction: column;
+}
+
 .ingredient-card-image{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
