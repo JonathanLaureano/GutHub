@@ -237,3 +237,41 @@
     /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
 }
 
+
+.no-favorites-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(46, 45, 45);
+    border-radius: 15px;
+    width: 35%;
+    /* margin-top: -5%; */
+    margin-left: 32%;
+    transition: 1s;
+}
+
+.no-favorites-found{
+    font-family: 'Shippori Mincho', serif;
+    /* font: 100 5vh "Vibur"; */
+    color: rgb(241, 159, 159);
+    /* text-shadow: 0 -5px 130px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 5px 3px #000; */
+    /* background-color: rgb(65, 65, 70); */
+    /* border-radius: 15px;
+    width: 35%; */
+    font-size: 125%;
+    padding: 1.5%;
+}
+
+.no-favorites-query{
+    font-family: 'Shippori Mincho', serif;
+    /* font: 100 5vh "Vibur"; */
+    color: rgb(248, 215, 215);
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; */
+    /* background-color: rgb(65, 65, 70);
+    border-radius: 15px;
+    width: 35%; */
+    font-size: 75%;
+    padding: 1.5%;
+}
+

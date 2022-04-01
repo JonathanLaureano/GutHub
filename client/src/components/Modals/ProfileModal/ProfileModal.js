@@ -119,10 +119,19 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
                     <div className='modal-profile-drinks-list-title'>Favorites:</div>
                     <div className='modal-profile-cards-wrapper'>
                         {favoriteDrinksToDisplay}
+                        {favoriteEmpty?<div className='no-favorites-container'> 
+                            <div className='no-favorites-found'>No Favorites Found</div>
+                            <div className='no-favorites-query'>Explore More Drinks to Add Favorites</div>
+                        </div>:null}
                     </div>
                     <div className='modal-profile-drinks-list-title'>Created:</div>
                     <div className='modal-profile-cards-wrapper'>
                         {createdDrinksToDisplay}
+                        {!createdEmpty?<div className='no-favorites-container'> 
+                            <div className='no-favorites-found'>No Created Drinks Found</div>
+                            <div className='no-favorites-query'>Go to the Mix Page to Create a Drink</div>
+                        </div>:null}
+
                     </div>
                 </div>
             </div>
