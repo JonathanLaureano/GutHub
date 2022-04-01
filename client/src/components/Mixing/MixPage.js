@@ -33,6 +33,9 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
 
     function handleMixClick(){
         console.log(mixes.mix);
+        if (mixes.mix.length <=1){
+            alert("               MIX ERORR: \nPlease add more than one ingredient.")
+        } else {
         axios.post('/mix',mixes)
         .then(r=>{
             if (r.data[0]===undefined){
@@ -50,6 +53,8 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 setMatchFound(true);
             }
         })
+    }
+
     }
 
     function displayIngredients(data){
