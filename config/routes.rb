@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post "/search", to: "drinks#search"
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
+  post "favorite", to: "users#favoritedrink"
+  post "unfavorite", to: "users#unfavoritedrink"
   
   delete "/logout", to: "sessions#destroy"
   

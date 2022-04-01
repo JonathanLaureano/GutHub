@@ -39,6 +39,18 @@ class UsersController < ApplicationController
         render json: @current_user.favorites
     end
 
+    def favoritedrink
+        drink = params[:drink]
+        @current_user.favorites << drink
+        render json: @current_user
+    end
+
+    def unfavoritedrink
+        drink = params[:drink]
+        @current_user.favorites = @current_user.favorites.filter{|favorite| favorite.id!=drink.id}
+        render json: @current_user
+    end
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
