@@ -87,8 +87,9 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
 
 
     let createdDrinksToDisplay = createdEmpty?profile.drinks.map(drink => {
+        let fullDrink = drinks[drink.id-1]
         return (
-            <img className='modal-mini-drink-image' onClick={handleClickMiniCard} src={drinkImgs('./' + drink.image_url)} />
+            <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(fullDrink)} src={drinkImgs('./' + drink.image_url)} />
         )
     }):null;
 

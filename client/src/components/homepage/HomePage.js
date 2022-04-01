@@ -49,7 +49,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
     return(
         <React.Fragment>
             {/* <div className='parallax'> */}
-                <h3 className={signedIn?'subtitle':'subtitle hidden'}>Welcome to</h3>
+                <h3 className={!signedIn?'subtitle':'subtitle hidden'}>Welcome to</h3>
                 <div className={signedIn && !searchActive && !mixActive ?"logo":"logo off"}><b>G<span>ut</span>H<span>u</span>b</b></div>
                 {signedIn?<form onSubmit={handleSearchSubmit}><input 
                     type='text'

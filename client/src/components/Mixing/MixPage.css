@@ -41,6 +41,11 @@
     height: 100%
 }
 
+.go-home-mix-page-button-lightsout{
+    color: inherit;
+    text-shadow: inherit;
+}
+
 .mix-page-items-wrapper{
     margin-top: .6%;
     display: flex;

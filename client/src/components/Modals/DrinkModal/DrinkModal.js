@@ -4,6 +4,7 @@ import '../Modal.css';
 import './DrinkModal.css';
 
 export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,handleFavoriteDrink,handleUnfavoriteDrink}){
+    console.log(drink)
     const images = require.context('../../../img/drinks',true);
     let [cardUser,setCardUser]=useState({})
     // let [inFavorites,setInFavorites] = useState(favoriteX!=undefined?favoriteX.includes(drink.id):false)
