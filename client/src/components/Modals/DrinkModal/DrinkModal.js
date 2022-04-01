@@ -6,13 +6,19 @@ import './DrinkModal.css';
 export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,handleFavoriteDrink,handleUnfavoriteDrink}){
     const images = require.context('../../../img/drinks',true);
     let [cardUser,setCardUser]=useState({})
+    // let [inFavorites,setInFavorites] = useState(favoriteX!=undefined?favoriteX.includes(drink.id):false)
+    let [favoriteX,setFavoritesX] = useState([])
+
 
     useEffect(()=>{
         axios.get('/me')
         .then(r=>{
             setCardUser(r.data)
+            // setInFavorites(cardUser.favorites!=undefined?cardUser.favorites.includes(drink.id):false)
         })
 
+        axios.get('/favorites')
+        .then(r=>setFavoritesX(r.data))
     },[])
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
@@ -28,23 +34,28 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
 
     function handleClickFavoriteButton(){
         handleFavoriteDrink(drink)
-        axios.get('/me')
-        .then(r=>{
-            setCardUser(r.data)
-        })
+        setFavoritesX([...favoriteX,drink.id])
+        // axios.get('/me')
+        // .then(r=>{
+        //     setCardUser(r.data)
+        //     // setInFavorites(true)
+        // })
 
     }
 
     function handleClickUnfavoriteButton(){
         handleUnfavoriteDrink(drink)
-        axios.get('/me')
-        .then(r=>{
-            setCardUser(r.data)
-        })
+        setFavoritesX(favoriteX.filter(fav=>fav!=drink.id))
+
+        // axios.get('/me')
+        // .then(r=>{
+        //     setCardUser(r.data)
+        //     // setInFavorites(false)
+        // })
 
     }
 
-    let inFavorites = cardUser['favorites']==[]?cardUser.favorites.map(favorite=>favorite.id):false
+    let inFavorites = favoriteX!=undefined?favoriteX.includes(drink.id):false
     console.log(cardUser.favorites)
     let drinkNameClass= drink.name.length>15?'modal-drink-name long':'modal-drink-name'
 
