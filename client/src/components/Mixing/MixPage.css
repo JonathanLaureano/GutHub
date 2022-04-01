@@ -52,6 +52,11 @@
     transition: 1s ease;
 }
 
+.go-home-mix-page-button-nolight:hover{
+    color: rgb(219, 205, 205);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+}
+
 .mix-page-items-wrapper{
     margin-top: .6%;
     display: flex;
@@ -179,7 +184,7 @@
     text-align: center;
     border: none;
     outline: none;
-    color: #fee;
+    color: rgb(245, 187, 187);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a4469, 0 0 0.5em #ff4a4469, 0 0 0.1em #ff4a4469, 0 10px 3px #000;
     background-color: rgb(17, 17, 17);
     padding-left: 10%;
