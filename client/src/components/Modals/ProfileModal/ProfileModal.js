@@ -75,8 +75,6 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
               console.log('Error', error.message);
             }
           });
-    
-    
     }
 
     let favoriteEmpty = profile.favorites!=undefined
@@ -127,7 +125,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
                     <div className='modal-profile-drinks-list-title'>Favorites:</div>
                     <div className='modal-profile-cards-wrapper'>
                         {favoriteDrinksToDisplay}
-                        {favoriteEmpty?<div className='no-favorites-container'> 
+                        {!favoriteEmpty?<div className='no-favorites-container'> 
                             <div className='no-favorites-found'>No Favorites Found</div>
                             <div className='no-favorites-query'>Explore More Drinks to Add Favorites</div>
                         </div>:null}
