@@ -77,7 +77,13 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
         case 'Tomato Juice':
             imgClass = 'ingredient-card-image Tomato'
             break;
-
+        case 'Capelletti Aperitif':
+            imgClass = 'ingredient-card-image capelletti'
+            break;
+        case 'Dragonfruit':
+            imgClass = 'ingredient-card-image dragonfruit'
+            break;          
+    
         default:
             imgClass = 'ingredient-card-image'
     }
