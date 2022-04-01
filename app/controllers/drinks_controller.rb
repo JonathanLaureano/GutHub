@@ -45,7 +45,7 @@ class DrinksController < ApplicationController
     end 
 
     def mixcreate
-        @mix = params[:mix]
+        @mix = params[:recipes]
         @name = params[:name]
         @user_id = params[:user_id]
         @image_url = params[:image_url]

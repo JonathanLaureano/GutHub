@@ -79,7 +79,6 @@ export default function IngredientCard({ingredient,mixes,setMixes}){
     }
 
 
-    // ! Remove ingredient if partsCount <1 && >0
     function subtractClick(){
         let isFloat = partsCount.toString().indexOf('.') != -1;
         if (isFloat){

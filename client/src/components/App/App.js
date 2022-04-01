@@ -209,6 +209,41 @@ function App() {
   }
 
 
+  function handleCreateDrinkSubmit(newDrink){
+    axios.post('/mixcreate')
+    .then(r=>{
+      setDrinks([...drinks,r.data])
+      setSelectedDrink(r.data);
+    })
+    .catch(function (error) {
+      if (error.response) {
+        console.log(error.response.data.errors);
+        alert(error.response.data.errors)
+      } else if (error.request) {
+        console.log(error.request);
+      } else {
+        console.log('Error', error.message);
+      }
+    });
+
+
+  fetch("/me")
+    .then((r) => {
+      if (r.ok) {
+        r.json().then((user) => {
+          setUser(user)
+        }
+        );
+      }
+    });
+
+  axios.get('/drinks')
+    .then(r => {
+      setDrinks(r.data)
+    })
+  }
+
+
   return (
     <div className="App">
       {signedIn ? <Header
@@ -268,6 +303,7 @@ function App() {
             handleLogOut={handleLogOut}
             mixToCreate={mixToCreate}
             setMixToCreate={setMixToCreate}
+            handleCreateDrinkSubmit={handleCreateDrinkSubmit}
           />
         </Route>
         <Route path='/profile'>
@@ -285,6 +321,8 @@ function App() {
             setShowMixModal={setShowMixModal}
             mixToCreate={mixToCreate}
             setMixToCreate={setMixToCreate}
+            ingredients={ingredients}
+            handleCreateDrinkSubmit={handleCreateDrinkSubmit}
             />
         </Route>
         <Route path='/mix'>

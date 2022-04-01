@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import MixModal from '../Modals/MixModal/MixModal';
 
-export default function FavoritesPage({user,showMixModal,setShowMixModal,mixToCreate,setMixToCreate}){
+export default function FavoritesPage({user,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,ingredients,handleCreateDrinkSubmit}){
     document.title = 'GutHub - Your Favorites'
 
     function clickAway(){
@@ -21,11 +21,11 @@ export default function FavoritesPage({user,showMixModal,setShowMixModal,mixToCr
         "recipes": [
             {
                 "ingredient_id": 12,
-                "parts": 1
+                "parts": 1.33
             },
             {
-                "ingredient_id": 42,
-                "parts": 2
+                "ingredient_id": 1,
+                "parts": 2.66
             }
         ]
     }
@@ -35,7 +35,7 @@ export default function FavoritesPage({user,showMixModal,setShowMixModal,mixToCr
             {showMixModal?null:<button onClick={clickButton}>SHOW MODAL</button>}
             {showMixModal?<div onClick={clickAway} className="modal-curtain"></div>:null}
             {showMixModal?<div className='modal-container'>
-                <MixModal user={user} setShowMixModal={setShowMixModal} drink={mix}/>
+                <MixModal user={user} setShowMixModal={setShowMixModal} drink={mix} ingredients={ingredients} handleCreateDrinkSubmit={handleCreateDrinkSubmit}/>
             </div>:null}
         </React.Fragment>
     )
