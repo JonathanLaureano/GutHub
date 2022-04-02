@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import './IngredientCard.css';
 import CheckIcon from './CheckCircleIcon.png'
 
-export default function IngredientCard({ ingredient, mixes, setMixes }) {
+export default function IngredientCard({ ingredient, mixes, setMixes,oldPartsCount }) {
+    let [partsCount, setPartsCount] = useState(oldPartsCount);
+    // let inMix = mixes.mix.find(ingred=>ingred.ingredient_id===ingredient.id)
+    // if(inMix!=undefined){setPartsCount(inMix["parts"])}
 
     function truncateDecimals(num, digits) {
         let numS = num.toString(),
@@ -15,7 +18,6 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
     }
 
     const images = require.context('../../img/ingredients', true);
-    let [partsCount, setPartsCount] = useState(0);
 
     // let imgClass = 'ingredient-card-image'
     let imgClass;
