@@ -163,6 +163,7 @@ function App() {
         setSignedIn(true)
         setShowSignInModal(false)
         setUser(r.data)
+        window.location.reload();
 
       })
       .catch(function (error) {
