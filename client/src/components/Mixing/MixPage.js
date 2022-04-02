@@ -175,7 +175,7 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
-                        <div className='mix-page-ingredients-type-tab'>ALL</div>
+                        <div value ='all' className='mix-page-ingredients-type-tab'>ALL</div>
                         <div className='mix-page-ingredients-type-tab'>ALCOHOL</div>
                         <div className='mix-page-ingredients-type-tab'>LIQUIDS</div>
                         <div className='mix-page-ingredients-type-tab'>SOLIDS</div>

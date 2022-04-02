@@ -51,6 +51,11 @@
     transition: 1s;
 }
 
+.search-results-title:active{
+    color: rgb(250, 204, 204);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    transition: 3s ease;
+  }
 
 .search-results-container{
     display:flex;

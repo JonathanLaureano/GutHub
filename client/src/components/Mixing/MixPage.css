@@ -24,6 +24,12 @@
     transition: .75s;
 }
 
+.mix-page-title:active{
+    color: rgb(250, 204, 204);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    transition: 3s ease;
+  }
+
 .go-home-mix-page-button{
     color: rgb(219, 205, 205);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
@@ -213,7 +219,7 @@
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(39, 39, 39);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -222,14 +228,16 @@
     font-family: 'Shippori Mincho', serif;
     align-self: center;
     justify-self: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.329);
     height: 5vh;
     width: 100%;
     transition: .5s ease;
+    padding-top: .75%;
 }
 
 .mix-page-ingredients-type-tab:hover{
-    background-color: rgb(53, 53, 53);
+    color: #fff;
+    background-color: rgb(24, 24, 24);
     transition: .25s ease;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
 }
@@ -256,4 +264,13 @@
     border-top-right-radius: 10px;
 }
 
+.mix-page-ingredients-type-tab-clicked{
+    font-family: 'Shippori Mincho', serif;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    height: 5vh;
+    width: 100%;
+    transition: .5s ease;
+}
 
