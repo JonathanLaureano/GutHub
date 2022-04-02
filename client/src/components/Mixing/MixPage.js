@@ -15,11 +15,7 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         ]
     });
 
-    let filteredIngredients = ingredients.filter(ingredient=>ingredient.ingredient_type===selectedCategory.toLowerCase() || selectedCategory==='ALL')
-
-    let sortedIngredients = ingredients.sort((ingred1, ingred2) => {
-        return ingred1.ingredient_type.localeCompare(ingred2.ingredient_type)
-    })
+    let filteredIngredients = ingredients.filter(ingredient=>ingredient.ingredient_type===selectedCategory.toLowerCase() || selectedCategory==='ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
 
     let sortedMix = mixes.mix.sort((recipe1, recipe2) => {
         return parseInt(recipe1["ingredient_id"]) - parseInt(recipe2["ingredient_id"])
@@ -183,6 +179,7 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         });
     }
 
+    //! ADD RECIPE TITLE AT THE TOP OF THE JUG CONTAINER WITH HR TO DISPLAY RECIPES
     return (
         <React.Fragment>
             <div style={{ marginTop: '22.5%' }}></div>
@@ -192,11 +189,11 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
             </div>
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
-                    <button className='mix-button' onClick={handleMixClick}>MIX</button>
-                    <button className='reset-mix' onClick={resetIngredients}>RESET</button>
                     <div className='mix-recipes-wrapper'>
                         {mixesToDisplay}
                     </div>
+                    <button className='mix-button' onClick={handleMixClick}>MIX</button>
+                    <button className='reset-mix' onClick={resetIngredients}>RESET</button>
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
