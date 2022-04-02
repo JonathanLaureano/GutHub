@@ -210,12 +210,10 @@
 }
 
 .mix-page-ingredients-tab-holders{
-    /* margin-top: -10%; */
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(221, 105, 105);
-    /* height: 5vh; */
+    background-color: rgb(15, 15, 15);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -244,11 +242,18 @@
     border-top-right-radius: 10px;
 }
 
+.mix-page-ingredients-type-tab:active{
+    background-color: rgb(92, 91, 91);
+    transition: .5s ease;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+}
 
-/* .mix-page-ingredients-tab-holders > .mix-page-ingredients-type-tab:hover {
+.mix-page-ingredients-type-tab:nth-of-type(1):active{
     border-top-left-radius: 10px;
 }
 
-.mix-page-ingredients-tab-holders > .mix-page-ingredients-type-tab ~ .mix-page-ingredients-type-tab:hover {
-    border-top-left-radius: 0px;
-} */
+.mix-page-ingredients-type-tab:nth-of-type(4):active{
+    border-top-right-radius: 10px;
+}
+
+
