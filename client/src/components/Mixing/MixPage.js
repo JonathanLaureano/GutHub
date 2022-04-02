@@ -47,9 +47,9 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 setShowMixModal(true)
             } else {
                 console.log(r.data[0])
-                celebrate();
                 setSelectedDrink(r.data[0])
                 setShowDrinkModal(true)
+                celebrate();
                 setMatchFound(true);
             }
         })
