@@ -175,6 +175,17 @@
     cursor: pointer;
 }
 
+.mix-recipe-title {
+    margin-top: 1.25%;
+    /* background-color: rgb(15, 15, 15); */
+    border-radius: 10px;
+    width: 80%;
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3vh;
+    /* padding-top: 1%; */
+    /* padding-bottom: 2%; */
+}
 
 .mix-recipe {
     margin-top: 1.25%;

@@ -189,6 +189,7 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
             </div>
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
+                <div className='mix-recipe-title'>RECIPE:</div>
                     <div className='mix-recipes-wrapper'>
                         {mixesToDisplay}
                     </div>
