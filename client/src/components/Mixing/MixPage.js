@@ -26,6 +26,20 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
         )
     })
 
+    // * categories
+    let [selectedCategory, setSelectedCategory] = useState('ALL')
+    let categories =['ALL','ALCOHOL','LIQUID','SOLID']
+    let categoriesToDisplay = categories.map(category=>{
+        let categoryClassName = selectedCategory === category ? 'mix-page-ingredients-type-tab selected' : 'mix-page-ingredients-type-tab'
+        return (
+            <div className={categoryClassName} onClick={handleClickTab}>{category}</div>
+        )
+    })
+
+    function handleClickTab(e){
+        setSelectedCategory(e.target.textContent)
+    }
+
     function handleClickArrow(){
         resetIngredients();
         scrollTopMix();
@@ -175,10 +189,11 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
-                        <div value ='all' className='mix-page-ingredients-type-tab'>ALL</div>
-                        <div className='mix-page-ingredients-type-tab'>ALCOHOL</div>
-                        <div className='mix-page-ingredients-type-tab'>LIQUIDS</div>
-                        <div className='mix-page-ingredients-type-tab'>SOLIDS</div>
+                        {/* <div val='all' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>ALL</div>
+                        <div val='Alcohol' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>ALCOHOL</div>
+                        <div val='Liquid' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>LIQUIDS</div>
+                        <div val= 'Solid' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>SOLIDS</div> */}
+                        {categoriesToDisplay}
                     </div>
                     <div className='mix-page-ingredients-holder' id='cards'>
                         {displayIngredients(ingredients)}
