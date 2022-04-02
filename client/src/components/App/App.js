@@ -96,6 +96,7 @@ function App() {
           r.json().then((user) => {
             setUser(user)
             setSignedIn(true)
+            scrollTop();
           }
           );
         }
@@ -210,6 +211,10 @@ function App() {
   //Scrolling:
   function scrollBot() {
     ScrollAction.scrollToBottom();
+  }
+
+  function scrollTop(){
+    ScrollAction.scrollToTop();
   }
 
 
