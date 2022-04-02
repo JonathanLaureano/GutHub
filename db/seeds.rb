@@ -156,127 +156,127 @@ Drink.create!([
     {
         name: "Dirty Shirley",
         image_url: "DirtyShirley.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "French Martini",
         image_url: "FrenchMartini.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Lychee Martini",
         image_url: "LycheeMartini.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "French 75",
         image_url: "French75.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Negroni",
         image_url: "Negroni.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Scottish Coffee",
         image_url: "ScottishCoffee.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Zombie",
         image_url: "Zombie.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Expresso Martini",
         image_url: "ExpressoMartini.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Tequila Pineapple",
         image_url: "TequilaPineapple.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Death In The Afternoon",
         image_url: "DeathInTheAfternoon.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Gin Martini",
         image_url: "GinMartini.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Sazerac",
         image_url: "Sazerac.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Necromancer",
         image_url: "Necromancer.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Gimlet",
         image_url: "Gimlet.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Tom Collins",
         image_url: "TomCollins.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Paloma",
         image_url: "Paloma.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Irish Car Bomb",
         image_url: "IrishCarBomb.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "La Tour Eiffel",
         image_url: "LaTourEiffel.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "High Seas",
         image_url: "HighSeas.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Vesper",
         image_url: "Vesper.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Aperol Spritz",
         image_url: "AperolSpritz.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Classic Bellini",
         image_url: "ClassicBellini.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Cleo",
         image_url: "Cleo.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Jalepeno Diablo",
         image_url: "JalepenoDiablo.png",
-        user_id: 1
+        user_id: 2
     },
     {
         name: "Pine Pepper Crush",
         image_url: "PinePepperCrush.png",
-        user_id: 1
+        user_id: 2
     }
 ])
 

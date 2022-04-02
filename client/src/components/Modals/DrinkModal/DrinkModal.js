@@ -14,7 +14,6 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
         axios.get('/me')
         .then(r=>{
             setCardUser(r.data)
-            // setInFavorites(cardUser.favorites!=undefined?cardUser.favorites.includes(drink.id):false)
         })
 
         axios.get('/favorites')
@@ -35,30 +34,17 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
     function handleClickFavoriteButton(){
         handleFavoriteDrink(drink)
         setFavoritesX([...favoriteX,drink.id])
-        // axios.get('/me')
-        // .then(r=>{
-        //     setCardUser(r.data)
-        //     // setInFavorites(true)
-        // })
-
     }
 
     function handleClickUnfavoriteButton(){
         handleUnfavoriteDrink(drink)
         setFavoritesX(favoriteX.filter(fav=>fav!=drink.id))
-
-        // axios.get('/me')
-        // .then(r=>{
-        //     setCardUser(r.data)
-        //     // setInFavorites(false)
-        // })
-
     }
 
     let inFavorites = favoriteX!=undefined?favoriteX.includes(drink.id):false
     let drinkNameClass= drink.name.length>15?'modal-drink-name long':'modal-drink-name'
 
-    let isCreatedDrink = drink.user.id!=1
+    let isCreatedDrink = drink.user.id!=1 && drink.user.id!=2
 
     return(
             <div className="modal-card">
@@ -77,7 +63,6 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
                     </div>
                 </div>
                 <div className="modal-bot"> 
-                    {/* <button className="favorite-button" onClick={handleClickFavoriteButton} >FAVORITE DRINK</button> */}
                     {inFavorites?<button className="unfavorite-button" onClick={handleClickUnfavoriteButton} >UNFAVORITE DRINK</button>:<button className="favorite-button" onClick={handleClickFavoriteButton} >FAVORITE DRINK</button>}
                     <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
                 </div>
