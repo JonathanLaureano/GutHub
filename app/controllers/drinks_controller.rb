@@ -32,7 +32,7 @@ class DrinksController < ApplicationController
         @mix = params[:mix]
 
         #returns only the drinks that contain an exact match of the provided ingredients
-        drinks = Drink.all.filter{|drink| (drink.recipes.map{|recipe| obj[:mix].map{|ingred| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}) && (obj[:mix].map{|ingred| drink.recipes.map{|recipe| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}) }
+        drinks = Drink.all.filter{|drink| (drink.recipes.map{|recipe| @mix.map{|ingred| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}) && (@mix.map{|ingred| drink.recipes.map{|recipe| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}) }
         render json: drinks, include: ["recipes.ingredient", "user"], status: :ok
     end
 
