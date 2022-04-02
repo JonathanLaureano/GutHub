@@ -108,7 +108,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     function ingredientCardsRow(data) {
         return <div className='mix-page-ingredients-cards-container'>
             {data.map(ingredient => {
-                // let inMix = selectedCategory.toLowerCase()===ingredient.ingredient_type || selectedCategory==='ALL'?'':'hidden'
                 let oldPartsCount;
                 let inMix= mixes.mix.find(ingred=>ingred.ingredient_id===ingredient.id)
                 inMix!=undefined?oldPartsCount = inMix["parts"]:oldPartsCount = 0;
@@ -139,11 +138,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
 
     let titleClass = mixes.mix.length == 0 || showDrinkModal || showProfileModal || showMixModal ? 'mix-page-title-off' : 'mix-page-title'
     let buttonClass = mixes.mix.length == 0 || showDrinkModal || showProfileModal || showMixModal ? 'go-home-mix-page-button-nolight' : 'go-home-mix-page-button'
-
-
-    function clickOffModal() {
-        setShowDrinkModal(false);
-    }
 
     let count = 200;
     let defaults = {
