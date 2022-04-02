@@ -63,6 +63,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
         case 'Mint Leaves':
             imgClass = 'ingredient-card-image mint'
             break;
+        case 'Raspberry':
         case 'Lime':
             imgClass = 'ingredient-card-image Lime'
             break;

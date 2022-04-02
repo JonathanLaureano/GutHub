@@ -483,9 +483,9 @@ Ingredient.create!([
         ingredient_type: "Liquid"
     },
     {
-        name: "TEST INGREDIENT",
-        image_url: "Prosecco.png",
-        ingredient_type: 'Alcohol'
+        name: "Raspberry",
+        image_url: "Raspberry.png",
+        ingredient_type: 'Solid'
     },
     {
         name: "Champagne",
