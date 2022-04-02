@@ -15,6 +15,8 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         ]
     });
 
+    let filteredIngredients = ingredients.filter(ingredient=>ingredient.ingredient_type===selectedCategory.toLowerCase() || selectedCategory==='ALL')
+
     let sortedIngredients = ingredients.sort((ingred1, ingred2) => {
         return ingred1.ingredient_type.localeCompare(ingred2.ingredient_type)
     })
@@ -34,15 +36,18 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     let categoriesToDisplay = categories.map(category => {
         let categoryClassName = selectedCategory === category ? 'mix-page-ingredients-type-tab selected' : 'mix-page-ingredients-type-tab'
         return (
-            <div className={categoryClassName} onClick={handleClickTab}>{category}</div>
+            <div key={category} className={categoryClassName} onClick={handleClickTab}>{category}</div>
         )
     })
 
     function handleClickTab(e) {
         setSelectedCategory(e.target.textContent)
+        console.log(e.target.textContent)
+        console.log(filteredIngredients)
     }
 
     function handleClickArrow() {
+        setSelectedCategory('ALL')
         resetIngredients();
         scrollTopMix();
     }
@@ -195,14 +200,10 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
-                        {/* <div val='all' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>ALL</div>
-                        <div val='Alcohol' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>ALCOHOL</div>
-                        <div val='Liquid' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>LIQUIDS</div>
-                        <div val= 'Solid' className='mix-page-ingredients-type-tab' onClick={handleClickTab}>SOLIDS</div> */}
                         {categoriesToDisplay}
                     </div>
                     <div className='mix-page-ingredients-holder' id='cards'>
-                        {displayIngredients(ingredients)}
+                        {displayIngredients(filteredIngredients)}
                     </div>
                 </div>
             </div>
