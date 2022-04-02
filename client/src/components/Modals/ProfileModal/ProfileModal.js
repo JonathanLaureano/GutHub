@@ -4,7 +4,6 @@ import '../Modal.css';
 import './ProfileModal.css';
 
 export default function ProfileModal({ profile,setUser,setShowProfileModal,handleLogOut,setSelectedDrink,setShowDrinkModal,drinks }) {
-    // const users = require.context('../../../img/users', true);
     const drinkImgs = require.context('../../../img/drinks', true);
 
     const [showEditMode,setShowEditMode] = useState(false)
@@ -86,10 +85,10 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
         )
     }):null;
 
-    let createdEmpty = profile.drinks!=undefined
+    let createdEmpty = profile.drinks.length===0;
 
 
-    let createdDrinksToDisplay = createdEmpty?profile.drinks.map(drink => {
+    let createdDrinksToDisplay = !createdEmpty?profile.drinks.map(drink => {
         let fullDrink = drinks[drink.id-1]
         return (
             <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(fullDrink)} src={drinkImgs('./' + drink.image_url)} />
@@ -133,7 +132,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
                     <div className='modal-profile-drinks-list-title'>Created:</div>
                     <div className='modal-profile-cards-wrapper'>
                         {createdDrinksToDisplay}
-                        {!createdEmpty?<div className='no-favorites-container'> 
+                        {createdEmpty?<div className='no-favorites-container'> 
                             <div className='no-favorites-found'>No Created Drinks Found</div>
                             <div className='no-favorites-query'>Go to the Mix Page to Create a Drink</div>
                         </div>:null}

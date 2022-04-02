@@ -7,7 +7,6 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
     console.log(drink)
     const images = require.context('../../../img/drinks',true);
     let [cardUser,setCardUser]=useState({})
-    // let [inFavorites,setInFavorites] = useState(favoriteX!=undefined?favoriteX.includes(drink.id):false)
     let [favoriteX,setFavoritesX] = useState([])
 
 
@@ -57,7 +56,6 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
     }
 
     let inFavorites = favoriteX!=undefined?favoriteX.includes(drink.id):false
-    console.log(cardUser.favorites)
     let drinkNameClass= drink.name.length>15?'modal-drink-name long':'modal-drink-name'
 
     let isCreatedDrink = drink.user.id!=1
