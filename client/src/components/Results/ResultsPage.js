@@ -1,20 +1,10 @@
 import './ResultsPage.css';
-import React, { useState, useEffect } from 'react'
-import { Route, Switch } from "react-router-dom";
+import React from 'react'
 import axios from 'axios';
 import DrinkCard from '../DrinkCard/DrinkCard';
-import { animateScroll as ScrollAction } from 'react-scroll';
-
-
-function scrollBot() {
-    // ScrollAction.scrollToBottom();
-    let cards = document.getElementById('cards')
-    cards.scroll(0, 100)
-}
-
-
 
 export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal}) {
+    let sortedDrinks=searchResults.sort((drink1,drink2)=>drink1.name.localeCompare(drink2.name))
 
     function displayDrinks(data){
             if (data.length>=20) {
@@ -128,7 +118,7 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
 
             <div className='search-results-container'>
                 <div className={searchResultsCardClass} id='cards'>
-                    {displayDrinks(searchResults)}
+                    {displayDrinks(sortedDrinks)}
                     {searchResults.length==0 && searchActive==true?
                         <div className='no-results-container'> 
                             <div className='no-results-found'>No Results Found</div>
