@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import './IngredientCard.css';
 import CheckIcon from './CheckCircleIcon.png'
 
-export default function IngredientCard({ ingredient, mixes, setMixes }) {
+export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCount }) {
+    let [partsCount, setPartsCount] = useState(oldPartsCount);
 
     function truncateDecimals(num, digits) {
         let numS = num.toString(),
@@ -15,9 +16,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
     }
 
     const images = require.context('../../img/ingredients', true);
-    let [partsCount, setPartsCount] = useState(0);
 
-    // let imgClass = 'ingredient-card-image'
     let imgClass;
 
     switch (ingredient.name) {
@@ -72,7 +71,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
             imgClass = 'ingredient-card-image paprika'
             break;
         case 'Salt':
-            imgClass ='ingredient-card-image salt'
+            imgClass = 'ingredient-card-image salt'
             break;
         case 'Sugar':
         case 'Tomato Juice':
@@ -83,8 +82,8 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
             break;
         case 'Dragonfruit':
             imgClass = 'ingredient-card-image dragonfruit'
-            break;          
-    
+            break;
+
         default:
             imgClass = 'ingredient-card-image'
     }
@@ -180,10 +179,6 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
         }
     }
 
-    function handleCountClick(e) {
-        console.log(e.target)
-    }
-
     function handleUpdatePartsCountOnInput(e) {
         let newValue = e.target.value;
         setPartsCount(newValue);
@@ -244,24 +239,6 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
         }
     }
 
-
-    let countClass;
-    if (ingredient.ingredient_type != 'Solid') {
-        if (partsCount === 5) {
-            countClass = 'count-max';
-        } else if (partsCount > 0) {
-            countClass = 'count-active';
-        } else {
-            countClass = 'count'
-        }
-    } else {
-        if (partsCount === 1) {
-            countClass = 'count-max';
-        } else {
-            countClass = 'count';
-        }
-    }
-
     let inputClass;
     if (ingredient.ingredient_type != 'Solid') {
         if (partsCount === 5) {
@@ -279,8 +256,6 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
         }
     }
 
-    let displayCheck = partsCount != 0;
-
     let containerClass = partsCount != 0 ? 'ingredient-card-container-active' : 'ingredient-card-container'
 
     return (
@@ -288,11 +263,9 @@ export default function IngredientCard({ ingredient, mixes, setMixes }) {
             <div id={ingredient.d} className={containerClass}>
                 <img className={imgClass} src={images('./' + ingredient.image_url)} />
                 <div className="ingredient-card-text-info">
-                    {/* {displayCheck?<img className='ingredient-check-icon' src={CheckIcon}/>:null} */}
                     <div className="ingredient-card-name">{ingredient.name}</div>
                     <div className="ingredient-card-partsCount">
                         <img className="subtract" src='https://img.icons8.com/fluency/48/000000/do-not-disturb.png' onClick={subtractClick} />
-                        {/* <div onClick={handleCountClick} className={countClass}>{partsCount}</div> */}
                         <input onBlur={handleOffFocusClick} className={inputClass} value={partsCount} onChange={handleUpdatePartsCountOnInput} type='number' min='0' max='5'></input>
                         <img className="add" src='https://img.icons8.com/fluency/48/000000/add.png' onClick={addClick} />
                     </div>

@@ -8,111 +8,136 @@ import { animateScroll as ScrollAction } from 'react-scroll';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
 
-export default function MixPage({user,ingredients,setIngredients,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,scrollTopMix,showProfileModal,matchFound,setMatchFound,mixToCreate,setMixToCreate,showMixModal, setShowMixModal}) {
-    let [mixes,setMixes]=useState({"mix":[
-    ]});
+export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal }) {
+    let [selectedCategory, setSelectedCategory] = useState('ALL')
+    let [mixes, setMixes] = useState({
+        "mix": [
+        ]
+    });
 
-    let sortedIngredients = ingredients.sort((ingred1,ingred2)=>{
+    let filteredIngredients = ingredients.filter(ingredient=>ingredient.ingredient_type===selectedCategory.toLowerCase() || selectedCategory==='ALL')
+
+    let sortedIngredients = ingredients.sort((ingred1, ingred2) => {
         return ingred1.ingredient_type.localeCompare(ingred2.ingredient_type)
     })
 
-    let sortedMix = mixes.mix.sort((recipe1,recipe2)=>{
+    let sortedMix = mixes.mix.sort((recipe1, recipe2) => {
         return parseInt(recipe1["ingredient_id"]) - parseInt(recipe2["ingredient_id"])
     })
 
-    let mixesToDisplay= sortedMix.map(mix=>{
-        return(
-            <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient=> ingredient.id==[mix["ingredient_id"]])[0].name}: {mix["parts"]}</div>
+    let mixesToDisplay = sortedMix.map(mix => {
+        return (
+            <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0].name}: {mix["parts"]}</div>
         )
     })
 
-    function handleClickArrow(){
+    // * categories
+    let categories = ['ALL', 'ALCOHOL', 'LIQUID', 'SOLID']
+    let categoriesToDisplay = categories.map(category => {
+        let categoryClassName = selectedCategory === category ? 'mix-page-ingredients-type-tab selected' : 'mix-page-ingredients-type-tab'
+        return (
+            <div key={category} className={categoryClassName} onClick={handleClickTab}>{category}</div>
+        )
+    })
+
+    function handleClickTab(e) {
+        setSelectedCategory(e.target.textContent)
+        console.log(e.target.textContent)
+        console.log(filteredIngredients)
+    }
+
+    function handleClickArrow() {
+        setSelectedCategory('ALL')
         resetIngredients();
         scrollTopMix();
     }
 
-    function handleMixClick(){
+    function handleMixClick() {
         console.log(mixes.mix);
-        if (mixes.mix.length <=1){
+        if (mixes.mix.length <= 1) {
             alert("               MIX ERORR: \nPlease add more than one ingredient.")
         } else {
-        axios.post('/mix',mixes)
-        .then(r=>{
-            if (r.data[0]===undefined){
-                alert("No Match Found")
-                setMixToCreate({
-                    "image_url": 'BlankGlass.png',
-                    "recipes": mixes.mix
+            axios.post('/mix', mixes)
+                .then(r => {
+                    if (r.data[0] === undefined) {
+                        alert("No Match Found")
+                        setMixToCreate({
+                            "image_url": 'BlankGlass.png',
+                            "recipes": mixes.mix
+                        })
+                        setShowMixModal(true)
+                    } else {
+                        console.log(r.data[0])
+                        setSelectedDrink(r.data[0])
+                        setShowDrinkModal(true)
+                        celebrate();
+                        setMatchFound(true);
+                    }
                 })
-                setShowMixModal(true)
-            } else {
-                console.log(r.data[0])
-                setSelectedDrink(r.data[0])
-                setShowDrinkModal(true)
-                celebrate();
-                setMatchFound(true);
-            }
-        })
-    }
+        }
 
     }
 
-    function displayIngredients(data){
-                return <React.Fragment>
-                    {ingredientCardsRow(data.slice(0,3))}
-                    {ingredientCardsRow(data.slice(3,6))}
-                    {ingredientCardsRow(data.slice(6,9))}
-                    {ingredientCardsRow(data.slice(9,12))}
-                    {ingredientCardsRow(data.slice(12,15))}
-                    {ingredientCardsRow(data.slice(15,18))}
-                    {ingredientCardsRow(data.slice(18,21))}
-                    {ingredientCardsRow(data.slice(21,24))}
-                    {ingredientCardsRow(data.slice(24,27))}
-                    {ingredientCardsRow(data.slice(27,30))}
-                    {ingredientCardsRow(data.slice(30,33))}
-                    {ingredientCardsRow(data.slice(33,36))}
-                    {ingredientCardsRow(data.slice(36,39))}
-                    {ingredientCardsRow(data.slice(39,42))}
-                    {ingredientCardsRow(data.slice(42,45))}
-                    {ingredientCardsRow(data.slice(45,48))}
-                    {ingredientCardsRow(data.slice(48,51))}
-                    {ingredientCardsRow(data.slice(51,54))}
-                    {ingredientCardsRow(data.slice(54,57))}
-                    {ingredientCardsRow(data.slice(57,60))}
-                    {ingredientCardsRow(data.slice(60,63))}
-                </React.Fragment>}
-    
-        
+    function displayIngredients(data) {
+        return <React.Fragment>
+            {ingredientCardsRow(data.slice(0, 3))}
+            {ingredientCardsRow(data.slice(3, 6))}
+            {ingredientCardsRow(data.slice(6, 9))}
+            {ingredientCardsRow(data.slice(9, 12))}
+            {ingredientCardsRow(data.slice(12, 15))}
+            {ingredientCardsRow(data.slice(15, 18))}
+            {ingredientCardsRow(data.slice(18, 21))}
+            {ingredientCardsRow(data.slice(21, 24))}
+            {ingredientCardsRow(data.slice(24, 27))}
+            {ingredientCardsRow(data.slice(27, 30))}
+            {ingredientCardsRow(data.slice(30, 33))}
+            {ingredientCardsRow(data.slice(33, 36))}
+            {ingredientCardsRow(data.slice(36, 39))}
+            {ingredientCardsRow(data.slice(39, 42))}
+            {ingredientCardsRow(data.slice(42, 45))}
+            {ingredientCardsRow(data.slice(45, 48))}
+            {ingredientCardsRow(data.slice(48, 51))}
+            {ingredientCardsRow(data.slice(51, 54))}
+            {ingredientCardsRow(data.slice(54, 57))}
+            {ingredientCardsRow(data.slice(57, 60))}
+            {ingredientCardsRow(data.slice(60, 63))}
+        </React.Fragment>
+    }
+
+
     function ingredientCardsRow(data) {
         return <div className='mix-page-ingredients-cards-container'>
             {data.map(ingredient => {
+                let oldPartsCount;
+                let inMix= mixes.mix.find(ingred=>ingred.ingredient_id===ingredient.id)
+                inMix!=undefined?oldPartsCount = inMix["parts"]:oldPartsCount = 0;
+
                 return (<IngredientCard
                     ingredient={ingredient}
                     key={ingredient.id}
                     mixes={mixes}
                     setMixes={setMixes}
+                    oldPartsCount={oldPartsCount}
                 />)
             })}
         </div>
     }
 
-    function resetIngredients(){
-        setMixes({"mix":[
-        ]})
+    function resetIngredients() {
+        setMixes({
+            "mix": [
+            ]
+        })
         setIngredients([])
         axios.get('/ingredients')
-        .then(r => {
-          setIngredients(r.data)
-        })  
-}
-
-    let titleClass = mixes.mix.length==0 || showDrinkModal || showProfileModal || showMixModal ?'mix-page-title-off':'mix-page-title'
-    let buttonClass = mixes.mix.length==0 || showDrinkModal || showProfileModal || showMixModal ?'go-home-mix-page-button-nolight':'go-home-mix-page-button'
-
-
-    function clickOffModal(){
-        setShowDrinkModal(false);
+            .then(r => {
+                setSelectedCategory('ALL')
+                setIngredients(r.data)
+            })
     }
+
+    let titleClass = mixes.mix.length == 0 || showDrinkModal || showProfileModal || showMixModal ? 'mix-page-title-off' : 'mix-page-title'
+    let buttonClass = mixes.mix.length == 0 || showDrinkModal || showProfileModal || showMixModal ? 'go-home-mix-page-button-nolight' : 'go-home-mix-page-button'
 
     let count = 200;
     let defaults = {
@@ -125,7 +150,7 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
         }));
     }
 
-    function celebrate(){
+    function celebrate() {
         fire(0.35, {
             spread: 36,
             startVelocity: 65,
@@ -160,7 +185,7 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
 
     return (
         <React.Fragment>
-            <div style={{marginTop:'22.5%'}}></div>
+            <div style={{ marginTop: '22.5%' }}></div>
             <div className='mix-page-wrapper'>
                 <div className={titleClass}>mixing</div>
                 <div className={buttonClass} onClick={handleClickArrow}>↑</div>
@@ -175,13 +200,10 @@ export default function MixPage({user,ingredients,setIngredients,showDrinkModal,
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
-                        <div className='mix-page-ingredients-type-tab'>ALL</div>
-                        <div className='mix-page-ingredients-type-tab'>ALCOHOL</div>
-                        <div className='mix-page-ingredients-type-tab'>LIQUIDS</div>
-                        <div className='mix-page-ingredients-type-tab'>SOLIDS</div>
+                        {categoriesToDisplay}
                     </div>
                     <div className='mix-page-ingredients-holder' id='cards'>
-                        {displayIngredients(ingredients)}
+                        {displayIngredients(filteredIngredients)}
                     </div>
                 </div>
             </div>
