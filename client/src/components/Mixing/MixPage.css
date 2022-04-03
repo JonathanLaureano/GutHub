@@ -18,7 +18,6 @@
     color: inherit;
     text-shadow: inherit;
     font-size: 300%;
-    /* margin-top: .5%; */
     font: 100 10vh "Vibur";
     cursor: default;
     transition: .75s;
@@ -99,7 +98,7 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    margin-bottom: 8.75%;
+    margin-bottom: 8%;
 }
 
 .mix-recipes-wrapper::-webkit-scrollbar {
@@ -117,6 +116,7 @@
 .mix-page-ingredients-holder {
     margin-top: -1.15%;
     width: 85vh;
+    max-width: 85vh;
     height: 78.5vh;
     /* border-radius: 10px; */
     border-bottom-left-radius: 10px;
@@ -129,6 +129,9 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .frozen {
@@ -142,10 +145,10 @@
 .mix-page-ingredients-cards-container {
     /* margin-left: 1%; */
     margin-top: 3%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around
+    justify-content: space-around;
 }
 
 .mix-button {
@@ -154,7 +157,6 @@
     border: none;
     outline: none;
     background-color: rgb(17, 17, 17);
-    /* width: 25%; */
     padding-top: 5%;
     padding-left: 10%;
     padding-right: 10%;
@@ -165,30 +167,31 @@
     width: fit-content;
     font-size: 300%;
     color: #fff;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
-    /* margin-top: 5%; */
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff6e, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000; */
 }
 
 .mix-button:hover {
     opacity: .75;
     color: aqua;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff6e, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
     cursor: pointer;
 }
 
 .mix-recipe-title {
-    margin-top: 1.25%;
-    /* background-color: rgb(15, 15, 15); */
-    border-radius: 10px;
-    width: 80%;
+    /* margin-top: 1.25%; */
+    background-color: rgb(15, 15, 15);
+    background-color: rgb(39, 39, 39);
+    padding-bottom: .75%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 30vw;
     color: #fff;
     font-family: 'Shippori Mincho', serif;
     font-size: 3vh;
-    /* padding-top: 1%; */
-    /* padding-bottom: 2%; */
 }
 
 .mix-recipe {
-    margin-top: 1.25%;
+    margin-top: 1.5%;
     background-color: rgb(15, 15, 15);
     border-radius: 10px;
     width: 80%;
@@ -206,7 +209,7 @@
     border: none;
     outline: none;
     color: rgb(245, 187, 187);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a4469, 0 0 0.5em #ff4a4469, 0 0 0.1em #ff4a4469, 0 10px 3px #000;
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a4469, 0 0 0.5em #ff4a4469, 0 0 0.1em #ff4a4469, 0 10px 3px #000; */
     background-color: rgb(17, 17, 17);
     padding-left: 10%;
     padding-right: 10%;
