@@ -36,6 +36,22 @@ class DrinksController < ApplicationController
         render json: drinks, include: ["recipes.ingredient", "user"], status: :ok
     end
 
+    def mixrelative
+        @mix = params[:mix]
+
+        #returns drinks that contain the provided ingredients
+        drinks = Drink.all.filter{|drink| @mix.map{|ingred| drink.recipes.map{|recipe| recipe.ingredient_id == ingred[:ingredient_id]}.include? true}.all?{|item| item==true} }
+        render json: drinks, include: ["recipes.ingredient", "user"], status: :ok
+    end
+
+    def mixstrict
+        @mix = params[:mix]
+
+        #returns only the drink that contains an exact match of the provided ingredients
+        drink = Drink.all.filter{|drink| (drink.recipes.map{|recipe| @mix.map{|ingred| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}) && (@mix.map{|ingred| drink.recipes.map{|recipe| recipe.ingredient_id == ingred[:ingredient_id] && recipe.parts == ingred[:parts]}.include? true}.all?{|item| item==true}) }[0]
+        render json: drink, include: ["recipes.ingredient", "user"], status: :ok
+    end
+
     def search
         @query = params[:query]
         # drinks = Drink.all.filter{|drink| drink.name.downcase.include? @query.downcase}
