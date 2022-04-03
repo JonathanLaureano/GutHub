@@ -74,32 +74,26 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
 
     }
 
-    function displayIngredients(data) {
-        return <React.Fragment>
-            {ingredientCardsRow(data.slice(0, 3))}
-            {ingredientCardsRow(data.slice(3, 6))}
-            {ingredientCardsRow(data.slice(6, 9))}
-            {ingredientCardsRow(data.slice(9, 12))}
-            {ingredientCardsRow(data.slice(12, 15))}
-            {ingredientCardsRow(data.slice(15, 18))}
-            {ingredientCardsRow(data.slice(18, 21))}
-            {ingredientCardsRow(data.slice(21, 24))}
-            {ingredientCardsRow(data.slice(24, 27))}
-            {ingredientCardsRow(data.slice(27, 30))}
-            {ingredientCardsRow(data.slice(30, 33))}
-            {ingredientCardsRow(data.slice(33, 36))}
-            {ingredientCardsRow(data.slice(36, 39))}
-            {ingredientCardsRow(data.slice(39, 42))}
-            {ingredientCardsRow(data.slice(42, 45))}
-            {ingredientCardsRow(data.slice(45, 48))}
-            {ingredientCardsRow(data.slice(48, 51))}
-            {ingredientCardsRow(data.slice(51, 54))}
-            {ingredientCardsRow(data.slice(54, 57))}
-            {ingredientCardsRow(data.slice(57, 60))}
-            {ingredientCardsRow(data.slice(60, 63))}
-        </React.Fragment>
-    }
+ 
 
+    function chunk(array, limit) {
+        if (array.length <= limit) return [array];
+        const perChunk = Math.ceil(array.length / Math.ceil(array.length / limit));
+        return [array.slice(0, perChunk)].concat(chunk(array.slice(perChunk), limit));
+      }
+
+    let chunkIngredients = chunk(filteredIngredients,3);
+
+
+    function displayIngredients(data) {
+        return data.map(row=>{
+            return(
+                <React.Fragment>
+                    {ingredientCardsRow(row)}
+            </React.Fragment>
+            )
+        })
+    }
 
     function ingredientCardsRow(data) {
         return <div className='mix-page-ingredients-cards-container'>
@@ -201,7 +195,7 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                         {categoriesToDisplay}
                     </div>
                     <div className='mix-page-ingredients-holder' id='cards'>
-                        {displayIngredients(filteredIngredients)}
+                        {displayIngredients(chunkIngredients)}
                     </div>
                 </div>
             </div>
