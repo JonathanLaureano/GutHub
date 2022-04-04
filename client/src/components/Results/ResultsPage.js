@@ -63,6 +63,24 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
         });
       }
     
+      function clickResetButton(){
+        setSearchParams('')
+        let query ={"query":''}
+        axios.post('/search',query)
+        .then(r=>{
+          setSearchResults(r.data)      
+        })
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.data.errors);
+            alert(error.response.data.errors)
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+        });
+      }
 
     let searchResultsCardClass = searchResults.length<=8 ?'search-results-card frozen':'search-results-card'
     let titleClass= searchResults.length==0||showDrinkModal ||showProfileModal?'search-results-title-off':'search-results-title'
@@ -73,6 +91,8 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
             <div style={{marginTop:'25%'}}></div>
             <div className={titleClass}>Search Results</div>
             <div className='search-title-wrapper'>
+            <div className={buttonClass} onClick={clickResetButton}>X</div>
+
             <form onSubmit={handleSearchSubmit}><input 
                     type='text'
                     placeholder='Search For A Drink'

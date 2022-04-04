@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center;
     cursor: pointer;
-    transition: color .5s;
+    transition: .5s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
