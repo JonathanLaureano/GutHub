@@ -53,9 +53,9 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         if (mixes.mix.length <= 1) {
             alert("               MIX ERORR: \nPlease add more than one ingredient.")
         } else {
-            axios.post('/mix', mixes)
+            axios.post('/mixstrict', mixes)
                 .then(r => {
-                    if (r.data[0] === undefined) {
+                    if (r.data === undefined) {
                         alert("No Match Found")
                         setMixToCreate({
                             "image_url": 'BlankGlass.png',
@@ -63,8 +63,8 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                         })
                         setShowMixModal(true)
                     } else {
-                        console.log(r.data[0])
-                        setSelectedDrink(r.data[0])
+                        console.log(r.data)
+                        setSelectedDrink(r.data)
                         setShowDrinkModal(true)
                         celebrate();
                         setMatchFound(true);
