@@ -23,7 +23,11 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
 
     let mixesToDisplay = sortedMix.map(mix => {
         return (
-            <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0].name}: {mix["parts"]}</div>
+        <div className='mix-recipe-identity'>
+                <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0].name}: </div>
+                    
+                <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
+            </div>
         )
     })
 
