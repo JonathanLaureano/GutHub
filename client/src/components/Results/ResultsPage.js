@@ -6,55 +6,22 @@ import DrinkCard from '../DrinkCard/DrinkCard';
 export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal}) {
     let sortedDrinks=searchResults.sort((drink1,drink2)=>drink1.name.localeCompare(drink2.name))
 
+    function chunk(array, limit) {
+        if (array.length <= limit) return [array];
+        const perChunk = Math.ceil(array.length / Math.ceil(array.length / limit));
+        return [array.slice(0, perChunk)].concat(chunk(array.slice(perChunk), limit));
+      }
+
+    let chunkDrinks = chunk(sortedDrinks,4)
+
     function displayDrinks(data){
-            if (data.length>=20) {
-                return <React.Fragment>
-                    {drinkCardsRow(data.slice(0,4))}
-                    {drinkCardsRow(data.slice(4,8))}
-                    {drinkCardsRow(data.slice(8,12))}
-                    {drinkCardsRow(data.slice(12,16))}
-                    {drinkCardsRow(data.slice(16,20))}
-                    {drinkCardsRow(data.slice(20,24))}
-                    {drinkCardsRow(data.slice(24,28))}
-                    {drinkCardsRow(data.slice(28,32))}
-                    {drinkCardsRow(data.slice(32,36))}
-                    {drinkCardsRow(data.slice(36,40))}
-                    {drinkCardsRow(data.slice(40,44))}
-                    {drinkCardsRow(data.slice(44,48))}
-                    {drinkCardsRow(data.slice(48,52))}
-                    {drinkCardsRow(data.slice(52,56))}
-                </React.Fragment>}
-            else if (data.length>=16)
-                {return <React.Fragment>
-                    {drinkCardsRow(data.slice(0,4))}
-                    {drinkCardsRow(data.slice(4,8))}
-                    {drinkCardsRow(data.slice(8,12))}
-                    {drinkCardsRow(data.slice(12,16))}
-                    {drinkCardsRow(data.slice(16,))}
-                </React.Fragment>}
-            else if (data.length>=12 ){
-                return <React.Fragment>
-                    {drinkCardsRow(data.slice(0,4))}
-                    {drinkCardsRow(data.slice(4,8))}
-                    {drinkCardsRow(data.slice(8,12))}
-                    {drinkCardsRow(data.slice(12,))}
-                </React.Fragment>}
-            else if (data.length>=8)
-                {return <React.Fragment>
-                    {drinkCardsRow(data.slice(0,4))}
-                    {drinkCardsRow(data.slice(4,8))}
-                    {drinkCardsRow(data.slice(8,))}
-                </React.Fragment>}
-            else if (data.length>=4)
-                {return <React.Fragment>
-                    {drinkCardsRow(data.slice(0,4))}
-                    {drinkCardsRow(data.slice(4,))}
-                </React.Fragment>}
-            else
-                {return <React.Fragment>
-                    {drinkCardsRow(data.slice(0,4))}
-                </React.Fragment>}
-            }
+        return data.map(row=>{
+            return <React.Fragment>
+                    {drinkCardsRow(row)}
+                </React.Fragment>
+
+        })
+    }
         
     function drinkCardsRow(data) {
         return <div className='drinks-page-cards-container'>
@@ -118,7 +85,7 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
 
             <div className='search-results-container'>
                 <div className={searchResultsCardClass} id='cards'>
-                    {displayDrinks(sortedDrinks)}
+                    {displayDrinks(chunkDrinks)}
                     {searchResults.length==0 && searchActive==true?
                         <div className='no-results-container'> 
                             <div className='no-results-found'>No Results Found</div>
