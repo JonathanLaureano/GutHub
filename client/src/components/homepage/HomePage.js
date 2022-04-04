@@ -5,7 +5,7 @@ import axios from 'axios';
 import {animateScroll as ScrollAction} from 'react-scroll';
 import SignInModal from '../SignInModal/SignInModal';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
-import ResultsPage from '../Results/ResultsPage';
+import SearchPage from '../SearchPage/SearchPage';
 import MixPage from '../Mixing/MixPage';
 import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 import MixModal from '../Modals/MixModal/MixModal';
@@ -121,7 +121,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
             </div>:null}
 
             {modalActive?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
-            {searchActive?<ResultsPage 
+            {searchActive?<SearchPage 
                 user={user}
                 searchActive={searchActive}
                 searchResults={searchResults}
