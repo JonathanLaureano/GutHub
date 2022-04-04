@@ -3,7 +3,7 @@ import React from 'react'
 import axios from 'axios';
 import DrinkCard from '../DrinkCard/DrinkCard';
 
-export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal,favorites,setFavorites}) {
+export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal,favorites,setFavorites,modalActive}) {
     let sortedDrinks=searchResults.sort((drink1,drink2)=>drink1.name.localeCompare(drink2.name))
 
     function chunk(array, limit) {
@@ -83,8 +83,8 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
       }
 
     let searchResultsCardClass = searchResults.length<=8 ?'search-results-card frozen':'search-results-card'
-    let titleClass= searchResults.length==0||showDrinkModal ||showProfileModal?'search-results-title-off':'search-results-title'
-    let buttonClass = searchResults.length==0||showDrinkModal||showProfileModal?'go-home-button-off':'go-home-button'
+    let titleClass= searchResults.length==0||modalActive?'search-results-title-off':'search-results-title'
+    let buttonClass = searchResults.length==0||modalActive?'go-home-button-off':'go-home-button'
 
     return (
         <React.Fragment>

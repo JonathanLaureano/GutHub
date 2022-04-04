@@ -11,7 +11,7 @@ import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 import MixModal from '../Modals/MixModal/MixModal';
 
 
-export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,favorites,setFavorites,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink}){
+export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,favorites,setFavorites,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink,showResultsModal,setShowResultsModal,mixResults,setMixResults}){
     document.title = 'GutHub - Home';
 
     let [matchFound,setMatchFound] = useState(false);
@@ -45,6 +45,8 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
         setMixActive(true)
         ScrollAction.scrollToBottom();
     }
+
+    let modalActive = showDrinkModal || showProfileModal || showMixModal || showResultsModal;
 
     return(
         <React.Fragment>
@@ -112,7 +114,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 <MixModal user={user} setShowMixModal={setShowMixModal} drink={mixToCreate} ingredients={ingredients} handleCreateDrinkSubmit={handleCreateDrinkSubmit}/>
             </div>:null}
 
-            {showDrinkModal || showProfileModal || showMixModal?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
+            {modalActive?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
             {searchActive?<ResultsPage 
                 user={user}
                 searchActive={searchActive}
@@ -130,6 +132,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 showProfileModal={showProfileModal}
                 favorites={favorites} 
                 setFavorites={setFavorites}   
+                modalActive={modalActive}
             />:null}
             {mixActive?<MixPage
                 user={user}
@@ -146,7 +149,12 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 mixToCreate={mixToCreate}
                 setMixToCreate={setMixToCreate}  
                 showMixModal={showMixModal}
-                setShowMixModal={setShowMixModal}  
+                setShowMixModal={setShowMixModal}
+                showResultsModal={showResultsModal}
+                setShowResultsModal={setShowResultsModal}
+                mixResults={mixResults}
+                setMixResults={setMixResults}   
+                modalActive={modalActive}   
             />:null}
         </React.Fragment>
     )
