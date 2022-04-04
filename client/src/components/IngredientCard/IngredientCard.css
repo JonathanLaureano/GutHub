@@ -43,7 +43,7 @@
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     height: 10vh;
-    width: 5vw;
+    /* width: 5vw; */
     max-width: 10vw;
     max-height: 10vh;
 }
@@ -81,7 +81,7 @@
 
 .nutmeg{
     height: 7.25vh;
-    width: 5vw;
+    /* width: 5vw; */
     margin-top: 1.375vh;
     margin-bottom: 1.375vh;
 }
@@ -113,10 +113,10 @@
 }
 
 .mint{
-    height: 9vh;
-    width: 5vw;
-    margin-top: .5vh;
-    margin-bottom: .5vh;
+    height: 8vh;
+    /* width: 5vw; */
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 .vodka{
@@ -147,7 +147,6 @@
 
 .dragonfruit{
     height: 8vh;
-    width: 10vh;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
