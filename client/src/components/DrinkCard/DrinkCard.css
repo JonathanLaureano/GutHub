@@ -9,7 +9,7 @@
     transition: color .5s;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: space-between;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -23,7 +23,6 @@
     justify-self: center;
     height: 15vh;
     width: 15vw;
-    margin-bottom: 12%;
     overflow-y: hidden;
 }
 
