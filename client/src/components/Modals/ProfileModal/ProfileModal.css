@@ -75,6 +75,7 @@
 
 .modal-mini-drink-image{
     height: 10vh;
+    cursor: pointer;
 }
 
 .edit-button {
