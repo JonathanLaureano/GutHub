@@ -85,7 +85,7 @@
     display: grid;
     flex-direction: column;
     transition: .5s ease;
-    margin-left: 3.5%;
+    margin-left: 4%;
     justify-content: center;
     align-content: center;
 }
