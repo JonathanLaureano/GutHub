@@ -10,6 +10,7 @@ import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
 export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal }) {
     let [selectedCategory, setSelectedCategory] = useState('ALL')
+    let [mixType,setMixType] = useState('RELATIVE');
     let [mixes, setMixes] = useState({
         "mix": [
         ]
@@ -180,7 +181,14 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         });
     }
 
-    //! ADD RECIPE TITLE AT THE TOP OF THE JUG CONTAINER WITH HR TO DISPLAY RECIPES
+    function handleSwitchButtonRelative(){
+        setMixType('STRICT')
+    }
+
+    function handleSwitchButtonStrict(){
+        setMixType('RELATIVE')
+    }
+
     return (
         <React.Fragment>
             <div style={{ marginTop: '22.5%' }}></div>
@@ -197,7 +205,7 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                     <div className='button-wrappers'>
                         <button className='mix-button' onClick={handleMixClick}>MIX</button>
                         <div className='reset-switch-wrapper'>
-                            <button className='reset-mix' onClick={resetIngredients}>SWITCH</button>
+                           {mixType==='RELATIVE'?<button className='switch-mix relative' onClick={handleSwitchButtonRelative}>RELATIVE</button>:<button className='switch-mix strict' onClick={handleSwitchButtonStrict}>STRICT</button>}
                             <button className='reset-mix' onClick={resetIngredients}>RESET</button>
                         </div>
                     </div>

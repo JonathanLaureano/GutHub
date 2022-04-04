@@ -254,6 +254,62 @@
     cursor: pointer;
 }
 
+
+.switch-mix {
+    margin-top: 2.5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(17, 17, 17);
+    /* padding-left: 10%;
+    padding-right: 10%; */
+    padding-bottom: 5%;
+    border-radius: 5px;
+    font-size: 150%;
+    text-align: center;
+    width: 150%;
+    /* margin-bottom: 3.25%; */
+    margin-left: 5%;
+
+}
+
+.switch-mix:hover {
+    opacity: .75;
+    cursor: pointer;
+}
+
+.relative {
+    color: rgb(210, 245, 187);
+}
+
+.relative:hover{
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #0d6921, 0 0 0.5em #0d6921, 0 0 0.1em #0d6921, 0 10px 3px #000;
+}
+
+
+.relative:active{
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff6e, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
+}
+
+.strict {
+    color: rgb(245, 241, 187);
+    width: 150%;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+.strict:hover{
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #69600d, 0 0 0.5em #69600d, 0 0 0.1em #69600d, 0 10px 3px #000;
+}
+
+.strict:active{
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff6e, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
+}
+
+
 .mix-page-ingredients-tab-holders {
     display: flex;
     flex-direction: row;
@@ -270,8 +326,6 @@
     width: 100%;
     transition: .5s ease;
     padding-top: .75%;
-    /* border-bottom: rgba(100, 100, 100, 0.329) solid 0.1rem;
-    border-left: rgba(91, 91, 91) solid .14rem; */
 }
 
 .mix-page-ingredients-type-tab:nth-of-type(1) {
@@ -313,7 +367,7 @@
 }
 
 .selected {
-    background-color: rgb(92, 91, 91) !important;
+    background-color: rgb(91, 91, 91) !important;
     color: #fff;
     transition: .5s ease;
 }
