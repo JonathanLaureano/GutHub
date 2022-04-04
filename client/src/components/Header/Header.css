@@ -4,8 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-content: space-around;
-    margin-top: -10%;
-    margin-left: 5%;
+    margin-top: -11%;
+    margin-left: 3%;
 }
 
   
@@ -27,11 +27,11 @@
 
 .profile-picture{
     filter: invert(100%);
-    border-radius: 40%;
-    border-style: solid;
-    border: 15% solid rgb(26, 25, 25);
+    /* border-radius: 40%; */
+    /* border-style: solid; */
+    /* border: 15% solid rgb(26, 25, 25); */
     opacity: 0.3;
-    border-width: 2.5%;
+    /* border-width: 2.5%; */
     height: 6vh;
     transition: .25s;
 }
