@@ -5,7 +5,7 @@ import axios from 'axios';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import HomePage from '../HomePage/HomePage';
 import MixPage from '../Mixing/MixPage';
-import ResultsPage from '../Results/ResultsPage';
+import ResultsPage from '../SearchPage/SearchPage';
 import DrinksPage from '../Drinks/DrinksPage';
 import Header from '../Header/Header';
 import ProfilePage from '../Profile/ProfilePage';

@@ -3,7 +3,7 @@ import React,{useState} from "react";
 import '../Modal.css';
 import './ResultsModal.css';
 
-export default function ResultsModal({showResultsModal,setResultsModal}) {
+export default function ResultsModal({showResultsModal,setShowResultsModal}) {
     const drinkImgs = require.context('../../../img/drinks', true);
 
 

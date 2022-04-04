@@ -5,10 +5,11 @@ import axios from 'axios';
 import {animateScroll as ScrollAction} from 'react-scroll';
 import SignInModal from '../SignInModal/SignInModal';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
-import ResultsPage from '../Results/ResultsPage';
+import SearchPage from '../SearchPage/SearchPage';
 import MixPage from '../Mixing/MixPage';
 import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 import MixModal from '../Modals/MixModal/MixModal';
+import ResultsModal from '../Modals/ResultsModal/ResultsModal';
 
 
 export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,favorites,setFavorites,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink,showResultsModal,setShowResultsModal,mixResults,setMixResults}){
@@ -39,6 +40,8 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
     function clickOffModal(){
         setShowDrinkModal(false);
         setShowProfileModal(false)
+        setShowMixModal(false);
+        setShowResultsModal(false);
     }
 
     function clickMixActivateButton(){
@@ -113,9 +116,12 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
             {showMixModal?<div className='modal-container'>
                 <MixModal user={user} setShowMixModal={setShowMixModal} drink={mixToCreate} ingredients={ingredients} handleCreateDrinkSubmit={handleCreateDrinkSubmit}/>
             </div>:null}
+            {showResultsModal?<div className='modal-container'>
+                <ResultsModal setShowResultsModal={setShowResultsModal} mixResults={mixResults}/>
+            </div>:null}
 
             {modalActive?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
-            {searchActive?<ResultsPage 
+            {searchActive?<SearchPage 
                 user={user}
                 searchActive={searchActive}
                 searchResults={searchResults}

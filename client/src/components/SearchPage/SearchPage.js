@@ -1,9 +1,9 @@
-import './ResultsPage.css';
+import './SearchPage.css';
 import React from 'react'
 import axios from 'axios';
 import DrinkCard from '../DrinkCard/DrinkCard';
 
-export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal,favorites,setFavorites,modalActive}) {
+export default function SearchPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal,favorites,setFavorites,modalActive}) {
     let sortedDrinks=searchResults.sort((drink1,drink2)=>drink1.name.localeCompare(drink2.name))
 
     function chunk(array, limit) {
