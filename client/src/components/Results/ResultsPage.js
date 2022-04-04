@@ -3,7 +3,7 @@ import React from 'react'
 import axios from 'axios';
 import DrinkCard from '../DrinkCard/DrinkCard';
 
-export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal}) {
+export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal,favorites,setFavorites}) {
     let sortedDrinks=searchResults.sort((drink1,drink2)=>drink1.name.localeCompare(drink2.name))
 
     function chunk(array, limit) {
@@ -24,15 +24,19 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
     }
         
     function drinkCardsRow(data) {
+      
         return <div className='drinks-page-cards-container'>
             {data.map(drink => {
+                let inFavorites = favorites!=undefined?favorites.includes(drink.id):false
+                let cardClass = inFavorites?'drink-card-container favorite':'drink-card-container'
                 return (<DrinkCard
                     drink={drink}
                     key={drink.id}
                     showDrinkModal={showDrinkModal}
                     setShowDrinkModal={setShowDrinkModal}    
                     selectedDrink={selectedDrink}
-                    setSelectedDrink={setSelectedDrink}        
+                    setSelectedDrink={setSelectedDrink} 
+                    cardClass={cardClass}       
                 />)
             })}
         </div>
@@ -59,16 +63,36 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
         });
       }
     
+      function clickResetButton(){
+        setSearchParams('')
+        let query ={"query":''}
+        axios.post('/search',query)
+        .then(r=>{
+          setSearchResults(r.data)      
+        })
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.data.errors);
+            alert(error.response.data.errors)
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+        });
+      }
 
     let searchResultsCardClass = searchResults.length<=8 ?'search-results-card frozen':'search-results-card'
     let titleClass= searchResults.length==0||showDrinkModal ||showProfileModal?'search-results-title-off':'search-results-title'
-    let buttonClass = showDrinkModal||showProfileModal?'go-home-button-off':'go-home-button'
+    let buttonClass = searchResults.length==0||showDrinkModal||showProfileModal?'go-home-button-off':'go-home-button'
 
     return (
         <React.Fragment>
             <div style={{marginTop:'25%'}}></div>
             <div className={titleClass}>Search Results</div>
             <div className='search-title-wrapper'>
+            <div className={buttonClass} onClick={clickResetButton}>X</div>
+
             <form onSubmit={handleSearchSubmit}><input 
                     type='text'
                     placeholder='Search For A Drink'

@@ -34,6 +34,7 @@ function App() {
 
   const [drinks, setDrinks] = useState([]);
   const [ingredients, setIngredients] = useState([]);
+  const [favorites,setFavorites] = useState([])
 
   // Search
   const [searchActive, setSearchActive] = useState(false)
@@ -51,6 +52,7 @@ function App() {
   const [showProfileModal,setShowProfileModal] = useState(false);
   const [showDrinkModal,setShowDrinkModal] = useState(false);
   const [selectedDrink,setSelectedDrink] = useState({});
+  
 
   function handleSearchSubmit(e) {
     e.preventDefault();
@@ -117,6 +119,9 @@ function App() {
       setSelectedDrink(r.data)
     })
 
+    axios.get('/favorites')
+    .then(r=>setFavorites(r.data))
+
   }, [])
 
 
@@ -129,7 +134,7 @@ function App() {
       username: signUpUsername,
       password: signUpPassword,
       "password_confirmation": signUpPasswordConfirmation,
-      "image_url": 'user-icon.png'
+      "image_url": 'https://img.icons8.com/material-rounded/384/000000/user.png'
     }
     axios.post("/signup", signUpDetails)
       .then(r => {
@@ -177,24 +182,6 @@ function App() {
           console.log('Error', error.message);
         }
       });
-
-    axios.get('/drinks')
-    .then(r => {
-      setDrinks(r.data)
-    })
-
-    axios.get('/ingredients')
-      .then(r => {
-        setIngredients(r.data)
-      })
-
-    axios.get('/drinks/1')
-    .then(r=>{
-      setSelectedDrink(r.data)
-    })
-
-
-
   }
 
   function handleLogOut() {
@@ -289,6 +276,8 @@ function App() {
             setDrinks={drinks}
             ingredients={ingredients}
             setIngredients={setIngredients}
+            favorites={favorites}
+            setFavorites={setFavorites}
             searchResults={searchResults}
             setSearchResults={setSearchResults}
             searchActive={searchActive}

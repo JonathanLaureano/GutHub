@@ -11,7 +11,7 @@ import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 import MixModal from '../Modals/MixModal/MixModal';
 
 
-export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink}){
+export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,favorites,setFavorites,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink}){
     document.title = 'GutHub - Home';
 
     let [matchFound,setMatchFound] = useState(false);
@@ -95,7 +95,15 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                         <div className='no-results-query'>Please Enter a Different Search Query</div>
                     </div>:null} */}
             {showDrinkModal?<div className='modal-container'>
-                <DrinkModal drink={selectedDrink} setShowDrinkModal={setShowDrinkModal} setMatchFound={setMatchFound} handleFavoriteDrink={handleFavoriteDrink} handleUnfavoriteDrink={handleUnfavoriteDrink} />
+                <DrinkModal 
+                    drink={selectedDrink} 
+                    setShowDrinkModal={setShowDrinkModal} 
+                    setMatchFound={setMatchFound} 
+                    handleFavoriteDrink={handleFavoriteDrink} 
+                    handleUnfavoriteDrink={handleUnfavoriteDrink}
+                    favorites={favorites} 
+                    setFavorites={setFavorites}   
+                />
             </div>:null}
             {showProfileModal?<div className='modal-container'>
                 <ProfileModal profile={user} setUser={setUser} setShowProfileModal={setShowProfileModal} handleLogOut={handleLogOut}drinks={drinks} setSelectedDrink={setSelectedDrink} setShowDrinkModal={setShowDrinkModal}/>
@@ -119,7 +127,9 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 setShowDrinkModal={setShowDrinkModal}    
                 selectedDrink={selectedDrink}
                 setSelectedDrink={setSelectedDrink}    
-                showProfileModal={showProfileModal}    
+                showProfileModal={showProfileModal}
+                favorites={favorites} 
+                setFavorites={setFavorites}   
             />:null}
             {mixActive?<MixPage
                 user={user}

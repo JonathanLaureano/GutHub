@@ -3,22 +3,16 @@ import React, { useEffect,useState } from "react";
 import '../Modal.css';
 import './DrinkModal.css';
 
-export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,handleFavoriteDrink,handleUnfavoriteDrink}){
+export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,handleFavoriteDrink,handleUnfavoriteDrink,favorites,setFavorites}){
     console.log(drink)
     const images = require.context('../../../img/drinks',true);
-    let [cardUser,setCardUser]=useState({})
-    let [favoriteX,setFavoritesX] = useState([])
+    // let [favoriteX,setFavoritesX] = useState([])
 
 
-    useEffect(()=>{
-        axios.get('/me')
-        .then(r=>{
-            setCardUser(r.data)
-        })
-
-        axios.get('/favorites')
-        .then(r=>setFavoritesX(r.data))
-    },[])
+    // useEffect(()=>{
+    //     axios.get('/favorites')
+    //     .then(r=>setFavoritesX(r.data))
+    // },[])
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
         return(
@@ -33,15 +27,15 @@ export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,h
 
     function handleClickFavoriteButton(){
         handleFavoriteDrink(drink)
-        setFavoritesX([...favoriteX,drink.id])
+        setFavorites([...favorites,drink.id])
     }
 
     function handleClickUnfavoriteButton(){
         handleUnfavoriteDrink(drink)
-        setFavoritesX(favoriteX.filter(fav=>fav!=drink.id))
+        setFavorites(favorites.filter(fav=>fav!=drink.id))
     }
 
-    let inFavorites = favoriteX!=undefined?favoriteX.includes(drink.id):false
+    let inFavorites = favorites!=undefined?favorites.includes(drink.id):false
     let drinkNameClass= drink.name.length>15?'modal-drink-name long':'modal-drink-name'
 
     let isCreatedDrink = drink.user.id!=1 && drink.user.id!=2
