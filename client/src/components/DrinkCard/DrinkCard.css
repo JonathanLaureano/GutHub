@@ -15,8 +15,14 @@
 }
 
 .favorite{
+    background-color: rgb(92, 70, 68);
+}
+
+.drink-card-container:hover{
     background-color: rgb(93, 93, 97);
 }
+
+
 
 .drink-card-image{
     align-self: center;
