@@ -95,7 +95,7 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
 
             <form onSubmit={handleSearchSubmit}><input 
                     type='text'
-                    placeholder='Search For A Drink'
+                    placeholder='Search For A Drink or Ingredient'
                     autoComplete='off'
                     cursor='pointer'
                     className='results-search'
