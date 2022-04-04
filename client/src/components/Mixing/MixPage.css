@@ -367,7 +367,7 @@
 }
 
 .selected {
-    background-color: rgb(92, 91, 91) !important;
+    background-color: rgb(91, 91, 91) !important;
     color: #fff;
     transition: .5s ease;
 }
