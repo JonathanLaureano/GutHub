@@ -18,14 +18,17 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     let filteredIngredients = ingredients.filter(ingredient=>ingredient.ingredient_type===selectedCategory.toLowerCase() || selectedCategory==='ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
 
     let sortedMix = mixes.mix.sort((recipe1, recipe2) => {
-        return parseInt(recipe1["ingredient_id"]) - parseInt(recipe2["ingredient_id"])
+
+        let recipe1Name= ingredients.filter(ingredient => ingredient.id == [recipe1["ingredient_id"]])[0].name;
+        let recipe2Name= ingredients.filter(ingredient => ingredient.id == [recipe2["ingredient_id"]])[0].name
+        return recipe1Name.localeCompare(recipe2Name);
+        // return parseInt(recipe1["ingredient_id"]) - parseInt(recipe2["ingredient_id"])
     })
 
     let mixesToDisplay = sortedMix.map(mix => {
         return (
         <div className='mix-recipe-identity'>
                 <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0].name}: </div>
-                    
                 <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
             </div>
         )
