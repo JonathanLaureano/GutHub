@@ -12,6 +12,9 @@
     margin-left: 3.5%;
 }
 
+.ingredient-card-container:hover{
+}
+
 .ingredient-card-container:nth-of-type(1){
     margin-left: 0%;
 }
@@ -237,7 +240,7 @@
     background-color: transparent;
     border: none;
     width: 25%; 
-    color: #fff;
+    color: rgba(255, 255, 255, 0.527);
     /* font-size: larger; */
     margin-top: -.6%;
     transition: .5s;
