@@ -50,11 +50,13 @@
     font-size: 150%;
     text-align: left;
     color: #fff;
-    color:rgb(128, 126, 126);
     margin-left: 3%;
     /* margin-bottom: 3%; */
 }
 
+.modal-profile-drinks-list-title label{
+    color:rgb(128, 126, 126);
+}
 .modal-profile-cards-wrapper{
     display: flex;
     flex-direction: row;
