@@ -6,16 +6,10 @@ import './DrinkModal.css';
 export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,handleFavoriteDrink,handleUnfavoriteDrink}){
     console.log(drink)
     const images = require.context('../../../img/drinks',true);
-    let [cardUser,setCardUser]=useState({})
     let [favoriteX,setFavoritesX] = useState([])
 
 
     useEffect(()=>{
-        axios.get('/me')
-        .then(r=>{
-            setCardUser(r.data)
-        })
-
         axios.get('/favorites')
         .then(r=>setFavoritesX(r.data))
     },[])
