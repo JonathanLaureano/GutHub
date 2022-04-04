@@ -1,7 +1,7 @@
 import React from "react";
 import './DrinkCard.css';
 
-export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink}){
+export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,cardClass}){
     const images = require.context('../../img/drinks',true);
     let imgClass;
 
@@ -39,7 +39,7 @@ export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,select
     
     return(
         <React.Fragment>
-            <div className="drink-card-container">
+            <div className={cardClass}>
                 <img className={imgClass} src={images('./'+drink.image_url)} onClick={handleClickCard}/>
                 <div className="drink-card-text-info">
                     <div className="drink-card-name">{drink.name}</div>

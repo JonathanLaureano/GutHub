@@ -3,7 +3,7 @@ import React from 'react'
 import axios from 'axios';
 import DrinkCard from '../DrinkCard/DrinkCard';
 
-export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal}) {
+export default function ResultsPage({searchActive, searchResults,setSearchResults,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,scrollTop,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,showProfileModal,favorites,setFavorites}) {
     let sortedDrinks=searchResults.sort((drink1,drink2)=>drink1.name.localeCompare(drink2.name))
 
     function chunk(array, limit) {
@@ -24,15 +24,19 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
     }
         
     function drinkCardsRow(data) {
+      
         return <div className='drinks-page-cards-container'>
             {data.map(drink => {
+                let inFavorites = favorites!=undefined?favorites.includes(drink.id):false
+                let cardClass = inFavorites?'drink-card-container favorite':'drink-card-container'
                 return (<DrinkCard
                     drink={drink}
                     key={drink.id}
                     showDrinkModal={showDrinkModal}
                     setShowDrinkModal={setShowDrinkModal}    
                     selectedDrink={selectedDrink}
-                    setSelectedDrink={setSelectedDrink}        
+                    setSelectedDrink={setSelectedDrink} 
+                    cardClass={cardClass}       
                 />)
             })}
         </div>
