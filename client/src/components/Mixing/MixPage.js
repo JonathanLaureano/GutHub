@@ -194,8 +194,13 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                     <div className='mix-recipes-wrapper'>
                         {mixesToDisplay}
                     </div>
-                    <button className='mix-button' onClick={handleMixClick}>MIX</button>
-                    <button className='reset-mix' onClick={resetIngredients}>RESET</button>
+                    <div className='button-wrappers'>
+                        <button className='mix-button' onClick={handleMixClick}>MIX</button>
+                        <div className='reset-switch-wrapper'>
+                            <button className='reset-mix' onClick={resetIngredients}>SWITCH</button>
+                            <button className='reset-mix' onClick={resetIngredients}>RESET</button>
+                        </div>
+                    </div>
                 </div>
                 <div className='mix-page-ingredients-container'>
                     <div className='mix-page-ingredients-tab-holders'>
