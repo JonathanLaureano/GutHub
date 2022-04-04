@@ -57,27 +57,61 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     }
 
     function handleMixClick() {
-        console.log(mixes.mix);
-        if (mixes.mix.length <= 1) {
-            alert("               MIX ERORR: \nPlease add more than one ingredient.")
-        } else {
-            axios.post('/mixstrict', mixes)
-                .then(r => {
-                    if (r.data === null) {
-                        alert("No Match Found")
-                        setMixToCreate({
-                            "image_url": 'BlankGlass.png',
-                            "recipes": mixes.mix
+        switch (mixType) {
+            case 'STRICT':
+                console.log(mixes.mix);
+                if (mixes.mix.length <= 1) {
+                    alert("               MIX ERORR: \nPlease add more than one ingredient.")
+                } else {
+                    axios.post('/mixstrict', mixes)
+                        .then(r => {
+                            if (r.data === null) {
+                                alert("No Match Found")
+                                setMixToCreate({
+                                    "image_url": 'BlankGlass.png',
+                                    "recipes": mixes.mix
+                                })
+                                setShowMixModal(true)
+                            } else {
+                                console.log(r.data)
+                                setSelectedDrink(r.data)
+                                setShowDrinkModal(true)
+                                celebrate();
+                                setMatchFound(true);
+                            }
                         })
-                        setShowMixModal(true)
-                    } else {
-                        console.log(r.data)
-                        setSelectedDrink(r.data)
-                        setShowDrinkModal(true)
-                        celebrate();
-                        setMatchFound(true);
-                    }
-                })
+                }
+            case 'RELATIVE':
+                // console.log(mixes.mix);
+                if (mixes.mix.length <= 1) {
+                    alert("               MIX ERORR: \nPlease add more than one ingredient.")
+                } else {
+                    axios.post('/mixrelative', mixes)
+                        .then(r => {
+                            if (r.data.length===0) {
+                                alert("No Match Found")
+                                setMixToCreate({
+                                    "image_url": 'BlankGlass.png',
+                                    "recipes": mixes.mix
+                                })
+                                setShowMixModal(true)
+                            } else if (r.data.length===1){
+                                    console.log(r.data[0])
+                                    setSelectedDrink(r.data[0])
+                                    setShowDrinkModal(true)
+                                    celebrate();
+                                    setMatchFound(true);    
+                            } else {
+                                    console.log(r.data)
+                                    // setSelectedDrink(r.data)
+                                    // setShowDrinkModal(true)
+                                    celebrate();
+                                    // setMatchFound(true);
+    
+                                }
+                        })
+                }
+            
         }
 
     }
