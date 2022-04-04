@@ -47,6 +47,8 @@ function App() {
   // * Modals
   let [showSignInModal, setShowSignInModal] = useState(false);
 
+  const [showResultsModal,setShowResultsModal] = useState(false);
+  const [mixResults,setMixResults] = useState({});
   const [showMixModal,setShowMixModal] = useState(false);
   const [mixToCreate,setMixToCreate] = useState({});
   const [showProfileModal,setShowProfileModal] = useState(false);
@@ -325,6 +327,10 @@ function App() {
             handleCreateDrinkSubmit={handleCreateDrinkSubmit}
             handleFavoriteDrink={handleFavoriteDrink}
             handleUnfavoriteDrink={handleUnfavoriteDrink}
+            showResultsModal={showResultsModal}
+            setShowResultsModal={setShowResultsModal}
+            mixResults={mixResults}
+            setMixResults={setMixResults}
           />
         </Route>
         <Route path='/profile'>

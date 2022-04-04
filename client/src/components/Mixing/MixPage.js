@@ -5,7 +5,7 @@ import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 
 
-export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal }) {
+export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive }) {
     let [selectedCategory, setSelectedCategory] = useState('ALL')
     let [mixType, setMixType] = useState('RELATIVE');
     let [mixes, setMixes] = useState({
@@ -164,8 +164,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
             })
     }
 
-    let titleClass = mixes.mix.length == 0 || showDrinkModal || showProfileModal || showMixModal ? 'mix-page-title-off' : 'mix-page-title'
-    let buttonClass = mixes.mix.length == 0 || showDrinkModal || showProfileModal || showMixModal ? 'go-home-mix-page-button-nolight' : 'go-home-mix-page-button'
 
     let count = 200;
     let defaults = {
@@ -218,6 +216,10 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     function handleSwitchButtonStrict() {
         setMixType('RELATIVE')
     }
+
+    let titleClass = mixes.mix.length == 0 || modalActive ? 'mix-page-title-off' : 'mix-page-title'
+    let buttonClass = mixes.mix.length == 0 || modalActive ? 'go-home-mix-page-button-nolight' : 'go-home-mix-page-button'
+
 
     return (
         <React.Fragment>
