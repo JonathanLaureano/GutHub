@@ -55,7 +55,7 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         } else {
             axios.post('/mixstrict', mixes)
                 .then(r => {
-                    if (r.data === undefined) {
+                    if (r.data === null) {
                         alert("No Match Found")
                         setMixToCreate({
                             "image_url": 'BlankGlass.png',
