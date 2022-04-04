@@ -23,32 +23,32 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
         case "Gin":
             imgClass = 'ingredient-card-image gin'
             break;
-        case "Whiskey":
-            imgClass = 'ingredient-card-image whiskey'
-            break;
-        case "Brandy":
-            imgClass = 'ingredient-card-image brandy'
-            break;
-        case 'Pineapple Juice':
-        case 'Almond Liquer':
-        case 'Wine':
-        case 'White Rum':
-        case 'Scotch':
-        case 'Champagne':
-        case 'Grenadine':
-        case 'Coke':
-        case 'Tonic':
-        case 'Simple Syrup':
-        case 'Worcestershire Sauce':
-        case 'Tobasco Sauce':
-        case 'Bitter':
-        case 'Cinnamon Stick':
-        case 'Olive':
-        case 'Lime Juice':
-        case 'Lemon Juice':
-        case 'Almond Liquer':
-            imgClass = 'ingredient-card-image almondliquer'
-            break;
+        // case "Whiskey":
+        //     imgClass = 'ingredient-card-image whiskey'
+        //     break;
+        // case "Brandy":
+        //     imgClass = 'ingredient-card-image brandy'
+        //     break;
+        // case 'Pineapple Juice':
+        // case 'Almond Liquer':
+        // case 'Wine':
+        // case 'White Rum':
+        // case 'Scotch':
+        // case 'Champagne':
+        // case 'Grenadine':
+        // case 'Coke':
+        // case 'Tonic':
+        // case 'Simple Syrup':
+        // case 'Worcestershire Sauce':
+        // case 'Tobasco Sauce':
+        // case 'Bitter':
+        // case 'Cinnamon Stick':
+        // case 'Olive':
+        // case 'Lime Juice':
+        // case 'Lemon Juice':
+        // case 'Almond Liquer':
+        //     imgClass = 'ingredient-card-image almondliquer'
+        //     break;
         case 'Coconut Cream':
         case "Nutmeg":
             imgClass = 'ingredient-card-image nutmeg'
@@ -62,24 +62,24 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
         case 'Mint Leaves':
             imgClass = 'ingredient-card-image mint'
             break;
-        case 'Raspberry':
-        case 'Lime':
-            imgClass = 'ingredient-card-image Lime'
-            break;
-        case 'Horse Radish':
-        case 'Paprika':
-            imgClass = 'ingredient-card-image paprika'
-            break;
-        case 'Salt':
-            imgClass = 'ingredient-card-image salt'
-            break;
-        case 'Sugar':
-        case 'Tomato Juice':
-            imgClass = 'ingredient-card-image Tomato'
-            break;
-        case 'Capelletti Aperitif':
-            imgClass = 'ingredient-card-image capelletti'
-            break;
+        // case 'Raspberry':
+        // case 'Lime':
+        //     imgClass = 'ingredient-card-image Lime'
+        //     break;
+        // case 'Horse Radish':
+        // case 'Paprika':
+        //     imgClass = 'ingredient-card-image paprika'
+        //     break;
+        // case 'Salt':
+        //     imgClass = 'ingredient-card-image salt'
+        //     break;
+        // case 'Sugar':
+        // case 'Tomato Juice':
+        //     imgClass = 'ingredient-card-image Tomato'
+        //     break;
+        // case 'Capelletti Aperitif':
+        //     imgClass = 'ingredient-card-image capelletti'
+        //     break;
         case 'Dragonfruit':
             imgClass = 'ingredient-card-image dragonfruit'
             break;
