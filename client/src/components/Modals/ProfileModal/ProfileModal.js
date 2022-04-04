@@ -121,7 +121,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
                     <hr></hr>
                     <div className="modal-profile-details"> <label>Email:</label> {showEditMode?<input className='profile-email-input' value={email} onChange={(e)=>{setEmail(e.target.value)}} placeholder='Username'></input>:profile.username}</div>
                     {showEditMode?<div className="modal-profile-details"><label>Password: </label> <input type='password' className='profile-password-input' value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password'></input></div>:<div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>}
-                    <div className='modal-profile-drinks-list-title'>Favorites:</div>
+                    <div className='modal-profile-drinks-list-title'>Favorites: {profile.favorites.length}</div>
                     <div className='modal-profile-cards-wrapper'>
                         {favoriteDrinksToDisplay}
                         {favoriteEmpty?<div className='no-favorites-container'> 
@@ -129,7 +129,7 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
                             <div className='no-favorites-query'>Explore More Drinks to Add Favorites</div>
                         </div>:null}
                     </div>
-                    <div className='modal-profile-drinks-list-title'>Created:</div>
+                    <div className='modal-profile-drinks-list-title'>Created: {profile.drinks.length}</div>
                     <div className='modal-profile-cards-wrapper'>
                         {createdDrinksToDisplay}
                         {createdEmpty?<div className='no-favorites-container'> 
