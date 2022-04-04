@@ -1,8 +1,8 @@
 import React from "react";
 import './DrinkCard.css';
 
-export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,cardClass}){
-    const images = require.context('../../img/drinks',true);
+export default function DrinkCard({ drink, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, cardClass }) {
+    const images = require.context('../../img/drinks', true);
     let imgClass;
 
     switch (drink.name) {
@@ -31,18 +31,18 @@ export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,select
         //     imgClass='drink-card-image godfather';
         //     break;
         default:
-            imgClass='drink-card-image'
+            imgClass = 'drink-card-image'
     }
 
-    function handleClickCard(){
+    function handleClickCard() {
         setSelectedDrink(drink);
         setShowDrinkModal(true);
     }
-    
-    return(
+
+    return (
         <React.Fragment>
             <div className={cardClass} onClick={handleClickCard}>
-                <img className={imgClass} src={images('./'+drink.image_url)} />
+                <img className={imgClass} src={images('./' + drink.image_url)} />
                 <div className="drink-card-text-info">
                     <div className="drink-card-name">{drink.name}</div>
                     <div className="drink-card-ingredient">{drink.recipes[0].ingredient.name}</div>

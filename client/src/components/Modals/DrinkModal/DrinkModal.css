@@ -1,39 +1,39 @@
-.modal-drink-image{
+.modal-drink-image {
     height: 90%;
 }
 
-.modal-drink-name{
+.modal-drink-name {
     font-family: 'Shippori Mincho', serif;
     font-size: 350%;
     color: #fff;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
 }
 
-.long{
+.long {
     font-size: 300%;
 }
 
-.modal-drink-recipe-title{
+.modal-drink-recipe-title {
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
     color: #fff;
 }
 
-.modal-drink-recipe-wrapper{
-    display:flex;
+.modal-drink-recipe-wrapper {
+    display: flex;
     flex-direction: column;
     align-items: center;
     height: 30.18vh;
     overflow-y: scroll;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;  
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .modal-drink-recipe-wrapper::-webkit-scrollbar {
     display: none;
-  }
+}
 
-.modal-drink-recipe{
+.modal-drink-recipe {
     margin-top: 1.25%;
     background-color: rgb(30, 30, 30);
     border-radius: 10px;
@@ -45,13 +45,13 @@
     padding-bottom: 2%;
 }
 
-.modal-drink-recipe b{
+.modal-drink-recipe b {
     color: #fff;
     font-weight: 300%;
     font-size: larger;
 }
 
-.modal-drink-credits{
+.modal-drink-credits {
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
     color: #fff;
@@ -60,6 +60,6 @@
     padding-bottom: 1%;
 }
 
-.modal-drink-credits label{
+.modal-drink-credits label {
     color: rgb(190, 189, 189)
 }

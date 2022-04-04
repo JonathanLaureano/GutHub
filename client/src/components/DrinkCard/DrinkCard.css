@@ -1,4 +1,4 @@
-.drink-card-container{
+.drink-card-container {
     background-color: rgb(35, 35, 39);
     height: 24vh;
     width: 22%;
@@ -14,17 +14,17 @@
     overflow-x: hidden;
 }
 
-.favorite{
+.favorite {
     background-color: rgb(92, 70, 68);
 }
 
-.drink-card-container:hover{
+.drink-card-container:hover {
     background-color: rgb(93, 93, 97);
 }
 
 
 
-.drink-card-image{
+.drink-card-image {
     align-self: center;
     justify-self: center;
     height: 25vh;
@@ -32,12 +32,12 @@
     overflow-y: hidden;
 }
 
-.margarita{
+.margarita {
     height: 15vh;
     width: 7.5vw;
 }
 
-.bloodymary{
+.bloodymary {
     height: 21vh;
     width: 22vw;
     margin-left: 5%;
@@ -45,26 +45,24 @@
     margin-top: -6%;
 }
 
-.caipirinha{
+.caipirinha {
     height: 15vh;
     width: 11vw;
 }
 
-.oldfashioned{
+.oldfashioned {
     height: 15vh;
     width: 11vw;
 }
 
-.gnt{
+.gnt {}
 
-}
-
-.godfather{
+.godfather {
     height: 15vh;
     width: 11vw;
 }
 
-.drink-card-text-info{
+.drink-card-text-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -73,13 +71,13 @@
     border-bottom-left-radius: 10px;
 }
 
-.drink-card-name{
+.drink-card-name {
     color: #fff;
     font-family: 'Shippori Mincho', serif;
     font-size: larger;
 }
 
-.drink-card-ingredient{
+.drink-card-ingredient {
     color: rgb(196, 194, 194);
     font-family: 'Shippori Mincho', serif;
     bottom: 0;

@@ -1,65 +1,59 @@
 import axios from "axios";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../Modal.css';
 import './DrinkModal.css';
 
-export default function DrinkModal({user,drink,setShowDrinkModal,setMatchFound,handleFavoriteDrink,handleUnfavoriteDrink,favorites,setFavorites}){
+export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFound, handleFavoriteDrink, handleUnfavoriteDrink, favorites, setFavorites }) {
     console.log(drink)
-    const images = require.context('../../../img/drinks',true);
-    // let [favoriteX,setFavoritesX] = useState([])
+    const images = require.context('../../../img/drinks', true);
 
 
-    // useEffect(()=>{
-    //     axios.get('/favorites')
-    //     .then(r=>setFavoritesX(r.data))
-    // },[])
-
-    let recipesToDisplay = drink.recipes.map(recipe=>{
-        return(
+    let recipesToDisplay = drink.recipes.map(recipe => {
+        return (
             <div key={recipe.ingredient.id} className="modal-drink-recipe"><b>{recipe.ingredient.name}</b>: {recipe.parts}</div>
         )
     })
 
-    function handleClickCloseButton(){
+    function handleClickCloseButton() {
         setShowDrinkModal(false);
         setMatchFound(false);
     }
 
-    function handleClickFavoriteButton(){
+    function handleClickFavoriteButton() {
         handleFavoriteDrink(drink)
-        setFavorites([...favorites,drink.id])
+        setFavorites([...favorites, drink.id])
     }
 
-    function handleClickUnfavoriteButton(){
+    function handleClickUnfavoriteButton() {
         handleUnfavoriteDrink(drink)
-        setFavorites(favorites.filter(fav=>fav!=drink.id))
+        setFavorites(favorites.filter(fav => fav != drink.id))
     }
 
-    let inFavorites = favorites!=undefined?favorites.includes(drink.id):false
-    let drinkNameClass= drink.name.length>15?'modal-drink-name long':'modal-drink-name'
+    let inFavorites = favorites != undefined ? favorites.includes(drink.id) : false
+    let drinkNameClass = drink.name.length > 15 ? 'modal-drink-name long' : 'modal-drink-name'
 
-    let isCreatedDrink = drink.user.id!=1 && drink.user.id!=2
+    let isCreatedDrink = drink.user.id != 1 && drink.user.id != 2
 
-    return(
-            <div className="modal-card">
-                <div className="modal-top"> 
-                    <div className="modal-left"> 
-                        <img src={images('./'+drink.image_url)} className="modal-drink-image"/>
-                        {isCreatedDrink?<div className="modal-drink-credits"><label>Created By: </label>{drink.user.username}</div>:null}
-                    </div>
-                    <div className="modal-right">   
-                        <div className={drinkNameClass}>{drink.name}</div>
-                        <hr></hr>
-                        <div className="modal-drink-recipe-title">Recipe: </div>
-                        <div className="modal-drink-recipe-wrapper">
-                            {recipesToDisplay}
-                        </div>
-                    </div>
+    return (
+        <div className="modal-card">
+            <div className="modal-top">
+                <div className="modal-left">
+                    <img src={images('./' + drink.image_url)} className="modal-drink-image" />
+                    {isCreatedDrink ? <div className="modal-drink-credits"><label>Created By: </label>{drink.user.username}</div> : null}
                 </div>
-                <div className="modal-bot"> 
-                    {inFavorites?<button className="unfavorite-button" onClick={handleClickUnfavoriteButton} >UNFAVORITE DRINK</button>:<button className="favorite-button" onClick={handleClickFavoriteButton} >FAVORITE DRINK</button>}
-                    <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
+                <div className="modal-right">
+                    <div className={drinkNameClass}>{drink.name}</div>
+                    <hr></hr>
+                    <div className="modal-drink-recipe-title">Recipe: </div>
+                    <div className="modal-drink-recipe-wrapper">
+                        {recipesToDisplay}
+                    </div>
                 </div>
             </div>
+            <div className="modal-bot">
+                {inFavorites ? <button className="unfavorite-button" onClick={handleClickUnfavoriteButton} >UNFAVORITE DRINK</button> : <button className="favorite-button" onClick={handleClickFavoriteButton} >FAVORITE DRINK</button>}
+                <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
+            </div>
+        </div>
     )
 }
