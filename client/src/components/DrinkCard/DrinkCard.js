@@ -41,8 +41,8 @@ export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,select
     
     return(
         <React.Fragment>
-            <div className={cardClass}>
-                <img className={imgClass} src={images('./'+drink.image_url)} onClick={handleClickCard}/>
+            <div className={cardClass} onClick={handleClickCard}>
+                <img className={imgClass} src={images('./'+drink.image_url)} />
                 <div className="drink-card-text-info">
                     <div className="drink-card-name">{drink.name}</div>
                     <div className="drink-card-ingredient">{drink.recipes[0].ingredient.name}</div>
