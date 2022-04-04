@@ -81,7 +81,9 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
     let favoriteDrinksToDisplay = !favoriteEmpty?profile.favorites.map(drink_id => {
         let drink = drinks[drink_id-1]
         return (
-            <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(drink)} src={drinkImgs('./' + drink.image_url)} />
+            <div className='modal-mini-card-container'>
+                <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(drink)} src={drinkImgs('./' + drink.image_url)} />
+            </div>
         )
     }):null;
 
@@ -91,7 +93,9 @@ export default function ProfileModal({ profile,setUser,setShowProfileModal,handl
     let createdDrinksToDisplay = !createdEmpty?profile.drinks.map(drink => {
         let fullDrink = drinks[drink.id-1]
         return (
-            <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(fullDrink)} src={drinkImgs('./' + drink.image_url)} />
+            <div className='modal-mini-card-container'>
+                <img className='modal-mini-drink-image' onClick={()=>handleClickMiniCard(fullDrink)} src={drinkImgs('./' + drink.image_url)} />
+            </div>
         )
     }):null;
 
