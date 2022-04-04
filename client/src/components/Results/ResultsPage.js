@@ -84,7 +84,7 @@ export default function ResultsPage({searchActive, searchResults,setSearchResult
 
     let searchResultsCardClass = searchResults.length<=8 ?'search-results-card frozen':'search-results-card'
     let titleClass= searchResults.length==0||showDrinkModal ||showProfileModal?'search-results-title-off':'search-results-title'
-    let buttonClass = showDrinkModal||showProfileModal?'go-home-button-off':'go-home-button'
+    let buttonClass = searchResults.length==0||showDrinkModal||showProfileModal?'go-home-button-off':'go-home-button'
 
     return (
         <React.Fragment>

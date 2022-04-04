@@ -12,13 +12,18 @@
     margin-left: 1%;
     font: 100 6vh "Vibur";
     cursor: pointer;
-    transition: 1s ease;
+    transition: .5s ease;
 }
 
 .go-home-button:hover {
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
     color: #ff9191;
     height: 100%
+}
+
+.go-home-button:nth-child(1){
+    margin-left: 0%;
+        margin-right: 1%;
 }
 
 .go-home-button-off {
@@ -29,7 +34,18 @@
     margin-left: 1%;
     font: 100 6vh "Vibur";
     cursor: pointer;
-    transition: 1s ease;
+    transition: .5s ease;
+}
+
+.go-home-button-off:nth-child(1){
+    margin-left: 0%;
+        margin-right: 1%;
+}
+
+.go-home-button-off:hover {
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    color: #ff9191;
+    height: 100%
 }
 
 .search-results-title {
