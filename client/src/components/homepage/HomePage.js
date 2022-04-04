@@ -39,6 +39,8 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
     function clickOffModal(){
         setShowDrinkModal(false);
         setShowProfileModal(false)
+        setShowMixModal(false);
+        setShowResultsModal(false);
     }
 
     function clickMixActivateButton(){
