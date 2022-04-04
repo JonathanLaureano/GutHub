@@ -134,7 +134,7 @@ function App() {
       username: signUpUsername,
       password: signUpPassword,
       "password_confirmation": signUpPasswordConfirmation,
-      "image_url": 'user-icon.png'
+      "image_url": 'https://img.icons8.com/material-rounded/384/000000/user.png'
     }
     axios.post("/signup", signUpDetails)
       .then(r => {
