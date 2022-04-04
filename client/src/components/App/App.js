@@ -276,6 +276,8 @@ function App() {
             setDrinks={drinks}
             ingredients={ingredients}
             setIngredients={setIngredients}
+            favorites={favorites}
+            setFavorites={setFavorites}
             searchResults={searchResults}
             setSearchResults={setSearchResults}
             searchActive={searchActive}
