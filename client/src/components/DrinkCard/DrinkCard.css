@@ -21,7 +21,7 @@
 .drink-card-image{
     align-self: center;
     justify-self: center;
-    height: 15vh;
+    height: 25vh;
     /* width: 15vw; */
     overflow-y: hidden;
 }

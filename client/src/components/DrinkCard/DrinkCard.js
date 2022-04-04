@@ -6,28 +6,30 @@ export default function DrinkCard({drink,showDrinkModal,setShowDrinkModal,select
     let imgClass;
 
     switch (drink.name) {
-        case "Margarita":
-            imgClass='drink-card-image margarita'
-            break;
-        case "Long Island Ice Tea":
-        case "Bloody Mary":
-            imgClass='drink-card-image bloodymary'
-            break;
-        case 'Negroni':
-        case 'Paloma':
-        case 'Pine Pepper Crush':
-        case 'Caipirinha':
-            imgClass='drink-card-image caipirinha'
-            break;
-        case 'Old Fashioned':
-            imgClass='drink-card-image oldfashioned'
-            break;
-        case 'Gin & Tonic':
-            imgClass='drink-card-image gnt';
-            break;
-        case 'The Godfather':
-            imgClass='drink-card-image godfather';
-            break;
+        // case "Margarita":
+        //     imgClass='drink-card-image margarita'
+        //     break;
+        // case "Long Island Ice Tea":
+        // case "Bloody Mary":
+        //     imgClass='drink-card-image bloodymary'
+        //     break;
+        // case 'Negroni':
+        // case 'Paloma':
+        // case 'Pine Pepper Crush':
+        // case 'Caipirinha':
+        //     imgClass='drink-card-image caipirinha'
+        //     break;
+        // case 'Old Fashioned':
+        //     imgClass='drink-card-image oldfashioned'
+        //     break;
+        // case 'Gin & Tonic':
+        //     imgClass='drink-card-image gnt';
+        //     break;
+        // case 'Paloma':
+        // case 'Old Fashioned':
+        // case 'The Godfather':
+        //     imgClass='drink-card-image godfather';
+        //     break;
         default:
             imgClass='drink-card-image'
     }
