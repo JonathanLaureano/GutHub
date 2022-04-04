@@ -1,34 +1,30 @@
 import './MixPage.css';
-import React, { useState, useEffect } from 'react'
-import { Route, Switch } from "react-router-dom";
+import React, { useState } from 'react'
 import axios from 'axios';
 import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
-import { animateScroll as ScrollAction } from 'react-scroll';
-import DrinkModal from '../Modals/DrinkModal/DrinkModal';
 
 
 export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal }) {
     let [selectedCategory, setSelectedCategory] = useState('ALL')
-    let [mixType,setMixType] = useState('RELATIVE');
+    let [mixType, setMixType] = useState('RELATIVE');
     let [mixes, setMixes] = useState({
         "mix": [
         ]
     });
 
-    let filteredIngredients = ingredients.filter(ingredient=>ingredient.ingredient_type===selectedCategory.toLowerCase() || selectedCategory==='ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
+    let filteredIngredients = ingredients.filter(ingredient => ingredient.ingredient_type === selectedCategory.toLowerCase() || selectedCategory === 'ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
 
     let sortedMix = mixes.mix.sort((recipe1, recipe2) => {
 
-        let recipe1Name= ingredients.filter(ingredient => ingredient.id == [recipe1["ingredient_id"]])[0].name;
-        let recipe2Name= ingredients.filter(ingredient => ingredient.id == [recipe2["ingredient_id"]])[0].name
+        let recipe1Name = ingredients.filter(ingredient => ingredient.id == [recipe1["ingredient_id"]])[0].name;
+        let recipe2Name = ingredients.filter(ingredient => ingredient.id == [recipe2["ingredient_id"]])[0].name
         return recipe1Name.localeCompare(recipe2Name);
-        // return parseInt(recipe1["ingredient_id"]) - parseInt(recipe2["ingredient_id"])
     })
 
     let mixesToDisplay = sortedMix.map(mix => {
         return (
-        <div className='mix-recipe-identity'>
+            <div className='mix-recipe-identity'>
                 <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0].name}: </div>
                 <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
             </div>
@@ -88,51 +84,51 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                 } else {
                     axios.post('/mixrelative', mixes)
                         .then(r => {
-                            if (r.data.length===0) {
+                            if (r.data.length === 0) {
                                 alert("No Match Found")
                                 setMixToCreate({
                                     "image_url": 'BlankGlass.png',
                                     "recipes": mixes.mix
                                 })
                                 setShowMixModal(true)
-                            } else if (r.data.length===1){
-                                    console.log(r.data[0])
-                                    setSelectedDrink(r.data[0])
-                                    setShowDrinkModal(true)
-                                    celebrate();
-                                    setMatchFound(true);    
+                            } else if (r.data.length === 1) {
+                                console.log(r.data[0])
+                                setSelectedDrink(r.data[0])
+                                setShowDrinkModal(true)
+                                celebrate();
+                                setMatchFound(true);
                             } else {
-                                    console.log(r.data)
-                                    // setSelectedDrink(r.data)
-                                    // setShowDrinkModal(true)
-                                    celebrate();
-                                    // setMatchFound(true);
-    
-                                }
+                                console.log(r.data)
+                                // setSelectedDrink(r.data)
+                                // setShowDrinkModal(true)
+                                celebrate();
+                                // setMatchFound(true);
+
+                            }
                         })
                 }
-            
+
         }
 
     }
 
- 
+
 
     function chunk(array, limit) {
         if (array.length <= limit) return [array];
         const perChunk = Math.ceil(array.length / Math.ceil(array.length / limit));
         return [array.slice(0, perChunk)].concat(chunk(array.slice(perChunk), limit));
-      }
+    }
 
-    let chunkIngredients = chunk(filteredIngredients,3);
+    let chunkIngredients = chunk(filteredIngredients, 3);
 
 
     function displayIngredients(data) {
-        return data.map(row=>{
-            return(
+        return data.map(row => {
+            return (
                 <React.Fragment>
                     {ingredientCardsRow(row)}
-            </React.Fragment>
+                </React.Fragment>
             )
         })
     }
@@ -141,8 +137,8 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         return <div className='mix-page-ingredients-cards-container'>
             {data.map(ingredient => {
                 let oldPartsCount;
-                let inMix= mixes.mix.find(ingred=>ingred.ingredient_id===ingredient.id)
-                inMix!=undefined?oldPartsCount = inMix["parts"]:oldPartsCount = 0;
+                let inMix = mixes.mix.find(ingred => ingred.ingredient_id === ingredient.id)
+                inMix != undefined ? oldPartsCount = inMix["parts"] : oldPartsCount = 0;
 
                 return (<IngredientCard
                     ingredient={ingredient}
@@ -215,11 +211,11 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
         });
     }
 
-    function handleSwitchButtonRelative(){
+    function handleSwitchButtonRelative() {
         setMixType('STRICT')
     }
 
-    function handleSwitchButtonStrict(){
+    function handleSwitchButtonStrict() {
         setMixType('RELATIVE')
     }
 
@@ -232,14 +228,14 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
             </div>
             <div className='mix-page-items-wrapper'>
                 <div className='mix-page-jug-container'>
-                <div className='mix-recipe-title'>RECIPE:</div>
+                    <div className='mix-recipe-title'>RECIPE:</div>
                     <div className='mix-recipes-wrapper'>
                         {mixesToDisplay}
                     </div>
                     <div className='button-wrappers'>
                         <button className='mix-button' onClick={handleMixClick}>MIX</button>
                         <div className='reset-switch-wrapper'>
-                           {mixType==='RELATIVE'?<button className='switch-mix relative' onClick={handleSwitchButtonRelative}>RELATIVE</button>:<button className='switch-mix strict' onClick={handleSwitchButtonStrict}>STRICT</button>}
+                            {mixType === 'RELATIVE' ? <button className='switch-mix relative' onClick={handleSwitchButtonRelative}>RELATIVE</button> : <button className='switch-mix strict' onClick={handleSwitchButtonStrict}>STRICT</button>}
                             <button className='reset-mix' onClick={resetIngredients}>RESET</button>
                         </div>
                     </div>
