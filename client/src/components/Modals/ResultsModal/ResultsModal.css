@@ -87,3 +87,15 @@
     justify-content: center;
     align-content: center;
 }
+
+.resultModal-drinks-title {
+    /* margin-top: 1.25%; */
+    background-color: rgb(15, 15, 15);
+    background-color: rgb(39, 39, 39);
+    padding-bottom: .75%;
+    border-top-right-radius: 10px;
+    width: 30vw;
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3vh;
+}

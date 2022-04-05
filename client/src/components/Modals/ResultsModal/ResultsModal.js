@@ -42,13 +42,15 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
         <div className="modal-card">
             <div className="modal-top">
                 <div className="modal-left">
-                    <div className='resultModal-ingredients-title'>RECIPE:</div>
+                    <div className='resultModal-ingredients-title'>RECIPE</div>
                     <div className='resultModal-ingredients-wrapper' id='cards'>
                         {ingredientCardsRow(mixIngredients)}
                     </div>
                 </div>
 
                 <div className="modal-right">
+                    <div className='resultModal-drinks-title'>DRINKS</div>
+
                 </div>
             </div>
             <div className="modal-bot">
