@@ -5,7 +5,7 @@ import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 
 
-export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive }) {
+export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults,setMixResults }) {
     let [selectedCategory, setSelectedCategory] = useState('ALL')
     let [mixType, setMixType] = useState('RELATIVE');
     let [mixes, setMixes] = useState({
@@ -55,7 +55,7 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     function handleMixClick() {
         switch (mixType) {
             case 'STRICT':
-                console.log(mixes.mix);
+                // console.log(mixes.mix);
                 if (mixes.mix.length <= 1) {
                     alert("               MIX ERORR: \nPlease add more than one ingredient.")
                 } else {
@@ -99,10 +99,10 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                                 setMatchFound(true);
                             } else {
                                 console.log(r.data)
-                                // setSelectedDrink(r.data)
-                                // setShowDrinkModal(true)
+                                setMixResults(r.data)
+                                setShowResultsModal(true)
                                 celebrate();
-                                // setMatchFound(true);
+                                setMatchFound(true);
 
                             }
                         })
