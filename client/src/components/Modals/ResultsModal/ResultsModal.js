@@ -42,7 +42,9 @@ export default function ResultsModal({ mixes, showResultsModal, setShowResultsMo
     function displayIngredients(data) {
         return <div className='mix-page-ingredients-cards-container result-modal'>
             {data.map(mixIngredient => {
-                let fullIngredient = ingredients.filter(ingredient => ingredient.id === [mixIngredient["ingredient_id"]])[0]
+
+                let fullIngredient = ingredients.filter(ingredient => ingredient.id == [mixIngredient["ingredient_id"]])[0]
+                console.log(fullIngredient)
                 return (
                     <div id={fullIngredient.id} className='resultModal-ingredient-container'>
                         <img className='resultModal-ingredient-image' alt={fullIngredient.name} src={ingredImages('./' + fullIngredient.image_url)} />
