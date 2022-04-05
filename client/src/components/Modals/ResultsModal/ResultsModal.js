@@ -3,12 +3,37 @@ import React,{useState} from "react";
 import '../Modal.css';
 import './ResultsModal.css';
 
-export default function ResultsModal({showResultsModal,setShowResultsModal}) {
+export default function ResultsModal({mixes,showResultsModal,setShowResultsModal,ingredients}) {
     const drinkImgs = require.context('../../../img/drinks', true);
+    const ingredImages = require.context('../../../img/ingredients', true);
 
 
     function handleClickCloseButton() {
         setShowResultsModal(false);
+    }
+
+    let mixIngredients = mixes.mix;
+
+    function ingredientCardsRow(data) {
+        return <div className='mix-page-ingredients-cards-container'>
+            {data.map(ingredient => 
+                {let fullIngredient= ingredients[ingredient["ingredient_id"]]
+            
+
+                return (
+                    <div id={fullIngredient.d} className='ingredient-card-container'>
+                    <img className='ingredient-card-image' src={ingredImages('./' + fullIngredient.image_url)} />
+                    <div className="ingredient-card-text-info">
+                        <div className="ingredient-card-name">{fullIngredient.name}</div>
+                        <div className="ingredient-card-partsCount">
+                    </div>
+                    </div>
+                    </div>
+                )
+            })
+
+            }
+        </div>
     }
 
 
@@ -16,6 +41,7 @@ export default function ResultsModal({showResultsModal,setShowResultsModal}) {
         <div className="modal-card">
             <div className="modal-top">
                 <div className="modal-left">
+                    {ingredientCardsRow(mixIngredients)}
                 </div>
                 <div className="modal-right">
                 </div>
