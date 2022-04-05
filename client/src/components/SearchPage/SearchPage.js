@@ -25,7 +25,7 @@ export default function SearchPage({searchActive, searchResults,setSearchResults
         
     function drinkCardsRow(data) {
       
-        return <div className='drinks-page-cards-container'>
+        return <div className='search-page-cards-container'>
             {data.map(drink => {
                 let inFavorites = favorites!=undefined?favorites.includes(drink.id):false
                 let cardClass = inFavorites?'drink-card-container favorite':'drink-card-container'
@@ -92,7 +92,6 @@ export default function SearchPage({searchActive, searchResults,setSearchResults
             <div className={titleClass}>Search Results</div>
             <div className='search-title-wrapper'>
             <div className={buttonClass} onClick={clickResetButton}>X</div>
-
             <form onSubmit={handleSearchSubmit}><input 
                     type='text'
                     placeholder='Search For A Drink or Ingredient'

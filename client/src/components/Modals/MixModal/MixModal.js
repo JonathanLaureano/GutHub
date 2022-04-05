@@ -3,6 +3,7 @@ import '../Modal.css';
 import './MixModal.css';
 
 export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingredients,handleCreateDrinkSubmit}){
+    console.log(drink)
     const images = require.context('../../../img/drinks',true);
 
     let [drinkName,setDrinkName] = useState('')
@@ -12,6 +13,7 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
     }
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
+        console.log(recipe)
         return(
             <div key={recipe.ingredient_id} className="modal-drink-recipe"><b>{ingredients.filter(ingredient=> ingredient.id==[recipe["ingredient_id"]])[0].name}</b>: {recipe.parts}</div>
         )
@@ -34,7 +36,7 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
             <div className="modal-card">
                 <div className="modal-top"> 
                     <div className="modal-left"> 
-                        <img src={images('./'+drink.image_url)} className="modal-drink-image"/>
+                        <img alt={drink.name} src={images('./'+drink.image_url)} className="modal-drink-image"/>
                     </div>
                     <div className="modal-right">   
                         <input type='text' value={drinkName} onChange={handleDrinkNameChange} className='mix-modal-input'></input>

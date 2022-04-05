@@ -171,3 +171,12 @@
     font-size: 100%;
     padding: 1.5%;
 }
+
+
+.search-page-cards-container{
+    /* margin-left: 1%; */
+    margin-top: 1.15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
+}
