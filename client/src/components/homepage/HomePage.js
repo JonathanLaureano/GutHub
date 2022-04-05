@@ -51,6 +51,11 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
 
     let modalActive = showDrinkModal || showProfileModal || showMixModal || showResultsModal;
 
+    let [mixes, setMixes] = useState({
+        "mix": [
+        ]
+    });
+    
     return(
         <React.Fragment>
             {/* <div className='parallax'> */}
@@ -141,6 +146,8 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 modalActive={modalActive}
             />:null}
             {mixActive?<MixPage
+                mixes={mixes} 
+                setMixes={setMixes}
                 user={user}
                 matchFound={matchFound}
                 setMatchFound={setMatchFound}

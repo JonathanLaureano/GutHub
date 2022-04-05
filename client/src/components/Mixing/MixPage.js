@@ -5,13 +5,10 @@ import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 
 
-export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults,setMixResults }) {
+export default function MixPage({mixes, setMixes, user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults,setMixResults }) {
     let [selectedCategory, setSelectedCategory] = useState('ALL')
     let [mixType, setMixType] = useState('RELATIVE');
-    let [mixes, setMixes] = useState({
-        "mix": [
-        ]
-    });
+
 
     let filteredIngredients = ingredients.filter(ingredient => ingredient.ingredient_type === selectedCategory.toLowerCase() || selectedCategory === 'ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
 
@@ -96,7 +93,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                                 console.log(r.data)
                                 setMixResults(r.data)
                                 setShowResultsModal(true)
-                                celebrate();
                                 setMatchFound(true);
 
                             }
