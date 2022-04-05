@@ -123,3 +123,93 @@
     color:#fff;
     font-size: 2vh;
 }
+
+.resultModal-view-button{
+    margin-top: 2.5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: rgb(206, 202, 202);
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a4469, 0 0 0.5em #ff4a4469, 0 0 0.1em #ff4a4469, 0 10px 3px #000; */
+    background-color: rgb(17, 17, 17);
+    height: 5vh;
+    transition: .35s ease-in-out;
+    border-radius: 5px;
+    font-size: 100%;
+    text-align: center;
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 5%;
+    max-width: 100px;
+
+}
+
+.resultModal-view-button:hover{
+    opacity: .75;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #c5b4b3, 0 0 0.5em #c5b4b3, 0 0 0.1em #c5b4b3, 0 10px 3px #000;
+    cursor: pointer;
+}
+
+.resultModal-favorite-button{
+    margin-top: 2.5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: rgb(179, 222, 250);
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff73, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000; */
+    background-color: rgb(17, 17, 17);
+    transition: .35s ease-in-out;
+    border-radius: 5px;
+    font-size: 100%;
+    text-align: center;
+    height: 5vh;
+    width: 75%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    max-width: 100px;
+
+
+}
+
+.resultModal-favorite-button:hover{
+    opacity: .75;
+    color: aqua;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
+    cursor: pointer;
+}
+
+.favorite-all-button {
+    margin-top: 1vh;
+    cursor: pointer;
+    font-size: 125%;
+    width: 30vw;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff73, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
+    font-weight: bold;
+    border-radius: 5px;    
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1%;
+    /* background-color: rgb(36, 36, 36); */
+    background-color: rgb(17, 17, 17);
+    transition: .25s;
+  }
+  
+.favorite-all-button:hover {
+    color: aqua;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
+    cursor: pointer;
+}  
+
+.favorite-all-button:active{
+    background-color: rgb(50, 36, 36);
+}

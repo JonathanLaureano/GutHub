@@ -42,6 +42,8 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
                 <div className="resultModal-drink-container">
                     <img className='resultModal-drink-image' src={drinkImages('./'+drink.image_url)} />
                     <div className='resultModal-drink-name'>{drink.name}</div>
+                    <button className='resultModal-view-button'>VIEW</button>
+                    <button className='resultModal-favorite-button'>FAVORITE</button>
                 </div>
             )
         })
@@ -52,7 +54,7 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
         <div className="modal-card">
             <div className="modal-top">
                 <div className="modal-left">
-                    <div className='resultModal-ingredients-title'>RECIPE</div>
+                    <div className='resultModal-ingredients-title'>INGREDIENTS</div>
                     <div className='resultModal-ingredients-wrapper' id='cards'>
                         {displayIngredients(mixIngredients)}
                     </div>
@@ -67,7 +69,7 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
                 </div>
             </div>
             <div className="modal-bot">
-                <button className="close-button" onClick={handleClickCloseButton}>Add All to Favorites</button>
+                <button className="favorite-all-button" onClick={handleClickCloseButton}>FAVORITE ALL DRINKS</button>
                 <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
             </div>
         </div>
