@@ -6,6 +6,7 @@ import IngredientCard from '../IngredientCard/IngedientCard';
 
 
 export default function MixPage({mixes, setMixes, user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults,setMixResults }) {
+    const images = require.context('../../img/ingredients', true);
     let [selectedCategory, setSelectedCategory] = useState('ALL')
     let [mixType, setMixType] = useState('RELATIVE');
 
@@ -19,10 +20,15 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
     })
 
     let mixesToDisplay = sortedMix.map(mix => {
+        let fullIngredient = ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0]
+        console.log(fullIngredient)
         return (
             <div className='mix-recipe-identity'>
-                <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0].name}: </div>
-                <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
+                <img className='mix-recipe-image' src={images('./' + fullIngredient.image_url)} />
+                <div className='mix-recipe-nameandcount'> 
+                    <div key={mix["ingredient_id"]} className='mix-recipe'>{fullIngredient.name}: </div>
+                    <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
+                </div>
             </div>
         )
     })

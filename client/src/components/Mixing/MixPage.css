@@ -194,7 +194,7 @@
     margin-top: 1.5%;
     display:flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: rgb(15, 15, 15);
     border-radius: 10px;
     width: 80%;
@@ -203,14 +203,36 @@
     font-size: larger;
     padding-top: 1%;
     padding-bottom: 2%;
+    transition: .75s ease;
+
+}
+
+.mix-recipe-identity:hover{
+    background-color: rgb(93, 93, 97);
+    transition: .75s ease;
+
+}
+
+.mix-recipe-image {
+    height: 4vh;
+    margin-right: -25%;
+}
+
+.mix-recipe-nameandcount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .mix-recipe {
+    align-self: center;
+    margin-left: -5%;
 }
 
 .mix-recipe-partsCount{
-    margin-left: 2.5%;
+    /* margin-left: 2.5%; */
     color: rgb(128, 126, 126);
+    align-self: center;
 }
 
 .button-wrappers {
