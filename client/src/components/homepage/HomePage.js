@@ -122,7 +122,18 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 <MixModal user={user} setShowMixModal={setShowMixModal} drink={mixToCreate} ingredients={ingredients} handleCreateDrinkSubmit={handleCreateDrinkSubmit}/>
             </div>:null}
             {showResultsModal?<div className='modal-container'>
-                <ResultsModal setShowResultsModal={setShowResultsModal} mixResults={mixResults} mixes={mixes} ingredients={ingredients}/>
+                <ResultsModal 
+                setShowResultsModal={setShowResultsModal} 
+                mixResults={mixResults} 
+                mixes={mixes} 
+                ingredients={ingredients} 
+                setSelectedDrink={setSelectedDrink} 
+                setShowDrinkModal={setShowDrinkModal}                     
+                handleFavoriteDrink={handleFavoriteDrink} 
+                    handleUnfavoriteDrink={handleUnfavoriteDrink}
+                    favorites={favorites} 
+                    setFavorites={setFavorites}   
+/>
             </div>:null}
 
             {modalActive?<div onClick={clickOffModal} className="modal-curtain"></div>:null}

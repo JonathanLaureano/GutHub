@@ -171,8 +171,6 @@
     margin-right: 5%;
     margin-top: 5%;
     max-width: 100px;
-
-
 }
 
 .resultModal-favorite-button:hover{
@@ -181,6 +179,37 @@
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
     cursor: pointer;
 }
+
+.resultModal-unfavorite-button{
+    margin-top: 2.5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: rgb(252, 159, 195);
+    background-color: rgb(17, 17, 17);
+    transition: .35s ease-in-out;
+    border-radius: 5px;
+    font-size: 75%;
+    text-align: center;
+    height: 5vh;
+    width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    max-width: 130px;
+}
+
+.resultModal-unfavorite-button:hover{
+    opacity: .75;
+    color: rgb(252, 7, 101);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    cursor: pointer;
+}
+
+
+
+
 
 .favorite-all-button {
     margin-top: 1vh;

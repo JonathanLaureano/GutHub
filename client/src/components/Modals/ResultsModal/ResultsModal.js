@@ -3,7 +3,7 @@ import React,{useState} from "react";
 import '../Modal.css';
 import './ResultsModal.css';
 
-export default function ResultsModal({mixes,showResultsModal,setShowResultsModal,ingredients,mixResults}) {
+export default function ResultsModal({mixes,showResultsModal,setShowResultsModal,ingredients,mixResults, setSelectedDrink,setShowDrinkModal,handleFavoriteDrink,handleUnfavoriteDrink,favorites,setFavorites}) {
     const drinkImages = require.context('../../../img/drinks', true);
     const ingredImages = require.context('../../../img/ingredients', true);
 
@@ -11,6 +11,32 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
     function handleClickCloseButton() {
         setShowResultsModal(false);
     }
+
+    function handleClickFavoriteButton(drink) {
+        handleFavoriteDrink(drink)
+        setFavorites([...favorites, drink.id])
+    }
+
+    function handleClickUnfavoriteButton(drink) {
+        handleUnfavoriteDrink(drink)
+        setFavorites(favorites.filter(fav => fav != drink.id))
+    }
+
+    function handleClickViewButton(drink){
+            setSelectedDrink(drink);
+            setShowDrinkModal(true);
+            setShowResultsModal(false);
+    }
+
+    function handleFavoriteAllButton(data){
+        // ! NEED TO FINISH THIS
+        // ! REACT DOES NOT LIKE THE NUMBER OF STATES BEING UPDATED HERE
+        // data.map(drink=>{
+        //     handleFavoriteDrink(drink)
+        //     setFavorites([...favorites, drink.id])    
+        // })
+    }
+
 
     let mixIngredients = mixes.mix;
 
@@ -37,13 +63,13 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
 
     function displayDrinks(data) {
         return data.map(drink=> {
-            console.log(drink)
+            let inFavorites = favorites != undefined ? favorites.includes(drink.id) : false
             return (
                 <div className="resultModal-drink-container">
                     <img className='resultModal-drink-image' src={drinkImages('./'+drink.image_url)} />
                     <div className='resultModal-drink-name'>{drink.name}</div>
-                    <button className='resultModal-view-button'>VIEW</button>
-                    <button className='resultModal-favorite-button'>FAVORITE</button>
+                    <button className='resultModal-view-button' onClick={()=>handleClickViewButton(drink)}>VIEW</button>
+                    {inFavorites?<button className='resultModal-unfavorite-button' onClick={()=>handleClickUnfavoriteButton(drink)}>UNFAVORITE</button>:<button className='resultModal-favorite-button' onClick={()=>handleClickFavoriteButton(drink)}>FAVORITE</button>}
                 </div>
             )
         })
@@ -69,7 +95,7 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
                 </div>
             </div>
             <div className="modal-bot">
-                <button className="favorite-all-button" onClick={handleClickCloseButton}>FAVORITE ALL DRINKS</button>
+                <button className="favorite-all-button" onClick={handleFavoriteAllButton(mixResults)}>FAVORITE ALL DRINKS</button>
                 <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>
             </div>
         </div>
