@@ -4,6 +4,8 @@ import CheckIcon from './CheckCircleIcon.png'
 
 export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCount }) {
     let [partsCount, setPartsCount] = useState(oldPartsCount);
+    const images = require.context('../../img/ingredients', true);
+
 
     function truncateDecimals(num, digits) {
         let numS = num.toString(),
@@ -15,7 +17,6 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
         return parseFloat(finalResult);
     }
 
-    const images = require.context('../../img/ingredients', true);
 
     let imgClass;
 

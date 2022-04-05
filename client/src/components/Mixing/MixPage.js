@@ -5,13 +5,10 @@ import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 
 
-export default function MixPage({ user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive }) {
+export default function MixPage({mixes, setMixes, user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults,setMixResults }) {
     let [selectedCategory, setSelectedCategory] = useState('ALL')
     let [mixType, setMixType] = useState('RELATIVE');
-    let [mixes, setMixes] = useState({
-        "mix": [
-        ]
-    });
+
 
     let filteredIngredients = ingredients.filter(ingredient => ingredient.ingredient_type === selectedCategory.toLowerCase() || selectedCategory === 'ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
 
@@ -42,8 +39,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
 
     function handleClickTab(e) {
         setSelectedCategory(e.target.textContent)
-        console.log(e.target.textContent)
-        console.log(filteredIngredients)
     }
 
     function handleClickArrow() {
@@ -55,7 +50,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     function handleMixClick() {
         switch (mixType) {
             case 'STRICT':
-                console.log(mixes.mix);
                 if (mixes.mix.length <= 1) {
                     alert("               MIX ERORR: \nPlease add more than one ingredient.")
                 } else {
@@ -69,7 +63,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                                 })
                                 setShowMixModal(true)
                             } else {
-                                console.log(r.data)
                                 setSelectedDrink(r.data)
                                 setShowDrinkModal(true)
                                 celebrate();
@@ -78,7 +71,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                         })
                 }
             case 'RELATIVE':
-                // console.log(mixes.mix);
                 if (mixes.mix.length <= 1) {
                     alert("               MIX ERORR: \nPlease add more than one ingredient.")
                 } else {
@@ -99,10 +91,9 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                                 setMatchFound(true);
                             } else {
                                 console.log(r.data)
-                                // setSelectedDrink(r.data)
-                                // setShowDrinkModal(true)
-                                celebrate();
-                                // setMatchFound(true);
+                                setMixResults(r.data)
+                                setShowResultsModal(true)
+                                setMatchFound(true);
 
                             }
                         })
