@@ -13,7 +13,6 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
     let filteredIngredients = ingredients.filter(ingredient => ingredient.ingredient_type === selectedCategory.toLowerCase() || selectedCategory === 'ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
 
     let sortedMix = mixes.mix.sort((recipe1, recipe2) => {
-
         let recipe1Name = ingredients.filter(ingredient => ingredient.id == [recipe1["ingredient_id"]])[0].name;
         let recipe2Name = ingredients.filter(ingredient => ingredient.id == [recipe2["ingredient_id"]])[0].name
         return recipe1Name.localeCompare(recipe2Name);
@@ -48,6 +47,7 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
     }
 
     function handleMixClick() {
+        console.log()
         switch (mixType) {
             case 'STRICT':
                 if (mixes.mix.length <= 1) {
@@ -70,6 +70,7 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
                             }
                         })
                 }
+            break
             case 'RELATIVE':
                 if (mixes.mix.length <= 1) {
                     alert("               MIX ERORR: \nPlease add more than one ingredient.")
@@ -98,6 +99,8 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
                             }
                         })
                 }
+                break
+
 
         }
 
