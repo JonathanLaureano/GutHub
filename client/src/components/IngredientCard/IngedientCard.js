@@ -125,10 +125,13 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
     }
 
     function addClick() {
-        if (ingredient.ingredient_type != 'Solid') {
-            handleAddUpdatePartsCount(5)
-        } else {
-            handleAddUpdatePartsCount(1)
+        if (totalPartsCount >=11){
+        }else {
+            if (ingredient.ingredient_type != 'Solid') {
+                handleAddUpdatePartsCount(5)
+            } else {
+                handleAddUpdatePartsCount(1)
+            }    
         }
     }
 
@@ -216,6 +219,8 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
                 setMixes(newMixes)
             }
         }
+
+        
     }
 
     function handleOffFocusClick(e) {
@@ -223,7 +228,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
             setPartsCount(parseInt(1));
             let ingredientRecipe = { "ingredient_id": ingredient.id, "parts": 1 }
             let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
-            let updatedMix = [...filteredMix, ingredientRecipe];
+            let updatedMix = [...filteredMix,  ingredientRecipe];
             let newMixes = { "mix": updatedMix }
             setMixes(newMixes)
         } else {
@@ -236,13 +241,15 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
                 let newMixes = { "mix": updatedMix }
                 setMixes(newMixes)
             }
-            else if (newValue === '') {
+            else if (newValue === '' || newValue === '0') {
+                setTotalPartsCount(totalPartsCount-oldPartsCount)
                 setPartsCount(0);
                 let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
                 let newMixes = { "mix": filteredMix }
                 setMixes(newMixes)
             } else if (newValue.toString().indexOf('.') != -1) {
                 setPartsCount(truncateDecimals(parseFloat(newValue), 2));
+                setTotalPartsCount(truncateDecimals(parseFloat(totalPartsCount), 2))
             }
         }
     }

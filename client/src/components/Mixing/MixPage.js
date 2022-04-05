@@ -228,6 +228,8 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
     let titleClass = mixes.mix.length == 0 || modalActive ? 'mix-page-title-off' : 'mix-page-title'
     let buttonClass = mixes.mix.length == 0 || modalActive ? 'go-home-mix-page-button-nolight' : 'go-home-mix-page-button'
 
+    let totalPartsCountClass = totalPartCount == 11 ? 'mix-recipe-partsCount-total max':'mix-recipe-partsCount-total'
+
 
     return (
         <React.Fragment>
@@ -244,7 +246,7 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                     </div>
                     <div className='mix-recipe-identity-total'>
                             <div className='mix-recipe-total'>Total: </div>
-                            <div className='mix-recipe-partsCount-total'> {totalPartCount}</div>
+                            <div className={totalPartsCountClass}> {totalPartCount}</div>
                     </div>
                     <div className='button-wrappers'>
                         <button className='mix-button' onClick={handleMixClick}>MIX</button>
