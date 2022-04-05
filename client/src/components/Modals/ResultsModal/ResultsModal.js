@@ -3,8 +3,8 @@ import React,{useState} from "react";
 import '../Modal.css';
 import './ResultsModal.css';
 
-export default function ResultsModal({mixes,showResultsModal,setShowResultsModal,ingredients}) {
-    const drinkImgs = require.context('../../../img/drinks', true);
+export default function ResultsModal({mixes,showResultsModal,setShowResultsModal,ingredients,mixResults}) {
+    const drinkImages = require.context('../../../img/drinks', true);
     const ingredImages = require.context('../../../img/ingredients', true);
 
 
@@ -14,13 +14,11 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
 
     let mixIngredients = mixes.mix;
 
-    function ingredientCardsRow(data) {
+    function displayIngredients(data) {
         return <div className='mix-page-ingredients-cards-container result-modal'>
             {data.map(mixIngredient => 
                 {
-                    let fullIngredient= ingredients.filter(ingredient => ingredient.id == [mixIngredient["ingredient_id"]])[0] 
-                    console.log(fullIngredient)
-
+                let fullIngredient= ingredients.filter(ingredient => ingredient.id == [mixIngredient["ingredient_id"]])[0] 
                 return (
                     <div id={fullIngredient.id} className='resultModal-ingredient-container'>
                     <img className='resultModal-ingredient-image' src={ingredImages('./' + fullIngredient.image_url)} />
@@ -37,6 +35,18 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
         </div>
     }
 
+    function displayDrinks(data) {
+        return data.map(drink=> {
+            console.log(drink)
+            return (
+                <div className="resultModal-drink-container">
+                    <img className='resultModal-drink-image' src={drinkImages('./'+drink.image_url)} />
+                    <div className='resultModal-drink-name'>{drink.name}</div>
+                </div>
+            )
+        })
+    }
+
 
     return (
         <div className="modal-card">
@@ -44,12 +54,15 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
                 <div className="modal-left">
                     <div className='resultModal-ingredients-title'>RECIPE</div>
                     <div className='resultModal-ingredients-wrapper' id='cards'>
-                        {ingredientCardsRow(mixIngredients)}
+                        {displayIngredients(mixIngredients)}
                     </div>
                 </div>
 
                 <div className="modal-right">
                     <div className='resultModal-drinks-title'>DRINKS</div>
+                    <div className='resultModal-drinks-wrapper'>
+                        {displayDrinks(mixResults)}
+                    </div>
 
                 </div>
             </div>

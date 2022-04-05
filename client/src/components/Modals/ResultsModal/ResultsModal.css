@@ -90,7 +90,6 @@
 
 .resultModal-drinks-title {
     /* margin-top: 1.25%; */
-    background-color: rgb(15, 15, 15);
     background-color: rgb(39, 39, 39);
     padding-bottom: .75%;
     border-top-right-radius: 10px;
@@ -98,4 +97,29 @@
     color: #fff;
     font-family: 'Shippori Mincho', serif;
     font-size: 3vh;
+}
+
+.resultModal-drinks-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: ;
+}
+
+.resultModal-drink-container {
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-top: 2.5%;
+}
+
+.resultModal-drink-image{
+    height: 10vh;
+}
+
+.resultModal-drink-name{
+    align-self: center;
+    color:#fff;
+    font-size: 2vh;
 }
