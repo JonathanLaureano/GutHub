@@ -4,12 +4,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import axios from 'axios';
 import { animateScroll as ScrollAction } from 'react-scroll';
 import HomePage from '../HomePage/HomePage';
-import MixPage from '../Mixing/MixPage';
-import ResultsPage from '../SearchPage/SearchPage';
-import DrinksPage from '../Drinks/DrinksPage';
 import Header from '../Header/Header';
-import ProfilePage from '../Profile/ProfilePage';
-import FavoritesPage from '../Favorites/FavoritesPage';
 
 function App() {
   let history = useHistory();
@@ -331,47 +326,6 @@ function App() {
             setShowResultsModal={setShowResultsModal}
             mixResults={mixResults}
             setMixResults={setMixResults}
-          />
-        </Route>
-        <Route path='/profile'>
-          <ProfilePage
-            signedIn={signedIn}
-            handleLogOut={handleLogOut}
-          />
-        </Route>
-        <Route path='/favorites'>
-          <FavoritesPage
-            user = {user}
-            showProfileModal={showProfileModal}
-            setShowProfileModal={setShowProfileModal}
-            showMixModal={showMixModal}
-            setShowMixModal={setShowMixModal}
-            mixToCreate={mixToCreate}
-            setMixToCreate={setMixToCreate}
-            ingredients={ingredients}
-            handleCreateDrinkSubmit={handleCreateDrinkSubmit}
-            />
-        </Route>
-        <Route path='/mix'>
-          <MixPage
-            ingredients={ingredients}
-            setIngredients={setIngredients}
-            showDrinkModal={showDrinkModal}
-            setShowDrinkModal={setShowDrinkModal}
-            selectedDrink={selectedDrink}
-            setSelectedDrink={setSelectedDrink}
-          />
-        </Route>
-        <Route path='/search-results'>
-          <ResultsPage
-            drinks={drinks}
-            setDrinks={drinks}
-          />
-        </Route>
-        <Route path='/all-drinks'>
-          <DrinksPage
-            drinks={drinks}
-            setDrinks={drinks}
           />
         </Route>
       </Switch>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import './IngredientCard.css';
-import CheckIcon from './CheckCircleIcon.png'
 
 export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCount }) {
     let [partsCount, setPartsCount] = useState(oldPartsCount);

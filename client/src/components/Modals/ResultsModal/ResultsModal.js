@@ -1,9 +1,8 @@
-import axios from "axios";
-import React,{useState} from "react";
+import React from "react";
 import '../Modal.css';
 import './ResultsModal.css';
 
-export default function ResultsModal({mixes,showResultsModal,setShowResultsModal,ingredients,mixResults, setSelectedDrink,setShowDrinkModal,handleFavoriteDrink,handleUnfavoriteDrink,favorites,setFavorites}) {
+export default function ResultsModal({ mixes, showResultsModal, setShowResultsModal, ingredients, mixResults, setSelectedDrink, setShowDrinkModal, handleFavoriteDrink, handleUnfavoriteDrink, favorites, setFavorites }) {
     const drinkImages = require.context('../../../img/drinks', true);
     const ingredImages = require.context('../../../img/ingredients', true);
 
@@ -19,16 +18,16 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
 
     function handleClickUnfavoriteButton(drink) {
         handleUnfavoriteDrink(drink)
-        setFavorites(favorites.filter(fav => fav != drink.id))
+        setFavorites(favorites.filter(fav => fav !== drink.id))
     }
 
-    function handleClickViewButton(drink){
-            setSelectedDrink(drink);
-            setShowDrinkModal(true);
-            setShowResultsModal(false);
+    function handleClickViewButton(drink) {
+        setSelectedDrink(drink);
+        setShowDrinkModal(true);
+        setShowResultsModal(false);
     }
 
-    function handleFavoriteAllButton(data){
+    function handleFavoriteAllButton(data) {
         // ! NEED TO FINISH THIS
         // ! REACT DOES NOT LIKE THE NUMBER OF STATES BEING UPDATED HERE
         // data.map(drink=>{
@@ -42,17 +41,16 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
 
     function displayIngredients(data) {
         return <div className='mix-page-ingredients-cards-container result-modal'>
-            {data.map(mixIngredient => 
-                {
-                let fullIngredient= ingredients.filter(ingredient => ingredient.id == [mixIngredient["ingredient_id"]])[0] 
+            {data.map(mixIngredient => {
+                let fullIngredient = ingredients.filter(ingredient => ingredient.id === [mixIngredient["ingredient_id"]])[0]
                 return (
                     <div id={fullIngredient.id} className='resultModal-ingredient-container'>
-                    <img className='resultModal-ingredient-image' src={ingredImages('./' + fullIngredient.image_url)} />
-                    <div className="resultModal-ingredient-text-info">
-                        <div className="resultModal-ingredient-name">{fullIngredient.name}</div>
-                        <div className="resultModal-ingredient-partsCount">
-                    </div>
-                    </div>
+                        <img className='resultModal-ingredient-image' alt={fullIngredient.name} src={ingredImages('./' + fullIngredient.image_url)} />
+                        <div className="resultModal-ingredient-text-info">
+                            <div className="resultModal-ingredient-name">{fullIngredient.name}</div>
+                            <div className="resultModal-ingredient-partsCount">
+                            </div>
+                        </div>
                     </div>
                 )
             })
@@ -62,14 +60,14 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
     }
 
     function displayDrinks(data) {
-        return data.map(drink=> {
-            let inFavorites = favorites != undefined ? favorites.includes(drink.id) : false
+        return data.map(drink => {
+            let inFavorites = favorites !== undefined ? favorites.includes(drink.id) : false
             return (
                 <div className="resultModal-drink-container">
-                    <img className='resultModal-drink-image' src={drinkImages('./'+drink.image_url)} />
+                    <img className='resultModal-drink-image' alt={drink.name} src={drinkImages('./' + drink.image_url)} />
                     <div className='resultModal-drink-name'>{drink.name}</div>
-                    <button className='resultModal-view-button' onClick={()=>handleClickViewButton(drink)}>VIEW</button>
-                    {inFavorites?<button className='resultModal-unfavorite-button' onClick={()=>handleClickUnfavoriteButton(drink)}>UNFAVORITE</button>:<button className='resultModal-favorite-button' onClick={()=>handleClickFavoriteButton(drink)}>FAVORITE</button>}
+                    <button className='resultModal-view-button' onClick={() => handleClickViewButton(drink)}>VIEW</button>
+                    {inFavorites ? <button className='resultModal-unfavorite-button' onClick={() => handleClickUnfavoriteButton(drink)}>UNFAVORITE</button> : <button className='resultModal-favorite-button' onClick={() => handleClickFavoriteButton(drink)}>FAVORITE</button>}
                 </div>
             )
         })

@@ -1,7 +1,5 @@
 import './HomePage.css';
-import React, { useState, useEffect } from 'react'
-import { Route, Switch } from "react-router-dom";
-import axios from 'axios';
+import React, { useState } from 'react'
 import {animateScroll as ScrollAction} from 'react-scroll';
 import SignInModal from '../SignInModal/SignInModal';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';

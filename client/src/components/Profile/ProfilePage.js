@@ -1,11 +1,9 @@
 import './ProfilePage.css';
-import React, { useState, useEffect } from 'react'
-import { Route, Switch } from "react-router-dom";
-import axios from 'axios';
+import React from 'react';
 
-export default function ProfilePage({signedIn,handleLogOut}){
+export default function ProfilePage({ signedIn, handleLogOut }) {
     document.title = 'GutHub - Profile'
-    return(
+    return (
         <React.Fragment>
             <div className='profile-nav'>
                 <a className="nav-link" href="/">Home</a>
