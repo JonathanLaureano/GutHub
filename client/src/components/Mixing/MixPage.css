@@ -167,8 +167,8 @@
     width: fit-content;
     font-size: 300%;
     color: #fff;
-    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff6e, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000; */
     margin-bottom: 10%;
+    margin-left: -30%;
 }
 
 .mix-button:hover {
