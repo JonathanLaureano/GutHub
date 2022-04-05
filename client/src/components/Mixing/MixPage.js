@@ -42,8 +42,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
 
     function handleClickTab(e) {
         setSelectedCategory(e.target.textContent)
-        console.log(e.target.textContent)
-        console.log(filteredIngredients)
     }
 
     function handleClickArrow() {
@@ -55,7 +53,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
     function handleMixClick() {
         switch (mixType) {
             case 'STRICT':
-                // console.log(mixes.mix);
                 if (mixes.mix.length <= 1) {
                     alert("               MIX ERORR: \nPlease add more than one ingredient.")
                 } else {
@@ -69,7 +66,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                                 })
                                 setShowMixModal(true)
                             } else {
-                                console.log(r.data)
                                 setSelectedDrink(r.data)
                                 setShowDrinkModal(true)
                                 celebrate();
@@ -78,7 +74,6 @@ export default function MixPage({ user, ingredients, setIngredients, showDrinkMo
                         })
                 }
             case 'RELATIVE':
-                // console.log(mixes.mix);
                 if (mixes.mix.length <= 1) {
                     alert("               MIX ERORR: \nPlease add more than one ingredient.")
                 } else {
