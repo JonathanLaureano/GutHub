@@ -16,12 +16,13 @@ export default function ResultsModal({mixes,showResultsModal,setShowResultsModal
 
     function ingredientCardsRow(data) {
         return <div className='mix-page-ingredients-cards-container'>
-            {data.map(ingredient => 
-                {let fullIngredient= ingredients[ingredient["ingredient_id"]]
-            
+            {data.map(mixIngredient => 
+                {
+                    let fullIngredient= ingredients.filter(ingredient => ingredient.id == [mixIngredient["ingredient_id"]])[0] 
+                    console.log(fullIngredient)
 
                 return (
-                    <div id={fullIngredient.d} className='ingredient-card-container'>
+                    <div id={fullIngredient.id} className='ingredient-card-container'>
                     <img className='ingredient-card-image' src={ingredImages('./' + fullIngredient.image_url)} />
                     <div className="ingredient-card-text-info">
                         <div className="ingredient-card-name">{fullIngredient.name}</div>
