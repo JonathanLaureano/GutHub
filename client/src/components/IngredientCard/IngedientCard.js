@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './IngredientCard.css';
 
-export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCount }) {
+export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCount,totalPartsCount,setTotalPartsCount}) {
     let [partsCount, setPartsCount] = useState(oldPartsCount);
     const images = require.context('../../img/ingredients', true);
 
@@ -91,7 +91,8 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
     function handleAddUpdatePartsCount(num) {
         let isFloat = partsCount.toString().indexOf('.') != -1;
         if (isFloat) {
-            setPartsCount(Math.ceil(partsCount))
+            setPartsCount(Math.ceil(partsCount))      
+            setTotalPartsCount(totalPartsCount+(Math.ceil(partsCount)-partsCount))
             let ingredientRecipe = { "ingredient_id": ingredient.id, "parts": Math.ceil(partsCount) }
             if (mixes.mix.length > 0) {
                 let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
@@ -107,6 +108,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
         else {
             if (partsCount < num) {
                 setPartsCount(partsCount += 1)
+                setTotalPartsCount(totalPartsCount+=1)
                 let ingredientRecipe = { "ingredient_id": ingredient.id, "parts": partsCount }
                 if (mixes.mix.length > 0) {
                     let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
@@ -136,12 +138,14 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
         if (isFloat) {
             if (partsCount < 1 && partsCount > 0) {
                 setPartsCount(0)
+                setTotalPartsCount(totalPartsCount-partsCount)
                 let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
                 let newMixes = { "mix": filteredMix }
                 setMixes(newMixes)
             }
             else {
                 setPartsCount(Math.floor(partsCount))
+                setTotalPartsCount(totalPartsCount-(partsCount-Math.floor(partsCount)))
                 let ingredientRecipe = { "ingredient_id": ingredient.id, "parts": Math.floor(partsCount) }
                 if (mixes.mix.length > 0) {
                     let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
@@ -158,6 +162,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
         else {
             if (partsCount > 1) {
                 setPartsCount(partsCount -= 1)
+                setTotalPartsCount(totalPartsCount-1)
                 let ingredientRecipe = { "ingredient_id": ingredient.id, "parts": partsCount }
                 if (mixes.mix.length > 0) {
                     let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
@@ -172,6 +177,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
             }
             else if (partsCount == 1) {
                 setPartsCount(partsCount -= 1)
+                setTotalPartsCount(totalPartsCount-1)
                 let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
                 let newMixes = { "mix": filteredMix }
                 setMixes(newMixes)
@@ -181,8 +187,9 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
 
     function handleUpdatePartsCountOnInput(e) {
         let newValue = e.target.value;
-        setPartsCount(newValue);
         if (newValue.toString().indexOf('.') != -1) {
+            setTotalPartsCount(totalPartsCount-(partsCount-newValue))
+            setPartsCount(newValue);
             let ingredientRecipe = { "ingredient_id": ingredient.id, "parts": truncateDecimals(parseFloat(newValue), 2) }
             if (mixes.mix.length > 0) {
                 let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
@@ -198,6 +205,7 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
             setPartsCount(parseInt(newValue));
             let ingredientRecipe = { "ingredient_id": ingredient.id, "parts": parseInt(newValue) }
             if (mixes.mix.length > 0) {
+                // setTotalPartsCount(totalPartsCount-(partsCount-newValue))
                 let filteredMix = mixes.mix.filter(mix => mix["ingredient_id"] != ingredient.id)
                 let updatedMix = [...filteredMix, ingredientRecipe];
                 let newMixes = { "mix": updatedMix }

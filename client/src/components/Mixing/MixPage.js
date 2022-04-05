@@ -5,9 +5,16 @@ import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 
 
-export default function MixPage({mixes, setMixes, user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults,setMixResults }) {
+export default function MixPage({ mixes, setMixes, user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults, setMixResults }) {
+    const images = require.context('../../img/ingredients', true);
     let [selectedCategory, setSelectedCategory] = useState('ALL')
     let [mixType, setMixType] = useState('RELATIVE');
+    let [totalPartCount, setTotalPartsCount] = useState(0);
+
+    let totalCount = 0;
+
+
+
 
 
     let filteredIngredients = ingredients.filter(ingredient => ingredient.ingredient_type === selectedCategory.toLowerCase() || selectedCategory === 'ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
@@ -19,10 +26,14 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
     })
 
     let mixesToDisplay = sortedMix.map(mix => {
+        let fullIngredient = ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0]
         return (
             <div className='mix-recipe-identity'>
-                <div key={mix["ingredient_id"]} className='mix-recipe'>{ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0].name}: </div>
-                <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
+                <img className='mix-recipe-image' src={images('./' + fullIngredient.image_url)} />
+                <div className='mix-recipe-nameandcount'>
+                    <div key={mix["ingredient_id"]} className='mix-recipe'>{fullIngredient.name}: </div>
+                    <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
+                </div>
             </div>
         )
     })
@@ -70,7 +81,7 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
                             }
                         })
                 }
-            break
+                break
             case 'RELATIVE':
                 if (mixes.mix.length <= 1) {
                     alert("               MIX ERORR: \nPlease add more than one ingredient.")
@@ -140,6 +151,8 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
                     mixes={mixes}
                     setMixes={setMixes}
                     oldPartsCount={oldPartsCount}
+                    totalPartsCount={totalPartCount}
+                    setTotalPartsCount={setTotalPartsCount}
                 />)
             })}
         </div>
@@ -156,6 +169,7 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
                 setSelectedCategory('ALL')
                 setIngredients(r.data)
             })
+        setTotalPartsCount(0)
     }
 
 
@@ -227,6 +241,10 @@ export default function MixPage({mixes, setMixes, user, ingredients, setIngredie
                     <div className='mix-recipe-title'>RECIPE:</div>
                     <div className='mix-recipes-wrapper'>
                         {mixesToDisplay}
+                    </div>
+                    <div className='mix-recipe-identity-total'>
+                            <div className='mix-recipe-total'>Total: </div>
+                            <div className='mix-recipe-partsCount-total'> {totalPartCount}</div>
                     </div>
                     <div className='button-wrappers'>
                         <button className='mix-button' onClick={handleMixClick}>MIX</button>
