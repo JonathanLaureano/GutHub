@@ -4,5 +4,5 @@ class Drink < ApplicationRecord
   has_many :ingredients, through: :recipes
   accepts_nested_attributes_for :recipes, :ingredients, allow_destroy: true
 
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 end
