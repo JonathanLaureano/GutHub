@@ -39,7 +39,7 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
                         <img alt={drink.name} src={images('./'+drink.image_url)} className="modal-drink-image"/>
                     </div>
                     <div className="modal-right">   
-                        <input type='text' value={drinkName} onChange={handleDrinkNameChange} className='mix-modal-input'></input>
+                        <input type='text' placeholder='Enter A Drink Name' value={drinkName} onChange={handleDrinkNameChange} className='mix-modal-input'></input>
                         <hr></hr>
                         <div className="modal-drink-recipe-title">Recipe: </div>
                         <div className="modal-drink-recipe-wrapper">
