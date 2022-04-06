@@ -3,7 +3,6 @@ import '../Modal.css';
 import './MixModal.css';
 
 export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingredients,handleCreateDrinkSubmit}){
-    console.log(drink)
     const images = require.context('../../../img/drinks',true);
 
     let [drinkName,setDrinkName] = useState('')
@@ -13,7 +12,6 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
     }
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
-        console.log(recipe)
         return(
             <div key={recipe.ingredient_id} className="modal-drink-recipe"><b>{ingredients.filter(ingredient=> ingredient.id==[recipe["ingredient_id"]])[0].name}</b>: {recipe.parts}</div>
         )
@@ -28,7 +26,6 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
         let newDrink= {...drink,
             "name": drinkName
         }
-        console.log(newDrink)
         handleCreateDrinkSubmit(newDrink)
     }
 

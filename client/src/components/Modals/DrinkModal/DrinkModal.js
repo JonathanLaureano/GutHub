@@ -4,7 +4,6 @@ import '../Modal.css';
 import './DrinkModal.css';
 
 export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFound, handleFavoriteDrink, handleUnfavoriteDrink, favorites, setFavorites }) {
-    console.log(drink)
     const images = require.context('../../../img/drinks', true);
 
 
@@ -39,7 +38,7 @@ export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFou
             <div className="modal-top">
                 <div className="modal-left">
                     <img src={images('./' + drink.image_url)} className="modal-drink-image" />
-                    {isCreatedDrink ? <div className="modal-drink-credits"><label>Created By: </label>{drink.user.username}</div> : null}
+                    {isCreatedDrink ? <div className="modal-drink-credits"><label>Created By: </label>{drink.user.first_name} {drink.user.last_name}</div> : null}
                 </div>
                 <div className="modal-right">
                     <div className={drinkNameClass}>{drink.name}</div>

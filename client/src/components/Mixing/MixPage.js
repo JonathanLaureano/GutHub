@@ -58,7 +58,6 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
     }
 
     function handleMixClick() {
-        console.log()
         switch (mixType) {
             case 'STRICT':
                 if (mixes.mix.length <= 1) {
@@ -84,7 +83,7 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                 break
             case 'RELATIVE':
                 if (mixes.mix.length <= 1) {
-                    alert("               MIX ERORR: \nPlease add more than one ingredient.")
+                    alert("MIX ERORR: \nPlease add more than one ingredient.")
                 } else {
                     axios.post('/mixrelative', mixes)
                         .then(r => {
@@ -96,13 +95,11 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                                 })
                                 setShowMixModal(true)
                             } else if (r.data.length === 1) {
-                                console.log(r.data[0])
                                 setSelectedDrink(r.data[0])
                                 setShowDrinkModal(true)
                                 celebrate();
                                 setMatchFound(true);
                             } else {
-                                console.log(r.data)
                                 setMixResults(r.data)
                                 setShowResultsModal(true)
                                 setMatchFound(true);

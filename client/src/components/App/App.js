@@ -138,6 +138,8 @@ function App() {
         console.log(r)
         setSignedIn(true)
         setShowSignInModal(!showSignInModal)
+        window.location.reload();
+
       })
       .catch(function (error) {
         if (error.response) {
@@ -161,8 +163,6 @@ function App() {
 
     axios.post("/login", logInDetails)
       .then((r) => {
-        console.log(r)
-        // console.log(r)
         setSignedIn(true)
         setShowSignInModal(false)
         setUser(r.data)

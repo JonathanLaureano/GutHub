@@ -10,9 +10,7 @@ export default function Header({signedIn,setSignedIn,showProfileModal,setShowPro
     let history=useHistory();
 
     function handleProfileClick(){
-        // history.push('/profile');
         setShowProfileModal(true)
-        console.log('working')
     }
 
 
