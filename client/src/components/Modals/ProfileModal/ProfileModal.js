@@ -31,10 +31,6 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
     }
 
     function handleSubmitButton() {
-        if (password === '') {
-            setPassword('westworld')
-        }
-
         if (email === '') {
             setEmail(profile.username)
         }
@@ -55,7 +51,6 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
             "first_name": firstName,
             "last_name": lastName,
             username: email,
-            "password": password,
             "image_url": imageLink
         }
 
