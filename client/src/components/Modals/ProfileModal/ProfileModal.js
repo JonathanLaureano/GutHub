@@ -124,7 +124,8 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
                     <div className={profileNameClass}>{showEditMode ? <input className='profile-name-input' value={firstName} onChange={(e) => { setFirstName(e.target.value) }} placeholder='First Name'></input> : profile.first_name} {showEditMode ? <input className='profile-name-input' value={lastName} onChange={(e) => { setLastName(e.target.value) }} placeholder='Last Name'></input> : profile.last_name}</div>
                     <hr></hr>
                     <div className="modal-profile-details"> <label>Email:</label> {showEditMode ? <input className='profile-email-input' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Username'></input> : profile.username}</div>
-                    {showEditMode ? <div className="modal-profile-details"><label>Password: </label> <input type='password' className='profile-password-input' value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password'></input></div> : <div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>}
+                     <div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>
+                    {/* {showEditMode ? <div className="modal-profile-details"><label>Password: </label> <input type='password' className='profile-password-input' value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password'></input></div> : <div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>} */}
                     <div className='modal-profile-drinks-list-title'><label>Favorites: </label>{profile.favorites.length}</div>
                     <div className='modal-profile-cards-wrapper'>
                         {favoriteDrinksToDisplay}
