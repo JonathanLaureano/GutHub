@@ -5,17 +5,11 @@ import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 
 
-export default function MixPage({ mixes, setMixes, user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults, setMixResults }) {
+export default function MixPage({ mixes, setMixes, user, ingredients, setIngredients, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, scrollTopMix, showProfileModal, matchFound, setMatchFound, mixToCreate, setMixToCreate, showMixModal, setShowMixModal, modalActive, setShowResultsModal, showResultsModal, mixResults, setMixResults, showInformationModal, setShowInformationModal }) {
     const images = require.context('../../img/ingredients', true);
     let [selectedCategory, setSelectedCategory] = useState('ALL')
     let [mixType, setMixType] = useState('RELATIVE');
     let [totalPartCount, setTotalPartsCount] = useState(0);
-
-    let totalCount = 0;
-
-
-
-
 
     let filteredIngredients = ingredients.filter(ingredient => ingredient.ingredient_type === selectedCategory.toLowerCase() || selectedCategory === 'ALL').sort((ingred1, ingred2) => ingred1.name.localeCompare(ingred2.name))
 
@@ -57,11 +51,15 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
         scrollTopMix();
     }
 
+    function handleClickQuestion(){
+        setShowInformationModal(true)
+    }
+
     function handleMixClick() {
         switch (mixType) {
             case 'STRICT':
                 if (mixes.mix.length <= 1) {
-                    alert("               MIX ERORR: \nPlease add more than one ingredient.")
+                    alert("MIX ERROR: \nPlease add more than one ingredient.")
                 } else {
                     axios.post('/mixstrict', mixes)
                         .then(r => {
@@ -83,7 +81,7 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                 break
             case 'RELATIVE':
                 if (mixes.mix.length <= 1) {
-                    alert("MIX ERORR: \nPlease add more than one ingredient.")
+                    alert("MIX ERROR: \nPlease add more than one ingredient.")
                 } else {
                     axios.post('/mixrelative', mixes)
                         .then(r => {
@@ -232,6 +230,7 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
         <React.Fragment>
             <div style={{ marginTop: '22.5%' }}></div>
             <div className='mix-page-wrapper'>
+                <div className={buttonClass} onClick={handleClickQuestion}>?</div>
                 <div className={titleClass}>mixing</div>
                 <div className={buttonClass} onClick={handleClickArrow}>↑</div>
             </div>

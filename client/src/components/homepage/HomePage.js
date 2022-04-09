@@ -180,7 +180,9 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 setShowResultsModal={setShowResultsModal}
                 mixResults={mixResults}
                 setMixResults={setMixResults}   
-                modalActive={modalActive}   
+                modalActive={modalActive}
+                showInformationModal={showInformationModal} 
+                setShowInformationModal={setShowInformationModal}   
             />:null}
         </React.Fragment>
     )
