@@ -3,13 +3,31 @@ import React, { useEffect, useState } from "react";
 import '../Modal.css';
 import './DrinkModal.css';
 
-export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFound, handleFavoriteDrink, handleUnfavoriteDrink, favorites, setFavorites }) {
-    const images = require.context('../../../img/drinks', true);
+export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFound, handleFavoriteDrink, handleUnfavoriteDrink, favorites, setFavorites, ingredients }) {
+    const drinks = require.context('../../../img/drinks', true);
+    const ingredientImgs = require.context('../../../img/ingredients', true);
+
+
 
 
     let recipesToDisplay = drink.recipes.map(recipe => {
+        console.log(recipe.ingredient)
+        // let fullIngredient = ingredients.filter(ingredient => ingredient.id == [recipe["ingredient_id"]])
+        // console.log(fullIngredient)
         return (
-            <div key={recipe.ingredient.id} className="modal-drink-recipe"><b>{recipe.ingredient.name}</b>: {recipe.parts}</div>
+            <React.Fragment>
+
+            <div className='mix-recipe-identity'>
+            <div className='mix-recipe-nameandcount'>
+            <img className='mix-recipe-image' src={ingredientImgs('./' + recipe.ingredient.image_url)} />
+                <div className='mix-recipe'><b>~</b>{recipe.ingredient.name}:</div>
+                <div className='mix-recipe-partsCount'><b>~</b>{recipe.parts}</div>
+
+            </div>
+        </div>
+        </React.Fragment>
+
+
         )
     })
 
@@ -37,7 +55,7 @@ export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFou
         <div className="modal-card">
             <div className="modal-top">
                 <div className="modal-left">
-                    <img src={images('./' + drink.image_url)} className="modal-drink-image" />
+                    <img src={drinks('./' + drink.image_url)} className="modal-drink-image" />
                     {isCreatedDrink ? <div className="modal-drink-credits"><label>Created By: </label>{drink.user.first_name} {drink.user.last_name}</div> : null}
                 </div>
                 <div className="modal-right">

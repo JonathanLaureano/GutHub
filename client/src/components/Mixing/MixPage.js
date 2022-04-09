@@ -23,10 +23,10 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
         let fullIngredient = ingredients.filter(ingredient => ingredient.id == [mix["ingredient_id"]])[0]
         return (
             <div className='mix-recipe-identity'>
-                <img className='mix-recipe-image' src={images('./' + fullIngredient.image_url)} />
                 <div className='mix-recipe-nameandcount'>
-                    <div key={mix["ingredient_id"]} className='mix-recipe'>{fullIngredient.name}: </div>
-                    <div className='mix-recipe-partsCount'> {mix["parts"]}</div>
+                <img className='mix-recipe-image' src={images('./' + fullIngredient.image_url)} />
+                    <div key={mix["ingredient_id"]} className='mix-recipe'><b>~</b>{fullIngredient.name}: </div>
+                    <div className='mix-recipe-partsCount'><b>~</b> {mix["parts"]}</div>
                 </div>
             </div>
         )
