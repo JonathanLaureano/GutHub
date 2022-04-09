@@ -209,8 +209,8 @@
     border: none;
     outline: none;
     opacity: .65;
-    color: rgb(110, 230, 63);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #52e683, 0 0 0.5em #52e683, 0 0 0.1em #52e683, 0 10px 3px #000;
+    color: rgb(93, 232, 38);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #21a34c, 0 0 0.5em #52e683, 0 0 0.1em #52e683, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
     padding-top: 1%;
