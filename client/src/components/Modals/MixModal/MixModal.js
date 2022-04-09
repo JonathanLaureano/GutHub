@@ -3,7 +3,8 @@ import '../Modal.css';
 import './MixModal.css';
 
 export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingredients,handleCreateDrinkSubmit}){
-    const images = require.context('../../../img/drinks',true);
+    const drinkImgs = require.context('../../../img/drinks',true);
+    const ingredientImgs = require.context('../../../img/ingredients', true);
 
     let [drinkName,setDrinkName] = useState('')
 
@@ -12,9 +13,17 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
     }
 
     let recipesToDisplay = drink.recipes.map(recipe=>{
-        return(
-            <div key={recipe.ingredient_id} className="modal-drink-recipe"><b>{ingredients.filter(ingredient=> ingredient.id==[recipe["ingredient_id"]])[0].name}</b>: {recipe.parts}</div>
-        )
+            let fullIngredient = ingredients.filter(ingredient => ingredient.id == [recipe["ingredient_id"]])[0]
+            return (
+                <div className='mix-recipe-identity'>
+                    <div className='mix-recipe-nameandcount'>
+                    <img className='mix-recipe-image' src={ingredientImgs('./' + fullIngredient.image_url)} />
+                        <div className='mix-recipe'><b>~</b>{fullIngredient.name}: </div>
+                        <div className='mix-recipe-partsCount'><b>~</b> {recipe.parts}</div>
+                    </div>
+                </div>
+            )
+    
     })
 
     function handleClickCloseButton(){
@@ -33,7 +42,7 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
             <div className="modal-card">
                 <div className="modal-top"> 
                     <div className="modal-left"> 
-                        <img alt={drink.name} src={images('./'+drink.image_url)} className="modal-drink-image"/>
+                        <img alt={drink.name} src={drinkImgs('./'+drink.image_url)} className="modal-drink-image"/>
                     </div>
                     <div className="modal-right">   
                         <input type='text' placeholder='Enter A Drink Name' value={drinkName} onChange={handleDrinkNameChange} className='mix-modal-input'></input>
