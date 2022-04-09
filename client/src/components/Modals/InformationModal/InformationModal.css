@@ -20,7 +20,7 @@
 
 .information-items{
     font-family: 'Shippori Mincho', serif;
-    font-size: 165%;
+    font-size: 140%;
     color: rgb(211, 211, 211);
     justify-content: flex-start;
     text-align: left;
@@ -28,6 +28,14 @@
     margin-left: 10%;
     margin-top: 1.5%;
 }
+
 .information-item{
     margin-bottom: 1.5%;
+}
+
+.information-item-small{
+    margin-bottom: 1.5%;
+    font-size: 80%;
+    color: rgba(211, 211, 211, 0.698);
+    margin-left: 10%;
 }
