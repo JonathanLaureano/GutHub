@@ -200,7 +200,7 @@
 }
 
 .mix-recipe-identity{
-    margin-top: 1.5%;
+    margin-top: 1.25%;
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -224,18 +224,24 @@
 
 .mix-recipe-image {
     height: 4vh;
-    margin-right: -25%;
+    /* margin-right: -25%; */
+    /* margin-right: 3%; */
 }
 
 .mix-recipe-nameandcount {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
+.mix-recipe-nameandcount b{
+    color:transparent;
+}
+
 
 .mix-recipe {
     align-self: center;
-    margin-left: -5%;
+    /* margin-left: -7.5%; */
 }
 
 .mix-recipe-partsCount{

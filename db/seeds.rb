@@ -282,6 +282,11 @@ Drink.create!([
         name: "Jäger Bomb",
         image_url: "JägerBomb.png",
         user_id: 2
+    },
+    {
+        name: "Pain Killer",
+        image_url: "PainKiller.png",
+        user_id: 2
     }
 ])
 
@@ -610,6 +615,12 @@ Ingredient.create!([
         name: "Jägermeister",
         image_url: "Jägermeister.png",
         ingredient_type: "alcohol"
+    },
+    {
+        name: "Dark Rum",
+        image_url: "DarkRum.png",
+        ingredient_type: "alcohol"
+
     }
 ])
 
@@ -820,5 +831,11 @@ puts "Seeding Recipes..."
     Recipe.create!(drink_id: 50, ingredient_id: 19, parts: 0.33)
     Recipe.create!(drink_id: 51, ingredient_id: 65, parts: 1)
     Recipe.create!(drink_id: 51, ingredient_id: 52, parts: 4)
+
+    Recipe.create!(drink_id: 52, ingredient_id: 66, parts: 1.33)
+    Recipe.create!(drink_id: 52, ingredient_id: 13, parts: 2.66)
+    Recipe.create!(drink_id: 52, ingredient_id: 12, parts: 0.66)
+    Recipe.create!(drink_id: 52, ingredient_id: 14, parts: 0.66)
+    Recipe.create!(drink_id: 52, ingredient_id: 31, parts: 1)
 
 puts "Seeding Done!"

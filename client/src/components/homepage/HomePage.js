@@ -112,6 +112,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                     handleUnfavoriteDrink={handleUnfavoriteDrink}
                     favorites={favorites} 
                     setFavorites={setFavorites}   
+                    ingredients={ingredients}
                 />
             </div>:null}
             {showProfileModal?<div className='modal-container'>
