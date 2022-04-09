@@ -26,7 +26,7 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                 <div className='mix-recipe-nameandcount'>
                 <img className='mix-recipe-image' src={images('./' + fullIngredient.image_url)} />
                     <div key={mix["ingredient_id"]} className='mix-recipe'><b>~</b>{fullIngredient.name}: </div>
-                    <div className='mix-recipe-partsCount'><b>~</b> {mix["parts"]}</div>
+                    <div className='mix-recipe-partsCount'><b>~</b>{mix["parts"]}</div>
                 </div>
             </div>
         )

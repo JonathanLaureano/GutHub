@@ -12,7 +12,6 @@ export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFou
 
     let recipesToDisplay = drink.recipes.map(recipe => {
         return (
-            <React.Fragment>
             <div className='mix-recipe-identity'>
             <div className='mix-recipe-nameandcount'>
             <img className='mix-recipe-image' src={ingredientImgs('./' + recipe.ingredient.image_url)} />
@@ -20,9 +19,6 @@ export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFou
                 <div className='mix-recipe-partsCount'><b>~</b>{recipe.parts}</div>
             </div>
         </div>
-        </React.Fragment>
-
-
         )
     })
 

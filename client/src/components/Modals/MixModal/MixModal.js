@@ -19,7 +19,7 @@ export default function MixModal({user,drink,setShowMixModal,setMatchFound,ingre
                     <div className='mix-recipe-nameandcount'>
                     <img className='mix-recipe-image' src={ingredientImgs('./' + fullIngredient.image_url)} />
                         <div className='mix-recipe'><b>~</b>{fullIngredient.name}: </div>
-                        <div className='mix-recipe-partsCount'><b>~</b> {recipe.parts}</div>
+                        <div className='mix-recipe-partsCount'><b>~</b>{recipe.parts}</div>
                     </div>
                 </div>
             )
