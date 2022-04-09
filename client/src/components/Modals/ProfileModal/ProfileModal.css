@@ -105,7 +105,7 @@
     text-align: center;
     border: none;
     outline: none;
-    color: #fff;
+    color: rgb(245, 239, 197);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
@@ -136,12 +136,12 @@
     margin-top: 1vh;
     cursor: pointer;
     font-size: 125%;
-    width: 30vw;
+    width: 16vw;
     font-family: 'Shippori Mincho', serif;
     text-align: center;
     border: none;
     outline: none;
-    color: rgb(252, 7, 101);
+    color: rgb(245, 72, 138);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
@@ -151,10 +151,11 @@
     padding-bottom: 1%;
     background-color: rgb(17, 17, 17);
     transition: .25s;
+    margin-right: .575vh;
   }
   
 .logout-button:hover {
-    color: #fee;
+    color: rgb(236, 157, 157);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     cursor: pointer;
 }  
@@ -311,3 +312,34 @@
     /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
 }
 
+.profile-close-button {
+    margin-top: 1vh;
+    cursor: pointer;
+    font-size: 125%;
+    width: 16vw;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    font-weight: bold;
+    border-radius: 5px;    
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1%;
+    /* background-color: rgb(36, 36, 36); */
+    background-color: rgb(17, 17, 17);
+    transition: .25s;
+  }
+  
+.profile-close-button:hover {
+    color: rgb(252, 7, 101);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    cursor: pointer;
+}  
+
+.profile-close-button:active{
+    background-color: rgb(50, 36, 36);
+}

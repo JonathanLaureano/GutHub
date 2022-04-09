@@ -146,7 +146,11 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
                 </div> :
                     <button className={editButtonClass} onClick={clickEditButton}>EDIT</button>
                 }
-                {showEditMode ? <button className="logout-button" onClick={handleLogOut}>LOG OUT</button> : <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>}
+                <div className='profile-edit-buttons'>
+                <button className="logout-button" onClick={handleLogOut}>LOG OUT</button>
+                <button className="profile-close-button" onClick={handleClickCloseButton}>CLOSE</button>
+                </div>
+                {/* {showEditMode ? <button className="logout-button" onClick={handleLogOut}>LOG OUT</button> : <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>} */}
             </div>
         </div>
     )
