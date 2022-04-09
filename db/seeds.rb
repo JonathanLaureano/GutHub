@@ -189,8 +189,8 @@ Drink.create!([
         user_id: 2
     },
     {
-        name: "Expresso Martini",
-        image_url: "ExpressoMartini.png",
+        name: "Espresso Martini",
+        image_url: "EspressoMartini.png",
         user_id: 2
     },
     {
@@ -533,8 +533,8 @@ Ingredient.create!([
         ingredient_type: 'liquid'
     },
     {
-        name: "Expresso",
-        image_url: "Expresso.png",
+        name: "Espresso",
+        image_url: "Espresso.png",
         ingredient_type: 'liquid'
     },
     {
@@ -759,7 +759,7 @@ puts "Seeding Recipes..."
     Recipe.create!(drink_id: 32, ingredient_id: 32, parts: 1)
     Recipe.create!(drink_id: 32, ingredient_id: 36, parts: 1)
     Recipe.create!(drink_id: 33, ingredient_id: 4, parts: 1.33)
-    Recipe.create!(drink_id: 33, ingredient_id: 50, parts: 0.66)
+    Recipe.create!(drink_id: 33, ingredient_id: 49, parts: 0.66)
     Recipe.create!(drink_id: 33, ingredient_id: 19, parts: 0.33)
     Recipe.create!(drink_id: 33, ingredient_id: 23, parts: 1)
     Recipe.create!(drink_id: 34, ingredient_id: 1, parts: 1)
