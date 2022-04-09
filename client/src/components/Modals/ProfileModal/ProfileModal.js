@@ -126,7 +126,6 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
                         {favoriteDrinksToDisplay}
                         {favoriteEmpty ? <div className='no-favorites-container'>
                             <div className='no-favorites-found'>No Favorites Found</div>
-                            {/* <div className='no-favorites-query'>Explore More Drinks to Add Favorites</div> */}
                         </div> : null}
                     </div>
                     <div className='modal-profile-drinks-list-title'><label>Created: </label> {profile.drinks.length}</div>
