@@ -1,0 +1,246 @@
+.result-modal{
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center;
+    align-content: center; */
+}
+
+.resultModal-ingredient-container{
+    background-color: rgb(35, 35, 39);
+    height: 15vh;
+    width: 25vh;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: color .5s;
+    display: grid;
+    flex-direction: column;
+    transition: .5s ease;
+    margin-left: 3.5%;
+}
+
+.resultModal-ingredient-container:nth-of-type(1){
+    margin-left: 0%;
+}
+
+
+.resultModal-ingredient-container-active{
+    background-color: rgb(93, 93, 97);
+    height: 15vh;
+    width: 25vh;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: color .5s;
+    display: grid;
+    flex-direction: column;
+    transition: .75s ease;
+    margin-left: 3.5%;
+
+}
+
+.resultModal-ingredient-container-active:nth-of-type(1){
+    margin-left: 0%;
+}
+
+
+.resultModal-ingredient-image{
+    align-self: center;
+    justify-self: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 10vh;
+}
+
+.resultModal-ingredient-text-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(49, 49, 54);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 2;
+}
+
+.resultModal-ingredient-name{
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 120%;
+}
+
+.resultModal-ingredients-title {
+    /* margin-top: 1.25%; */
+    background-color: rgb(15, 15, 15);
+    background-color: rgb(39, 39, 39);
+    padding-bottom: .75%;
+    border-top-left-radius: 10px;
+    width: 35vw;
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3vh;
+}
+
+.resultModal-ingredients-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.resultModal-drinks-title {
+    /* margin-top: 1.25%; */
+    background-color: rgb(39, 39, 39);
+    padding-bottom: .75%;
+    border-top-right-radius: 10px;
+    width: 30vw;
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3vh;
+}
+
+.resultModal-drinks-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: ;
+}
+
+.resultModal-drink-container {
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-top: 2.5%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+.resultModal-drink-image{
+    height: 10vh;
+}
+
+.resultModal-drink-name{
+    align-self: center;
+    color:#fff;
+    font-size: 2vh;
+}
+
+.resultModal-view-button{
+    margin-top: 2.5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: rgb(206, 202, 202);
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a4469, 0 0 0.5em #ff4a4469, 0 0 0.1em #ff4a4469, 0 10px 3px #000; */
+    background-color: rgb(17, 17, 17);
+    height: 5vh;
+    transition: .35s ease-in-out;
+    border-radius: 5px;
+    font-size: 100%;
+    text-align: center;
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 5%;
+    max-width: 100px;
+
+}
+
+.resultModal-view-button:hover{
+    opacity: .75;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #c5b4b3, 0 0 0.5em #c5b4b3, 0 0 0.1em #c5b4b3, 0 10px 3px #000;
+    cursor: pointer;
+}
+
+.resultModal-favorite-button{
+    margin-top: 2.5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: rgb(179, 222, 250);
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff73, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000; */
+    background-color: rgb(17, 17, 17);
+    transition: .35s ease-in-out;
+    border-radius: 5px;
+    font-size: 100%;
+    text-align: center;
+    height: 5vh;
+    width: 75%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    max-width: 100px;
+}
+
+.resultModal-favorite-button:hover{
+    opacity: .75;
+    color: aqua;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
+    cursor: pointer;
+}
+
+.resultModal-unfavorite-button{
+    margin-top: 2.5%;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: rgb(252, 159, 195);
+    background-color: rgb(17, 17, 17);
+    transition: .35s ease-in-out;
+    border-radius: 5px;
+    font-size: 75%;
+    text-align: center;
+    height: 5vh;
+    width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    max-width: 130px;
+}
+
+.resultModal-unfavorite-button:hover{
+    opacity: .75;
+    color: rgb(252, 7, 101);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    cursor: pointer;
+}
+
+
+
+
+
+.favorite-all-button {
+    margin-top: 1vh;
+    cursor: pointer;
+    font-size: 125%;
+    width: 30vw;
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff73, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
+    font-weight: bold;
+    border-radius: 5px;    
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1%;
+    /* background-color: rgb(36, 36, 36); */
+    background-color: rgb(17, 17, 17);
+    transition: .25s;
+  }
+  
+.favorite-all-button:hover {
+    color: aqua;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
+    cursor: pointer;
+}  
+
+.favorite-all-button:active{
+    background-color: rgb(50, 36, 36);
+}
