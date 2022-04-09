@@ -11,18 +11,13 @@ export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFou
 
 
     let recipesToDisplay = drink.recipes.map(recipe => {
-        console.log(recipe.ingredient)
-        // let fullIngredient = ingredients.filter(ingredient => ingredient.id == [recipe["ingredient_id"]])
-        // console.log(fullIngredient)
         return (
             <React.Fragment>
-
             <div className='mix-recipe-identity'>
             <div className='mix-recipe-nameandcount'>
             <img className='mix-recipe-image' src={ingredientImgs('./' + recipe.ingredient.image_url)} />
                 <div className='mix-recipe'><b>~</b>{recipe.ingredient.name}:</div>
                 <div className='mix-recipe-partsCount'><b>~</b>{recipe.parts}</div>
-
             </div>
         </div>
         </React.Fragment>
