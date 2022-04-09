@@ -49,6 +49,7 @@ function App() {
   const [showProfileModal,setShowProfileModal] = useState(false);
   const [showDrinkModal,setShowDrinkModal] = useState(false);
   const [selectedDrink,setSelectedDrink] = useState({});
+  const [showInformationModal,setShowInformationModal] = useState(false);
   
 
   function handleSearchSubmit(e) {
@@ -326,6 +327,8 @@ function App() {
             setShowResultsModal={setShowResultsModal}
             mixResults={mixResults}
             setMixResults={setMixResults}
+            showInformationModal={showInformationModal}
+            setShowInformationModal={setShowInformationModal}
           />
         </Route>
       </Switch>
