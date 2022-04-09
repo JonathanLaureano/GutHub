@@ -1,0 +1,33 @@
+.information-modal-top{
+    display: flex;
+    flex-direction: column;
+    width: 65vw;
+    height: 50vh;
+    border-radius: 15px;
+}
+
+.information-title {
+    background-color: rgb(15, 15, 15);
+    background-color: rgb(39, 39, 39);
+    padding-bottom: .75%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3vh;
+}
+
+.information-items{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 165%;
+    color: rgb(211, 211, 211);
+    justify-content: flex-start;
+    text-align: left;
+    width: 85%;
+    margin-left: 10%;
+    margin-top: 1.5%;
+}
+.information-item{
+    margin-bottom: 1.5%;
+}

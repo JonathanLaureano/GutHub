@@ -40,6 +40,11 @@
     transition: 1s ease;
 }
 
+.go-home-mix-page-button:nth-of-type(1) {
+    margin-right: 2.5%;
+}
+
+
 .go-home-mix-page-button:hover {
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
     color: #ff9191;
@@ -55,6 +60,10 @@
     font: 100 6vh "Vibur";
     cursor: pointer;
     transition: 1s ease;
+}
+
+.go-home-mix-page-button-nolight:nth-of-type(1) {
+    margin-right: 2.5%;
 }
 
 .go-home-mix-page-button-nolight:hover {

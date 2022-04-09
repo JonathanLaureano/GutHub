@@ -8,9 +8,10 @@ import MixPage from '../Mixing/MixPage';
 import ProfileModal from '../Modals/ProfileModal/ProfileModal';
 import MixModal from '../Modals/MixModal/MixModal';
 import ResultsModal from '../Modals/ResultsModal/ResultsModal';
+import InformationModal from '../Modals/InformationModal/InformationModal';
 
 
-export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,favorites,setFavorites,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink,showResultsModal,setShowResultsModal,mixResults,setMixResults}){
+export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setIngredients,favorites,setFavorites,searchResults,setSearchResults,searchActive,setSearchActive,searchParams,setSearchParams,handleSearchChange,handleSearchSubmit,username,password,passwordConfirmation,setUsername,setPassword,setPasswordConfirmation,handleLogInSubmit,showSignInModal,setShowSignInModal,signedIn,signUpFirstName,setSignUpFirstName,signUpLastName,setSignUpLastName,signUpUsername,setSignUpUsername,signUpPassword,setSignUpPassword,signUpPasswordConfirmation,setSignUpPasswordConfirmation,signUpImage,setSignUpImage,signUpDesc,setSignUpDesc,handleSignUpSubmit,showDrinkModal,setShowDrinkModal,selectedDrink,setSelectedDrink,mixActive,setMixActive,showProfileModal,setShowProfileModal,handleLogOut,showMixModal,setShowMixModal,mixToCreate,setMixToCreate,handleCreateDrinkSubmit,handleFavoriteDrink,handleUnfavoriteDrink,showResultsModal,setShowResultsModal,mixResults,setMixResults,showInformationModal,setShowInformationModal}){
     document.title = 'GutHub - Home';
 
     let [matchFound,setMatchFound] = useState(false);
@@ -47,7 +48,7 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
         ScrollAction.scrollToBottom();
     }
 
-    let modalActive = showDrinkModal || showProfileModal || showMixModal || showResultsModal;
+    let modalActive = showDrinkModal || showProfileModal || showMixModal || showResultsModal || showInformationModal;
 
     let [mixes, setMixes] = useState({
         "mix": [
@@ -131,7 +132,10 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                     handleUnfavoriteDrink={handleUnfavoriteDrink}
                     favorites={favorites} 
                     setFavorites={setFavorites}   
-/>
+                />
+            </div>:null}
+            {showInformationModal?<div className='modal-container'>
+                <InformationModal showInformationModal={showInformationModal} setShowInformationModal={setShowInformationModal} />
             </div>:null}
 
             {modalActive?<div onClick={clickOffModal} className="modal-curtain"></div>:null}
@@ -176,7 +180,9 @@ export default function HomePage({user,setUser,drinks,setDrinks,ingredients,setI
                 setShowResultsModal={setShowResultsModal}
                 mixResults={mixResults}
                 setMixResults={setMixResults}   
-                modalActive={modalActive}   
+                modalActive={modalActive}
+                showInformationModal={showInformationModal} 
+                setShowInformationModal={setShowInformationModal}   
             />:null}
         </React.Fragment>
     )
