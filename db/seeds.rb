@@ -601,6 +601,11 @@ Ingredient.create!([
         image_url: "Cherry.png",
         ingredient_type:"solid"
     },
+    {
+        name: "Jäegermeister",
+        image_url: "Jäegermeister.png",
+        ingredient_type: "alcohol"
+    }
 ])
 
 puts "Seeding Recipes..."
