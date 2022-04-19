@@ -37,6 +37,7 @@ export default function DrinkCard({ drink, showDrinkModal, setShowDrinkModal, se
     function handleClickCard() {
         setSelectedDrink(drink);
         setShowDrinkModal(true);
+        console.log(drink)
     }
 
     return (
