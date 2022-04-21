@@ -1,24 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# GutHub
+An interactive drink mixing and creation resource 
+- User Authentication
+- Search for different drinks
+- Save favorite recipes for later viewing
+- Create, name, and save unique cocktail mixes
