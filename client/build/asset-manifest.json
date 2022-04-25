@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.7bc3fc13.css",
-    "main.js": "/static/js/main.95695c27.js",
+    "main.css": "/static/css/main.1ff2d559.css",
+    "main.js": "/static/js/main.ca63b171.js",
     "static/media/CapellettiAperitif.png": "/static/media/CapellettiAperitif.7b8d922b4e7b656e6864.png",
+    "static/media/Jägermeister.png": "/static/media/Jägermeister.6fc8cc9798d1120414bd.png",
     "static/media/Negroni.png": "/static/media/Negroni.e7575a0deeeb462be7c9.png",
     "static/media/Peach.png": "/static/media/Peach.402009e683f46687aa6e.png",
     "static/media/MoscowMule.png": "/static/media/MoscowMule.f30dc29aa2e3c279b81a.png",
@@ -13,6 +14,7 @@
     "static/media/JalepenoDiablo.png": "/static/media/JalepenoDiablo.30bed882b480533bd68d.png",
     "static/media/Pineapple.png": "/static/media/Pineapple.ed2f2a3a46c6c90ee9fb.png",
     "static/media/Absinthe.png": "/static/media/Absinthe.9cac96fe48bdd2bc4a46.png",
+    "static/media/JägerBomb.png": "/static/media/JägerBomb.6c3faed26b77e8c14e1b.png",
     "static/media/GingerBeer.png": "/static/media/GingerBeer.8b8b7e2c90bf6942de81.png",
     "static/media/GrapefruitSoda.png": "/static/media/GrapefruitSoda.1363920a258736cb7009.png",
     "static/media/Ginger.png": "/static/media/Ginger.9376c2ac2a90b342a231.png",
@@ -21,6 +23,7 @@
     "static/media/Vermouth.png": "/static/media/Vermouth.020df1298b22636d91c0.png",
     "static/media/Sazerac.png": "/static/media/Sazerac.b3491d095014b19b0b50.png",
     "static/media/Cognac.png": "/static/media/Cognac.a600aa994bf41d4fe665.png",
+    "static/media/Espresso.png": "/static/media/Espresso.a37949d564aa7d36c7e6.png",
     "static/media/Expresso.png": "/static/media/Expresso.a37949d564aa7d36c7e6.png",
     "static/media/Guiness.png": "/static/media/Guiness.b131b0dce7a9056be849.png",
     "static/media/TequilaPineapple.png": "/static/media/TequilaPineapple.48d75ab92cb9947efbcf.png",
@@ -29,7 +32,9 @@
     "static/media/TomCollins.png": "/static/media/TomCollins.0d6ed8f9e3a837c2d28a.png",
     "static/media/Redbull.png": "/static/media/Redbull.983bc4355011ea38f8fd.png",
     "static/media/Suze.png": "/static/media/Suze.5cd7af9ec87de5011044.png",
+    "static/media/PainKiller.png": "/static/media/PainKiller.a28695253c793ae1f998.png",
     "static/media/IrishCarBomb.png": "/static/media/IrishCarBomb.123238cf55caa9f1df82.png",
+    "static/media/DarkRum.png": "/static/media/DarkRum.f2fdf8f5cd6130ad9347.png",
     "static/media/Falernum.png": "/static/media/Falernum.122113711382e7101f68.png",
     "static/media/AperolSpritz.png": "/static/media/AperolSpritz.4ab4c573416ce9905811.png",
     "static/media/BayBreeze.png": "/static/media/BayBreeze.09365e5722235c515ba4.png",
@@ -51,6 +56,7 @@
     "static/media/Cleo.png": "/static/media/Cleo.90ea8d67f6806269bba0.png",
     "static/media/PinkLady.png": "/static/media/PinkLady.c84e9146ab11b561e0f1.png",
     "static/media/LycheeMartini.png": "/static/media/LycheeMartini.edec071a0ff4382f00ea.png",
+    "static/media/EspressoMartini.png": "/static/media/EspressoMartini.f7e14c5bcde4730a8c56.png",
     "static/media/ExpressoMartini.png": "/static/media/ExpressoMartini.f7e14c5bcde4730a8c56.png",
     "static/media/Aperol.png": "/static/media/Aperol.ca7c9d3a3304afc41762.png",
     "static/media/French75.png": "/static/media/French75.f549986c2796544d7947.png",
@@ -120,11 +126,11 @@
     "static/media/Vodka.png": "/static/media/Vodka.ccb24129b9284994ef70.png",
     "static/media/AlmondLiquer.png": "/static/media/AlmondLiquer.d54dc2f50b6b55bf73f0.png",
     "index.html": "/index.html",
-    "main.7bc3fc13.css.map": "/static/css/main.7bc3fc13.css.map",
-    "main.95695c27.js.map": "/static/js/main.95695c27.js.map"
+    "main.1ff2d559.css.map": "/static/css/main.1ff2d559.css.map",
+    "main.ca63b171.js.map": "/static/js/main.ca63b171.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bc3fc13.css",
-    "static/js/main.95695c27.js"
+    "static/css/main.1ff2d559.css",
+    "static/js/main.ca63b171.js"
   ]
 }
