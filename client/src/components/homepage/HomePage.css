@@ -140,33 +140,23 @@ body {
   transition: 3s ease;
 }
 
-  
-.parallax{
-    /* Set a specific height */
-    min-height: 600px; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-}
-
 .hidden{
   visibility: hidden;
   transition: .5s ease-in-out;
 }
 
 .off{
-  /* margin-top: -4%;
-  margin-bottom: -2%;
-  text-align: center; */
-  /* position:fixed;
-  margin-left: 40%;
-  margin-top: 40%; */
   color: inherit;
   text-shadow: inherit;
   transition: 2s ease-in-out;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(15, 15, 15);
+}
+
+.off b:active{
+  color: inherit;
+  text-shadow: inherit;
+  transition: 3s ease;
 }
 
 .off b{

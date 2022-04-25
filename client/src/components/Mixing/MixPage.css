@@ -21,7 +21,15 @@
     font: 100 10vh "Vibur";
     cursor: default;
     transition: .75s;
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: rgb(29, 29, 29);  
 }
+
+.mix-page-title-off:active{
+    color: inherit;
+    text-shadow: inherit;
+    transition: 3s ease;
+  }
 
 .mix-page-title:active {
     color: rgb(250, 204, 204);
@@ -60,6 +68,8 @@
     font: 100 6vh "Vibur";
     cursor: pointer;
     transition: 1s ease;
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: rgb(29, 29, 29);  
 }
 
 .go-home-mix-page-button-nolight:nth-of-type(1) {
@@ -69,6 +79,9 @@
 .go-home-mix-page-button-nolight:hover {
     color: rgb(219, 205, 205);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984454, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: transparent;  
+
 }
 
 .mix-page-items-wrapper {
