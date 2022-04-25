@@ -1,7 +1,6 @@
 import './MixPage.css';
 import React, { useState } from 'react'
 import axios from 'axios';
-import confetti from "canvas-confetti";
 import IngredientCard from '../IngredientCard/IngedientCard';
 
 
@@ -73,7 +72,6 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                             } else {
                                 setSelectedDrink(r.data)
                                 setShowDrinkModal(true)
-                                celebrate();
                                 setMatchFound(true);
                             }
                         })
@@ -95,7 +93,6 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                             } else if (r.data.length === 1) {
                                 setSelectedDrink(r.data[0])
                                 setShowDrinkModal(true)
-                                celebrate();
                                 setMatchFound(true);
                             } else {
                                 setMixResults(r.data)
@@ -173,44 +170,6 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
         origin: { y: 0.9 }
     };
 
-    function fire(particleRatio, opts) {
-        confetti(Object.assign({}, defaults, opts, {
-            particleCount: Math.floor(count * particleRatio)
-        }));
-    }
-
-    function celebrate() {
-        fire(0.35, {
-            spread: 36,
-            startVelocity: 65,
-        });
-        fire(0.25, {
-            spread: 26,
-            startVelocity: 55,
-        });
-        fire(0.2, {
-            spread: 60,
-        });
-        fire(0.35, {
-            spread: 100,
-            decay: 0.91,
-            scalar: 0.8
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 25,
-            decay: 0.92,
-            scalar: 1.2
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 45,
-        });
-        fire(0.05, {
-            spread: 130,
-            startVelocity: 55,
-        });
-    }
 
     function handleSwitchButtonRelative() {
         setMixType('STRICT')
