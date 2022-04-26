@@ -20,19 +20,20 @@ An application in which a user can make, view, or save cocktails
 
 </p>
 
-# Technical Accomplishments
-
--Leveraged BCrypt Ruby gem to facilitate user creation and authorization.
-
--Developed object-relational API database that responds with individualized nested information upon fetch requests
-
--Implemented custom methods with endpoint routing to handle multilayered passing of information from fetch methods and identify potential matches within PostgreSQL database
-
--Manage client side media files for build production and version control
-
 # GIFs
 
 <img src="assets/Guthub.gif" width="500">
+
+# Technical Accomplishments
+
+* Leveraged BCrypt Ruby gem to facilitate user creation and authorization.
+
+* Developed object-relational API database that responds with individualized nested information upon fetch requests
+
+* Implemented custom methods with endpoint routing to handle multilayered passing of information from fetch methods and identify potential matches within PostgreSQL database
+
+* Manage client side media files for build production and version control
+
 
 # Credits
 
