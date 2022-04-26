@@ -1,8 +1,4 @@
-# README
-
-# GutHub
-
-<img src="assets/Guthub.jpeg" width="500">
+# <img src="assets/Guthub.jpeg" width="500">
 
 **Demo Link**: http://gutthub.herokuapp.com/
 
