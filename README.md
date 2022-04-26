@@ -2,7 +2,7 @@
 
 # GutHub
 
-<img src="assets/Guthub.jpeg" width="300">
+<img src="assets/Guthub.jpeg" width="500">
 
 **Demo Link**: http://gutthub.herokuapp.com/
 
@@ -36,4 +36,6 @@ An application in which a user can make, view, or save cocktails
 
 # Credits
 
-Developed by Jonathan Laureano & Henry Miller
+Developed by: 
+* [Jonathan Laureano](https://github.com/JonathanLaureano/)
+* [Henry Miller](https://github.com/henreth/)
