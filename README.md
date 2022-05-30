@@ -4,7 +4,13 @@
 
 # Description
 
-An application in which a user can make, view, or save cocktails
+An interactive web application in which users can make, view, or save their favorite cocktails
+
+# GIFs
+
+<img src="assets/Guthub.gif" width="500">
+
+# Technical Accomplishments
 
 **Made With:** 
 
@@ -16,12 +22,6 @@ An application in which a user can make, view, or save cocktails
 
 </p>
 
-# GIFs
-
-<img src="assets/Guthub.gif" width="500">
-
-# Technical Accomplishments
-
 * Leveraged BCrypt Ruby gem to facilitate user creation and authorization.
 
 * Developed object-relational API database that responds with individualized nested information upon fetch requests
@@ -31,8 +31,11 @@ An application in which a user can make, view, or save cocktails
 * Manage client side media files for build production and version control
 
 
-# Credits
+# 
 
-Developed by: 
-* [Jonathan Laureano](https://github.com/JonathanLaureano/)
+### Developed by: 
+
+![Contributors Display](https://badges.pufler.dev/contributors/jonathanlaureano/guthub)
+
 * [Henry Miller](https://github.com/henreth/)
+* [Jonathan Laureano](https://github.com/JonathanLaureano/)
