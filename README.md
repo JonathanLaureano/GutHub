@@ -1,12 +1,23 @@
 # <img src="assets/Guthub-logo.gif" width="600">
 
-**Demo Link**: http://gutthub.herokuapp.com/
-
-# Description
-
 An interactive web application in which users can make, view, or save their favorite cocktails
 
-# GIFs
+* Search for popular and unique drinks by ingredient, recipe, or name
+* Create unique cocktails by combining a variety of ingredients
+* View and save cocktail recipe lists for future reference
+
+**Try it out here:**: http://gutthub.herokuapp.com/
+
+### Developed by: 
+
+![Contributors Display](https://badges.pufler.dev/contributors/jonathanlaureano/guthub)
+
+* [Henry Miller](https://github.com/henreth/)
+* [Jonathan Laureano](https://github.com/JonathanLaureano/)
+
+# 
+
+# Demos
 
 <img src="assets/Guthub.gif" width="500">
 
@@ -29,13 +40,3 @@ An interactive web application in which users can make, view, or save their favo
 * Implemented custom methods with endpoint routing to handle multilayered passing of information from fetch methods and identify potential matches within PostgreSQL database
 
 * Manage client side media files for build production and version control
-
-
-# 
-
-### Developed by: 
-
-![Contributors Display](https://badges.pufler.dev/contributors/jonathanlaureano/guthub)
-
-* [Henry Miller](https://github.com/henreth/)
-* [Jonathan Laureano](https://github.com/JonathanLaureano/)
