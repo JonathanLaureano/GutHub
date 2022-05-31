@@ -6,7 +6,7 @@ An interactive web application in which users can make, view, or save their favo
 * Create unique cocktails by combining a variety of ingredients
 * View and save cocktail recipe lists for future reference
 
-**Try it out here:**: http://gutthub.herokuapp.com/
+**Try it out here:** http://gutthub.herokuapp.com/
 
 ### Developed by: 
 
