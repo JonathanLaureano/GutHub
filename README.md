@@ -1,4 +1,4 @@
-# <img src="assets/Guthub.jpeg" width="500">
+# <img src="assets/Guthub-logo.gif" width="600">
 
 **Demo Link**: http://gutthub.herokuapp.com/
 
