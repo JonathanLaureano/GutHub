@@ -10,12 +10,13 @@ An interactive web application in which users can make, view, or save their favo
 
 ### Developed by: 
 
-![Contributors Display](https://badges.pufler.dev/contributors/jonathanlaureano/guthub)
+<a href="https://github.com/henreth" target="_blank" title="henreth">
+  <img src="https://github.com/henreth.png?size=50" height="45" width="45" alt="henreth"/>
+</a>
 
-* [Henry Miller](https://github.com/henreth/)
-* [Jonathan Laureano](https://github.com/JonathanLaureano/)
-
-# 
+<a href="https://github.com/JonathanLaureano" target="_blank" title="JonathanLaureano">
+  <img src="https://github.com/JonathanLaureano.png?size=50" height="45" width="45" alt="JonathanLaureano"/>
+</a>
 
 # Demos
 
