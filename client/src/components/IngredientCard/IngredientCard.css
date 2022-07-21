@@ -46,9 +46,9 @@
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     height: 10vh;
-    /* width: 5vw; */
     max-width: 10vw;
     max-height: 10vh;
+    user-select: none;
 }
 
 .gin {
@@ -159,9 +159,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* align-items: flex-end; */
     background-color: rgb(49, 49, 54);
-    /* border-radius: 10px; */
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     z-index: 2;
@@ -170,7 +168,6 @@
 .ingredient-card-name{
     color: #fff;
     font-family: 'Shippori Mincho', serif;
-    /* font-size: ; */
     font-weight: bolder;
 }
 
@@ -189,6 +186,7 @@
     font-size: larger;
     margin-top: -1.75%;
     transition: .5s;
+    user-select: none;
 }
 
 .count-active{
@@ -196,6 +194,7 @@
     margin-top: -1.75%;
     transition: .5s;
     color: #f3b37f;
+    user-select: none;
 }
 
 .count-max{
@@ -203,6 +202,7 @@
     margin-top: -1.75%;
     transition: .5s;
     color: #f37f7f;
+    user-select: none;
 }
 
 .subtract{
@@ -210,21 +210,20 @@
     font-weight:900;
     height: 50%;
     cursor: pointer;
+    user-select: none;
 }
 
 .subtract:hover{
     box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em rgba(255, 66, 66, 0.137), 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 0px 0px #000;
     border-radius: 100%;
     transition: .15s;
-    /* height: 55%; */
 }
 
 .add {
-    /* margin-left: -5%; */
     margin-right: 10%;
-    /* transition: .5s; */
     height: 50%;
     cursor: pointer;
+    user-select: none;
 }
 
 .add:hover{
@@ -232,7 +231,6 @@
     box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em rgba(152, 255, 68, 0.137), 0 0 0.5em #98ff44, 0 0 0.1em #98ff44, 0 0px 0px #000;  
     border-radius: 100%;
     transition: .15s;
-    /* height: 55%; */
 }
 
 
@@ -241,7 +239,6 @@
     border: none;
     width: 25%; 
     color: rgba(255, 255, 255, 0.527);
-    /* font-size: larger; */
     margin-top: -.6%;
     transition: .5s;
     text-align: center;
@@ -253,7 +250,6 @@
     background-color: transparent;
     width: 25%; 
     border: none;
-    /* font-size: larger; */
     margin-top: -.6%;
     transition: .5s;
     text-align: center;
@@ -266,7 +262,6 @@
     background-color: transparent;
     border: none;
     width: 25%; 
-    /* font-size: larger; */
     margin-top: -.6%;
     transition: .5s;
     text-align: center;

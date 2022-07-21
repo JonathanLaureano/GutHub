@@ -358,6 +358,8 @@
     width: 100%;
     transition: .5s ease;
     padding-top: .75%;
+    user-select: none;
+    cursor: pointer;
 }
 
 .mix-page-ingredients-type-tab:nth-of-type(1) {
