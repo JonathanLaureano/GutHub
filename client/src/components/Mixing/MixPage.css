@@ -12,6 +12,7 @@
     font: 100 10vh "Vibur";
     cursor: default;
     transition: .75s;
+    user-select: none;
 }
 
 .mix-page-title-off {
@@ -21,6 +22,7 @@
     font: 100 10vh "Vibur";
     cursor: default;
     transition: .75s;
+    user-select: none;
 }
 
 .mix-page-title:active {

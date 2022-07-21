@@ -3,47 +3,16 @@ import './DrinkCard.css';
 
 export default function DrinkCard({ drink, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, cardClass }) {
     const images = require.context('../../img/drinks', true);
-    let imgClass;
-
-    switch (drink.name) {
-        // case "Margarita":
-        //     imgClass='drink-card-image margarita'
-        //     break;
-        // case "Long Island Ice Tea":
-        // case "Bloody Mary":
-        //     imgClass='drink-card-image bloodymary'
-        //     break;
-        // case 'Negroni':
-        // case 'Paloma':
-        // case 'Pine Pepper Crush':
-        // case 'Caipirinha':
-        //     imgClass='drink-card-image caipirinha'
-        //     break;
-        // case 'Old Fashioned':
-        //     imgClass='drink-card-image oldfashioned'
-        //     break;
-        // case 'Gin & Tonic':
-        //     imgClass='drink-card-image gnt';
-        //     break;
-        // case 'Paloma':
-        // case 'Old Fashioned':
-        // case 'The Godfather':
-        //     imgClass='drink-card-image godfather';
-        //     break;
-        default:
-            imgClass = 'drink-card-image'
-    }
 
     function handleClickCard() {
         setSelectedDrink(drink);
         setShowDrinkModal(true);
-        console.log(drink)
     }
 
     return (
         <React.Fragment>
             <div className={cardClass} onClick={handleClickCard}>
-                <img className={imgClass} src={images('./' + drink.image_url)} />
+                <img className='drink-card-image' src={images('./' + drink.image_url)} />
                 <div className="drink-card-text-info">
                     <div className="drink-card-name">{drink.name}</div>
                     <div className="drink-card-ingredient">{drink.recipes[0].ingredient.name}</div>
