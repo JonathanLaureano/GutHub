@@ -89,11 +89,7 @@ body {
   
 .logo b{
     color: rgb(255, 238, 238);
-    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844a4, 0 0 0.5em #ff98448f, 0 0 0.1em #ff984481, 0 10px 3px #000;
-    /* ff9844 */
-    /* color: rgb(255, 244, 238); */
-    /* rgb(238, 254, 255) */
+     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844a4, 0 0 0.5em #ff98448f, 0 0 0.1em #ff984481, 0 10px 3px #000;
 }
 .logo b span{
     animation: blink linear infinite 2s;
@@ -159,12 +155,6 @@ body {
 }
 
 .off{
-  /* margin-top: -4%;
-  margin-bottom: -2%;
-  text-align: center; */
-  /* position:fixed;
-  margin-left: 40%;
-  margin-top: 40%; */
   color: inherit;
   text-shadow: inherit;
   transition: 2s ease-in-out;
