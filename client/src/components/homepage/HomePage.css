@@ -137,18 +137,6 @@ body {
   transition: 3s ease;
 }
 
-  
-.parallax{
-    /* Set a specific height */
-    min-height: 600px; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-}
-
 .hidden{
   visibility: hidden;
   transition: .5s ease-in-out;
