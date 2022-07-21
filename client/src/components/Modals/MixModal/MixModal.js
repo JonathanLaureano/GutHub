@@ -9,7 +9,13 @@ export default function MixModal({ user, drink, setShowMixModal, setMatchFound, 
     let [drinkName, setDrinkName] = useState('')
 
     function handleDrinkNameChange(e) {
-        setDrinkName(e.target.value);
+        setDrinkName(cleanString(e.target.value));
+    }
+
+    function cleanString(str){
+        return str.replace(/[^\w]/g,'')
+                .split('')
+                .join('')
     }
 
     let recipesToDisplay = drink.recipes.map(recipe => {
@@ -31,9 +37,13 @@ export default function MixModal({ user, drink, setShowMixModal, setMatchFound, 
         setMatchFound(false);
     }
 
+    let doNotUseNames = ['drink','name','a','b','asdf','fdsa','qwert','new','newdrink']
+
     function handleClickCreate() {
         if (drinkName === '') {
-            alert('Please enter a drink name')
+            alert('Please enter a drink name.')
+        } else if (doNotUseNames.includes(drinkName.toLowerCase())) {
+            alert('Please enter a different name.')
         } else {
             let newDrink = {
                 ...drink,
