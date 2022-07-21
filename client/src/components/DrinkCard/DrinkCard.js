@@ -1,7 +1,7 @@
 import React from "react";
 import './DrinkCard.css';
 
-export default function DrinkCard({ drink, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, cardClass }) {
+export default function DrinkCard({ drink, setShowDrinkModal, setSelectedDrink, cardClass }) {
     const images = require.context('../../img/drinks', true);
 
     function handleClickCard() {
