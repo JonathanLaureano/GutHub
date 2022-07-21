@@ -12,7 +12,6 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
     const [firstName, setFirstName] = useState(profile.first_name)
     const [lastName, setLastName] = useState(profile.last_name)
     const [email, setEmail] = useState(profile.username)
-    const [imageLink, setImageLink] = useState('')
     const [password, setPassword] = useState('');
 
     function clickEditButton() {
@@ -42,16 +41,10 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
         if (lastName === '') {
             setLastName(profile.last_name)
         }
-
-        if (imageLink === '') {
-            setImageLink(profile.imageLink)
-        }
-
         let updatedProfile = {
             "first_name": firstName,
             "last_name": lastName,
-            username: email,
-            "image_url": imageLink
+            username: email
         }
 
         axios.patch('/users/' + profile.id, updatedProfile)
@@ -112,15 +105,12 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
         <div className="modal-card">
             <div className="modal-top">
                 <div className="modal-left">
-                    <img alt={profile.name} src={profile.image_url} className={imageClass} />
-                    {showEditMode ? <input type='text' className="profile-image-input" placeholder='Image Url' value={imageLink} onChange={(e) => { setImageLink(e.target.value) }}></input> : null}
                 </div>
                 <div className="modal-right">
                     <div className={profileNameClass}>{showEditMode ? <input className='profile-name-input' value={firstName} onChange={(e) => { setFirstName(e.target.value) }} placeholder='First Name'></input> : profile.first_name} {showEditMode ? <input className='profile-name-input' value={lastName} onChange={(e) => { setLastName(e.target.value) }} placeholder='Last Name'></input> : profile.last_name}</div>
                     <hr></hr>
                     <div className="modal-profile-details"> <label>Email:</label> {showEditMode ? <input className='profile-email-input' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Username'></input> : profile.username}</div>
                      <div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>
-                    {/* {showEditMode ? <div className="modal-profile-details"><label>Password: </label> <input type='password' className='profile-password-input' value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password'></input></div> : <div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>} */}
                     <div className='modal-profile-drinks-list-title'><label>Favorites: </label>{profile.favorites.length}</div>
                     <div className='modal-profile-cards-wrapper'>
                         {favoriteDrinksToDisplay}

@@ -273,6 +273,8 @@ export default function IngredientCard({ ingredient, mixes, setMixes, oldPartsCo
 
     let containerClass = partsCount != 0 ? 'ingredient-card-container-active' : 'ingredient-card-container'
 
+
+    
     return (
         <React.Fragment>
             <div id={ingredient.d} className={containerClass}>
