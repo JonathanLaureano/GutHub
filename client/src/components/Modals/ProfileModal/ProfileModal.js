@@ -99,18 +99,10 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let dateMsg = `${monthNames[month]} ${day}, ${year}`;
 
-    let imageClass = showEditMode ? 'modal-profile-edit-image' : 'modal-profile-image'
-
     return (
         <div className="modal-card">
             <div className="modal-top">
                 <div className="modal-left">
-                </div>
-                <div className="modal-right">
-                    <div className={profileNameClass}>{showEditMode ? <input className='profile-name-input' value={firstName} onChange={(e) => { setFirstName(e.target.value) }} placeholder='First Name'></input> : profile.first_name} {showEditMode ? <input className='profile-name-input' value={lastName} onChange={(e) => { setLastName(e.target.value) }} placeholder='Last Name'></input> : profile.last_name}</div>
-                    <hr></hr>
-                    <div className="modal-profile-details"> <label>Email:</label> {showEditMode ? <input className='profile-email-input' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Username'></input> : profile.username}</div>
-                     <div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>
                     <div className='modal-profile-drinks-list-title'><label>Favorites: </label>{profile.favorites.length}</div>
                     <div className='modal-profile-cards-wrapper'>
                         {favoriteDrinksToDisplay}
@@ -125,8 +117,13 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
                             <div className='no-favorites-found'>No Created Drinks Found</div>
                             <div className='no-favorites-query'>Go to the Mix Page to Create a Drink</div>
                         </div> : null}
-
                     </div>
+                </div>
+                <div className="modal-right">
+                    <div className={profileNameClass}>{showEditMode ? <input className='profile-name-input' value={firstName} onChange={(e) => { setFirstName(e.target.value) }} placeholder='First Name'></input> : profile.first_name} {showEditMode ? <input className='profile-name-input' value={lastName} onChange={(e) => { setLastName(e.target.value) }} placeholder='Last Name'></input> : profile.last_name}</div>
+                    <hr></hr>
+                    <div className="modal-profile-details"> <label>Email:</label> {showEditMode ? <input className='profile-email-input' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Username'></input> : profile.username}</div>
+                    <div className="modal-profile-details"> <label>Mixing Since: </label>{dateMsg}</div>
                 </div>
             </div>
             <div className="modal-bot">
@@ -137,8 +134,8 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
                     <button className={editButtonClass} onClick={clickEditButton}>EDIT</button>
                 }
                 <div className='profile-edit-buttons'>
-                <button className="logout-button" onClick={handleLogOut}>LOG OUT</button>
-                <button className="profile-close-button" onClick={handleClickCloseButton}>CLOSE</button>
+                    <button className="logout-button" onClick={handleLogOut}>LOG OUT</button>
+                    <button className="profile-close-button" onClick={handleClickCloseButton}>CLOSE</button>
                 </div>
                 {/* {showEditMode ? <button className="logout-button" onClick={handleLogOut}>LOG OUT</button> : <button className="close-button" onClick={handleClickCloseButton}>CLOSE</button>} */}
             </div>
