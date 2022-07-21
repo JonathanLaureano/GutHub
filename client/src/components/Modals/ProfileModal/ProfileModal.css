@@ -1,23 +1,23 @@
-.modal-profile-image{
+.modal-profile-image {
     height: 50vh;
 }
 
-.modal-profile-edit-image{
+.modal-profile-edit-image {
     height: 45vh;
 }
 
-.modal-profile-name{
+.modal-profile-name {
     font-family: 'Shippori Mincho', serif;
     font-size: 350%;
     color: #fff;
     /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
 }
 
-.long{
+.long {
     font-size: 300%;
 }
 
-.modal-profile-details{
+.modal-profile-details {
     text-align: left;
     margin-left: 3%;
     font-family: 'Shippori Mincho', serif;
@@ -25,15 +25,15 @@
     color: rgb(200, 200, 200);
 }
 
-.modal-profile-details label{
-    color:rgb(128, 126, 126)
+.modal-profile-details label {
+    color: rgb(128, 126, 126)
 }
 
 .modal-profile-recipe-wrapper::-webkit-scrollbar {
     display: none;
 }
 
-.modal-profile-recipe{
+.modal-profile-recipe {
     margin-top: 1.25%;
     background-color: rgb(15, 15, 15);
     border-radius: 10px;
@@ -45,7 +45,7 @@
     padding-bottom: 2%;
 }
 
-.modal-profile-drinks-list-title{
+.modal-profile-drinks-list-title {
     font-family: 'Shippori Mincho', serif;
     font-size: 150%;
     text-align: left;
@@ -54,16 +54,17 @@
     /* margin-bottom: 3%; */
 }
 
-.modal-profile-drinks-list-title label{
-    color:rgb(128, 126, 126);
+.modal-profile-drinks-list-title label {
+    color: rgb(128, 126, 126);
 }
-.modal-profile-cards-wrapper{
+
+.modal-profile-cards-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     overflow-x: scroll;
     background-color: rgb(34, 34, 34);
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
     scrollbar-width: none;
     width: 32.5vw;
     height: 15vh;
@@ -74,7 +75,7 @@
     display: none;
 }
 
-.modal-mini-card-container{
+.modal-mini-card-container {
     background-color: rgb(52, 52, 52);
     height: 10vh;
     width: 80px;
@@ -91,7 +92,7 @@
 }
 
 
-.modal-mini-drink-image{
+.modal-mini-drink-image {
     height: 8vh;
     cursor: pointer;
 }
@@ -106,9 +107,8 @@
     border: none;
     outline: none;
     color: rgb(245, 239, 197);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     font-weight: bold;
-    border-radius: 5px;    
+    border-radius: 5px;
     padding-top: 1%;
     padding-left: 10%;
     padding-right: 10%;
@@ -116,16 +116,17 @@
     background-color: rgb(36, 36, 36);
     background-color: rgb(17, 17, 17);
     transition: .25s;
-  }
-  
+}
+
 .edit-button:hover {
     opacity: .75;
     cursor: pointer;
     color: rgb(255, 228, 105);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     transition: .25s
-} 
+}
 
-.edit-button:active{
+.edit-button:active {
     opacity: .65;
     cursor: pointer;
     color: aqua;
@@ -142,9 +143,9 @@
     border: none;
     outline: none;
     color: rgb(245, 72, 138);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000; */
     font-weight: bold;
-    border-radius: 5px;    
+    border-radius: 5px;
     padding-top: 1%;
     padding-left: 10%;
     padding-right: 10%;
@@ -152,20 +153,20 @@
     background-color: rgb(17, 17, 17);
     transition: .25s;
     margin-right: .575vh;
-  }
-  
+}
+
 .logout-button:hover {
     color: rgb(236, 157, 157);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     cursor: pointer;
-}  
+}
 
-.logout-button:active{
+.logout-button:active {
     background-color: rgb(36, 36, 36);
 }
 
-.profile-edit-buttons{
-    display:flex;
+.profile-edit-buttons {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -181,9 +182,8 @@
     outline: none;
     opacity: .65;
     color: aqua;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
     font-weight: bold;
-    border-radius: 5px;    
+    border-radius: 5px;
     padding-top: 1%;
     padding-left: 10%;
     padding-right: 10%;
@@ -192,14 +192,16 @@
     background-color: rgb(17, 17, 17);
     transition: .25s;
     margin-right: .575vh;
-  }
+}
 
-.edit-button-active:hover{
+.edit-button-active:hover {
     color: #fff;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
+
 }
 
 
-.submit-profile-changes-button{
+.submit-profile-changes-button {
     margin-top: 1vh;
     cursor: pointer;
     font-size: 155%;
@@ -210,9 +212,8 @@
     outline: none;
     opacity: .65;
     color: rgb(93, 232, 38);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #21a34c, 0 0 0.5em #52e683, 0 0 0.1em #52e683, 0 10px 3px #000;
     font-weight: bold;
-    border-radius: 5px;    
+    border-radius: 5px;
     padding-top: 1%;
     padding-left: 10%;
     padding-right: 10%;
@@ -223,12 +224,14 @@
 
 }
 
-.submit-profile-changes-button:hover{
+.submit-profile-changes-button:hover {
     color: #fff;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #21a34c, 0 0 0.5em #52e683, 0 0 0.1em #52e683, 0 10px 3px #000;
+
 }
 
 
-.profile-name-input{
+.profile-name-input {
     background-color: rgba(0, 0, 0, 0.363);
     border-color: transparent;
     font-family: 'Shippori Mincho', serif;
@@ -239,7 +242,7 @@
     /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
 }
 
-.profile-email-input{
+.profile-email-input {
     background-color: rgba(0, 0, 0, 0.363);
     border-color: transparent;
     font-family: 'Shippori Mincho', serif;
@@ -250,7 +253,7 @@
     /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff984470, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000; */
 }
 
-.profile-password-input{
+.profile-password-input {
     background-color: rgba(0, 0, 0, 0.363);
     border-color: transparent;
     font-family: 'Shippori Mincho', serif;
@@ -262,7 +265,7 @@
 }
 
 
-.no-favorites-container{
+.no-favorites-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -275,7 +278,7 @@
     transition: 1s;
 }
 
-.no-favorites-found{
+.no-favorites-found {
     font-family: 'Shippori Mincho', serif;
     /* font: 100 5vh "Vibur"; */
     color: rgb(241, 159, 159);
@@ -287,7 +290,7 @@
     padding: 1.5%;
 }
 
-.no-favorites-query{
+.no-favorites-query {
     font-family: 'Shippori Mincho', serif;
     /* font: 100 5vh "Vibur"; */
     color: rgb(248, 215, 215);
@@ -300,7 +303,7 @@
 }
 
 
-.profile-image-input{
+.profile-image-input {
     margin-top: -30%;
     background-color: rgba(0, 0, 0, 0.363);
     border-color: transparent;
@@ -322,24 +325,23 @@
     border: none;
     outline: none;
     color: #fee;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
+    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000; */
     font-weight: bold;
-    border-radius: 5px;    
+    border-radius: 5px;
     padding-top: 1%;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 1%;
-    /* background-color: rgb(36, 36, 36); */
     background-color: rgb(17, 17, 17);
     transition: .25s;
-  }
-  
+}
+
 .profile-close-button:hover {
     color: rgb(252, 7, 101);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     cursor: pointer;
-}  
+}
 
-.profile-close-button:active{
+.profile-close-button:active {
     background-color: rgb(50, 36, 36);
 }
