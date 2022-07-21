@@ -84,6 +84,7 @@ body {
     transition: 1s ease-in-out;
     font: 100 30vh "Vibur";
     cursor: default;
+    user-select: none;
   }
   
 .logo b{
