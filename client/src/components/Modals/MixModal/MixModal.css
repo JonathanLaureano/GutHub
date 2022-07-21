@@ -1,5 +1,6 @@
 .modal-drink-image{
     height: 90%;
+    user-select: none;
 }
 
 .long{

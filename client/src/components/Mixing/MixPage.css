@@ -178,6 +178,7 @@
     color: #fff;
     margin-bottom: 10%;
     margin-left: -30%;
+    user-select: none;
 }
 
 .mix-button:hover {
@@ -223,12 +224,14 @@
 
 .mix-recipe-image {
     height: 4vh;
+    user-select: none;
 }
 
 .mix-recipe-nameandcount {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    user-select: none;
 }
 
 .mix-recipe-nameandcount b{
@@ -238,6 +241,7 @@
 
 .mix-recipe {
     align-self: center;
+    user-select: none;
 }
 
 .mix-recipe-partsCount{
@@ -274,7 +278,7 @@
     width: 150%;
     margin-bottom: 3.25%;
     margin-left: 5%;
-
+    user-select: none;
 }
 
 .reset-mix:hover {
@@ -299,6 +303,7 @@
     text-align: center;
     width: 150%;
     margin-left: 5%;
+    user-select: none;
 }
 
 .switch-mix:hover {
@@ -308,6 +313,7 @@
 
 .relative {
     color: rgb(210, 245, 187);
+    user-select: none;
 }
 
 .relative:hover{
