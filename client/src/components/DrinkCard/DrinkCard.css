@@ -82,4 +82,5 @@
     font-family: 'Shippori Mincho', serif;
     bottom: 0;
     font-size: smaller;
+    user-select: none;
 }
