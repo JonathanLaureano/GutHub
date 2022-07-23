@@ -1,8 +1,5 @@
 .result-modal{
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center;
-    align-content: center; */
 }
 
 .resultModal-ingredient-container{
@@ -59,7 +56,6 @@
     background-color: rgb(49, 49, 54);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    z-index: 2;
 }
 
 .resultModal-ingredient-name{
@@ -69,7 +65,6 @@
 }
 
 .resultModal-ingredients-title {
-    /* margin-top: 1.25%; */
     background-color: rgb(15, 15, 15);
     background-color: rgb(39, 39, 39);
     padding-bottom: .75%;
@@ -89,7 +84,6 @@
 }
 
 .resultModal-drinks-title {
-    /* margin-top: 1.25%; */
     background-color: rgb(39, 39, 39);
     padding-bottom: .75%;
     border-top-right-radius: 10px;
@@ -99,11 +93,14 @@
     font-size: 3vh;
 }
 
+.resultModal-drink-holder{
+    height: 5% !important;
+}
+
 .resultModal-drinks-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: ;
 }
 
 .resultModal-drink-container {
@@ -114,26 +111,29 @@
     margin-top: 2.5%;
     margin-left: 1.5%;
     margin-right: 1.5%;
+    align-items: center;
+    justify-items: center;
 }
 
 .resultModal-drink-image{
-    height: 10vh;
+    height: 5vh;
 }
 
 .resultModal-drink-name{
     align-self: center;
     color:#fff;
-    font-size: 2vh;
+    font-size: 1.75vh;
+    width: 30%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 
 .resultModal-view-button{
-    margin-top: 2.5%;
     font-family: 'Shippori Mincho', serif;
     text-align: center;
     border: none;
     outline: none;
     color: rgb(206, 202, 202);
-    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a4469, 0 0 0.5em #ff4a4469, 0 0 0.1em #ff4a4469, 0 10px 3px #000; */
     background-color: rgb(17, 17, 17);
     height: 5vh;
     transition: .35s ease-in-out;
@@ -142,9 +142,7 @@
     text-align: center;
     width: 100%;
     margin-left: 5%;
-    margin-top: 5%;
     max-width: 100px;
-
 }
 
 .resultModal-view-button:hover{
@@ -155,13 +153,11 @@
 }
 
 .resultModal-favorite-button{
-    margin-top: 2.5%;
     font-family: 'Shippori Mincho', serif;
     text-align: center;
     border: none;
     outline: none;
     color: rgb(179, 222, 250);
-    /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff73, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000; */
     background-color: rgb(17, 17, 17);
     transition: .35s ease-in-out;
     border-radius: 5px;
@@ -171,7 +167,6 @@
     width: 75%;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 5%;
     max-width: 100px;
 }
 

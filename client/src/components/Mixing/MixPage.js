@@ -80,9 +80,7 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
                 }
                 break
             case 'RELATIVE':
-                if (mixes.mix.length <= 1) {
-                    alert("MIX ERROR: \nPlease add more than one ingredient.")
-                } else {
+
                     axios.post('/mixrelative', mixes)
                         .then(r => {
                             if (r.data.length === 0) {
@@ -104,7 +102,7 @@ export default function MixPage({ mixes, setMixes, user, ingredients, setIngredi
 
                             }
                         })
-                }
+
                 break
 
 

@@ -89,12 +89,12 @@ export default function SearchPage({searchActive, searchResults,setSearchResults
     return (
         <React.Fragment>
             <div style={{marginTop:'25%'}}></div>
-            <div className={titleClass}>Search Results</div>
+            <div className={titleClass}>drinks</div>
             <div className='search-title-wrapper'>
             <div className={buttonClass} onClick={clickResetButton}>X</div>
             <form onSubmit={handleSearchSubmit}><input 
                     type='text'
-                    placeholder='Search For A Drink or Ingredient'
+                    placeholder='Search For a Drink or Ingredient'
                     autoComplete='off'
                     cursor='pointer'
                     className='results-search'
