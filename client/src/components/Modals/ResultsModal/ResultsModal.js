@@ -87,8 +87,10 @@ export default function ResultsModal({ mixes, showResultsModal, setShowResultsMo
 
                 <div className="modal-right">
                     <div className='resultModal-drinks-title'>DRINKS</div>
-                    <div className='resultModal-drinks-wrapper'>
-                        {displayDrinks(mixResults)}
+                    <div className="resultModal-drink-holder">
+                        <div className='resultModal-drinks-wrapper'>
+                            {displayDrinks(mixResults)}
+                        </div>
                     </div>
 
                 </div>
