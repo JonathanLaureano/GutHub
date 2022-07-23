@@ -59,7 +59,7 @@ export default function HomePage({ user, setUser, drinks, setDrinks, ingredients
         <React.Fragment>
             <h3 className={signedIn ? 'subtitle' : 'subtitle hidden'}>Welcome to</h3>
             <div className={signedIn && !searchActive && !mixActive ? "logo" : "logo off"}><b>G<span>ut</span>H<span>u</span>b</b></div>
-            {signedIn ? <form onSubmit={handleSearchSubmit}><input
+            {/* {signedIn ? <form onSubmit={handleSearchSubmit}><input
                 type='text'
                 placeholder='Search For A Drink'
                 autoComplete='off'
@@ -69,8 +69,11 @@ export default function HomePage({ user, setUser, drinks, setDrinks, ingredients
                 onChange={handleSearchChange}
                 id='search-input'
             >
-            </input></form> : <button className='home-signIn' onClick={handleSignIn}>Sign In</button>}
-            {signedIn ? <button className='home-mix-button' onClick={clickMixActivateButton}>Make a Mix</button> : null}
+            </input></form> : <button className='home-signIn' onClick={handleSignIn}>Sign In</button>} */}
+            <div className='home-buttons-wrapper'>
+                {signedIn ? <button className='home-mix-button' onClick={handleSearchSubmit}>Search For a Drink </button> : null}
+                {signedIn ? <button className='home-mix-button' onClick={clickMixActivateButton}>Make a Mix</button> : null}
+            </div>
             {showSignInModal ? <SignInModal
                 username={username}
                 setUsername={setUsername}
