@@ -13,7 +13,7 @@ export default function MixModal({ user, drink, setShowMixModal, setMatchFound, 
     }
 
     function cleanString(str) {
-        return str.replace(/[^a-zA-Z\d\s:\u00C0-\u00FF]/g, '')
+        return str.replace(/[^\w\d\s:\u00C0-\u00FF]/g, '')
           .split('')
           .join('')
       }

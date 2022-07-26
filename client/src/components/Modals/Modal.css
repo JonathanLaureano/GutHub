@@ -65,6 +65,7 @@
     height: 50vh;
     background-color: #3e4044;
     border-top-left-radius: 10px;
+    align-items: center;
 }
 
 .modal-right{
@@ -85,7 +86,6 @@
     border: none;
     outline: none;
     color: #fff;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #4476ff73, 0 0 0.5em #4476ff, 0 0 0.1em #4476ff, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
     padding-top: 1%;
@@ -100,16 +100,15 @@
 .favorite-button:hover {
     opacity: .75;
     color: aqua;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #6044ff, 0 0 0.5em #6044ff, 0 0 0.1em #6044ff, 0 10px 3px #000;
     cursor: pointer;
 } 
 
-.favorite-button:active{
+/* .favorite-button:active{
     opacity: .65;
     color: rgb(255, 228, 105);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     cursor: pointer;
-}
+} */
 
 .close-button {
     margin-top: 1vh;
@@ -121,14 +120,12 @@
     border: none;
     outline: none;
     color: #fee;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
     padding-top: 1%;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 1%;
-    /* background-color: rgb(36, 36, 36); */
     background-color: rgb(17, 17, 17);
     transition: .25s;
   }
@@ -138,11 +135,6 @@
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     cursor: pointer;
 }  
-
-.close-button:active{
-    background-color: rgb(50, 36, 36);
-}
-
 
 .unfavorite-button {
     margin-top: 1vh;
@@ -154,7 +146,6 @@
     border: none;
     outline: none;
     color: rgb(252, 159, 195);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a4470, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     font-weight: bold;
     border-radius: 5px;    
     padding-top: 1%;
@@ -169,14 +160,12 @@
 .unfavorite-button:hover {
     opacity: .75;
     color: rgb(252, 7, 101);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4a44, 0 0 0.5em #ff4a44, 0 0 0.1em #ff4a44, 0 10px 3px #000;
     cursor: pointer;
 } 
 
 .unfavorite-button:active{
     opacity: .65;
     color: rgb(255, 228, 105);
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844, 0 0 0.5em #ff9844, 0 0 0.1em #ff9844, 0 10px 3px #000;
     cursor: pointer;
 }
 
