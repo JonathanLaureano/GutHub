@@ -12,11 +12,12 @@ export default function MixModal({ user, drink, setShowMixModal, setMatchFound, 
         setDrinkName(cleanString(e.target.value));
     }
 
-    function cleanString(str){
-        return str.replace(/[^\w]/g,'')
-                .split('')
-                .join('')
-    }
+    function cleanString(str) {
+        return str.replace(/[^a-zA-Z\d\s:\u00C0-\u00FF]/g, '')
+          .split('')
+          .join('')
+      }
+    
 
     let recipesToDisplay = drink.recipes.map(recipe => {
         let fullIngredient = ingredients.filter(ingredient => ingredient.id == [recipe["ingredient_id"]])[0]
