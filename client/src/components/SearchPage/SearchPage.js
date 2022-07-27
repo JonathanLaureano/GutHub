@@ -43,7 +43,7 @@ export default function SearchPage({ searchActive, searchResults, setSearchResul
   }
 
   function cleanString(str) {
-    return str.replace(/[^w\d\s:\u00C0-\u00FF]/g, '')
+    return str.replace(/[^\w\d\s:\u00C0-\u00FF]/g,'')
       .split('')
       .join('')
   }
