@@ -20,7 +20,12 @@ An interactive web application in which users can make, view, or save their favo
 
 # Demos
 
-<img src="assets/Guthub.gif" width="500">
+Mixing:
+
+<img src="assets/demo-mix.gif" width="500">
+
+Searching:
+<img src="assets/demo-search.gif" width="500">
 
 # Technical Accomplishments
 
