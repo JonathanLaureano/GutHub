@@ -22,11 +22,11 @@ An interactive web application in which users can make, view, or save their favo
 
 Mixing:
 
-<img src="assets/demo-mix.gif" width="500">
+<img src="assets/demo-mix.gif" width="600">
 
 Searching:
 
-<img src="assets/demo-search.gif" width="500">
+<img src="assets/demo-search.gif" width="600">
 
 # Technical Accomplishments
 
