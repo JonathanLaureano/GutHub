@@ -25,6 +25,7 @@ Mixing:
 <img src="assets/demo-mix.gif" width="500">
 
 Searching:
+
 <img src="assets/demo-search.gif" width="500">
 
 # Technical Accomplishments
