@@ -8,8 +8,8 @@
 .signin-modal {
     position: absolute;
     transition: all .15s;
-    margin-left: 24%;
-    margin-top: -30%;
+	top: 25%;
+	left: 25%;
     animation: .3s fadeInAnimation ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
