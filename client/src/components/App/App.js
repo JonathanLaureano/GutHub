@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 import Header from '../Header/Header';
@@ -148,7 +148,6 @@ function App() {
     }
     axios.post("/signup", signUpDetails)
       .then(r => {
-        console.log(r)
         setSignedIn(true)
         setShowSignInModal(!showSignInModal)
         window.location.reload();
