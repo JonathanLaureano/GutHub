@@ -96,7 +96,7 @@ export default function SearchPage({ searchActive, searchResults, setSearchResul
       <div style={{ marginTop: '25%' }}></div>
       <div className={titleClass}>drinks</div>
       <div className='search-title-wrapper'>
-        <div className={buttonClass} onClick={clickResetButton}>X</div>
+        {/* <div className={buttonClass} onClick={clickResetButton}>X</div> */}
         <form onSubmit={handleSearchSubmit}><input
           type='text'
           placeholder='Search For a Drink or Ingredient'

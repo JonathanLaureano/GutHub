@@ -11,7 +11,7 @@ import ResultsModal from '../Modals/ResultsModal/ResultsModal';
 import InformationModal from '../Modals/InformationModal/InformationModal';
 
 
-export default function HomePage({ user, setUser, drinks, setDrinks, ingredients, setIngredients, favorites, setFavorites, searchResults, setSearchResults, searchActive, setSearchActive, searchParams, setSearchParams, handleSearchChange, handleSearchSubmit, username, password, passwordConfirmation, setUsername, setPassword, setPasswordConfirmation, handleLogInSubmit, showSignInModal, setShowSignInModal, signedIn, signUpFirstName, setSignUpFirstName, signUpLastName, setSignUpLastName, signUpUsername, setSignUpUsername, signUpPassword, setSignUpPassword, signUpPasswordConfirmation, setSignUpPasswordConfirmation, signUpImage, setSignUpImage, signUpDesc, setSignUpDesc, handleSignUpSubmit, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, mixActive, setMixActive, showProfileModal, setShowProfileModal, handleLogOut, showMixModal, setShowMixModal, mixToCreate, setMixToCreate, handleCreateDrinkSubmit, handleFavoriteDrink, handleUnfavoriteDrink, showResultsModal, setShowResultsModal, mixResults, setMixResults, showInformationModal, setShowInformationModal }) {
+export default function HomePage({ user, setUser, drinks, setDrinks, ingredients, setIngredients, favorites, setFavorites, searchResults, setSearchResults, searchActive, setSearchActive, searchParams, setSearchParams, handleSearchChange, handleSearchSubmit, username, password, passwordConfirmation, setUsername, setPassword, setPasswordConfirmation, handleLogInSubmit, showSignInModal, setShowSignInModal, signedIn, signUpFirstName, setSignUpFirstName, signUpLastName, setSignUpLastName, signUpUsername, setSignUpUsername, signUpPassword, setSignUpPassword, signUpPasswordConfirmation, setSignUpPasswordConfirmation, signUpImage, setSignUpImage, signUpDesc, setSignUpDesc, handleSignUpSubmit, showDrinkModal, setShowDrinkModal, selectedDrink, setSelectedDrink, mixActive, setMixActive, showProfileModal, setShowProfileModal, handleLogOut, showMixModal, setShowMixModal, mixToCreate, setMixToCreate, handleCreateDrinkSubmit, handleFavoriteDrink, handleUnfavoriteDrink, showResultsModal, setShowResultsModal, mixResults, setMixResults, showInformationModal, setShowInformationModal,handleDemoLogIn }) {
     document.title = 'GutHub - Home';
 
     let [matchFound, setMatchFound] = useState(false);
@@ -71,7 +71,7 @@ export default function HomePage({ user, setUser, drinks, setDrinks, ingredients
             >
             </input></form> : <button className='home-signIn' onClick={handleSignIn}>Sign In</button>} */}
             <div className='home-buttons-wrapper'>
-                {signedIn ? <button className='home-mix-button' onClick={handleSearchSubmit}>Search For a Drink </button> : null}
+                {signedIn ? <button className='home-mix-button' onClick={handleSearchSubmit}>Search For a Drink </button> : <button className='home-signIn' onClick={handleSignIn}>Sign In</button>}
                 {signedIn ? <button className='home-mix-button' onClick={clickMixActivateButton}>Make a Mix</button> : null}
             </div>
             {showSignInModal ? <SignInModal
@@ -99,6 +99,7 @@ export default function HomePage({ user, setUser, drinks, setDrinks, ingredients
                 signUpDesc={signUpDesc}
                 setSignUpDesc={setSignUpDesc}
                 handleSignUpSubmit={handleSignUpSubmit}
+                handleDemoLogIn={handleDemoLogIn}
             /> : null}
             {/* {matchFound?<div className='no-results-container'> 
                         <div className='no-results-found'>No Results Found</div>
