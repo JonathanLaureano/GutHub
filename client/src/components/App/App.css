@@ -1,3 +1,203 @@
 .App {
   text-align: center;
 }
+
+@import url(//fonts.googleapis.com/css?family=Vibur);
+html,body{
+  height:100%
+}
+
+body {
+    background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
+    background-size:cover;
+    margin:0;
+    overflow-y: hidden;
+  }
+
+.link-container{
+    /* justify-content: space-between; */
+    display: flex;  
+    flex-direction: column;
+}
+
+.home-search{
+    font-family: 'Shippori Mincho', serif;
+    text-align: center;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: rgb(46, 45, 45);
+    width: 15%;
+    padding: .75%;
+    transition: .25s ease-in-out;
+    opacity: .5;
+    border-radius:5px;
+    text-align: center;
+    margin-top: -10%;
+    color: transparent;
+}
+
+.home-search:focus{
+    margin-top: -5%;
+    font-size: 125%;
+    width: 65%;
+    cursor: text;
+    opacity: .55;
+    color: #fff
+}
+
+.home-signIn{
+  font-family: 'Shippori Mincho', serif;
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: rgb(46, 45, 45);
+  width: 12.5%;
+  padding: 1%;
+  transition: .35s ease-in-out;
+  opacity: .5;
+  border-radius:5px;
+  text-align: center;
+  /* margin-top: -15%; */
+  color: white;
+}
+
+.home-signIn:hover{
+  opacity: .75;
+  color: #fff;
+  cursor: pointer;
+  
+}
+
+.subtitle{
+    margin-top: 12.55%;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 200%;
+    color: #ffff;
+    transition: .5s ease-in-out;
+    font: 100 30vh;
+    cursor: default;
+}
+
+.logo {
+    margin-top: -4%;
+    text-align: center;
+    height: 1200%;
+    margin-bottom: -2%;
+    transition: 1s ease-in-out;
+    font: 100 30vh "Vibur";
+    cursor: default;
+    user-select: none;
+  }
+  
+.logo b{
+    color: rgb(255, 238, 238);
+     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff9844a4, 0 0 0.5em #ff98448f, 0 0 0.1em #ff984481, 0 10px 3px #000;
+}
+.logo b span{
+    animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2){
+    animation: blink linear infinite 3s;
+}
+  @keyframes blink {
+    78% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    79%{
+       color: #333;
+    }
+    80% {
+      
+      text-shadow: none;
+    }
+    81% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    82% {
+      color: #333;
+      text-shadow: none;
+    }
+    83% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    92% {
+      color: #333;
+      text-shadow: none;
+    }
+    92.5% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+  }
+
+.logo b:active{
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+  transition: 3s ease;
+}
+
+.hidden{
+  visibility: hidden;
+  transition: .5s ease-in-out;
+}
+
+.off{
+  color: inherit;
+  text-shadow: inherit;
+  transition: 2s ease-in-out;
+}
+
+.off b{
+  color: inherit;
+  text-shadow: inherit;
+
+}
+.off b span{
+  animation: none;
+}
+.off b span:nth-of-type(2){
+  animation: none;
+}
+
+.home-page-spacer{
+  background-color: white;
+  margin-top: 25%;
+}
+
+
+.home-mix-button{
+  font-family: 'Shippori Mincho', serif;
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: rgb(46, 45, 45);
+  width: 12.5%;
+  padding: 1%;
+  transition: .35s ease-in-out;
+  opacity: .5;
+  border-radius:5px;
+  text-align: center;
+  margin-top: 1.5%;
+  color: white;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+
+}
+
+.home-mix-button:hover{
+  opacity: .75;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.home-buttons-wrapper{
+  display: flex;
+  justify-content: center;
+}
