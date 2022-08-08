@@ -182,6 +182,33 @@ function App() {
       });
   }
 
+  function handleDemoLogIn(e) {
+    e.preventDefault();
+    const logInDetails = {
+      username: "Demo User",
+      password: "12345"
+    }
+
+    axios.post("/login", logInDetails)
+      .then((r) => {
+        setSignedIn(true)
+        setShowSignInModal(false)
+        setUser(r.data)
+        window.location.reload();
+
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data.errors);
+          alert(error.response.data.errors)
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+  }
+
   function handleLogOut() {
     axios.delete('/logout')
       .then(r => {
@@ -329,6 +356,7 @@ function App() {
             setMixResults={setMixResults}
             showInformationModal={showInformationModal}
             setShowInformationModal={setShowInformationModal}
+            handleDemoLogIn={handleDemoLogIn}
           />
         </Route>
       </Switch>

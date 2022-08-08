@@ -23,7 +23,17 @@ User.create!([
         image_url: "https://img.icons8.com/material-rounded/384/000000/user.png",
         description: "",
         favorites: []
+    },
+    {
+        first_name: "Demo",
+        last_name: "User",
+        username: "Demo User",
+        password: "12345",
+        image_url: "https://img.icons8.com/material-rounded/384/000000/user.png",
+        description: "",
+        favorites: []
     }
+
 ])
 
 puts "Seeding Drinks..."

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignInModal.css';
 
-export default function SignInModal({ username, setUsername, password, setPassword, handleLogInSubmit, showSignInModal, setShowSignInModal, signUpFirstName, setSignUpFirstName, signUpLastName, setSignUpLastName, signUpUsername, setSignUpUsername, signUpPassword, setSignUpPassword, signUpPasswordConfirmation, setSignUpPasswordConfirmation, signUpImage, setSignUpImage, signUpDesc, setSignUpDesc, handleSignUpSubmit }) {
+export default function SignInModal({ username, setUsername, password, setPassword, handleLogInSubmit, showSignInModal, setShowSignInModal, signUpFirstName, setSignUpFirstName, signUpLastName, setSignUpLastName, signUpUsername, setSignUpUsername, signUpPassword, setSignUpPassword, signUpPasswordConfirmation, setSignUpPasswordConfirmation, signUpImage, setSignUpImage, signUpDesc, setSignUpDesc, handleSignUpSubmit,handleDemoLogIn }) {
 
     const [formType, setFormType] = useState(true)
 
@@ -33,6 +33,7 @@ export default function SignInModal({ username, setUsername, password, setPasswo
                             <input className='modal-input' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <a className='modal-a' href="#">Forgot your password?</a>
                             <button className='modal-button' onClick={handleLogInSubmit}>Sign In</button>
+                            <button className='modal-button demo' onClick={handleDemoLogIn}>Sign In as Demo User</button>
                         </form>
                     </div>
                     <div className="overlay-container">
