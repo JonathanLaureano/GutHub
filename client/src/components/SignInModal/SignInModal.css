@@ -384,6 +384,11 @@
 }
 
 .demo {
-	background-color: #426DFB;
+	background-color: #6586f3;
 	margin-top: 5%;
+
 }
+
+.demo:hover{
+	background-color: #426DFB;
+	}
