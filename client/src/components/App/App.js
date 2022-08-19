@@ -114,24 +114,21 @@ function App() {
         }
       });
 
-    axios.get('/drinks')
-      .then(r => {
-        setDrinks(r.data)
-      })
+    let drinksReq = axios.get('/drinks')
 
-    axios.get('/ingredients')
-      .then(r => {
-        setIngredients(r.data)
-      })
+    let ingredsReq = axios.get('/ingredients')
 
-    axios.get('/drinks/1')
-      .then(r => {
-        setSelectedDrink(r.data)
-      })
+    let selectedDrinkReq = axios.get('/drinks/1')
 
-    axios.get('/favorites')
-      .then(r => setFavorites(r.data))
+    let favoritesReq = axios.get('/favorites')
 
+    axios.all([drinksReq, ingredsReq, selectedDrinkReq, favoritesReq])
+      .then(axios.spread((res1, res2, res3, res4) => {
+        setDrinks(res1.data)
+        setIngredients(res2.data)
+        setSelectedDrink(res3.data)
+        setFavorites(res4.data)
+      }))
   }, [])
 
 
@@ -458,7 +455,7 @@ function App() {
       {displayHeader}
       <h3 className={subtitleClass}>Welcome to</h3>
       <div className={titleClass}><b>G<span>ut</span>H<span>u</span>b</b></div>
-      {displayHomeButtons }
+      {displayHomeButtons}
       {displaySignInModal}
       {displayDrinkModal}
       {displayProfileModal}
