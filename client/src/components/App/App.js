@@ -35,8 +35,7 @@ function App() {
   const [password, setPassword] = useState("");
 
   // Signed In:
-  const [signedIn, setSignedIn] = useState(false);
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
 
   const [drinks, setDrinks] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -107,7 +106,6 @@ function App() {
         if (r.ok) {
           r.json().then((user) => {
             setUser(user)
-            setSignedIn(true)
             scrollTop();
           }
           );
@@ -145,7 +143,6 @@ function App() {
     }
     axios.post("/signup", signUpDetails)
       .then(r => {
-        setSignedIn(true)
         setShowSignInModal(!showSignInModal)
         window.location.reload();
 
@@ -172,7 +169,6 @@ function App() {
 
     axios.post("/login", logInDetails)
       .then((r) => {
-        setSignedIn(true)
         setShowSignInModal(false)
         setUser(r.data)
         window.location.reload();
@@ -199,7 +195,6 @@ function App() {
 
     axios.post("/login", logInDetails)
       .then((r) => {
-        setSignedIn(true)
         setShowSignInModal(false)
         setUser(r.data)
         window.location.reload();
@@ -221,8 +216,7 @@ function App() {
     axios.delete('/logout')
       .then(r => {
         setShowProfileModal(false);
-        setSignedIn(false);
-        setUser(null);
+        setUser({});
         history.push('/');
         window.location.reload();
       })
@@ -332,15 +326,11 @@ function App() {
     ]
   });
 
-  const displayHeader = signedIn ? <Header
-    signedIn={signedIn}
-    setSignedIn={setSignedIn}
-    showProfileModal={showProfileModal}
-    setShowProfileModal={setShowProfileModal} /> : null;
+  const displayHeader = user.username ? <Header showProfileModal={showProfileModal} setShowProfileModal={setShowProfileModal} /> : null;
 
-  const subtitleClass = signedIn ? 'subtitle' : 'subtitle hidden';
-  const titleClass = signedIn && !searchActive && !mixActive ? "logo" : "logo off";
-  const displayHomeButtons = signedIn ? <div className='home-buttons-wrapper'>
+  const subtitleClass = user.username ? 'subtitle' : 'subtitle hidden';
+  const titleClass = user.username && !searchActive && !mixActive ? "logo" : "logo off";
+  const displayHomeButtons = user.username ? <div className='home-buttons-wrapper'>
     <button className='home-mix-button' onClick={handleSearchSubmit}>Search For a Drink </button>
     <button className='home-mix-button' onClick={clickMixActivateButton}>Make a Mix</button>
   </div> : <button className='home-signIn' onClick={handleSignIn}>Sign In</button>;
