@@ -1,7 +1,7 @@
 import './ProfilePage.css';
 import React from 'react';
 
-export default function ProfilePage({ signedIn, handleLogOut }) {
+export default function ProfilePage({ handleLogOut }) {
     document.title = 'GutHub - Profile'
     return (
         <React.Fragment>

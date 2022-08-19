@@ -2,9 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
-
 import Header from '../Header/Header';
-
 import { animateScroll as ScrollAction } from 'react-scroll';
 import SignInModal from '../SignInModal/SignInModal';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
@@ -15,7 +13,7 @@ import MixModal from '../Modals/MixModal/MixModal';
 import ResultsModal from '../Modals/ResultsModal/ResultsModal';
 import InformationModal from '../Modals/InformationModal/InformationModal';
 
-function App() {
+export default function App() {
   document.title = 'GutHub - Home';
 
   let history = useHistory();
@@ -35,8 +33,7 @@ function App() {
   const [password, setPassword] = useState("");
 
   // Signed In:
-  const [signedIn, setSignedIn] = useState(false);
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
 
   const [drinks, setDrinks] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -107,31 +104,27 @@ function App() {
         if (r.ok) {
           r.json().then((user) => {
             setUser(user)
-            setSignedIn(true)
             scrollTop();
           }
           );
         }
       });
 
-    axios.get('/drinks')
-      .then(r => {
-        setDrinks(r.data)
-      })
+    let drinksReq = axios.get('/drinks')
 
-    axios.get('/ingredients')
-      .then(r => {
-        setIngredients(r.data)
-      })
+    let ingredsReq = axios.get('/ingredients')
 
-    axios.get('/drinks/1')
-      .then(r => {
-        setSelectedDrink(r.data)
-      })
+    let selectedDrinkReq = axios.get('/drinks/1')
 
-    axios.get('/favorites')
-      .then(r => setFavorites(r.data))
+    let favoritesReq = axios.get('/favorites')
 
+    axios.all([drinksReq, ingredsReq, selectedDrinkReq, favoritesReq])
+      .then(axios.spread((res1, res2, res3, res4) => {
+        setDrinks(res1.data)
+        setIngredients(res2.data)
+        setSelectedDrink(res3.data)
+        setFavorites(res4.data)
+      }))
   }, [])
 
 
@@ -148,7 +141,6 @@ function App() {
     }
     axios.post("/signup", signUpDetails)
       .then(r => {
-        setSignedIn(true)
         setShowSignInModal(!showSignInModal)
         window.location.reload();
 
@@ -175,7 +167,6 @@ function App() {
 
     axios.post("/login", logInDetails)
       .then((r) => {
-        setSignedIn(true)
         setShowSignInModal(false)
         setUser(r.data)
         window.location.reload();
@@ -202,7 +193,6 @@ function App() {
 
     axios.post("/login", logInDetails)
       .then((r) => {
-        setSignedIn(true)
         setShowSignInModal(false)
         setUser(r.data)
         window.location.reload();
@@ -224,8 +214,7 @@ function App() {
     axios.delete('/logout')
       .then(r => {
         setShowProfileModal(false);
-        setSignedIn(false);
-        setUser(null);
+        setUser({});
         history.push('/');
         window.location.reload();
       })
@@ -335,15 +324,11 @@ function App() {
     ]
   });
 
-  const displayHeader = signedIn ? <Header
-    signedIn={signedIn}
-    setSignedIn={setSignedIn}
-    showProfileModal={showProfileModal}
-    setShowProfileModal={setShowProfileModal} /> : null;
+  const displayHeader = user.username ? <Header showProfileModal={showProfileModal} setShowProfileModal={setShowProfileModal} /> : null;
 
-  const subtitleClass = signedIn ? 'subtitle' : 'subtitle hidden';
-  const titleClass = signedIn && !searchActive && !mixActive ? "logo" : "logo off";
-  const displayHomeButtons = signedIn ? <div className='home-buttons-wrapper'>
+  const subtitleClass = user.username ? 'subtitle' : 'subtitle hidden';
+  const titleClass = user.username && !searchActive && !mixActive ? "logo" : "logo off";
+  const displayHomeButtons = user.username ? <div className='home-buttons-wrapper'>
     <button className='home-mix-button' onClick={handleSearchSubmit}>Search For a Drink </button>
     <button className='home-mix-button' onClick={clickMixActivateButton}>Make a Mix</button>
   </div> : <button className='home-signIn' onClick={handleSignIn}>Sign In</button>;
@@ -458,7 +443,7 @@ function App() {
       {displayHeader}
       <h3 className={subtitleClass}>Welcome to</h3>
       <div className={titleClass}><b>G<span>ut</span>H<span>u</span>b</b></div>
-      {displayHomeButtons }
+      {displayHomeButtons}
       {displaySignInModal}
       {displayDrinkModal}
       {displayProfileModal}
@@ -471,5 +456,3 @@ function App() {
     </div >
   );
 }
-
-export default App;
