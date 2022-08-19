@@ -2,9 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
-
 import Header from '../Header/Header';
-
 import { animateScroll as ScrollAction } from 'react-scroll';
 import SignInModal from '../SignInModal/SignInModal';
 import DrinkModal from '../Modals/DrinkModal/DrinkModal';
@@ -15,7 +13,7 @@ import MixModal from '../Modals/MixModal/MixModal';
 import ResultsModal from '../Modals/ResultsModal/ResultsModal';
 import InformationModal from '../Modals/InformationModal/InformationModal';
 
-function App() {
+export default function App() {
   document.title = 'GutHub - Home';
 
   let history = useHistory();
@@ -458,5 +456,3 @@ function App() {
     </div >
   );
 }
-
-export default App;

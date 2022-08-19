@@ -1,12 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import '../Modal.css';
 import './DrinkModal.css';
 
 export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFound, handleFavoriteDrink, handleUnfavoriteDrink, favorites, setFavorites, ingredients }) {
     const drinks = require.context('../../../img/drinks', true);
     const ingredientImgs = require.context('../../../img/ingredients', true);
-
 
     let recipesToDisplay = drink.recipes.map(recipe => {
         return (
@@ -35,7 +33,7 @@ export default function DrinkModal({ user, drink, setShowDrinkModal, setMatchFou
         setFavorites(favorites.filter(fav => fav != drink.id))
     }
 
-    let inFavorites = favorites != undefined ? favorites.includes(drink.id) : false
+    let inFavorites = favorites !== [] ? favorites.includes(drink.id) : false
     let drinkNameClass = drink.name.length > 15 ? 'modal-drink-name long' : 'modal-drink-name'
 
     let isCreatedDrink = drink.user.id != 1 && drink.user.id != 2

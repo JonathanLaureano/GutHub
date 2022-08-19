@@ -1,7 +1,6 @@
 import './Header.css';
 import React from 'react'
 
-
 export default function Header({showProfileModal,setShowProfileModal}){
     function handleProfileClick(){
         setShowProfileModal(true)
