@@ -64,9 +64,9 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
             });
     }
 
-    let favoriteEmpty = profile.favorites.length === 0;
+    // let favoriteEmpty = profile.favorites.length === 0;
 
-    let favoriteDrinksToDisplay = !favoriteEmpty ? profile.favorites.map(drink_id => {
+    let favoriteDrinksToDisplay = profile.favorites ? profile.favorites.map(drink_id => {
         let drink = drinks[drink_id - 1]
         return (
             <div className='modal-mini-card-container'>
@@ -75,10 +75,9 @@ export default function ProfileModal({ profile, setUser, setShowProfileModal, ha
         )
     }) : null;
 
-    let createdEmpty = profile.drinks.length === 0;
+    // let createdEmpty = profile.drinks.length === 0;
 
-
-    let createdDrinksToDisplay = !createdEmpty ? profile.drinks.map(drink => {
+    let createdDrinksToDisplay = profile.drinks ? profile.drinks.map(drink => {
         let fullDrink = drinks[drink.id - 1]
         return (
             <div className='modal-mini-card-container'>
